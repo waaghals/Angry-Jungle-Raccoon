@@ -27,6 +27,13 @@ Alle projecten waarvan de huidige datum in één van de periodes valt.</body>
 
 http://www.asp.net/mvc/tutorials/older-versions/models-(data)/validating-with-a-service-layer-cs</body>
     </comment>
+    <comment
+      Id="d24a79ee-ec96-4957-91e3-16d2758b4d27">
+      <body>TODO
+
+Nette manier vinden om de Database context over meerdere repositories te verdelen in bijvoorbeeld een enkele service
+</body>
+    </comment>
   </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances
