@@ -8,6 +8,15 @@
       Id="055aa091-f6a1-41ae-b0b5-2cf7021c68c6">
       <body>Alle modelen hier afgebeeld zijn entiteiten en hebben voor gemakkelijk database gebruik allemaal een id.</body>
     </comment>
+    <comment
+      Id="f197c0a9-b760-40f5-a4d9-8f9ad7f2a04d">
+      <body>AllOpen():
+Alle projecten waarvan de huidige datum in één van de periodes valt.</body>
+    </comment>
+    <comment
+      Id="84fc4847-615d-458d-a23c-63cd8db7332f">
+      <body>En nog een voor student, etc.</body>
+    </comment>
   </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances
@@ -2228,26 +2237,6 @@
             </propertyInstances>
           </stereotypeInstance>
         </appliedStereotypesInternal>
-        <ownedAttributes>
-          <property
-            Id="24144d85-851d-4566-a050-8375da7d803b"
-            name="Entities"
-            isLeaf="false"
-            isStatic="false"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="18f21a2e-953d-4cf6-bcd2-20a64bdac8f5"
-                LastKnownName="DbSet&lt;TEntity&gt;"
-                LastKnownLocation="AKD.uml" />
-            </type_NamedElement>
-          </property>
-        </ownedAttributes>
         <ownedOperations>
           <operation
             Id="8fb60d12-406c-469c-b4d5-5f7b1ac61401"
@@ -2268,6 +2257,18 @@
                     <undefinedTypeMoniker
                       Id="cc80b36a-e23a-4082-9491-09f07f8d727b"
                       LastKnownName="T"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0eab0dc5-375b-4b07-8520-b1b7f281b16a"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="d9af9c30-2c4b-41e8-adc0-0957a3329460"
+                      LastKnownName="Void"
                       LastKnownLocation="AKD.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -2296,6 +2297,18 @@
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d30c833e-8b80-4da8-b998-edda52982aad"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
           <operation
@@ -2316,6 +2329,18 @@
                     <undefinedTypeMoniker
                       Id="cc80b36a-e23a-4082-9491-09f07f8d727b"
                       LastKnownName="T"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e3bd796f-e991-4e6b-bf4e-f64fce8e2c6b"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
                       LastKnownLocation="AKD.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -2345,6 +2370,18 @@
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="8802f2fe-3936-41c2-b8f4-a52b9e122bdf"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="cc80b36a-e23a-4082-9491-09f07f8d727b"
+                      LastKnownName="T"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
           <operation
@@ -2354,7 +2391,22 @@
             isStatic="false"
             isAbstract="true"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="d7e3a361-154b-4973-bb53-5c209cdbd738"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="ed518a59-af87-4436-8993-68d9a5a6bef3"
+                      LastKnownName="IEnumerable"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="4b626753-d4db-407c-8e16-1985e7b8db47"
             name="Save"
@@ -2362,7 +2414,22 @@
             isStatic="false"
             isAbstract="true"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="04993dbf-f23d-49a8-947b-d898445fa8d2"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="d9af9c30-2c4b-41e8-adc0-0957a3329460"
+                      LastKnownName="Void"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="483ac84b-e77c-4c6b-b811-9cb5eaa86889"
             name="Delete"
@@ -2381,6 +2448,18 @@
                     <primitiveTypeMoniker
                       Id="220a3521-e091-4221-bae9-3ef9018e845c"
                       LastKnownName="Integer"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="318e9193-5478-4eb3-8e6b-32825d78407c"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
                       LastKnownLocation="AKD.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -2411,6 +2490,610 @@
       <undefinedType
         Id="b7678abb-f545-4bd7-b84a-816acd211101"
         name="Inte" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="ed518a59-af87-4436-8993-68d9a5a6bef3"
+        name="IEnumerable" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="18ed8f5d-917b-44c0-bac6-e3cf7276f7ce"
+        name="Boo" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="d9af9c30-2c4b-41e8-adc0-0957a3329460"
+        name="Void" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="05fe0392-646b-415b-9838-6e5e3f655538"
+        name="GenericRepository&lt;T&gt;"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="832e3f4e-5e86-49ea-a672-f4bdfd0fab5e">
+            <interfaceMoniker
+              Id="b9edb83c-dce9-450d-9354-268fddcb8ad5"
+              LastKnownName="IRepository&lt;T&gt;"
+              LastKnownLocation="AKD.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="62825633-fec5-4f49-b5dd-2c74bff783ed"
+            name="Insert"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="780383ae-bef6-44c1-a79f-3fb6d8f94d17"
+                  name="entity"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="cc80b36a-e23a-4082-9491-09f07f8d727b"
+                      LastKnownName="T"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7b7bdc0d-491d-4403-98e6-9fb2fc166484"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="d9af9c30-2c4b-41e8-adc0-0957a3329460"
+                      LastKnownName="Void"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="17f3cdda-4799-4c8c-bdb5-ffecf762f309"
+            name="Delete"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b00514ba-b3b3-4089-bcb3-c2554db6a335"
+                  name="entity"
+                  direction="In">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="cc80b36a-e23a-4082-9491-09f07f8d727b"
+                      LastKnownName="T"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5daea84c-7056-4804-b263-79605d2d4d4a"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="ac61d95e-d403-41d0-9936-e638c1da7cac"
+            name="Update"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="50ee6b36-ff7e-4594-a9c9-16f21b3ef0ef"
+                  name="entity"
+                  direction="In">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="cc80b36a-e23a-4082-9491-09f07f8d727b"
+                      LastKnownName="T"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0ebcd33e-1d90-4fd2-9baf-e6fe544ab58e"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="f064c81d-70fe-4dc4-acf1-c8a79624c162"
+            name="Get"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="93a12ac0-34cb-4275-8010-7094f459b558"
+                  name="id"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6f72180a-8318-4f75-a205-406076a412d9"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="cc80b36a-e23a-4082-9491-09f07f8d727b"
+                      LastKnownName="T"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="f071680f-c1b7-42a2-a84d-0fffea9a0d23"
+            name="GetAll"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="c3f5b55c-3a63-4c05-8336-f19b198629fc"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="ed518a59-af87-4436-8993-68d9a5a6bef3"
+                      LastKnownName="IEnumerable"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="a6fe399a-4c94-4834-b331-e330d9b440c3"
+            name="Save"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="8f724e50-d065-4f1b-9376-3338cb42ad68"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="d9af9c30-2c4b-41e8-adc0-0957a3329460"
+                      LastKnownName="Void"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="d8b8f204-6363-484e-89d9-04009e833bef"
+            name="Delete"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="f8c81352-d6ea-4b71-a9ec-d19a976d1084"
+                  name="id"
+                  direction="In">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="641c267c-6991-4c75-b4c0-ce18fdba069c"
+                  direction="Return">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+                      LastKnownName="Boolean"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="064478ab-b4da-4cbe-a58e-b9f59eebc95b"
+        name="GroupRepository"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="c6624871-23c4-4e7f-bb70-c62aa2bf23a5"
+            isSubstitutable="false">
+            <classMoniker
+              Id="05fe0392-646b-415b-9838-6e5e3f655538"
+              LastKnownName="GenericRepository&lt;T&gt;"
+              LastKnownLocation="AKD.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="593679e7-4d8a-48de-9d8a-fe8686f98842"
+            name="ByStudent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ddb4a535-5a19-4b79-a813-3b2fb76e9b24"
+                  name="student"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="545cbb34-fefa-46fe-bd06-0a23ac944018"
+                      LastKnownName="Student"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="1af12986-5d8c-4485-b725-b6a8305596e4"
+            name="ByStudent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="083dc86d-d540-42a0-9af7-c77aed246fab"
+                  name="studentId"
+                  direction="In">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="04af40df-5d85-4970-932f-26664c1953b4"
+            name="InProject"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b3c04bd9-70ca-467f-86a2-50b983a1491f"
+                  name="projectId"
+                  direction="In">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="a42c4b3b-d478-4706-a377-cef02c19ce0e"
+            name="InProject"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a0bc287a-d5aa-4165-bf09-18c1260c0807"
+                  name="project"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="1b60e566-03f8-4bf5-8123-7133cdfcb628"
+                      LastKnownName="Project"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="41fce07c-1d7a-44bd-ada9-efa6a9469a92"
+        name="ProjectRepository"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="acbb5c67-fd97-4473-aa6d-99b3cbff5bc0"
+            isSubstitutable="false">
+            <classMoniker
+              Id="05fe0392-646b-415b-9838-6e5e3f655538"
+              LastKnownName="GenericRepository&lt;T&gt;"
+              LastKnownLocation="AKD.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="cec96d1a-1d2f-408e-a0ed-1147bd292182"
+            name="WithStudent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="85507bb0-a0ec-402c-9b48-d9e40708d42e"
+                  name="student"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="545cbb34-fefa-46fe-bd06-0a23ac944018"
+                      LastKnownName="Student"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="92dcf926-1c8f-422b-849e-7983bcb48e31"
+            name="WithStudent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="44b82de4-d6bc-4209-89f2-0b71367b33b9"
+                  name="studentId"
+                  direction="In">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="17acb82e-5657-4320-9e67-114eec25113c"
+            name="AllOpen"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <description>Alle projecten waarvan de huidige datum in één van de periodes valt.</description>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e9c9dfa4-20fd-426c-8d28-189b5b2ad5e3"
+                  direction="Return" />
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="570f2ca9-c9b9-493a-9d83-336ee75ed70a"
+        name="StudentRepository"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="4c2db768-2f3f-4c1a-a275-8d001ca14ab2"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false" />
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="45006b02-0192-4c61-b29d-9a4a9ea00e20"
+        name="EvaluationRepository"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <generalsInternal>
+          <generalization
+            Id="db8484bd-fec8-4198-8e2c-3f30a52527eb"
+            isSubstitutable="false">
+            <classMoniker
+              Id="05fe0392-646b-415b-9838-6e5e3f655538"
+              LastKnownName="GenericRepository&lt;T&gt;"
+              LastKnownLocation="AKD.uml" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="247b42e8-0bd9-4f3b-921c-5eef0710cd84"
+            name="ForStudent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4cdeafb1-72ec-4bd2-883b-866cc9977f4a"
+                  name="student"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="545cbb34-fefa-46fe-bd06-0a23ac944018"
+                      LastKnownName="Student"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="48b5b3f9-6c04-4fb6-acaa-9a28e5aa90fc"
+            name="ForStudent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="13a6373f-47e4-4c57-a65b-eec90cd56fb9"
+                  name="studentId"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="2ee8138c-7f53-48b7-acd2-ca2528fe71d2"
+            name="ByStudent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="da8fcc0b-f17f-4592-b035-fb6ed1eea5cf"
+                  name="student"
+                  direction="In">
+                  <type_NamedElement>
+                    <classMoniker
+                      Id="545cbb34-fefa-46fe-bd06-0a23ac944018"
+                      LastKnownName="Student"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="91bee626-631a-4007-bcb4-a7bebbe25c49"
+            name="ByStudent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="7d826d34-77d9-496c-b2a6-f2c2994038c0"
+                  name="studentId"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="220a3521-e091-4221-bae9-3ef9018e845c"
+                      LastKnownName="Integer"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
