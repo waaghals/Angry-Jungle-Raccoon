@@ -17,6 +17,10 @@ Alle projecten waarvan de huidige datum in één van de periodes valt.</body>
       Id="84fc4847-615d-458d-a23c-63cd8db7332f">
       <body>En nog een voor student, etc.</body>
     </comment>
+    <comment
+      Id="6bc13f82-ea31-4ace-8ffa-c38d24cffba9">
+      <body>Oranje classes zijn vanuit Asp/net MVC4 en niet zelf geimplementeerd</body>
+    </comment>
   </ownedCommentsInternal>
   <profileInstances>
     <packageHasProfileInstances
@@ -99,7 +103,23 @@ Alle projecten waarvan de huidige datum in één van de periodes valt.</body>
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="89a7549b-079b-4b7e-8b3c-d4b225da3df7"
+                  name="model"
+                  direction="In">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="8e8afcd6-eb19-45ae-a6c7-f3311f329d20"
+                      LastKnownName="ViewModel"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="6895c5f2-f8ad-488e-9db0-5053cd3a0d69"
             name="Delete"
@@ -127,7 +147,7 @@ Alle projecten waarvan de huidige datum in één van de periodes valt.</body>
           </operation>
           <operation
             Id="0f449efe-cbfc-423f-b19f-cecac3ab3e9b"
-            name="Edit"
+            name="Update"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -144,6 +164,19 @@ Alle projecten waarvan de huidige datum in één van de periodes valt.</body>
                     <primitiveTypeMoniker
                       Id="220a3521-e091-4221-bae9-3ef9018e845c"
                       LastKnownName="Integer"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e180660f-9520-4ded-9f69-66f5c94a1816"
+                  name="ViewModel"
+                  direction="In">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="cde1df64-4a67-4b4f-8464-97538bbe1528"
+                      LastKnownName="object"
                       LastKnownLocation="AKD.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -278,7 +311,23 @@ Alle projecten waarvan de huidige datum in één van de periodes valt.</body>
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="be019f69-daf4-4912-a58d-e14571cacb44"
+                  name="model"
+                  direction="In">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="8e8afcd6-eb19-45ae-a6c7-f3311f329d20"
+                      LastKnownName="ViewModel"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="6ce5b32f-85b5-4192-a42e-4899ceefa9bb"
             name="Delete"
@@ -306,7 +355,7 @@ Alle projecten waarvan de huidige datum in één van de periodes valt.</body>
           </operation>
           <operation
             Id="2e4c00bb-0a71-4784-91d1-d9a686468602"
-            name="Edit"
+            name="Update"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -323,6 +372,19 @@ Alle projecten waarvan de huidige datum in één van de periodes valt.</body>
                     <primitiveTypeMoniker
                       Id="220a3521-e091-4221-bae9-3ef9018e845c"
                       LastKnownName="Integer"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="3328daee-1014-433b-a0c0-a81fe12fd2a6"
+                  name="ViewModel"
+                  direction="In">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="cde1df64-4a67-4b4f-8464-97538bbe1528"
+                      LastKnownName="object"
                       LastKnownLocation="AKD.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -463,7 +525,23 @@ Alle projecten waarvan de huidige datum in één van de periodes valt.</body>
             isStatic="false"
             isAbstract="false"
             concurrency="Sequential"
-            isQuery="false" />
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="e77f850c-2930-4eca-8aec-17a8177427aa"
+                  name="model"
+                  direction="In">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="8e8afcd6-eb19-45ae-a6c7-f3311f329d20"
+                      LastKnownName="ViewModel"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
           <operation
             Id="207a0808-0b4c-4e41-9eb2-220cacf512e0"
             name="Delete"
@@ -491,7 +569,7 @@ Alle projecten waarvan de huidige datum in één van de periodes valt.</body>
           </operation>
           <operation
             Id="6c351655-772d-4306-a48f-49655199f819"
-            name="Edit"
+            name="Update"
             isLeaf="false"
             isStatic="false"
             isAbstract="false"
@@ -508,6 +586,19 @@ Alle projecten waarvan de huidige datum in één van de periodes valt.</body>
                     <primitiveTypeMoniker
                       Id="220a3521-e091-4221-bae9-3ef9018e845c"
                       LastKnownName="Integer"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2c887bd1-a7f4-431b-bdec-c97847cc7f75"
+                  name="ViewModel"
+                  direction="In">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="cde1df64-4a67-4b4f-8464-97538bbe1528"
+                      LastKnownName="object"
                       LastKnownLocation="AKD.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -706,7 +797,7 @@ Alle projecten waarvan de huidige datum in één van de periodes valt.</body>
           </operation>
           <operation
             Id="df6871a2-0904-4eea-9f4b-31ecec90dfbd"
-            name="Edit"
+            name="Update"
             isLeaf="false"
             isStatic="false"
             isAbstract="true"
@@ -723,6 +814,19 @@ Alle projecten waarvan de huidige datum in één van de periodes valt.</body>
                     <primitiveTypeMoniker
                       Id="220a3521-e091-4221-bae9-3ef9018e845c"
                       LastKnownName="Integer"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0d46c205-ce7e-4c69-b8bf-8737a670ef96"
+                  name="ViewModel"
+                  direction="In">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="cde1df64-4a67-4b4f-8464-97538bbe1528"
+                      LastKnownName="object"
                       LastKnownLocation="AKD.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -756,6 +860,30 @@ Alle projecten waarvan de huidige datum in één van de periodes valt.</body>
                     <primitiveTypeMoniker
                       Id="220a3521-e091-4221-bae9-3ef9018e845c"
                       LastKnownName="Integer"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="56ee896b-f92d-42cc-b4ba-3f331603d2ff"
+            name="Create"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9076d68a-3121-4ca2-8347-dde67bd6af0d"
+                  name="model"
+                  direction="In">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="8e8afcd6-eb19-45ae-a6c7-f3311f329d20"
+                      LastKnownName="ViewModel"
                       LastKnownLocation="AKD.uml" />
                   </type_NamedElement>
                 </parameter>
@@ -860,7 +988,7 @@ Alle projecten waarvan de huidige datum in één van de periodes valt.</body>
         </suppliersInternal>
         <generalsInternal>
           <generalization
-            Id="d9ec3733-8336-47a2-b44c-f0d4385a59d1"
+            Id="d049189d-65bd-43c8-a16c-ddc601e3c10d"
             isSubstitutable="false">
             <classMoniker
               Id="697fe634-ff96-47de-ae7e-23d43f71fbae"
@@ -3094,6 +3222,16 @@ Alle projecten waarvan de huidige datum in één van de periodes valt.</body>
           </operation>
         </ownedOperationsInternal>
       </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="cde1df64-4a67-4b4f-8464-97538bbe1528"
+        name="object" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="8e8afcd6-eb19-45ae-a6c7-f3311f329d20"
+        name="ViewModel" />
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType

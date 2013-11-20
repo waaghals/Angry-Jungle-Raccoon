@@ -1,13 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="36cd0754-f805-4277-b97f-30c9e089c1a5" name="Controllers" linkedPackageId="de9d297d-69e6-4d7e-bacc-4d8310c18bee" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="eba8e4df-072a-4a6f-8e0f-85883b5405cb">
-      <profileInstance Id="00666c3b-277f-4e9b-a7d1-7f96222b4b6d" name="TextTemplateBindings">
-        <elementDefinition Id="e9fcbeb2-5544-457c-be58-97addb3df36a" />
-      </profileInstance>
-      <elementDefinition Id="c735b3e5-bc5a-4bb0-9554-35e17d10fb96" />
-    </packageHasProfileInstances>
-  </profileInstances>
+  <ownedCommentsInternal>
+    <comment Id="e8ea1c64-9b27-4bc0-a724-93b7c1572c83">
+      <elementDefinition Id="6bc13f82-ea31-4ace-8ffa-c38d24cffba9" />
+      <body>Oranje classes zijn vanuit Asp/net MVC4 en niet zelf geimplementeerd</body>
+    </comment>
+  </ownedCommentsInternal>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <class Id="8445d285-e113-4ec2-929c-d5f58600f3e5" name="Controller" isAbstract="false" isLeaf="false" isActiveClass="false">
@@ -41,6 +39,16 @@
         <ownedOperationsInternal>
           <operation Id="ab407e15-1c59-4e50-ba19-521639dc4df1" name="Create" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="2023a79a-25e0-45be-ad7f-a1e1f8d9461b" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="443ed802-f50f-4578-ab83-728cbbf79671" name="model" direction="In">
+                  <elementDefinition Id="89a7549b-079b-4b7e-8b3c-d4b225da3df7" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="bd9b84bb-c074-4435-81a9-cc2d958bd9d5" LastKnownName="ViewModel" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="291d6a0f-5d48-4cac-b081-7e42f4343e05" name="Delete" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="6895c5f2-f8ad-488e-9db0-5053cd3a0d69" />
@@ -55,7 +63,7 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
-          <operation Id="e9094e6c-5af4-44a5-9959-e5c93bf8a851" name="Edit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="e9094e6c-5af4-44a5-9959-e5c93bf8a851" name="Update" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="0f449efe-cbfc-423f-b19f-cecac3ab3e9b" />
             <ownedParameters>
               <operationHasOwnedParameters>
@@ -63,6 +71,14 @@
                   <elementDefinition Id="300bdf92-2a01-46f9-b1f9-2439da35f47e" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="5dac23c5-90fb-4b8c-b440-011bab0e355a" LastKnownName="Integer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6dfab17e-659f-4b79-a2df-3804a4a38904" name="ViewModel" direction="In">
+                  <elementDefinition Id="e180660f-9520-4ded-9f69-66f5c94a1816" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c034f8ac-45b7-4739-97e0-f421906b2880" LastKnownName="object" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -137,6 +153,16 @@
         <ownedOperationsInternal>
           <operation Id="51f7723a-c237-47ab-a977-bcb0005acd0a" name="Create" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="57c77262-a88d-44c9-a29e-717a50beaad7" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="870f50fb-3123-40bc-90b5-f9164fd468d0" name="model" direction="In">
+                  <elementDefinition Id="be019f69-daf4-4912-a58d-e14571cacb44" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="bd9b84bb-c074-4435-81a9-cc2d958bd9d5" LastKnownName="ViewModel" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="2c4e2603-e5d7-4c61-9931-003063607cee" name="Delete" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="6ce5b32f-85b5-4192-a42e-4899ceefa9bb" />
@@ -151,7 +177,7 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
-          <operation Id="702735ed-f70f-4397-9f8e-ad41632f7711" name="Edit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="702735ed-f70f-4397-9f8e-ad41632f7711" name="Update" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="2e4c00bb-0a71-4784-91d1-d9a686468602" />
             <ownedParameters>
               <operationHasOwnedParameters>
@@ -159,6 +185,14 @@
                   <elementDefinition Id="5cd65b2c-fd8e-4d12-af82-06852987e15c" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="5dac23c5-90fb-4b8c-b440-011bab0e355a" LastKnownName="Integer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a1926419-afd8-4c37-8146-228ace40a29a" name="ViewModel" direction="In">
+                  <elementDefinition Id="3328daee-1014-433b-a0c0-a81fe12fd2a6" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c034f8ac-45b7-4739-97e0-f421906b2880" LastKnownName="object" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -235,6 +269,16 @@
         <ownedOperationsInternal>
           <operation Id="c2feef19-674d-4a28-97c7-e943f20d1567" name="Create" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="5a44aa8a-a8ae-4e02-a8aa-9afffa5608a5" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5bb296cc-3bfb-44c1-81a5-b054ccf214e3" name="model" direction="In">
+                  <elementDefinition Id="e77f850c-2930-4eca-8aec-17a8177427aa" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="bd9b84bb-c074-4435-81a9-cc2d958bd9d5" LastKnownName="ViewModel" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
           <operation Id="2c0a6c3d-2b0a-4750-8d75-9d712b5dcfdf" name="Delete" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="207a0808-0b4c-4e41-9eb2-220cacf512e0" />
@@ -249,7 +293,7 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
-          <operation Id="00002285-8541-48be-8c7a-805579e59e1f" name="Edit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+          <operation Id="00002285-8541-48be-8c7a-805579e59e1f" name="Update" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="6c351655-772d-4306-a48f-49655199f819" />
             <ownedParameters>
               <operationHasOwnedParameters>
@@ -257,6 +301,14 @@
                   <elementDefinition Id="e3f084d7-a156-4c85-b85f-369d0976cd92" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="5dac23c5-90fb-4b8c-b440-011bab0e355a" LastKnownName="Integer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d566dfdb-50c3-480e-b6ee-949c02a8a6a3" name="ViewModel" direction="In">
+                  <elementDefinition Id="2c887bd1-a7f4-431b-bdec-c97847cc7f75" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c034f8ac-45b7-4739-97e0-f421906b2880" LastKnownName="object" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -346,7 +398,7 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
-          <operation Id="edcce506-1773-411f-9256-7ffab885e663" name="Edit" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+          <operation Id="edcce506-1773-411f-9256-7ffab885e663" name="Update" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
             <elementDefinition Id="df6871a2-0904-4eea-9f4b-31ecec90dfbd" />
             <ownedParameters>
               <operationHasOwnedParameters>
@@ -354,6 +406,14 @@
                   <elementDefinition Id="418712ff-aa3b-4957-8237-4b4a9001375d" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="5dac23c5-90fb-4b8c-b440-011bab0e355a" LastKnownName="Integer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="2dff1310-a04c-44e4-a067-56aaad95b88d" name="ViewModel" direction="In">
+                  <elementDefinition Id="0d46c205-ce7e-4c69-b8bf-8737a670ef96" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="c034f8ac-45b7-4739-97e0-f421906b2880" LastKnownName="object" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -370,6 +430,19 @@
                   <elementDefinition Id="1f9ab965-79ae-40ba-853e-78aeee4c1ef7" />
                   <type_NamedElement>
                     <referencedTypeMoniker Id="5dac23c5-90fb-4b8c-b440-011bab0e355a" LastKnownName="Integer" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="eebef4eb-4b33-415d-a21f-a87df6f64115" name="Create" isLeaf="false" isStatic="false" isAbstract="true" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="56ee896b-f92d-42cc-b4ba-3f331603d2ff" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0f006885-7608-4475-91a0-8f42052b08a3" name="model" direction="In">
+                  <elementDefinition Id="9076d68a-3121-4ca2-8347-dde67bd6af0d" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="bd9b84bb-c074-4435-81a9-cc2d958bd9d5" LastKnownName="ViewModel" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -428,9 +501,9 @@
           </interfaceRealization>
         </suppliersInternal>
         <generalsInternal>
-          <generalization Id="804b9179-537f-496e-b3d9-94a874a63939" isSubstitutable="false">
+          <generalization Id="183fb2cf-4799-4254-93fa-ae305612e3e1" isSubstitutable="false">
             <classMoniker Id="8445d285-e113-4ec2-929c-d5f58600f3e5" LastKnownName="Controller" />
-            <elementDefinition Id="d9ec3733-8336-47a2-b44c-f0d4385a59d1" />
+            <elementDefinition Id="d049189d-65bd-43c8-a16c-ddc601e3c10d" />
           </generalization>
         </generalsInternal>
         <ownedOperationsInternal>
@@ -468,6 +541,16 @@
         <elementDefinition Id="220a3521-e091-4221-bae9-3ef9018e845c" />
       </referencedType>
     </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="c034f8ac-45b7-4739-97e0-f421906b2880" name="object" isAbstract="false" isLeaf="false" cachedFullName="object">
+        <elementDefinition Id="cde1df64-4a67-4b4f-8464-97538bbe1528" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="bd9b84bb-c074-4435-81a9-cc2d958bd9d5" name="ViewModel" isAbstract="false" isLeaf="false" cachedFullName="ViewModel">
+        <elementDefinition Id="8e8afcd6-eb19-45ae-a6c7-f3311f329d20" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="de9d297d-69e6-4d7e-bacc-4d8310c18bee" name="AKD">
     <elementDefinition Id="a5b95440-de55-412e-818f-8fb14b90b96b" />
@@ -483,6 +566,12 @@
           <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
         </profileInstance>
         <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="eba8e4df-072a-4a6f-8e0f-85883b5405cb">
+        <profileInstance Id="00666c3b-277f-4e9b-a7d1-7f96222b4b6d" name="TextTemplateBindings">
+          <elementDefinition Id="e9fcbeb2-5544-457c-be58-97addb3df36a" />
+        </profileInstance>
+        <elementDefinition Id="c735b3e5-bc5a-4bb0-9554-35e17d10fb96" />
       </packageHasProfileInstances>
     </profileInstances>
   </package>

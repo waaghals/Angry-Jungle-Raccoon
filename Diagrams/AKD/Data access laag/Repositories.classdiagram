@@ -11,20 +11,6 @@ Alle projecten waarvan de huidige datum in één van de periodes valt.</body>
       <body>En nog een voor student, etc.</body>
     </comment>
   </ownedCommentsInternal>
-  <profileInstances>
-    <packageHasProfileInstances Id="3a897443-c409-4445-bbbe-47e74a5a4386">
-      <profileInstance Id="25515d0b-bfb8-4dc8-a11d-8f10cd30d780" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="194a68bd-7d4a-4335-9b16-8dc56287b55a">
-      <profileInstance Id="050c5b36-4216-407f-ae96-0a6079ae06ca" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <packageHasNamedElement>
       <referencedType Id="bd06e825-671c-43f5-9405-b1b5a129b36a" name="Integer" isAbstract="false" isLeaf="false" cachedFullName="Integer">
@@ -601,6 +587,18 @@ Alle projecten waarvan de huidige datum in één van de periodes valt.</body>
           <elementDefinition Id="e9fcbeb2-5544-457c-be58-97addb3df36a" />
         </profileInstance>
         <elementDefinition Id="c735b3e5-bc5a-4bb0-9554-35e17d10fb96" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="3a897443-c409-4445-bbbe-47e74a5a4386">
+        <profileInstance Id="25515d0b-bfb8-4dc8-a11d-8f10cd30d780" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="194a68bd-7d4a-4335-9b16-8dc56287b55a">
+        <profileInstance Id="050c5b36-4216-407f-ae96-0a6079ae06ca" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
       </packageHasProfileInstances>
     </profileInstances>
   </package>
