@@ -37,7 +37,7 @@ Daarom is er gekozen voor de volgende architectuur ook wel bekent als Union Arch
 5. View Data laag; ViewModels, data voor gebruik in views
 6. Presentatie laag; Views
 
-De union architecture nogal gefocused op interfaces. Door het gebruik van interfaces onstaat er een losse koppeling tussen de lagen en zijn de onderdelen makkelijke te veranderen of te vervangen zonder een groot gedeelte van de code te hoeven veranderen. De classes in de lagen hebben dus geen of weinig dependecies op de andere lagen. Een uitzondering hierop is de View data laag en de Presentatie laag aangezien een ViewModel geschreven wordt voor een specifice view en dus een harde koppeling heeft.
+De union architecture nogal gefocused op interfaces. Door het gebruik van interfaces onstaat er een losse koppeling tussen de lagen en zijn de onderdelen makkelijke te veranderen of te vervangen zonder een groot gedeelte van de code te hoeven veranderen.[4] De classes in de lagen hebben dus geen of weinig dependecies op de andere lagen. Een uitzondering hierop is de View data laag en de Presentatie laag aangezien een ViewModel geschreven wordt voor een specifice view en dus een harde koppeling heeft.
 
 ## Design Patterns
 Om de data laag en de service laag te koppelen wordt er gebruik gemaakt het Repository Pattern.
@@ -64,6 +64,7 @@ Uiteindelijk is er gekozen voor het Entity Framework omdat:
 * Het Entity framework implenteerd al gedeeltelijk het Unit of Work en het Repository Pattern.
 
 #Verwijzingen
-[1] http://joncairns.com/2013/04/fat-model-skinny-controller-is-a-load-of-rubbish/
-[2] http://stackoverflow.com/a/8828946
-[3] http://rules.ssw.com.au/SoftwareDevelopment/RulesToBetterMVC/Pages/The-layers-of-the-onion-architecture.aspx
+1. http://joncairns.com/2013/04/fat-model-skinny-controller-is-a-load-of-rubbish/ 19-11-13
+2. http://stackoverflow.com/a/8828946 19-11-13
+3. http://rules.ssw.com.au/SoftwareDevelopment/RulesToBetterMVC/Pages/The-layers-of-the-onion-architecture.aspx 20-11-13
+4. http://www.asp.net/mvc/tutorials/older-versions/models-(data)/validating-with-a-service-layer-cs 20-11-13
