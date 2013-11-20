@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Repositories">
+  <logicalClassDesignerModelMoniker Id="c63adb75-c6a2-4d16-98ea-33492d626a90" />
+  <nestedChildShapes>
+    <interfaceShape Id="25cfa34b-588e-46e6-ab48-9418806fa3b6" absoluteBounds="0.875, 0.625, 1.5, 1.0624999801317849" hideQualifiedName="false" increaseHeight="0" customColor="207, 223, 191">
+      <interfaceMoniker Id="2785aba1-0a14-4423-8d58-9dc89b9f6ad5" LastKnownName="IEntity" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="775c785f-7b5b-4fda-9d51-5a367400934f" absoluteBounds="0.88999999999999968, 1.0150000000000001, 1.4700000000000002, 0.36132811258236563" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="1893957d-289c-4419-a037-6ed9a87974a4" absoluteBounds="0.88999999999999968, 1.3863281125823654, 1.4700000000000002, 0.2011718675494194" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </interfaceShape>
+    <interfaceShape Id="871f12cb-76e6-430d-9b87-d82570b9a093" absoluteBounds="0.875, 2.25, 2.625, 2.3715971543391543" hideQualifiedName="false" increaseHeight="0.18800345897674564" customColor="207, 223, 191">
+      <interfaceMoniker Id="7700a7e8-3eae-42de-a317-1c0e29d65719" LastKnownName="IRepository&lt;T&gt;" />
+      <nestedChildShapes>
+        <AttributeElementListCompartment Id="fc398f6a-059f-4ece-95b7-8a5c3431f9df" absoluteBounds="0.89000000000000012, 2.8280034589767458, 2.5949999999999998, 0.36132811258236563" name="AttributesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <OperationElementListCompartment Id="9b6df58d-4ee6-4cb6-be5e-075c69285df3" absoluteBounds="0.89000000000000012, 3.1993315715591111, 2.5949999999999998, 1.3222655827800431" name="OperationsCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </interfaceShape>
+  </nestedChildShapes>
+</logicalClassDesignerDiagram>
