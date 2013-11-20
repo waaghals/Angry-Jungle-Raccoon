@@ -33,14 +33,11 @@ Daarom is er gekozen voor de volgende architectuur ook wel bekent als Union Arch
 1. Data laag; Models met database gegevens
 2. Data access laag; Repositories met Models (Data logic)
 3. Service laag; Model manipulatie (Business logic)
-4. Commando laag; Error checking, validatie en eventueel uitvoeren van de service laag.
-5. Controllers Laag: Aansturing van commando's en service laag.
-6. View Data laag; ViewModels, data voor gebruik in views
-7. Presentatie laag; Views
+4. Controllers Laag: Aansturing van service laag.
+5. View Data laag; ViewModels, data voor gebruik in views
+6. Presentatie laag; Views
 
-Niet elke laag hoeft er altijd te zijn, zo is bijvoorbeeld niet altijd de commando of de view data laag nodig.
-Tevens is de union architecture nogal gefocused op interfaces. Door het gebruik van interfaces onstaat er een losse koppeling tussen de lagen en zijn de onderdelen makkelijke te veranderen of te vervangen zonder een groot gedeelte van de code te hoeven veranderen.
-
+De union architecture nogal gefocused op interfaces. Door het gebruik van interfaces onstaat er een losse koppeling tussen de lagen en zijn de onderdelen makkelijke te veranderen of te vervangen zonder een groot gedeelte van de code te hoeven veranderen. De classes in de lagen hebben dus geen of weinig dependecies op de andere lagen. Een uitzondering hierop is de View data laag en de Presentatie laag aangezien een ViewModel geschreven wordt voor een specifice view en dus een harde koppeling heeft.
 
 ## Design Patterns
 Om de data laag en de service laag te koppelen wordt er gebruik gemaakt het Repository Pattern.
