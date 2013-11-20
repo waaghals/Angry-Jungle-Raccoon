@@ -3741,6 +3741,24 @@ http://www.asp.net/mvc/tutorials/older-versions/models-(data)/validating-with-a-
                 LastKnownLocation="AKD.uml" />
             </type_NamedElement>
           </property>
+          <property
+            Id="27ea57e5-ea17-4efa-82e5-88da5c98117e"
+            name="Repository"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="064478ab-b4da-4cbe-a58e-b9f59eebc95b"
+                LastKnownName="GroupRepository"
+                LastKnownLocation="AKD.uml" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation
@@ -4079,6 +4097,24 @@ http://www.asp.net/mvc/tutorials/older-versions/models-(data)/validating-with-a-
               <undefinedTypeMoniker
                 Id="0a673451-e36d-4b31-b2c1-d246541425d7"
                 LastKnownName="IValidatorService&lt;Project&gt;"
+                LastKnownLocation="AKD.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="cf133c14-5081-4b42-8fe2-f087148c9900"
+            name="Repository"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="41fce07c-1d7a-44bd-ada9-efa6a9469a92"
+                LastKnownName="ProjectRepository"
                 LastKnownLocation="AKD.uml" />
             </type_NamedElement>
           </property>
@@ -4515,6 +4551,24 @@ http://www.asp.net/mvc/tutorials/older-versions/models-(data)/validating-with-a-
               <undefinedTypeMoniker
                 Id="d7eb7f56-0cdc-4940-aaae-c504624a7740"
                 LastKnownName="IValidatorService&lt;Evaluation&gt;"
+                LastKnownLocation="AKD.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="19cbb9c8-361f-4207-a08f-71bdc4bf1ac1"
+            name="Repository"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="45006b02-0192-4c61-b29d-9a4a9ea00e20"
+                LastKnownName="EvaluationRepository"
                 LastKnownLocation="AKD.uml" />
             </type_NamedElement>
           </property>

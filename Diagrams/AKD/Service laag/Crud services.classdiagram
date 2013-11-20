@@ -208,6 +208,12 @@
               <referencedTypeMoniker Id="a64203b6-f99d-4143-8f86-01ef9874a619" LastKnownName="AKD::IValidationService&lt;Group&gt;" />
             </type_NamedElement>
           </property>
+          <property Id="cf8c1f1a-d9db-4279-a5da-e4b66854d66a" name="Repository" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="27ea57e5-ea17-4efa-82e5-88da5c98117e" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="57f1d7a6-e3c0-4c10-ad29-2053986168cd" LastKnownName="GroupRepository" />
+            </type_NamedElement>
+          </property>
         </ownedAttributesInternal>
         <ownedOperationsInternal>
           <operation Id="fe96b3bc-74a8-4189-ae65-80f173d83341" name="AddStudent" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
@@ -364,6 +370,12 @@
             <elementDefinition Id="495148a8-f55a-4700-b272-10f3d1c240d5" />
             <type_NamedElement>
               <referencedTypeMoniker Id="c9c6f612-6147-40b3-b2d7-f039b9f16847" LastKnownName="IValidatorService&lt;Project&gt;" />
+            </type_NamedElement>
+          </property>
+          <property Id="2d812701-4777-47d3-b93c-f4794b6436f3" name="Repository" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="cf133c14-5081-4b42-8fe2-f087148c9900" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="57a3c373-0bad-4a70-816b-e99df4a5f7f7" LastKnownName="ProjectRepository" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
@@ -539,6 +551,12 @@
             <elementDefinition Id="5320d7cc-69d1-4457-b780-7195c70126c1" />
             <type_NamedElement>
               <referencedTypeMoniker Id="e2948839-65ea-481d-85f2-295f73555430" LastKnownName="IValidatorService&lt;Evaluation&gt;" />
+            </type_NamedElement>
+          </property>
+          <property Id="41f464ac-45e3-4f17-b087-3946a5e47d54" name="Repository" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="19cbb9c8-361f-4207-a08f-71bdc4bf1ac1" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="9fa61228-5023-4f3c-96d8-4b581dc4269b" LastKnownName="EvaluationRepository" />
             </type_NamedElement>
           </property>
         </ownedAttributesInternal>
@@ -721,6 +739,21 @@
     <packageHasNamedElement>
       <referencedType Id="e2948839-65ea-481d-85f2-295f73555430" name="IValidatorService&lt;Evaluation&gt;" isAbstract="false" isLeaf="false" cachedFullName="IValidatorService&lt;Evaluation&gt;">
         <elementDefinition Id="d7eb7f56-0cdc-4940-aaae-c504624a7740" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="57f1d7a6-e3c0-4c10-ad29-2053986168cd" name="GroupRepository" isAbstract="false" isLeaf="false" cachedFullName="AKD::GroupRepository">
+        <elementDefinition Id="064478ab-b4da-4cbe-a58e-b9f59eebc95b" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="57a3c373-0bad-4a70-816b-e99df4a5f7f7" name="ProjectRepository" isAbstract="false" isLeaf="false" cachedFullName="AKD::ProjectRepository">
+        <elementDefinition Id="41fce07c-1d7a-44bd-ada9-efa6a9469a92" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="9fa61228-5023-4f3c-96d8-4b581dc4269b" name="EvaluationRepository" isAbstract="false" isLeaf="false" cachedFullName="AKD::EvaluationRepository">
+        <elementDefinition Id="45006b02-0192-4c61-b29d-9a4a9ea00e20" />
       </referencedType>
     </packageHasNamedElement>
   </packagedElements>
