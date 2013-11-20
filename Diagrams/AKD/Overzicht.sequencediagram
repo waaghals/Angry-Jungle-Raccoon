@@ -1222,7 +1222,7 @@ De controller stuurt alleen de juiste views aan, redirect of toont een 401 forbi
               <messageOccurrenceSpecificationMoniker Id="1b494b68-e885-498d-a86e-11d8a115b0d4" LastKnownName="MessageOccurrenceSpecification20" />
             </receiveEvent>
           </message>
-          <message Id="6da3e7e4-e5a7-416b-ac92-c3508e69ce6e" name="&lt;&lt;return&gt;&gt;" messageKind="Complete" messageSort="Reply" createSelfMessage="false">
+          <message Id="6da3e7e4-e5a7-416b-ac92-c3508e69ce6e" name="valid : Boolean" messageKind="Complete" messageSort="Reply" createSelfMessage="false">
             <elementDefinition Id="c122dfb1-c96f-40e0-874f-64480a638e0c" />
             <sendEvent>
               <messageOccurrenceSpecificationMoniker Id="04881972-0f2f-492a-bad9-c6519f47c2a1" LastKnownName="MessageOccurrenceSpecification7" />
@@ -1285,7 +1285,7 @@ De controller stuurt alleen de juiste views aan, redirect of toont een 401 forbi
               <messageOccurrenceSpecificationMoniker Id="6945eb7f-2497-45e4-8c1f-55589ac60866" LastKnownName="MessageOccurrenceSpecification32" />
             </receiveEvent>
           </message>
-          <message Id="c1e54e8e-52d0-464a-993c-5421419307ca" name="&lt;&lt;return&gt;&gt;" messageKind="Complete" messageSort="Reply" createSelfMessage="false">
+          <message Id="c1e54e8e-52d0-464a-993c-5421419307ca" name="valid : Boolean" messageKind="Complete" messageSort="Reply" createSelfMessage="false">
             <elementDefinition Id="71ace81e-87a8-47c4-af5c-e80f87b3a867" />
             <sendEvent>
               <messageOccurrenceSpecificationMoniker Id="49fd7b85-708a-4839-86c9-e10697792b57" LastKnownName="MessageOccurrenceSpecification33" />
@@ -1312,7 +1312,7 @@ De controller stuurt alleen de juiste views aan, redirect of toont een 401 forbi
               <messageOccurrenceSpecificationMoniker Id="c506b6c9-a7fd-4959-9dfd-83b7c624c355" LastKnownName="MessageOccurrenceSpecification30" />
             </receiveEvent>
           </message>
-          <message Id="356354a0-0c31-40b7-8eef-49f4026182ae" name="&lt;&lt;return&gt;&gt;" messageKind="Complete" messageSort="Reply" createSelfMessage="false">
+          <message Id="356354a0-0c31-40b7-8eef-49f4026182ae" name="Show Updated view" messageKind="Complete" messageSort="Reply" createSelfMessage="false">
             <elementDefinition Id="657e70f0-e7f2-4079-a868-10c6662cbeff" />
             <sendEvent>
               <messageOccurrenceSpecificationMoniker Id="c3649034-aadd-4ed4-ba61-6032c5f91544" LastKnownName="MessageOccurrenceSpecification23" />

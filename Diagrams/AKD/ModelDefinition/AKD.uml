@@ -7247,7 +7247,7 @@ De controller stuurt alleen de juiste views aan, redirect of toont een 401 forbi
           </message>
           <message
             Id="c122dfb1-c96f-40e0-874f-64480a638e0c"
-            name="&lt;&lt;return&gt;&gt;"
+            name="valid : Boolean"
             messageKind="Complete"
             messageSort="Reply"
             createSelfMessage="false">
@@ -7380,7 +7380,7 @@ De controller stuurt alleen de juiste views aan, redirect of toont een 401 forbi
           </message>
           <message
             Id="71ace81e-87a8-47c4-af5c-e80f87b3a867"
-            name="&lt;&lt;return&gt;&gt;"
+            name="valid : Boolean"
             messageKind="Complete"
             messageSort="Reply"
             createSelfMessage="false">
@@ -7437,7 +7437,7 @@ De controller stuurt alleen de juiste views aan, redirect of toont een 401 forbi
           </message>
           <message
             Id="657e70f0-e7f2-4079-a868-10c6662cbeff"
-            name="&lt;&lt;return&gt;&gt;"
+            name="Show Updated view"
             messageKind="Complete"
             messageSort="Reply"
             createSelfMessage="false">
