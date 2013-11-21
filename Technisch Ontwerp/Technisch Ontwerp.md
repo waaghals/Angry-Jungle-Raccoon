@@ -1,4 +1,4 @@
-﻿Technisch Ontwerp
+Technisch Ontwerp
 ===============
 
 # Architectuur
@@ -64,7 +64,6 @@ Uiteindelijk is er gekozen voor het Entity Framework omdat:
 * Het Entity framework implenteerd al gedeeltelijk het Unit of Work en het Repository Pattern.
 
 #Source control
-
 ##Git 
 
 Om met elkaar samen aan het systeem te kunnen werken hebben wij voor Git gekozen als source control oplossing. We hebben hiervoor gekozen omdat iedereen al een keer heeft gewerkt met Git in eerdere projecten en iedereen dus al de nodige ervaring heeft met Git om meteen aan de slag te kunnen met het project.
