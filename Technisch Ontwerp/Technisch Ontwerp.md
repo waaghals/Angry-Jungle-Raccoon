@@ -63,6 +63,8 @@ Uiteindelijk is er gekozen voor het Entity Framework omdat:
 * Entity framework is ondersteund door Microsoft dus veel ondersteuning en informatie
 * Het Entity framework implenteerd al gedeeltelijk het Unit of Work en het Repository Pattern.
 
+# Traceability
+
 #Verwijzingen
 1. http://joncairns.com/2013/04/fat-model-skinny-controller-is-a-load-of-rubbish/ 19-11-13
 2. http://stackoverflow.com/a/8828946 19-11-13
