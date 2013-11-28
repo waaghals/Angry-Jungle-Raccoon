@@ -71,6 +71,13 @@
       <SubType>Content</SubType>
       <DependentUpon>Service laag\Validation.classdiagram</DependentUpon>
     </Content>
+    <Content Include="AbstractOverzicht.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="AbstractOverzicht.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>AbstractOverzicht.sequencediagram</DependentUpon>
+    </Content>
     <Folder Include="ModelDefinition\" />
     <Content Include="ModelDefinition\AKD.uml">
       <SubType>Content</SubType>
