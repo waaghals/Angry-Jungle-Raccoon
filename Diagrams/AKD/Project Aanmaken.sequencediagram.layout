@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sequenceDesignerDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Project Aanmaken">
+  <SequenceDesignerModelMoniker Id="906c66d2-0ff6-419d-b9e2-b578df0e9dd5" />
+  <nestedChildShapes>
+    <lifelineShape Id="ec277904-7489-4fec-867a-3916ddbd673b" absoluteBounds="1.025, 1, 0.15, 7" visible="true" visualStyleMode="Modified">
+      <lifelineMoniker Id="723066ff-7f8c-44ef-8888-f7d142cb3e3a" LastKnownName="&quot;User&quot;" />
+      <relativeChildShapes>
+        <umlLifelineHeadShape Id="4a55274f-78d9-45fe-8828-0537e83380cc" absoluteBounds="0.59999999999999987, 0.6, 1, 0.4" customColor="White" visualStyleMode="Modified">
+          <lifelineMoniker Id="723066ff-7f8c-44ef-8888-f7d142cb3e3a" LastKnownName="&quot;User&quot;" />
+          <relativeChildShapes />
+        </umlLifelineHeadShape>
+        <lifelineHoverShape Id="4112c89b-5c66-44b3-8d0b-cff89621b2df" absoluteBounds="1.025, 1, 0, 7">
+          <lifelineMoniker Id="723066ff-7f8c-44ef-8888-f7d142cb3e3a" LastKnownName="&quot;User&quot;" />
+        </lifelineHoverShape>
+      </relativeChildShapes>
+    </lifelineShape>
+    <lifelineShape Id="8b5b0aa1-1a7f-48b6-b848-e18946496df0" absoluteBounds="2.3916666666666666, 1, 0.15, 7" visible="true" visualStyleMode="Modified">
+      <lifelineMoniker Id="b9f5732e-0dbf-4dd6-bd52-497b3685ca0d" LastKnownName="projectController : ProjectController" />
+      <relativeChildShapes>
+        <umlLifelineHeadShape Id="026da936-4ee3-4924-bd01-033ea5f4655b" absoluteBounds="1.8133810631434122, 0.6, 1.3065712070465088, 0.4" customColor="White" visualStyleMode="Modified">
+          <lifelineMoniker Id="b9f5732e-0dbf-4dd6-bd52-497b3685ca0d" LastKnownName="projectController : ProjectController" />
+          <relativeChildShapes />
+        </umlLifelineHeadShape>
+        <lifelineHoverShape Id="476057a4-ac85-41b9-a79a-35aa68422280" absoluteBounds="2.3916666666666666, 1, 0, 7">
+          <lifelineMoniker Id="b9f5732e-0dbf-4dd6-bd52-497b3685ca0d" LastKnownName="projectController : ProjectController" />
+        </lifelineHoverShape>
+        <umlExecutionSpecificationShape Id="6d3b27a5-4774-4753-a4a2-987f4b7c002b" absoluteBounds="2.3916666666666666, 1.5083333333333333, 0.15, 0.55000000000000027" customColor="184, 204, 215" visualStyleMode="Modified">
+          <behaviorExecutionSpecificationMoniker Id="a63e0156-7645-4e95-b4e2-bf1893f21f78" LastKnownName="BehaviorExecutionSpecification1" />
+        </umlExecutionSpecificationShape>
+      </relativeChildShapes>
+    </lifelineShape>
+    <asyncMessageConnector edgePoints="[(1.1 : 1.50833333333333); (2.39166666666667 : 1.50833333333333)]" fixedFrom="Caller" fixedTo="Caller" TargetRelationshipDomainClassId="e24617ce-6c7e-4c7d-802a-63014f02e313" customColor="Black" visible="true" visualStyleMode="Modified" messageId="00000000-0000-0000-0000-000000000000">
+      <relativeChildShapes />
+      <nodes>
+        <lifelineShapeMoniker Id="ec277904-7489-4fec-867a-3916ddbd673b" />
+        <umlExecutionSpecificationShapeMoniker Id="6d3b27a5-4774-4753-a4a2-987f4b7c002b" />
+      </nodes>
+    </asyncMessageConnector>
+  </nestedChildShapes>
+</sequenceDesignerDiagram>
