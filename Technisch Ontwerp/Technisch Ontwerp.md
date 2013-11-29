@@ -73,6 +73,33 @@ Hier onder staat het overzicht:
 | 12 | Groepen toewijzen aan project | 12.1.1  12.1.2  12.1.3  12.2.1  12.3.1  12.3.2  12.4.1  12.4.2  12.4.3  12.5.1  12.5.2  12.1.4  12.1.5  12.1.6  12.2.2  12.3.3  12.4.4  12.4.5 |
 | 13 | Mentor vooruitgang student inzien | 13.1.1  13.2.1  13.2.2  13.3.1  13.4.1  13.4.2  13.5.1  13.1.2  13.2.3  13.4.3 |
 
+#Prototypes
+##Leraar deel
+Groepen toewijzen aan projecten
+![Groep toewijzen aan projecten](../Prototypes/Docent/Groep toewijzen aan project.png)
+Groepsindeling aanmaken
+![Groepsindeling aanmaken](../Prototypes/Docent/Groepsindeling aanmaken.png)
+Klacht indienen
+![Klacht indienen](../Prototypes/Docent/Klacht indienen.png)
+Mentor vooruitgang student inzien
+![Mentor vooruitgng student inzien](../Prototypes/Docent/Mentor vooruitgang student inzien.png)
+Onderbouwing aanvragen
+![Onderbouwing aanvragen](../Prototypes/Docent/Onderbouwing aanvragen.png)
+Opmerkingen scherm
+![Opmerkingen scherm](../Prototypes/Docent/Opmerking scherm.png)
+Project aanmaken (nieuw project)
+![Project aanmaken](../Prototypes/Docent/Project aanmaken nieuw project.png)
+Project aanmaken (gebaseerd op voorgaand project)
+![Project aanmaken](../Prototypes/Docent/Project aanmaken gebaseerd op voorgaand project.png)
+Student cijfer toekennen
+![Student cijfer toekennen](../Prototypes/Docent/Student cijfer toekennen.png)
+Student non-actief zetten
+![Student non-actief zetten](../Prototypes/Docent/Student non-actief zetten.png)
+Tutor toewijzing
+![Tutor toewijzing](../Prototypes/Docent/Ter beschikking stellen tutor toewijzing.png)
+Tutor groep beoordelingen inzien
+![Tutor groep beoordelingen inzien](../Prototypes/Docent/Tutor groep beoordelingen inzien.png)
+
 # Framework
 ##Object Relation Mapper
 Er zijn een aantal constraints waarmee de ORM over weg moet kunnen. Zo moet de ORM MSSQL spreken aangezien het gebruik van MSSQL is verplicht.
