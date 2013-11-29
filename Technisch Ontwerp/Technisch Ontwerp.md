@@ -112,8 +112,9 @@ In het bovenstaande scherm worden meldingen weergegeven en kan de student de wee
 ![Beoordeling scherm](../Prototypes/Student/Beoordeling Scherm student.png)
 In het bovenstaande scherm kan de student per groepslid de cijfers invoeren voor de competenties en eventueel iets invullen bij opmerkingen.
 
-# Framework
-##Object Relation Mapper
+#Technologie
+## Framework
+###Object Relation Mapper
 Er zijn een aantal constraints waarmee de ORM over weg moet kunnen. Zo moet de ORM MSSQL spreken aangezien het gebruik van MSSQL is verplicht.
 
 Eisen:
@@ -131,23 +132,76 @@ Uiteindelijk is er gekozen voor het Entity Framework omdat:
 * Entity framework is ondersteund door Microsoft dus veel ondersteuning en informatie
 * Het Entity framework implenteerd al gedeeltelijk het Unit of Work en het Repository Pattern.
 
-#Source control
-##Git 
+##Source control
+###Git
 
 Om met elkaar samen aan het systeem te kunnen werken hebben wij voor Git gekozen als source control oplossing. We hebben hiervoor gekozen omdat iedereen al een keer heeft gewerkt met Git in eerdere projecten en iedereen dus al de nodige ervaring heeft met Git om meteen aan de slag te kunnen met het project.
 
-##Git flow
+###Git flow
 
 Om te voorkomen dat we conflicten krijgen als we tegelijkertijd aan het werk zijn gebruiken we een speciale manier van het omgaan met de bestanden in de repository. Deze oplossing genaamd 'Git flow' houdt in dat we gebruik maken van verschillende branches. Elk onderdeel van het systeem heeft een apparte branch. Deze onderdelen noemen we features. Als je aan een nieuwe feature begint maak je vanuit de developer branch een nieuwe sub-tak genaamd feature/myfeature, met als myfeature het onderdeel waar je aan gaat werken. Is de feature klaar dan wordt deze toegevoegd aan de developers branch. Hier wordt alles een geheel en dat geheel wordt aan de release branch toegevoed waar eventueel nog bugfixes uitgevoerd kunnen worden. De inlever versie van het systeem komt in de master branch. Als we voor de oplevering nog ergens een fout tegen komen wordt deze gefixt in de hotfix branch en de hotfix wordt daarna aan de master en develop branches toegevoegd.
 
-##SourceTree
+###SourceTree
 
 Om iedereen een gelijke en makkelijk te gebruiken omgeving te geven voor het gebruik van Git flow gebruiken we het programma SourceTree. Dit is een Git gui die git flow ondersteund. We hebben hier ook voor gekozen omdat SourceTree meerdere platformen ondersteund.
 
-#Coding guidelines 
+##Coding guidelines 
 
 Om de code overzichtelijk en eenduidig te houden heeft Patrick een stijlgids gemaakt waarin de stijl en naamgeving wordt uitgelegd die we aan gaan houden. Ook staan hierin regels opgesteld voor het aanmaken van bestanden en mappen om de folderstructuur overzichtelijk te houden. We hebben dan ook allemaal afgesproken onszelf aan de guidelines te houden zodat we het niet af hoeven te dwingen met een programma. Tijdens de code reviews wordt er dan ook op gelet dat de code aan de guidelines voldoet.
 
+#Organisatie
+##Code reviewing
+Binnen een week na voltooien van delen van de software word het door 2 onafhankelijke groepsgenoten gereviewed en getest op alle requirements waaraan de software moet voldoen. Mocht niet overal aan voldaan zijn of mochten er componenten niet werken dan word dat terug gekoppeld aan de schrijver van de software die vervolgens zijn software verbeterd. Wanneer dat af is word het weer opnieuw gereviewed zoals hierboven word vermeld.
+##Continuous Integration
+Zodra er gereviewed is en de code is goed gekeurd wordt de code in de master branch gezet. Vanaf daar kunnen nieuwe functies worden toegevoegd op basis van de nieuwste versie.
+
+##Rolverdeling
+###Projectleider
+####Yannik Hegge
+De projectleider zal verantwoordelijk zijn voor het administratieve deel van het project.
+De projectleider:
+* Moet zorgen dat aan het begin van elke vergadering(dus niet tijdens) de urenregistratie van de groepsleden is bijgewerkt.
+* Is verantwoordelijk voor de organisatie van google drive(duidelijkheid mapstructuur, bestandsbenamingen).
+* Zal vergaderingen voorbereiden en leiden.
+* Zal wanneer nodig een aanspreekpunt zijn voor docenten namens de projectgroep.
+* Zal de vergadering plannen en aankondigen.
+###Notulist
+####Robin Collard
+De notulist is simpelweg verantwoordelijk voor de notules.
+De notulist:
+* Moet tijdens elke projectbijeenkomst zorgen dat er een complete, correcte notule wordt gemaakt, en beschikbaar is op google drive.
+* Zal bij reviewsessies aantekeningen maken over feedback, en zal deze beschikbaar maken op google drive.
+
+###Agendabeheerder
+####Jip Verhoeven
+De agendabeheerder is verantwoordelijk voor de algemene planning van het blok.
+De agendabeheerder:
+* Houdt bij wanneer deadlines zijn.
+* Houdt de voortgang van de projectgroep richting de volgende deadline bij.
+* Zorgt dat er een algemene planning is gemaakt van de opdrachten in het blok.
+* Zorgt dat de taakbeheerder op tijd taken verdeelt om de volgende deadline te kunnen halen.
+* Zorgt dat, waar nodig, de planning bijgesteld wordt.
+* Zorgt dat producten voor de deadlines ingeleverd worden.
+* Zorgt dat deadlines in de Google Agenda komen te staan.
+
+###Taakbeheerder
+####Michael vd Ven
+De taakbeheerder is verantwoordelijk voor de verdeling van de taken nodig om producten op tijd af te kunnen leveren.
+De taakbeheerder:
+* Zal samen met de agendabeheerder een zicht houden op wanneer welke producten afgeleverd moeten worden.
+* Zorgt dat er taakverdelingen gemaakt worden om producten op tijd af te kunnen leveren.
+* Zorgt dat de taakverdeling in de taakverdelingsspreadsheet komt te staan.
+* Zorgt dat groepsleden hun taken correct en compleet uitvoeren.
+* Zorgt dat, wanneer nodig, taken opnieuw verdeeld worden om verbeterd te kunnen worden.
+* Zorgt dat al het gemaakte werk gereviewed wordt(door minstens twee groepsleden die het werk niet zelf hebben gemaakt).
+
+###Versiebeheerder
+####Patrick Berenschot
+De versiebeheerder zorgt voor het goed gebruik van git.
+De versiebeheerder:
+* Zorgt dat alle groepsleden begrijpen hoe git werkt.
+* Zorgt dat er ten alle tijden een huidige versie van het project beschikbaar is om aan te werken.
+* Zorgt dat de git repository goed georganiseerd en werkend blijft.
 
 #Verwijzingen
 1. http://joncairns.com/2013/04/fat-model-skinny-controller-is-a-load-of-rubbish/ 19-11-13
