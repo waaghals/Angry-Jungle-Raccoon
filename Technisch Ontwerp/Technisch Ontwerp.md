@@ -100,6 +100,18 @@ Tutor toewijzing
 Tutor groep beoordelingen inzien
 ![Tutor groep beoordelingen inzien](../Prototypes/Docent/Tutor groep beoordelingen inzien.png)
 
+Alle schermen zijn hebben hun eigen functie en navigatie. Daarom is 1 hoofdmenu genoeg om alle schermen te kunnen navigeren. Dit is de standaard menubalk boven het scherm. 
+Bij het klikken op de Opmerkingen knop komt er een pop-up tevoorschijn waarbij je de opmerkingen in een scherm ziet.
+
+##Student deel
+De volgende drie schermen horen bij het beoordelen van een medestudent
+![Student selecteren](../Prototypes/Student/Home Scherm student.png)
+In het bovenstaande scherm kan een student het project selecteren. Door op de knop "Naar project" te klikken wordt het onderstaande scherm weergegeven.
+![Project scherm](../Prototypes/Student/Project Scherm student.png)
+In het bovenstaande scherm worden meldingen weergegeven en kan de student de week selecteren waarin de beoordeling plaats vind. Door op de knop “Medestudent beoordelen” te klikken wordt het onderstaande scherm weergegeven.
+![Beoordeling scherm](../Prototypes/Student/Beoordeling Scherm student.png)
+In het bovenstaande scherm kan de student per groepslid de cijfers invoeren voor de competenties en eventueel iets invullen bij opmerkingen.
+
 # Framework
 ##Object Relation Mapper
 Er zijn een aantal constraints waarmee de ORM over weg moet kunnen. Zo moet de ORM MSSQL spreken aangezien het gebruik van MSSQL is verplicht.
@@ -119,7 +131,6 @@ Uiteindelijk is er gekozen voor het Entity Framework omdat:
 * Entity framework is ondersteund door Microsoft dus veel ondersteuning en informatie
 * Het Entity framework implenteerd al gedeeltelijk het Unit of Work en het Repository Pattern.
 
-=======
 #Source control
 ##Git 
 
