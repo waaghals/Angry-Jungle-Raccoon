@@ -1,5 +1,12 @@
-Technisch Ontwerp
+﻿Technisch Ontwerp
 ===============
+#Inleiding
+Dit verslag bevat het Technisch Ontwerp voor SOPROJ6 van 42IN06SOf.
+#Document geschiedenis
+|Versie|Datum|Wijzigingen|Reden|Door|
+|:-----|:----|:----------|:----|:---|
+|0.1|11-11-2013|Eerste versie; bestand aangemaakt.|NVT|Edwin Hattink|
+|1.0|26-11-2013|Informatie aangevuld en eerste versie gewijzigd.|NVT|Groep|
 
 # Architectuur
 ## MVC
