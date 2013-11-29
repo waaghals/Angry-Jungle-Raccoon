@@ -1,7 +1,9 @@
 ﻿Technisch Ontwerp
 ===============
+
 #Inleiding
 Dit verslag bevat het Technisch Ontwerp voor SOPROJ6 van 42IN06SOf.
+
 #Document geschiedenis
 |Versie|Datum|Wijzigingen|Reden|Door|
 |:-----|:----|:----------|:----|:---|
@@ -51,6 +53,26 @@ Om de data laag en de service laag te koppelen wordt er gebruik gemaakt het Repo
 
 Unity voor dependencie injection
 
+#Traceability
+
+Al onze requirements afgedekt door de door ons 11 vastgelegde PUC’s. De mensen die de prototypes maken, deze lopen evenredig met de PUC’s, zijn verantwoordelijk voor de bijbehorende requirements. 
+
+Hier onder staat het overzicht:
+
+| PUC nr.       | PUC naam      | Requirements  |
+| -------------:|:------------- | :-----|
+| 1      | Medestudent beoordelen | 1.1.1  1.2.1  1.2.2  1.3.1  1.3.2  1.4.1  1.5.1  1.5.2  1.6.1  1.6.2  1.1.2  1.1.3  1.2.3  1.2.4 1.2.5  1.2.6  1.2.7  1.2.8  1.3.3  1.4.2  1.4.3  1.5.3  1.5.4  1.5.5 |
+| 2      | Groeps indeling aanmaken      |   2.1.1  2.2.1  2.3.1  2.3.2  2.5.1  2.6.1  2.6.2   2.6.3  2.7.1  2.7.2  2.1.2  2.2.2  2.2.3  2.3.3  2.4.1  2.5.2  2.6.4 |
+| 4 | Student eigen resultaat inzien      |    6.1.1  6.1.2  6.1.3  6.1.4  6.2.1  6.2.2  6.3.1  6.3.2  6.4.1  |
+| 5 | Tutor groepen beoordeling inzien | 5.1.1  5.1.2  5.1.3  5.2.1  5.3.1  5.4.1  5.5.1  5.5.2  5.6.1  5.5.4  |
+| 6 | Student cijfer toekennen | 6.1.1  6.1.2  6.1.3  6.1.4  6.2.1  6.2.2  6.3.1  6.3.2  6.4.1 |
+| 7 | Student non-actief zetten | 7.1.1  7.2.1  7.2.2  7.3.1  7.3.2  7.4.1  7.5.1  7.6.1  7.6.2  7.6.3  7.7.1  7.7.2  7.7.3  7.1.2  7.1.3  7.2.3  7.5.2  7.6.4 |
+| 8 | Een project aanmaken | 8.0.1  8.0.2  8.0.3  8.0.4  8.1.1  8.1.2  8.1.3  8.1.4  8.1.5  8.1.6  8.2.1  8.2.2  8.2.3  8.2.4  8.2.5  8.2.6  8.2.7 |
+| 10 | Onderbouwing aanvragen | 10.1.1  10.2.1  10.3.1  10.4.1 |
+| 11 | Ter beschikking stellen tutor toewijzing | 11.1.1  11.1.2  11.2.1  11.3.1  11.3.2  11.3.3  11.4.1  11.5.1  11.5.2  11.6.1  11.7.1  11.7.2 |
+| 12 | Groepen toewijzen aan project | 12.1.1  12.1.2  12.1.3  12.2.1  12.3.1  12.3.2  12.4.1  12.4.2  12.4.3  12.5.1  12.5.2  12.1.4  12.1.5  12.1.6  12.2.2  12.3.3  12.4.4  12.4.5 |
+| 13 | Mentor vooruitgang student inzien | 13.1.1  13.2.1  13.2.2  13.3.1  13.4.1  13.4.2  13.5.1  13.1.2  13.2.3  13.4.3 |
+
 # Framework
 ##Object Relation Mapper
 Er zijn een aantal constraints waarmee de ORM over weg moet kunnen. Zo moet de ORM MSSQL spreken aangezien het gebruik van MSSQL is verplicht.
@@ -94,24 +116,4 @@ Om de code overzichtelijk en eenduidig te houden heeft Patrick een stijlgids gem
 2. http://stackoverflow.com/a/8828946 19-11-13
 3. http://rules.ssw.com.au/SoftwareDevelopment/RulesToBetterMVC/Pages/The-layers-of-the-onion-architecture.aspx 20-11-13
 4. http://www.asp.net/mvc/tutorials/older-versions/models-(data)/validating-with-a-service-layer-cs 20-11-13
-
-# Traceability
-
-Al onze requirements afgedekt door de door ons 11 vastgelegde PUC’s. De mensen die de prototypes maken, deze lopen evenredig met de PUC’s, zijn verantwoordelijk voor de bijbehorende requirements. 
-
-Hier onder staat het overzicht:
-
-| PUC nr.       | PUC naam      | Requirements  |
-| -------------:|:------------- | :-----|
-| 1      | Medestudent beoordelen | 1.1.1  1.2.1  1.2.2  1.3.1  1.3.2  1.4.1  1.5.1  1.5.2  1.6.1  1.6.2  1.1.2  1.1.3  1.2.3  1.2.4 1.2.5  1.2.6  1.2.7  1.2.8  1.3.3  1.4.2  1.4.3  1.5.3  1.5.4  1.5.5 |
-| 2      | Groeps indeling aanmaken      |   2.1.1  2.2.1  2.3.1  2.3.2  2.5.1  2.6.1  2.6.2   2.6.3  2.7.1  2.7.2  2.1.2  2.2.2  2.2.3  2.3.3  2.4.1  2.5.2  2.6.4 |
-| 4 | Student eigen resultaat inzien      |    6.1.1  6.1.2  6.1.3  6.1.4  6.2.1  6.2.2  6.3.1  6.3.2  6.4.1  |
-| 5 | Tutor groepen beoordeling inzien | 5.1.1  5.1.2  5.1.3  5.2.1  5.3.1  5.4.1  5.5.1  5.5.2  5.6.1  5.5.4  |
-| 6 | Student cijfer toekennen | 6.1.1  6.1.2  6.1.3  6.1.4  6.2.1  6.2.2  6.3.1  6.3.2  6.4.1 |
-| 7 | Student non-actief zetten | 7.1.1  7.2.1  7.2.2  7.3.1  7.3.2  7.4.1  7.5.1  7.6.1  7.6.2  7.6.3  7.7.1  7.7.2  7.7.3  7.1.2  7.1.3  7.2.3  7.5.2  7.6.4 |
-| 8 | Een project aanmaken | 8.0.1  8.0.2  8.0.3  8.0.4  8.1.1  8.1.2  8.1.3  8.1.4  8.1.5  8.1.6  8.2.1  8.2.2  8.2.3  8.2.4  8.2.5  8.2.6  8.2.7 |
-| 10 | Onderbouwing aanvragen | 10.1.1  10.2.1  10.3.1  10.4.1 |
-| 11 | Ter beschikking stellen tutor toewijzing | 11.1.1  11.1.2  11.2.1  11.3.1  11.3.2  11.3.3  11.4.1  11.5.1  11.5.2  11.6.1  11.7.1  11.7.2 |
-| 12 | Groepen toewijzen aan project | 12.1.1  12.1.2  12.1.3  12.2.1  12.3.1  12.3.2  12.4.1  12.4.2  12.4.3  12.5.1  12.5.2  12.1.4  12.1.5  12.1.6  12.2.2  12.3.3  12.4.4  12.4.5 |
-| 13 | Mentor vooruitgang student inzien | 13.1.1  13.2.1  13.2.2  13.3.1  13.4.1  13.4.2  13.5.1  13.1.2  13.2.3  13.4.3 |
 
