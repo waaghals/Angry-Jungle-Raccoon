@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="a5b95440-de55-412e-818f-8fb14b90b96b"
   name="AKD" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -4068,7 +4068,7 @@ Nette manier vinden om de Database context over meerdere repositories te verdele
     <packageHasNamedElement>
       <class
         Id="bf897a39-09ba-429e-8711-cfb26348e0a3"
-        name="ProjectServicee"
+        name="ProjectService"
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
@@ -8030,22 +8030,22 @@ De controller stuurt alleen de juiste views aan, redirect of toont een 401 forbi
             </covered>
           </executionOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="ced3e035-fd53-4ecd-9ed7-90247f774ca9"
-            name="MessageOccurrenceSpecification12">
-            <covered>
-              <lifelineMoniker
-                Id="66ad4347-9e3a-4d61-b6e1-1d7f03e6467b"
-                LastKnownName="&quot;Actor&quot;"
-                LastKnownLocation="AKD.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="79052fc8-9a50-4cd9-b16d-006cc70aa15c"
             name="MessageOccurrenceSpecification11">
             <covered>
               <lifelineMoniker
                 Id="2f802d36-c40d-4ba3-af03-39732dcf014a"
                 LastKnownName="Controller"
+                LastKnownLocation="AKD.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="ced3e035-fd53-4ecd-9ed7-90247f774ca9"
+            name="MessageOccurrenceSpecification12">
+            <covered>
+              <lifelineMoniker
+                Id="66ad4347-9e3a-4d61-b6e1-1d7f03e6467b"
+                LastKnownName="&quot;Actor&quot;"
                 LastKnownLocation="AKD.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -8360,22 +8360,22 @@ De controller stuurt alleen de juiste views aan, redirect of toont een 401 forbi
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="6f3f1c13-afbb-47bd-b383-ae0519dc99f4"
-            name="MessageOccurrenceSpecification19">
-            <covered>
-              <lifelineMoniker
-                Id="f0b7df77-4ecc-457e-a3cc-02d6f82043bb"
-                LastKnownName="Repository"
-                LastKnownLocation="AKD.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="2b2f6c89-a391-4744-823f-f668db6cb8b0"
             name="MessageOccurrenceSpecification20">
             <covered>
               <lifelineMoniker
                 Id="aa81b92f-951b-4d02-be61-7b073cf72557"
                 LastKnownName="Service"
+                LastKnownLocation="AKD.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="6f3f1c13-afbb-47bd-b383-ae0519dc99f4"
+            name="MessageOccurrenceSpecification19">
+            <covered>
+              <lifelineMoniker
+                Id="f0b7df77-4ecc-457e-a3cc-02d6f82043bb"
+                LastKnownName="Repository"
                 LastKnownLocation="AKD.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -8614,22 +8614,22 @@ De controller stuurt alleen de juiste views aan, redirect of toont een 401 forbi
             </covered>
           </messageOccurrenceSpecification>
           <messageOccurrenceSpecification
-            Id="1cfd8a0f-b872-4607-a604-5ed564998454"
-            name="MessageOccurrenceSpecification27">
-            <covered>
-              <lifelineMoniker
-                Id="a287456f-8061-426e-85ef-b5c4b1433934"
-                LastKnownName="Validator"
-                LastKnownLocation="AKD.uml" />
-            </covered>
-          </messageOccurrenceSpecification>
-          <messageOccurrenceSpecification
             Id="cf85602a-110e-4ca6-a803-5ee4f07492dc"
             name="MessageOccurrenceSpecification28">
             <covered>
               <lifelineMoniker
                 Id="2f802d36-c40d-4ba3-af03-39732dcf014a"
                 LastKnownName="Controller"
+                LastKnownLocation="AKD.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="1cfd8a0f-b872-4607-a604-5ed564998454"
+            name="MessageOccurrenceSpecification27">
+            <covered>
+              <lifelineMoniker
+                Id="a287456f-8061-426e-85ef-b5c4b1433934"
+                LastKnownName="Validator"
                 LastKnownLocation="AKD.uml" />
             </covered>
           </messageOccurrenceSpecification>
@@ -8971,22 +8971,22 @@ De controller stuurt alleen de juiste views aan, redirect of toont een 401 forbi
             </covered>
           </executionOccurrenceSpecification>
           <operandOccurrenceSpecification
-            Id="eddeb192-104a-490c-8d83-997f49baeaa9"
-            name="OperandOccurrenceSpecification12">
-            <covered>
-              <lifelineMoniker
-                Id="2f802d36-c40d-4ba3-af03-39732dcf014a"
-                LastKnownName="Controller"
-                LastKnownLocation="AKD.uml" />
-            </covered>
-          </operandOccurrenceSpecification>
-          <operandOccurrenceSpecification
             Id="05cfa4e3-e5ea-421c-a39d-22eeb9ad7537"
             name="OperandOccurrenceSpecification10">
             <covered>
               <lifelineMoniker
                 Id="66ad4347-9e3a-4d61-b6e1-1d7f03e6467b"
                 LastKnownName="&quot;Actor&quot;"
+                LastKnownLocation="AKD.uml" />
+            </covered>
+          </operandOccurrenceSpecification>
+          <operandOccurrenceSpecification
+            Id="eddeb192-104a-490c-8d83-997f49baeaa9"
+            name="OperandOccurrenceSpecification12">
+            <covered>
+              <lifelineMoniker
+                Id="2f802d36-c40d-4ba3-af03-39732dcf014a"
+                LastKnownName="Controller"
                 LastKnownLocation="AKD.uml" />
             </covered>
           </operandOccurrenceSpecification>
@@ -9597,6 +9597,1004 @@ De controller stuurt alleen de juiste views aan, redirect of toont een 401 forbi
       <executionEvent
         Id="c7c9ca94-26d7-4d01-80fd-15c1abae32e4"
         name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <interaction
+        Id="dfdcf563-abc6-4797-8efc-e012d894e20b"
+        name="Project Aanmaken"
+        collapseFragmentsFlag="false"
+        isActiveClass="false"
+        isAbstract="false"
+        isLeaf="false"
+        isReentrant="false">
+        <fragments>
+          <behaviorExecutionSpecification
+            Id="e3704b19-5071-499f-91a9-944e7472adf7"
+            name="BehaviorExecutionSpecification1">
+            <coveredLifelines>
+              <lifelineMoniker
+                Id="e2f68ff4-446c-4209-a6ec-f093b055508b"
+                LastKnownName="projectController : ProjectController"
+                LastKnownLocation="AKD.uml" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker
+                Id="9490315f-c69e-4078-915e-39212d5efb4a"
+                LastKnownName="ExecutionOccurrenceSpecification2"
+                LastKnownLocation="AKD.uml" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker
+                Id="97f5a4c0-3ad6-42b6-a5e9-c23c4683d5d7"
+                LastKnownName="ExecutionOccurrenceSpecification1"
+                LastKnownLocation="AKD.uml" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="09f7edf6-f022-4a1e-b1b5-b1370a77e009"
+                LastKnownName="MessageOccurrenceSpecification2"
+                LastKnownLocation="AKD.uml" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification
+            Id="97f5a4c0-3ad6-42b6-a5e9-c23c4683d5d7"
+            name="ExecutionOccurrenceSpecification1">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="580fa8cb-c64c-495c-9cc0-d6531531155d"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="AKD.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="e2f68ff4-446c-4209-a6ec-f093b055508b"
+                LastKnownName="projectController : ProjectController"
+                LastKnownLocation="AKD.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="ff2dedc2-4604-4b61-aa5e-ad998aebfd9d"
+            name="MessageOccurrenceSpecification1">
+            <covered>
+              <lifelineMoniker
+                Id="f1303884-a631-4c44-ba09-a84d3b9374cd"
+                LastKnownName="&quot;User&quot;"
+                LastKnownLocation="AKD.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification
+            Id="09f7edf6-f022-4a1e-b1b5-b1370a77e009"
+            name="MessageOccurrenceSpecification2">
+            <covered>
+              <lifelineMoniker
+                Id="e2f68ff4-446c-4209-a6ec-f093b055508b"
+                LastKnownName="projectController : ProjectController"
+                LastKnownLocation="AKD.uml" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification
+            Id="9490315f-c69e-4078-915e-39212d5efb4a"
+            name="ExecutionOccurrenceSpecification2">
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker
+                  Id="229dd907-7ed6-4943-9f17-93a3612deb39"
+                  LastKnownName="ExecutionEvent"
+                  LastKnownLocation="AKD.uml" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker
+                Id="e2f68ff4-446c-4209-a6ec-f093b055508b"
+                LastKnownName="projectController : ProjectController"
+                LastKnownLocation="AKD.uml" />
+            </covered>
+          </executionOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline
+            Id="f1303884-a631-4c44-ba09-a84d3b9374cd"
+            name="&quot;User&quot;"
+            isActor="false"
+            lifelineDisplayName="&quot;User&quot;">
+            <topLevelOccurrences>
+              <messageOccurrenceSpecificationMoniker
+                Id="ff2dedc2-4604-4b61-aa5e-ad998aebfd9d"
+                LastKnownName="MessageOccurrenceSpecification1"
+                LastKnownLocation="AKD.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline
+            Id="e2f68ff4-446c-4209-a6ec-f093b055508b"
+            name="projectController : ProjectController"
+            isActor="false"
+            lifelineDisplayName="projectController : ProjectController">
+            <represents>
+              <propertyMoniker
+                Id="25f2bc21-7eea-4765-8a27-1db5fbfd2214"
+                LastKnownLocation="AKD.uml" />
+            </represents>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker
+                Id="97f5a4c0-3ad6-42b6-a5e9-c23c4683d5d7"
+                LastKnownName="ExecutionOccurrenceSpecification1"
+                LastKnownLocation="AKD.uml" />
+              <executionOccurrenceSpecificationMoniker
+                Id="9490315f-c69e-4078-915e-39212d5efb4a"
+                LastKnownName="ExecutionOccurrenceSpecification2"
+                LastKnownLocation="AKD.uml" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message
+            Id="45b8a5c1-7c89-4ece-9ba4-c4626d796266"
+            name="Create(viewModel)"
+            messageKind="Complete"
+            messageSort="AsynchCall"
+            createSelfMessage="false">
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="ff2dedc2-4604-4b61-aa5e-ad998aebfd9d"
+                LastKnownName="MessageOccurrenceSpecification1"
+                LastKnownLocation="AKD.uml" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker
+                Id="09f7edf6-f022-4a1e-b1b5-b1370a77e009"
+                LastKnownName="MessageOccurrenceSpecification2"
+                LastKnownLocation="AKD.uml" />
+            </receiveEvent>
+          </message>
+        </messages>
+        <ownedAttributesInternal>
+          <property
+            Id="25f2bc21-7eea-4765-8a27-1db5fbfd2214"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="c6408a57-5560-4e76-b182-b00043da2e24"
+                LastKnownName="ProjectController"
+                LastKnownLocation="AKD.uml" />
+            </type_NamedElement>
+          </property>
+          <property
+            Id="7f028f55-38cb-478a-8034-1c7fcc31ebc8"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <classMoniker
+                Id="bf897a39-09ba-429e-8711-cfb26348e0a3"
+                LastKnownName="ProjectService"
+                LastKnownLocation="AKD.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="580fa8cb-c64c-495c-9cc0-d6531531155d"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent
+        Id="229dd907-7ed6-4943-9f17-93a3612deb39"
+        name="ExecutionEvent" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="b3b9453b-97e6-4562-9f8e-395ff9c31385"
+        name="Class3"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="ed2f0b55-7db9-4c9e-9ea6-f16a5637c821"
+        name="ICrudAuthService"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedAttributes>
+          <property
+            Id="45aa2e3c-4a13-4bfc-9f9a-1ab178b8f898"
+            name="CurrentUser"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="b214eff1-7de1-4638-a7fc-083b3fa77ecd"
+                LastKnownName="MembershipUser "
+                LastKnownLocation="AKD.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributes>
+        <ownedOperations>
+          <operation
+            Id="e63cabb2-5de6-4a74-b0de-4ce7529c842c"
+            name="CanCreate"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a34d44b3-c0e6-43b6-a41b-9c7eb777accd"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c8108581-81bb-473e-9101-ebdf380b8fec"
+                      LastKnownName="boolean"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="3d5d4f88-2682-48a6-bb80-c06093288a0a"
+            name="CanRead"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="35b3144c-c3d0-4927-bc2c-d0086809acdd"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c8108581-81bb-473e-9101-ebdf380b8fec"
+                      LastKnownName="boolean"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="14fb2cb1-2b2d-411d-a0ee-ce33dfec43b3"
+            name="CanUpdate"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="45f33369-a0b7-4ce8-a402-263690e8081b"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c8108581-81bb-473e-9101-ebdf380b8fec"
+                      LastKnownName="boolean"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="d495e99a-5dcf-4ad7-afe0-003cbaf0a092"
+            name="CanDelete"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="4c7a3c80-4295-401b-92d8-ba07b56be30d"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c8108581-81bb-473e-9101-ebdf380b8fec"
+                      LastKnownName="boolean"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="b214eff1-7de1-4638-a7fc-083b3fa77ecd"
+        name="MembershipUser " />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="c8108581-81bb-473e-9101-ebdf380b8fec"
+        name="boolean" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="ab333912-ae63-43d5-8154-a9b93bea8f2a"
+        name="ProjectAuthService"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="b34dfa80-c93b-4dcb-b4b0-1a704a0e075f">
+            <interfaceMoniker
+              Id="ed2f0b55-7db9-4c9e-9ea6-f16a5637c821"
+              LastKnownName="ICrudAuthService"
+              LastKnownLocation="AKD.uml" />
+          </interfaceRealization>
+          <interfaceRealization
+            Id="5996232f-7907-4545-9d82-11e12ffab9cb">
+            <interfaceMoniker
+              Id="b9579b7e-09b8-4956-913e-496960e73251"
+              LastKnownName="IProjectAuthService"
+              LastKnownLocation="AKD.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="27790cbf-dee2-45fa-9c79-714917cd6665"
+            name="CanCreate"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="31901649-4c38-4ad0-9b70-2c83158358a9"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c8108581-81bb-473e-9101-ebdf380b8fec"
+                      LastKnownName="boolean"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="7783280e-9959-4e1b-b718-7ad70ed52884"
+            name="CanRead"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a4a2cda8-fd31-417f-8c1c-a97ad5519c34"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c8108581-81bb-473e-9101-ebdf380b8fec"
+                      LastKnownName="boolean"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="e7b7d61f-3778-4931-8faa-2275ce032f09"
+            name="CanUpdate"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="33fe26aa-cdb3-4473-ba3b-3d514d296f36"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c8108581-81bb-473e-9101-ebdf380b8fec"
+                      LastKnownName="boolean"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="f2afcd06-2311-4b68-b8d9-8f9d0fb38b67"
+            name="CanDelete"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b200e5a3-5b03-4ae3-852c-2fe43d8e2650"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c8108581-81bb-473e-9101-ebdf380b8fec"
+                      LastKnownName="boolean"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="63ab84aa-aa97-4393-9449-38a34d44fdf4"
+            name="CanAddGroup"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="deb9fc81-d973-4aca-ab17-3766b4b446fc"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c8108581-81bb-473e-9101-ebdf380b8fec"
+                      LastKnownName="boolean"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="5f61bd7d-2c8a-4937-9734-83269a5c6e41"
+            name="CanDeleteGroup"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="eb5ff642-dfde-414c-8079-568f643339ca"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c8108581-81bb-473e-9101-ebdf380b8fec"
+                      LastKnownName="boolean"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="b9579b7e-09b8-4956-913e-496960e73251"
+        name="IProjectAuthService"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedOperations>
+          <operation
+            Id="1fa501c8-1c22-4364-a704-545e990eaf5e"
+            name="CanAddGroup"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="6464f0f2-ab76-4557-9969-585b3b86e49b"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c8108581-81bb-473e-9101-ebdf380b8fec"
+                      LastKnownName="boolean"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="11f318d4-5570-4505-acef-d9837f2b02ed"
+            name="CanDeleteGroup"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="754e0a5a-1477-444e-bafc-939b8293ad8a"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c8108581-81bb-473e-9101-ebdf380b8fec"
+                      LastKnownName="boolean"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="c19e0aab-e3de-4c67-8f0e-b93f66ca2f8e"
+        name="IEvaluationAuthService"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedAttributes>
+          <property
+            Id="f45454b7-073f-4097-a920-23cc13be0fc1"
+            name="SubjectStudentId"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="aebac4e1-07da-44bc-be32-ea379819fdde"
+                LastKnownName="int"
+                LastKnownLocation="AKD.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributes>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <Interface
+        Id="b2c2eb48-551c-45d3-9637-d33b9bba3f6a"
+        name="IGroupAuthService"
+        isAbstract="false"
+        isLeaf="false">
+        <ownedAttributes>
+          <property
+            Id="30479d0e-4426-430f-a116-f1f12bbfe0dc"
+            name="SubjectStudentId"
+            isLeaf="false"
+            isStatic="false"
+            isReadOnly="false"
+            isUnique="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <type_NamedElement>
+              <undefinedTypeMoniker
+                Id="aebac4e1-07da-44bc-be32-ea379819fdde"
+                LastKnownName="int"
+                LastKnownLocation="AKD.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributes>
+        <ownedOperations>
+          <operation
+            Id="4f89d2f9-3501-4c51-9543-8489a0030618"
+            name="CanAddStudent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="2699e216-17a5-4a3a-9a66-462ee8f4e694"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c8108581-81bb-473e-9101-ebdf380b8fec"
+                      LastKnownName="boolean"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="72a396e2-3288-4539-868e-14706fb93ab7"
+            name="CanRemoveStudent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="21a318e3-911a-476e-b81a-5f95bd47ebbd"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c8108581-81bb-473e-9101-ebdf380b8fec"
+                      LastKnownName="boolean"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="a42f3c83-7eb5-40b4-8ee9-c0844f10f80a"
+            name="CanChangeTutor"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="true"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="773a96af-2ce0-432d-8400-804ffc85bd7a"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c8108581-81bb-473e-9101-ebdf380b8fec"
+                      LastKnownName="boolean"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperations>
+      </Interface>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="308c4d57-5560-4d81-a63a-4cef2b8a7c43"
+        name="GroupAuthService"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="842920b6-e767-4996-a5c8-37a553582545">
+            <interfaceMoniker
+              Id="ed2f0b55-7db9-4c9e-9ea6-f16a5637c821"
+              LastKnownName="ICrudAuthService"
+              LastKnownLocation="AKD.uml" />
+          </interfaceRealization>
+          <interfaceRealization
+            Id="7d3a2583-972c-490a-a50d-d8bc79d829f8">
+            <interfaceMoniker
+              Id="b2c2eb48-551c-45d3-9637-d33b9bba3f6a"
+              LastKnownName="IGroupAuthService"
+              LastKnownLocation="AKD.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="6c59d2b4-0fcd-48b3-a4af-398e6f16234c"
+            name="CanCreate"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ca369946-aaa9-4fca-bb23-68e358f52e56"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c8108581-81bb-473e-9101-ebdf380b8fec"
+                      LastKnownName="boolean"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="e384773b-8ede-43e1-83e4-1f223ac1b950"
+            name="CanRead"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="a6f8fe10-1d8e-4d6e-90d9-b04d51693374"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c8108581-81bb-473e-9101-ebdf380b8fec"
+                      LastKnownName="boolean"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="f47bdf82-9077-4116-9115-18eeb583c39e"
+            name="CanUpdate"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="0674569d-8d7b-4257-bfe2-f781c37d1e32"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c8108581-81bb-473e-9101-ebdf380b8fec"
+                      LastKnownName="boolean"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="99a3e85c-edec-4e31-ac9d-3bef655d0e42"
+            name="CanDelete"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="acb7f5e2-e7d0-40d9-a248-bffa51818bad"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c8108581-81bb-473e-9101-ebdf380b8fec"
+                      LastKnownName="boolean"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="a06bfa42-2668-43c4-98b9-fd49bbd6309e"
+            name="CanAddStudent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5e0aa8e2-143f-42e5-b247-9c893c459662"
+                  direction="Return"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c8108581-81bb-473e-9101-ebdf380b8fec"
+                      LastKnownName="boolean"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="1760da39-707e-411e-9951-f93fc4464bec"
+            name="CanRemoveStudent"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="52d0e5c7-5684-44d3-b49b-d46983fc571d"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c8108581-81bb-473e-9101-ebdf380b8fec"
+                      LastKnownName="boolean"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="9d121824-0162-4278-91de-e4c69b4ae3b3"
+            name="CanChangeTutor"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="90376535-b0eb-44dc-a13d-5f1acbfb5b0e"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c8108581-81bb-473e-9101-ebdf380b8fec"
+                      LastKnownName="boolean"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="efad2231-293f-4194-a6b2-ea9321064a51"
+        name="EvaluationAuthService"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <suppliersInternal>
+          <interfaceRealization
+            Id="c3f20486-c568-410e-881f-f2482c24c743">
+            <interfaceMoniker
+              Id="c19e0aab-e3de-4c67-8f0e-b93f66ca2f8e"
+              LastKnownName="IEvaluationAuthService"
+              LastKnownLocation="AKD.uml" />
+          </interfaceRealization>
+          <interfaceRealization
+            Id="fe100b0b-baa0-4d1c-8317-0b2b47ce1227">
+            <interfaceMoniker
+              Id="ed2f0b55-7db9-4c9e-9ea6-f16a5637c821"
+              LastKnownName="ICrudAuthService"
+              LastKnownLocation="AKD.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="5ae232db-3d38-49ae-b973-140dc90e6888"
+            name="CanCreate"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="61c06b87-b8e7-4a5c-9964-f62808b5f1db"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c8108581-81bb-473e-9101-ebdf380b8fec"
+                      LastKnownName="boolean"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="9ef60cb7-4087-497c-be8f-e07be4876581"
+            name="CanRead"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b2207cc1-ce13-432a-92de-1c04e9b297b1"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c8108581-81bb-473e-9101-ebdf380b8fec"
+                      LastKnownName="boolean"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="6e98964c-4fea-4088-a93a-c29605ede3b9"
+            name="CanUpdate"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="b57ecddf-92cd-4654-8110-5505c151de69"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c8108581-81bb-473e-9101-ebdf380b8fec"
+                      LastKnownName="boolean"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="04b666e4-f353-4ce4-9b14-1bba1200bbea"
+            name="CanDelete"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="855dc443-d1ec-436f-a62c-2e7d96e31e8d"
+                  direction="Return">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="c8108581-81bb-473e-9101-ebdf380b8fec"
+                      LastKnownName="boolean"
+                      LastKnownLocation="AKD.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
     </packageHasNamedElement>
   </packagedElements>
   <primitiveType
