@@ -1,25 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="ae7d663c-af4c-4430-9158-991519df7ed3" name="Authentication" linkedPackageId="3f7219ec-1ef3-4fae-839d-9d01dbe89298" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="e4321987-2684-4325-b329-19b015dfd97a">
-      <profileInstance Id="c07d589e-e90c-40ae-8d23-d26ae454a5a3" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="0448e63e-af95-4cdd-912f-53e688423367">
-      <profileInstance Id="a9e91f66-7e65-4ae2-8104-765bf00bc69c" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="6b236787-7411-42cd-9a5e-a47b40cf1168">
-      <profileInstance Id="ce34b305-6fa6-49f3-86b5-50e30bf9b3d9" name="TextTemplateBindings">
-        <elementDefinition Id="e9fcbeb2-5544-457c-be58-97addb3df36a" />
-      </profileInstance>
-      <elementDefinition Id="c735b3e5-bc5a-4bb0-9554-35e17d10fb96" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <Interface Id="34f18f41-4470-49a0-aab9-37309121cf1d" name="ICrudAuthService" isAbstract="false" isLeaf="false">
@@ -508,5 +488,25 @@
   </packagedElements>
   <package Id="3f7219ec-1ef3-4fae-839d-9d01dbe89298" name="AKD">
     <elementDefinition Id="a5b95440-de55-412e-818f-8fb14b90b96b" />
+    <profileInstances>
+      <packageHasProfileInstances Id="e4321987-2684-4325-b329-19b015dfd97a">
+        <profileInstance Id="c07d589e-e90c-40ae-8d23-d26ae454a5a3" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="0448e63e-af95-4cdd-912f-53e688423367">
+        <profileInstance Id="a9e91f66-7e65-4ae2-8104-765bf00bc69c" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="6b236787-7411-42cd-9a5e-a47b40cf1168">
+        <profileInstance Id="ce34b305-6fa6-49f3-86b5-50e30bf9b3d9" name="TextTemplateBindings">
+          <elementDefinition Id="e9fcbeb2-5544-457c-be58-97addb3df36a" />
+        </profileInstance>
+        <elementDefinition Id="c735b3e5-bc5a-4bb0-9554-35e17d10fb96" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>
