@@ -83,12 +83,17 @@ Klacht indienen
 ![Klacht indienen](../Prototypes/Docent/Klacht indienen.png)
 Mentor vooruitgang student inzien
 ![Mentor vooruitgng student inzien](../Prototypes/Docent/Mentor vooruitgang student inzien.png)
+
 Onderbouwing aanvragen
 ![Onderbouwing aanvragen](../Prototypes/Docent/Onderbouwing aanvragen.png)
+
 Opmerkingen scherm
+
 ![Opmerkingen scherm](../Prototypes/Docent/Opmerking scherm.png)
+
 Project aanmaken (nieuw project)
 ![Project aanmaken](../Prototypes/Docent/Project aanmaken nieuw project.png)
+
 Project aanmaken (gebaseerd op voorgaand project)
 ![Project aanmaken](../Prototypes/Docent/Project aanmaken gebaseerd op voorgaand project.png)
 Student cijfer toekennen
@@ -100,16 +105,22 @@ Tutor toewijzing
 Tutor groep beoordelingen inzien
 ![Tutor groep beoordelingen inzien](../Prototypes/Docent/Tutor groep beoordelingen inzien.png)
 
-Alle schermen zijn hebben hun eigen functie en navigatie. Daarom is 1 hoofdmenu genoeg om alle schermen te kunnen navigeren. Dit is de standaard menubalk boven het scherm. 
+Alle schermen hebben hun eigen functie en navigatie. Daarom is 1 hoofdmenu genoeg om alle schermen te kunnen navigeren. Dit is de standaard menubalk boven het scherm. 
 Bij het klikken op de Opmerkingen knop komt er een pop-up tevoorschijn waarbij je de opmerkingen in een scherm ziet.
 
 ##Student deel
 De volgende drie schermen horen bij het beoordelen van een medestudent
+
 ![Student selecteren](../Prototypes/Student/Home Scherm student.png)
+
 In het bovenstaande scherm kan een student het project selecteren. Door op de knop "Naar project" te klikken wordt het onderstaande scherm weergegeven.
+
 ![Project scherm](../Prototypes/Student/Project Scherm student.png)
+
 In het bovenstaande scherm worden meldingen weergegeven en kan de student de week selecteren waarin de beoordeling plaats vind. Door op de knop “Medestudent beoordelen” te klikken wordt het onderstaande scherm weergegeven.
+
 ![Beoordeling scherm](../Prototypes/Student/Beoordeling Scherm student.png)
+
 In het bovenstaande scherm kan de student per groepslid de cijfers invoeren voor de competenties en eventueel iets invullen bij opmerkingen.
 
 #Technologie
@@ -165,6 +176,7 @@ De projectleider:
 * Zal vergaderingen voorbereiden en leiden.
 * Zal wanneer nodig een aanspreekpunt zijn voor docenten namens de projectgroep.
 * Zal de vergadering plannen en aankondigen.
+
 ###Notulist
 ####Robin Collard
 De notulist is simpelweg verantwoordelijk voor de notules.
