@@ -13,6 +13,7 @@ Het systeem dat we willen gaan bouwen is een systeem waarmee studenten elkaar op
 |:-----|:----|:----------|:----|:---|
 |0.1|11-11-2013|Eerste versie; bestand aangemaakt.|NVT|Edwin Hattink|
 |1.0|26-11-2013|Informatie aangevuld en eerste versie gewijzigd.|NVT|Groep|
+|1.1|2-12-2013|Inleiding en context toegevoegd|Feedback gekregen|Jip Verhoeven|
 
 # Architectuur
 ## MVC
