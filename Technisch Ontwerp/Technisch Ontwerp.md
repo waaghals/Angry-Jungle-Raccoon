@@ -11,9 +11,10 @@ Het systeem dat we willen gaan bouwen is een systeem waarmee studenten elkaar op
 #Document geschiedenis
 |Versie|Datum|Wijzigingen|Reden|Door|
 |:-----|:----|:----------|:----|:---|
-|0.1|11-11-2013|Eerste versie; bestand aangemaakt.|NVT|Edwin Hattink|
-|1.0|26-11-2013|Informatie aangevuld en eerste versie gewijzigd.|NVT|Groep|
+|0.1|11-11-2013|Eerste versie; bestand aangemaakt.|N.v.t.|Edwin Hattink|
+|1.0|26-11-2013|Informatie aangevuld en eerste versie gewijzigd.|N.v.t.|Groep|
 |1.1|2-12-2013|Inleiding en context toegevoegd|Feedback gekregen|Jip Verhoeven|
+|1.2|2-12-2013|Continuous Integration uitgebreid|Te kort|Patrick Berenschot|
 
 # Architectuur
 ## MVC
@@ -161,15 +162,13 @@ Om te voorkomen dat we conflicten krijgen als we tegelijkertijd aan het werk zij
 
 Om iedereen een gelijke en makkelijk te gebruiken omgeving te geven voor het gebruik van Git-flow gebruiken we het programma SourceTree. Dit is een Git gui die Git-flow ondersteund. We hebben hier ook voor gekozen omdat SourceTree meerdere platformen ondersteund.
 
-##Coding guidelines
-
-Om de code overzichtelijk en eenduidig te houden heeft Patrick een stijlgids gemaakt waarin de stijl en naamgeving wordt uitgelegd die we aan gaan houden. Ook staan hierin regels opgesteld voor het aanmaken van bestanden en mappen om de folderstructuur overzichtelijk te houden. We hebben dan ook allemaal afgesproken onszelf aan de guidelines te houden zodat we het niet af hoeven te dwingen met een programma. Tijdens de code reviews wordt er dan ook op gelet dat de code aan de guidelines voldoet.
-
 #Organisatie
 ##Code reviewing
 Binnen een week na voltooien van delen van de software word het door 2 onafhankelijke groepsgenoten gereviewed en getest op alle requirements waaraan de software moet voldoen. Mocht niet overal aan voldaan zijn of mochten er componenten niet werken dan word dat terug gekoppeld aan de schrijver van de software die vervolgens zijn software verbeterd. Wanneer dat af is word het weer opnieuw gereviewed zoals hierboven word vermeld.
-##Continuous Integration
-Zodra er gereviewed is en de code is goed gekeurd wordt de code in de master branch gezet. Vanaf daar kunnen nieuwe functies worden toegevoegd op basis van de nieuwste versie.
+
+###Continuous Integration
+Er is altijd één stabile branch en dat is `master`. De `develop` branch bevat de allerlaatste features en kan dus instabiel zijn. Het uitwerken van merge conflicts op de `develop` branch is de verantwoordelijkheid van de versiebeheerder. Diegene zorgt er voor dat een push naar de `develop` of `master` branch een nieuwe build start. Indien de build faalt dient de versiebeheerder het probleem zichtbaar te maken door een issue op GitHub. De Taakbeheerder zal de taak dan toewijzen aan een persoon. Zodra er gereviewd is en de code is goed gekeurd wordt de code in de master branch gezet.
+
 
 ##Rolverdeling
 ###Projectleider
