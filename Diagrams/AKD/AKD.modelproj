@@ -57,6 +57,20 @@
       <SubType>Content</SubType>
       <DependentUpon>Overzicht.sequencediagram</DependentUpon>
     </Content>
+    <Content Include="Project Aanmaken.sequencediagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Project Aanmaken.sequencediagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Project Aanmaken.sequencediagram</DependentUpon>
+    </Content>
+    <Content Include="Service laag\Authentication.classdiagram">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Service laag\Authentication.classdiagram.layout">
+      <SubType>Content</SubType>
+      <DependentUpon>Service laag\Authentication.classdiagram</DependentUpon>
+    </Content>
     <Content Include="Service laag\Crud services.classdiagram">
       <SubType>Content</SubType>
     </Content>

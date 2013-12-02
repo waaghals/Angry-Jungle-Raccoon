@@ -1,25 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="b5352e9b-adea-4629-9a27-2265f41925ef" name="Crud services" linkedPackageId="c5f8e9f2-62c9-4250-86e9-6eee867a218c" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
-  <profileInstances>
-    <packageHasProfileInstances Id="4f777386-99dc-46eb-8282-b72c531a04f5">
-      <profileInstance Id="0862382b-5527-4858-8ac2-11848998c30f" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="15903c71-0b47-4a4e-8311-344fd1eb440f">
-      <profileInstance Id="32cf06f1-88e7-4191-ac2a-97209027001a" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="a6015bc9-ae8d-4049-ac26-ba8cf540e6db">
-      <profileInstance Id="99f1d125-322a-46e7-891e-33d9182be536" name="TextTemplateBindings">
-        <elementDefinition Id="e9fcbeb2-5544-457c-be58-97addb3df36a" />
-      </profileInstance>
-      <elementDefinition Id="c735b3e5-bc5a-4bb0-9554-35e17d10fb96" />
-    </packageHasProfileInstances>
-  </profileInstances>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="b5352e9b-adea-4629-9a27-2265f41925ef" name="Crud services" linkedPackageId="c5f8e9f2-62c9-4250-86e9-6eee867a218c" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <Interface Id="bf0d8f8e-b528-44d3-84b5-b65214285a4b" name="IGroupService" isAbstract="false" isLeaf="false">
@@ -353,7 +333,7 @@
       </referencedType>
     </packageHasNamedElement>
     <logicalClassDesignerModelHasTypes>
-      <class Id="4a61da39-6696-4fd9-8aaa-7953b480b5ea" name="ProjectServicee" isAbstract="false" isLeaf="false" isActiveClass="false">
+      <class Id="4a61da39-6696-4fd9-8aaa-7953b480b5ea" name="ProjectService" isAbstract="false" isLeaf="false" isActiveClass="false">
         <elementDefinition Id="bf897a39-09ba-429e-8711-cfb26348e0a3" />
         <suppliersInternal>
           <interfaceRealization Id="5e2f0a36-91a2-41f1-a547-539d26fecb74">
@@ -759,5 +739,25 @@
   </packagedElements>
   <package Id="c5f8e9f2-62c9-4250-86e9-6eee867a218c" name="AKD">
     <elementDefinition Id="a5b95440-de55-412e-818f-8fb14b90b96b" />
+    <profileInstances>
+      <packageHasProfileInstances Id="4f777386-99dc-46eb-8282-b72c531a04f5">
+        <profileInstance Id="0862382b-5527-4858-8ac2-11848998c30f" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="15903c71-0b47-4a4e-8311-344fd1eb440f">
+        <profileInstance Id="32cf06f1-88e7-4191-ac2a-97209027001a" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="a6015bc9-ae8d-4049-ac26-ba8cf540e6db">
+        <profileInstance Id="99f1d125-322a-46e7-891e-33d9182be536" name="TextTemplateBindings">
+          <elementDefinition Id="e9fcbeb2-5544-457c-be58-97addb3df36a" />
+        </profileInstance>
+        <elementDefinition Id="c735b3e5-bc5a-4bb0-9554-35e17d10fb96" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>

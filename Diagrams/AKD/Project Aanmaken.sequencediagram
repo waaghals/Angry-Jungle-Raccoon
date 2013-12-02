@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SequenceDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/dsltools/LogicalClassDesigner" dslVersion="1.0.0.0" Id="906c66d2-0ff6-419d-b9e2-b578df0e9dd5" name="Project Aanmaken" linkedPackageId="16737d9b-aff4-4a13-8bfc-77c4c51fd70b" xmlns="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner">
+  <profileInstances>
+    <packageHasProfileInstances Id="6753b65b-d43a-4c05-ab8b-a5b8d0d2d90a">
+      <profileInstance Id="a1658e4e-c7a8-4ee7-96ac-6507d7481e8d" name="StandardProfileL2">
+        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+      </profileInstance>
+      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="3df458f7-54b5-47a8-aac6-ece2c28c755b">
+      <profileInstance Id="98485b67-9f4e-41fe-bd4e-86e727f240df" name="StandardProfileL3">
+        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+      </profileInstance>
+      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances Id="be486b2b-62c4-4a14-8cba-d6135b7f6a49">
+      <profileInstance Id="a6d84059-c14f-4444-b8b2-92f26f258a93" name="TextTemplateBindings">
+        <elementDefinition Id="e9fcbeb2-5544-457c-be58-97addb3df36a" />
+      </profileInstance>
+      <elementDefinition Id="c735b3e5-bc5a-4bb0-9554-35e17d10fb96" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <interaction Id="3b3a5a6d-b8e6-42e7-b66a-599c16c5db5e" name="Project Aanmaken" collapseFragmentsFlag="false" isActiveClass="false" isAbstract="false" isLeaf="false" isReentrant="false">
+        <elementDefinition Id="dfdcf563-abc6-4797-8efc-e012d894e20b" />
+        <fragments>
+          <behaviorExecutionSpecification Id="a63e0156-7645-4e95-b4e2-bf1893f21f78" name="BehaviorExecutionSpecification1">
+            <elementDefinition Id="e3704b19-5071-499f-91a9-944e7472adf7" />
+            <coveredLifelines>
+              <lifelineMoniker Id="b9f5732e-0dbf-4dd6-bd52-497b3685ca0d" LastKnownName="projectController : ProjectController" />
+            </coveredLifelines>
+            <finish>
+              <executionOccurrenceSpecificationMoniker Id="e2f03963-9663-4937-9c15-968a533825d3" LastKnownName="ExecutionOccurrenceSpecification2" />
+            </finish>
+            <start>
+              <executionOccurrenceSpecificationMoniker Id="e8239572-8cec-43eb-8bc8-fb72c5acaa2e" LastKnownName="ExecutionOccurrenceSpecification1" />
+            </start>
+            <nestedOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="ded4e63f-574a-4ad8-93a8-2494dc857b4e" LastKnownName="MessageOccurrenceSpecification2" />
+            </nestedOccurrences>
+          </behaviorExecutionSpecification>
+          <executionOccurrenceSpecification Id="e8239572-8cec-43eb-8bc8-fb72c5acaa2e" name="ExecutionOccurrenceSpecification1">
+            <elementDefinition Id="97f5a4c0-3ad6-42b6-a5e9-c23c4683d5d7" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="7f1acd20-501d-4cdf-a124-04f4ae97987d" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="b9f5732e-0dbf-4dd6-bd52-497b3685ca0d" LastKnownName="projectController : ProjectController" />
+            </covered>
+          </executionOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="c54967c1-8153-4c57-872a-d3668efafe97" name="MessageOccurrenceSpecification1">
+            <elementDefinition Id="ff2dedc2-4604-4b61-aa5e-ad998aebfd9d" />
+            <covered>
+              <lifelineMoniker Id="723066ff-7f8c-44ef-8888-f7d142cb3e3a" LastKnownName="&quot;User&quot;" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <messageOccurrenceSpecification Id="ded4e63f-574a-4ad8-93a8-2494dc857b4e" name="MessageOccurrenceSpecification2">
+            <elementDefinition Id="09f7edf6-f022-4a1e-b1b5-b1370a77e009" />
+            <covered>
+              <lifelineMoniker Id="b9f5732e-0dbf-4dd6-bd52-497b3685ca0d" LastKnownName="projectController : ProjectController" />
+            </covered>
+          </messageOccurrenceSpecification>
+          <executionOccurrenceSpecification Id="e2f03963-9663-4937-9c15-968a533825d3" name="ExecutionOccurrenceSpecification2">
+            <elementDefinition Id="9490315f-c69e-4078-915e-39212d5efb4a" />
+            <event>
+              <executionOccurrenceSpecificationReferencesEvent>
+                <executionEventMoniker Id="d0519163-558c-4f57-8336-26e4cee2fc99" LastKnownName="ExecutionEvent" />
+              </executionOccurrenceSpecificationReferencesEvent>
+            </event>
+            <covered>
+              <lifelineMoniker Id="b9f5732e-0dbf-4dd6-bd52-497b3685ca0d" LastKnownName="projectController : ProjectController" />
+            </covered>
+          </executionOccurrenceSpecification>
+        </fragments>
+        <lifelines>
+          <lifeline Id="723066ff-7f8c-44ef-8888-f7d142cb3e3a" name="&quot;User&quot;" isActor="false" lifelineDisplayName="&quot;User&quot;">
+            <elementDefinition Id="f1303884-a631-4c44-ba09-a84d3b9374cd" />
+            <topLevelOccurrences>
+              <messageOccurrenceSpecificationMoniker Id="c54967c1-8153-4c57-872a-d3668efafe97" LastKnownName="MessageOccurrenceSpecification1" />
+            </topLevelOccurrences>
+          </lifeline>
+          <lifeline Id="b9f5732e-0dbf-4dd6-bd52-497b3685ca0d" name="projectController : ProjectController" isActor="false" lifelineDisplayName="projectController : ProjectController">
+            <elementDefinition Id="e2f68ff4-446c-4209-a6ec-f093b055508b" />
+            <represents>
+              <propertyMoniker Id="7695501b-590c-4922-8833-2222b9d4dbe2" />
+            </represents>
+            <topLevelOccurrences>
+              <executionOccurrenceSpecificationMoniker Id="e8239572-8cec-43eb-8bc8-fb72c5acaa2e" LastKnownName="ExecutionOccurrenceSpecification1" />
+              <executionOccurrenceSpecificationMoniker Id="e2f03963-9663-4937-9c15-968a533825d3" LastKnownName="ExecutionOccurrenceSpecification2" />
+            </topLevelOccurrences>
+          </lifeline>
+        </lifelines>
+        <messages>
+          <message Id="59648a30-6cbe-4873-a933-3a8bbe1a6545" name="Create(viewModel)" messageKind="Complete" messageSort="AsynchCall" createSelfMessage="false">
+            <elementDefinition Id="45b8a5c1-7c89-4ece-9ba4-c4626d796266" />
+            <sendEvent>
+              <messageOccurrenceSpecificationMoniker Id="c54967c1-8153-4c57-872a-d3668efafe97" LastKnownName="MessageOccurrenceSpecification1" />
+            </sendEvent>
+            <receiveEvent>
+              <messageOccurrenceSpecificationMoniker Id="ded4e63f-574a-4ad8-93a8-2494dc857b4e" LastKnownName="MessageOccurrenceSpecification2" />
+            </receiveEvent>
+          </message>
+        </messages>
+        <ownedAttributesInternal>
+          <property Id="7695501b-590c-4922-8833-2222b9d4dbe2" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="25f2bc21-7eea-4765-8a27-1db5fbfd2214" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="0986c0c9-2be0-4d94-90e8-34b46ebf9937" LastKnownName="ProjectController" />
+            </type_NamedElement>
+          </property>
+          <property Id="44888fc1-f7ae-4edf-b4d8-8f5216feb953" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="7f028f55-38cb-478a-8034-1c7fcc31ebc8" />
+            <type_NamedElement>
+              <referencedTypeMoniker Id="a4860a66-78d1-4688-9981-f61b38a92783" LastKnownName="ProjectService" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+      </interaction>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="0986c0c9-2be0-4d94-90e8-34b46ebf9937" name="ProjectController" isAbstract="false" isLeaf="false" cachedFullName="AKD::ProjectController">
+        <elementDefinition Id="c6408a57-5560-4e76-b182-b00043da2e24" />
+      </referencedType>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="7f1acd20-501d-4cdf-a124-04f4ae97987d" name="ExecutionEvent">
+        <elementDefinition Id="580fa8cb-c64c-495c-9cc0-d6531531155d" />
+      </executionEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <executionEvent Id="d0519163-558c-4f57-8336-26e4cee2fc99" name="ExecutionEvent">
+        <elementDefinition Id="229dd907-7ed6-4943-9f17-93a3612deb39" />
+      </executionEvent>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <referencedType Id="a4860a66-78d1-4688-9981-f61b38a92783" name="ProjectService" isAbstract="false" isLeaf="false" cachedFullName="AKD::ProjectService">
+        <elementDefinition Id="bf897a39-09ba-429e-8711-cfb26348e0a3" />
+      </referencedType>
+    </packageHasNamedElement>
+  </packagedElements>
+  <package Id="16737d9b-aff4-4a13-8bfc-77c4c51fd70b" name="AKD">
+    <elementDefinition Id="a5b95440-de55-412e-818f-8fb14b90b96b" />
+  </package>
+</SequenceDesignerModel>
