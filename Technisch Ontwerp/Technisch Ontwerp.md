@@ -110,7 +110,7 @@ Tutor toewijzing
 Tutor groep beoordelingen inzien
 ![Tutor groep beoordelingen inzien](../Prototypes/Docent/Tutor groep beoordelingen inzien.png)
 
-Alle schermen hebben hun eigen functie en navigatie. Daarom is 1 hoofdmenu genoeg om alle schermen te kunnen navigeren. Dit is de standaard menubalk boven het scherm. 
+Alle schermen hebben hun eigen functie en navigatie. Daarom is 1 hoofdmenu genoeg om alle schermen te kunnen navigeren. Dit is de standaard menubalk boven het scherm.
 Bij het klikken op de Opmerkingen knop komt er een pop-up tevoorschijn waarbij je de opmerkingen in een scherm ziet.
 
 ##Student deel
@@ -159,7 +159,7 @@ Om te voorkomen dat we conflicten krijgen als we tegelijkertijd aan het werk zij
 
 ###SourceTree
 
-Om iedereen een gelijke en makkelijk te gebruiken omgeving te geven voor het gebruik van Git-flow gebruiken we het programma SourceTree. Dit is een Git gui die git-flow ondersteund. We hebben hier ook voor gekozen omdat SourceTree meerdere platformen ondersteund.
+Om iedereen een gelijke en makkelijk te gebruiken omgeving te geven voor het gebruik van Git-flow gebruiken we het programma SourceTree. Dit is een Git gui die Git-flow ondersteund. We hebben hier ook voor gekozen omdat SourceTree meerdere platformen ondersteund.
 
 ##Coding guidelines
 
@@ -175,6 +175,7 @@ Zodra er gereviewed is en de code is goed gekeurd wordt de code in de master bra
 ###Projectleider
 ####Yannik Hegge
 De projectleider zal verantwoordelijk zijn voor het administratieve deel van het project.
+
 De projectleider:
 * Moet zorgen dat aan het begin van elke vergadering(dus niet tijdens) de urenregistratie van de groepsleden is bijgewerkt.
 * Is verantwoordelijk voor de organisatie van google drive(duidelijkheid mapstructuur, bestandsbenamingen).
@@ -185,6 +186,7 @@ De projectleider:
 ###Notulist
 ####Robin Collard
 De notulist is simpelweg verantwoordelijk voor de notules.
+
 De notulist:
 * Moet tijdens elke projectbijeenkomst zorgen dat er een complete, correcte notule wordt gemaakt, en beschikbaar is op google drive.
 * Zal bij reviewsessies aantekeningen maken over feedback, en zal deze beschikbaar maken op google drive.
@@ -192,6 +194,7 @@ De notulist:
 ###Agendabeheerder
 ####Jip Verhoeven
 De agendabeheerder is verantwoordelijk voor de algemene planning van het blok.
+
 De agendabeheerder:
 * Houdt bij wanneer deadlines zijn.
 * Houdt de voortgang van de projectgroep richting de volgende deadline bij.
@@ -204,6 +207,7 @@ De agendabeheerder:
 ###Taakbeheerder
 ####Michael vd Ven
 De taakbeheerder is verantwoordelijk voor de verdeling van de taken nodig om producten op tijd af te kunnen leveren.
+
 De taakbeheerder:
 * Zal samen met de agendabeheerder een zicht houden op wanneer welke producten afgeleverd moeten worden.
 * Zorgt dat er taakverdelingen gemaakt worden om producten op tijd af te kunnen leveren.
@@ -214,11 +218,12 @@ De taakbeheerder:
 
 ###Versiebeheerder
 ####Patrick Berenschot
-De versiebeheerder zorgt voor het goed gebruik van git.
+De versiebeheerder zorgt voor het goed gebruik van Git.
+
 De versiebeheerder:
-* Zorgt dat alle groepsleden begrijpen hoe git werkt.
+* Zorgt dat alle groepsleden begrijpen hoe Git werkt.
 * Zorgt dat er ten alle tijden een huidige versie van het project beschikbaar is om aan te werken.
-* Zorgt dat de git repository goed georganiseerd en werkend blijft.
+* Zorgt dat de Git repository goed georganiseerd en werkend blijft.
 
 #Verwijzingen
 1. http://joncairns.com/2013/04/fat-model-skinny-controller-is-a-load-of-rubbish/ 19-11-13
