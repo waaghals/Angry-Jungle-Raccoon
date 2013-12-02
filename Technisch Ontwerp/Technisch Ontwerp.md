@@ -226,8 +226,10 @@ De versiebeheerder:
 * Zorgt dat de Git repository goed georganiseerd en werkend blijft.
 
 #Verwijzingen
-1. http://joncairns.com/2013/04/fat-model-skinny-controller-is-a-load-of-rubbish/ 19-11-13
-2. http://stackoverflow.com/a/8828946 19-11-13
-3. http://rules.ssw.com.au/SoftwareDevelopment/RulesToBetterMVC/Pages/The-layers-of-the-onion-architecture.aspx 20-11-13
-4. http://www.asp.net/mvc/tutorials/older-versions/models-(data)/validating-with-a-service-layer-cs 20-11-13
+1. Cairns, Jon. "“Fat model, skinny controller” is a load of rubbish." *Jon Cairns*. N.p., 11 Apr. 2013. Web. 19 Nov. 2013. http://joncairns.com/2013/04/fat-model-skinny-controller-is-a-load-of-rubbish/.
 
+2. "Fat model / thin controller vs. Service layer [closed]." *Stack Overflow*. Version rev 2013.12.2.1186. stack exchange inc, 12 Jan. 2012. Web. 19 Nov. 2013. http://stackoverflow.com/a/8828946.
+
+3. Araujo, Tiago. "Do you know the layers of the onion architecture?." *SSW*. Version 15.28.18.20783. N.p., 11 Sept. 2013. Web. 20 Nov. 2013. http://rules.ssw.com.au/SoftwareDevelopment/RulesToBetterMVC/Pages/The-layers-of-the-onion-architecture.aspx.
+
+4. Walther, Stephen. "Validating with a Service Layer (C#)." *The Official Microsoft ASP.NET Site*. Microsoft, 2 Mar. 2009. Web. 20 Nov. 2013. http://www.asp.net/mvc/tutorials/older-versions/models-(data)/validating-with-a-service-layer-cs.
