@@ -155,7 +155,7 @@ Om met elkaar samen aan het systeem te kunnen werken hebben wij voor Git gekozen
 
 ###Git-flow
 
-Om te voorkomen dat we conflicten krijgen als we tegelijkertijd aan het werk zijn gebruiken we een speciale manier van het omgaan met de bestanden in de repository. Deze oplossing genaamd 'Git-flow' houdt in dat we gebruik maken van verschillende branches. Elk onderdeel van het systeem heeft een apparte branch. Deze onderdelen noemen we features. Als je aan een nieuwe feature begint maak je vanuit de developer branch een nieuwe sub-tak genaamd feature/myfeature, met als myfeature het onderdeel waar je aan gaat werken. Is de feature klaar dan wordt deze toegevoegd aan de developers branch. Hier wordt alles een geheel en dat geheel wordt aan de release branch toegevoed waar eventueel nog bugfixes uitgevoerd kunnen worden. De inlever versie van het systeem komt in de master branch. Als we voor de oplevering nog ergens een fout tegen komen wordt deze gefixt in de hotfix branch en de hotfix wordt daarna aan de master en develop branches toegevoegd.
+Om te voorkomen dat we conflicten krijgen als we tegelijkertijd aan het werk zijn gebruiken we een speciale manier van het omgaan met de bestanden in de repository. Deze oplossing genaamd 'Git-flow' [5] houdt in dat we gebruik maken van verschillende branches. Elk onderdeel van het systeem heeft een apparte branch. Deze onderdelen noemen we features. Als je aan een nieuwe feature begint maak je vanuit de developer branch een nieuwe sub-tak genaamd feature/myfeature, met als myfeature het onderdeel waar je aan gaat werken. Is de feature klaar dan wordt deze toegevoegd aan de developers branch. Hier wordt alles een geheel en dat geheel wordt aan de release branch toegevoed waar eventueel nog bugfixes uitgevoerd kunnen worden. De inlever versie van het systeem komt in de master branch. Als we voor de oplevering nog ergens een fout tegen komen wordt deze gefixt in de hotfix branch en de hotfix wordt daarna aan de master en develop branches toegevoegd.
 
 ###SourceTree
 
@@ -233,3 +233,5 @@ De versiebeheerder:
 3. Araujo, Tiago. "Do you know the layers of the onion architecture?." *SSW*. Version 15.28.18.20783. N.p., 11 Sept. 2013. Web. 20 Nov. 2013. http://rules.ssw.com.au/SoftwareDevelopment/RulesToBetterMVC/Pages/The-layers-of-the-onion-architecture.aspx.
 
 4. Walther, Stephen. "Validating with a Service Layer (C#)." *The Official Microsoft ASP.NET Site*. Microsoft, 2 Mar. 2009. Web. 20 Nov. 2013. http://www.asp.net/mvc/tutorials/older-versions/models-(data)/validating-with-a-service-layer-cs.
+
+5. Driessen, Vincent. "A successful Git branching model." *nvie.com*. N.p., 5 Jan. 2010. Web. 18 Nov. 2013. http://nvie.com/posts/a-successful-git-branching-model/.
