@@ -56,8 +56,6 @@ De union architecture nogal gefocused op interfaces. Door het gebruik van interf
 ## Design Patterns
 Om de data laag en de service laag te koppelen wordt er gebruik gemaakt het Repository Pattern.
 
-Unity voor dependencie injection
-
 #Traceability
 
 Al onze requirements afgedekt door de door ons 11 vastgelegde PUC’s. De mensen die de prototypes maken, deze lopen evenredig met de PUC’s, zijn verantwoordelijk voor de bijbehorende requirements. 
