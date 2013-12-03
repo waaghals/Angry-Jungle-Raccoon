@@ -2,13 +2,18 @@
 ===============
 
 #Inleiding
-Dit verslag bevat het Technisch Ontwerp voor SOPROJ6 van 42IN06SOf.
+Dit verslag bevat het Technisch Ontwerp voor SOPROJ6 van 42IN06SOf. Hierin staat een beschrijving over de gekozen architectuur en de gekozen technologie. Daarnaast bevat het een overzicht over welke delen software welke requirements dekken en een beschrijving over de organisatie. Het Technisch Ontwerp bevat ook de prototypes en de uitleg over hoe de gebruiker kan navigeren door de site.
+
+#Context
+Het systeem dat we willen gaan bouwen is een systeem waarmee studenten elkaar op diverse aspecten kunnen beoordelen. Een deel van deze aspecten heeft te maken met communicatieve en sociale vaardigheden. De studenten beoordelen elkaar op bepaalde momenten tijdens een project. Daarnaast kan een tutor het systeem gebruiken om zijn studenten tijdens een project te volgen en aan het eind van het project de studenten te beoordelen. Ook een mentor kan het systeem gebruiken. Met het systeem kan de voortgang van een student gevolgd worden.
+
 
 #Document geschiedenis
 |Versie|Datum|Wijzigingen|Reden|Door|
 |:-----|:----|:----------|:----|:---|
 |0.1|11-11-2013|Eerste versie; bestand aangemaakt.|NVT|Edwin Hattink|
 |1.0|26-11-2013|Informatie aangevuld en eerste versie gewijzigd.|NVT|Groep|
+|1.1|2-12-2013|Inleiding en context toegevoegd|Feedback gekregen|Jip Verhoeven|
 
 # Architectuur
 ## MVC
@@ -105,7 +110,7 @@ Tutor toewijzing
 Tutor groep beoordelingen inzien
 ![Tutor groep beoordelingen inzien](../Prototypes/Docent/Tutor groep beoordelingen inzien.png)
 
-Alle schermen hebben hun eigen functie en navigatie. Daarom is 1 hoofdmenu genoeg om alle schermen te kunnen navigeren. Dit is de standaard menubalk boven het scherm. 
+Alle schermen hebben hun eigen functie en navigatie. Daarom is 1 hoofdmenu genoeg om alle schermen te kunnen navigeren. Dit is de standaard menubalk boven het scherm.
 Bij het klikken op de Opmerkingen knop komt er een pop-up tevoorschijn waarbij je de opmerkingen in een scherm ziet.
 
 ##Student deel
@@ -146,17 +151,17 @@ Uiteindelijk is er gekozen voor het Entity Framework omdat:
 ##Source control
 ###Git
 
-Om met elkaar samen aan het systeem te kunnen werken hebben wij voor Git gekozen als source control oplossing. We hebben hiervoor gekozen omdat iedereen al een keer heeft gewerkt met Git in eerdere projecten en iedereen dus al de nodige ervaring heeft met Git om meteen aan de slag te kunnen met het project.
+Om met elkaar samen aan het systeem te kunnen werken hebben wij voor Git gekozen als source control oplossing. We hebben hiervoor gekozen omdat iedereen al een keer heeft gewerkt met Git in eerdere projecten en iedereen dus al de nodige ervaring heeft om meteen met Git aan de slag te kunnen met het project.
 
-###Git flow
+###Git-flow
 
-Om te voorkomen dat we conflicten krijgen als we tegelijkertijd aan het werk zijn gebruiken we een speciale manier van het omgaan met de bestanden in de repository. Deze oplossing genaamd 'Git flow' houdt in dat we gebruik maken van verschillende branches. Elk onderdeel van het systeem heeft een apparte branch. Deze onderdelen noemen we features. Als je aan een nieuwe feature begint maak je vanuit de developer branch een nieuwe sub-tak genaamd feature/myfeature, met als myfeature het onderdeel waar je aan gaat werken. Is de feature klaar dan wordt deze toegevoegd aan de developers branch. Hier wordt alles een geheel en dat geheel wordt aan de release branch toegevoed waar eventueel nog bugfixes uitgevoerd kunnen worden. De inlever versie van het systeem komt in de master branch. Als we voor de oplevering nog ergens een fout tegen komen wordt deze gefixt in de hotfix branch en de hotfix wordt daarna aan de master en develop branches toegevoegd.
+Om te voorkomen dat we conflicten krijgen als we tegelijkertijd aan het werk zijn gebruiken we een speciale manier van het omgaan met de bestanden in de repository. Deze oplossing genaamd 'Git-flow' [5] houdt in dat we gebruik maken van verschillende branches. Elk onderdeel van het systeem heeft een apparte branch. Deze onderdelen noemen we features. Als je aan een nieuwe feature begint maak je vanuit de developer branch een nieuwe sub-tak genaamd feature/myfeature, met als myfeature het onderdeel waar je aan gaat werken. Is de feature klaar dan wordt deze toegevoegd aan de developers branch. Hier wordt alles een geheel en dat geheel wordt aan de release branch toegevoed waar eventueel nog bugfixes uitgevoerd kunnen worden. De inlever versie van het systeem komt in de master branch. Als we voor de oplevering nog ergens een fout tegen komen wordt deze gefixt in de hotfix branch en de hotfix wordt daarna aan de master en develop branches toegevoegd.
 
 ###SourceTree
 
-Om iedereen een gelijke en makkelijk te gebruiken omgeving te geven voor het gebruik van Git flow gebruiken we het programma SourceTree. Dit is een Git gui die git flow ondersteund. We hebben hier ook voor gekozen omdat SourceTree meerdere platformen ondersteund.
+Om iedereen een gelijke en makkelijk te gebruiken omgeving te geven voor het gebruik van Git-flow gebruiken we het programma SourceTree. Dit is een Git gui die Git-flow ondersteund. We hebben hier ook voor gekozen omdat SourceTree meerdere platformen ondersteund.
 
-##Coding guidelines 
+##Coding guidelines
 
 Om de code overzichtelijk en eenduidig te houden heeft Patrick een stijlgids gemaakt waarin de stijl en naamgeving wordt uitgelegd die we aan gaan houden. Ook staan hierin regels opgesteld voor het aanmaken van bestanden en mappen om de folderstructuur overzichtelijk te houden. We hebben dan ook allemaal afgesproken onszelf aan de guidelines te houden zodat we het niet af hoeven te dwingen met een programma. Tijdens de code reviews wordt er dan ook op gelet dat de code aan de guidelines voldoet.
 
@@ -170,6 +175,7 @@ Zodra er gereviewed is en de code is goed gekeurd wordt de code in de master bra
 ###Projectleider
 ####Yannik Hegge
 De projectleider zal verantwoordelijk zijn voor het administratieve deel van het project.
+
 De projectleider:
 * Moet zorgen dat aan het begin van elke vergadering(dus niet tijdens) de urenregistratie van de groepsleden is bijgewerkt.
 * Is verantwoordelijk voor de organisatie van google drive(duidelijkheid mapstructuur, bestandsbenamingen).
@@ -180,6 +186,7 @@ De projectleider:
 ###Notulist
 ####Robin Collard
 De notulist is simpelweg verantwoordelijk voor de notules.
+
 De notulist:
 * Moet tijdens elke projectbijeenkomst zorgen dat er een complete, correcte notule wordt gemaakt, en beschikbaar is op google drive.
 * Zal bij reviewsessies aantekeningen maken over feedback, en zal deze beschikbaar maken op google drive.
@@ -187,6 +194,7 @@ De notulist:
 ###Agendabeheerder
 ####Jip Verhoeven
 De agendabeheerder is verantwoordelijk voor de algemene planning van het blok.
+
 De agendabeheerder:
 * Houdt bij wanneer deadlines zijn.
 * Houdt de voortgang van de projectgroep richting de volgende deadline bij.
@@ -199,6 +207,7 @@ De agendabeheerder:
 ###Taakbeheerder
 ####Michael vd Ven
 De taakbeheerder is verantwoordelijk voor de verdeling van de taken nodig om producten op tijd af te kunnen leveren.
+
 De taakbeheerder:
 * Zal samen met de agendabeheerder een zicht houden op wanneer welke producten afgeleverd moeten worden.
 * Zorgt dat er taakverdelingen gemaakt worden om producten op tijd af te kunnen leveren.
@@ -209,15 +218,20 @@ De taakbeheerder:
 
 ###Versiebeheerder
 ####Patrick Berenschot
-De versiebeheerder zorgt voor het goed gebruik van git.
+De versiebeheerder zorgt voor het goed gebruik van Git.
+
 De versiebeheerder:
-* Zorgt dat alle groepsleden begrijpen hoe git werkt.
+* Zorgt dat alle groepsleden begrijpen hoe Git werkt.
 * Zorgt dat er ten alle tijden een huidige versie van het project beschikbaar is om aan te werken.
-* Zorgt dat de git repository goed georganiseerd en werkend blijft.
+* Zorgt dat de Git repository goed georganiseerd en werkend blijft.
 
 #Verwijzingen
-1. http://joncairns.com/2013/04/fat-model-skinny-controller-is-a-load-of-rubbish/ 19-11-13
-2. http://stackoverflow.com/a/8828946 19-11-13
-3. http://rules.ssw.com.au/SoftwareDevelopment/RulesToBetterMVC/Pages/The-layers-of-the-onion-architecture.aspx 20-11-13
-4. http://www.asp.net/mvc/tutorials/older-versions/models-(data)/validating-with-a-service-layer-cs 20-11-13
+1. Cairns, Jon. "“Fat model, skinny controller” is a load of rubbish." *Jon Cairns*. N.p., 11 Apr. 2013. Web. 19 Nov. 2013. http://joncairns.com/2013/04/fat-model-skinny-controller-is-a-load-of-rubbish/.
 
+2. "Fat model / thin controller vs. Service layer [closed]." *Stack Overflow*. Version rev 2013.12.2.1186. stack exchange inc, 12 Jan. 2012. Web. 19 Nov. 2013. http://stackoverflow.com/a/8828946.
+
+3. Araujo, Tiago. "Do you know the layers of the onion architecture?." *SSW*. Version 15.28.18.20783. N.p., 11 Sept. 2013. Web. 20 Nov. 2013. http://rules.ssw.com.au/SoftwareDevelopment/RulesToBetterMVC/Pages/The-layers-of-the-onion-architecture.aspx.
+
+4. Walther, Stephen. "Validating with a Service Layer (C#)." *The Official Microsoft ASP.NET Site*. Microsoft, 2 Mar. 2009. Web. 20 Nov. 2013. http://www.asp.net/mvc/tutorials/older-versions/models-(data)/validating-with-a-service-layer-cs.
+
+5. Driessen, Vincent. "A successful Git branching model." *nvie.com*. N.p., 5 Jan. 2010. Web. 18 Nov. 2013. http://nvie.com/posts/a-successful-git-branching-model/.
