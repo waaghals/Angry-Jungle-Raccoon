@@ -56,8 +56,6 @@ De union architecture nogal gefocused op interfaces. Door het gebruik van interf
 ## Design Patterns
 Om de data laag en de service laag te koppelen wordt er gebruik gemaakt het Repository Pattern.
 
-Unity voor dependencie injection
-
 #Traceability
 
 Al onze requirements afgedekt door de door ons 11 vastgelegde PUC’s. De mensen die de prototypes maken, deze lopen evenredig met de PUC’s, zijn verantwoordelijk voor de bijbehorende requirements. 
@@ -77,56 +75,6 @@ Hier onder staat het overzicht:
 | 11 | Ter beschikking stellen tutor toewijzing | 11.1.1  11.1.2  11.2.1  11.3.1  11.3.2  11.3.3  11.4.1  11.5.1  11.5.2  11.6.1  11.7.1  11.7.2 |
 | 12 | Groepen toewijzen aan project | 12.1.1  12.1.2  12.1.3  12.2.1  12.3.1  12.3.2  12.4.1  12.4.2  12.4.3  12.5.1  12.5.2  12.1.4  12.1.5  12.1.6  12.2.2  12.3.3  12.4.4  12.4.5 |
 | 13 | Mentor vooruitgang student inzien | 13.1.1  13.2.1  13.2.2  13.3.1  13.4.1  13.4.2  13.5.1  13.1.2  13.2.3  13.4.3 |
-
-#Prototypes
-##Leraar deel
-Groepen toewijzen aan projecten
-![Groep toewijzen aan projecten](../Prototypes/Docent/Groep toewijzen aan project.png)
-Groepsindeling aanmaken
-![Groepsindeling aanmaken](../Prototypes/Docent/Groepsindeling aanmaken.png)
-Klacht indienen
-![Klacht indienen](../Prototypes/Docent/Klacht indienen.png)
-Mentor vooruitgang student inzien
-![Mentor vooruitgng student inzien](../Prototypes/Docent/Mentor vooruitgang student inzien.png)
-
-Onderbouwing aanvragen
-![Onderbouwing aanvragen](../Prototypes/Docent/Onderbouwing aanvragen.png)
-
-Opmerkingen scherm
-
-![Opmerkingen scherm](../Prototypes/Docent/Opmerking scherm.png)
-
-Project aanmaken (nieuw project)
-![Project aanmaken](../Prototypes/Docent/Project aanmaken nieuw project.png)
-
-Project aanmaken (gebaseerd op voorgaand project)
-![Project aanmaken](../Prototypes/Docent/Project aanmaken gebaseerd op voorgaand project.png)
-Student cijfer toekennen
-![Student cijfer toekennen](../Prototypes/Docent/Student cijfer toekennen.png)
-Student non-actief zetten
-![Student non-actief zetten](../Prototypes/Docent/Student non-actief zetten.png)
-Tutor toewijzing
-![Tutor toewijzing](../Prototypes/Docent/Ter beschikking stellen tutor toewijzing.png)
-Tutor groep beoordelingen inzien
-![Tutor groep beoordelingen inzien](../Prototypes/Docent/Tutor groep beoordelingen inzien.png)
-
-Alle schermen hebben hun eigen functie en navigatie. Daarom is 1 hoofdmenu genoeg om alle schermen te kunnen navigeren. Dit is de standaard menubalk boven het scherm.
-Bij het klikken op de Opmerkingen knop komt er een pop-up tevoorschijn waarbij je de opmerkingen in een scherm ziet.
-
-##Student deel
-De volgende drie schermen horen bij het beoordelen van een medestudent
-
-![Student selecteren](../Prototypes/Student/Home Scherm student.png)
-
-In het bovenstaande scherm kan een student het project selecteren. Door op de knop "Naar project" te klikken wordt het onderstaande scherm weergegeven.
-
-![Project scherm](../Prototypes/Student/Project Scherm student.png)
-
-In het bovenstaande scherm worden meldingen weergegeven en kan de student de week selecteren waarin de beoordeling plaats vind. Door op de knop “Medestudent beoordelen” te klikken wordt het onderstaande scherm weergegeven.
-
-![Beoordeling scherm](../Prototypes/Student/Beoordeling Scherm student.png)
-
-In het bovenstaande scherm kan de student per groepslid de cijfers invoeren voor de competenties en eventueel iets invullen bij opmerkingen.
 
 #Technologie
 ## Framework
