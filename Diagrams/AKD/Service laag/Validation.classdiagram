@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="834427d2-55b2-4960-8acd-566c3b620b23" name="Validation" linkedPackageId="f36609fb-b920-46a9-9dcb-367153c8a72c" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" xmlns:dm9="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner" dslVersion="1.0.0.0" Id="834427d2-55b2-4960-8acd-566c3b620b23" name="Validation" linkedPackageId="f36609fb-b920-46a9-9dcb-367153c8a72c" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
   <ownedCommentsInternal>
     <comment Id="5f749c3e-2eba-4b8f-8edd-e95a33b31993">
       <elementDefinition Id="b48e9b1d-1860-40ef-bbc4-9ad2c143dd46" />
@@ -8,26 +8,6 @@
 http://www.asp.net/mvc/tutorials/older-versions/models-(data)/validating-with-a-service-layer-cs</body>
     </comment>
   </ownedCommentsInternal>
-  <profileInstances>
-    <packageHasProfileInstances Id="56e1d2a1-08f7-4fbb-8627-58bf15799e24">
-      <profileInstance Id="88424a5e-5bae-4316-904a-6419b8f5347b" name="StandardProfileL2">
-        <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
-      </profileInstance>
-      <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="cbd4354f-9ef0-48f6-b63f-a4be57d4d23e">
-      <profileInstance Id="8dc252bf-6103-441b-8844-c2ebb764faf8" name="StandardProfileL3">
-        <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
-      </profileInstance>
-      <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
-    </packageHasProfileInstances>
-    <packageHasProfileInstances Id="4ec039bf-fabb-4810-93e5-2f695d4b98ae">
-      <profileInstance Id="25ae5f15-9659-423a-961c-afca4f9a8d47" name="TextTemplateBindings">
-        <elementDefinition Id="e9fcbeb2-5544-457c-be58-97addb3df36a" />
-      </profileInstance>
-      <elementDefinition Id="c735b3e5-bc5a-4bb0-9554-35e17d10fb96" />
-    </packageHasProfileInstances>
-  </profileInstances>
   <packagedElements>
     <logicalClassDesignerModelHasTypes>
       <Interface Id="7642890e-dd6e-40c0-b638-c06768980337" name="IValidationService&lt;T&gt;" isAbstract="false" isLeaf="false">
@@ -84,7 +64,7 @@ http://www.asp.net/mvc/tutorials/older-versions/models-(data)/validating-with-a-
                 <parameter Id="e77e297c-3d61-4811-95e5-f3a5011629a0" direction="Return">
                   <elementDefinition Id="3d0b9ff9-a30f-4d60-8d7f-eeae3a188ecb" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="bf21ae33-4c8c-4bb1-b7e8-edb15f8bb650" LastKnownName="Boolean" />
+                    <referencedTypeMoniker Id="b993aeb9-f744-4486-aa89-00326881cbed" LastKnownName="boolean" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -101,11 +81,6 @@ http://www.asp.net/mvc/tutorials/older-versions/models-(data)/validating-with-a-
     <packageHasNamedElement>
       <referencedType Id="e6b15ea4-0218-466d-a058-fa019b105946" name="IRepository&lt;T&gt;" isAbstract="false" isLeaf="false" cachedFullName="AKD::IRepository&lt;T&gt;">
         <elementDefinition Id="b9edb83c-dce9-450d-9354-268fddcb8ad5" />
-      </referencedType>
-    </packageHasNamedElement>
-    <packageHasNamedElement>
-      <referencedType Id="bf21ae33-4c8c-4bb1-b7e8-edb15f8bb650" name="Boolean" isAbstract="false" isLeaf="false" cachedFullName="Boolean">
-        <elementDefinition Id="8943dc84-709e-4f62-b15a-a3273aa6f165" />
       </referencedType>
     </packageHasNamedElement>
     <logicalClassDesignerModelHasTypes>
@@ -179,7 +154,7 @@ http://www.asp.net/mvc/tutorials/older-versions/models-(data)/validating-with-a-
                 <parameter Id="2bbe9bcd-881f-4884-ad71-dcb5e5d1e052" direction="Return">
                   <elementDefinition Id="7712285d-b980-4499-84ee-e9a0330f0526" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="bf21ae33-4c8c-4bb1-b7e8-edb15f8bb650" LastKnownName="Boolean" />
+                    <referencedTypeMoniker Id="b993aeb9-f744-4486-aa89-00326881cbed" LastKnownName="boolean" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -213,7 +188,7 @@ http://www.asp.net/mvc/tutorials/older-versions/models-(data)/validating-with-a-
                 <parameter Id="7e377794-73c3-4344-997f-10d32ad53660" direction="Return">
                   <elementDefinition Id="0290d114-90ea-4c9f-a8b4-1dcf554b4e1e" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="bf21ae33-4c8c-4bb1-b7e8-edb15f8bb650" LastKnownName="Boolean" />
+                    <referencedTypeMoniker Id="b993aeb9-f744-4486-aa89-00326881cbed" LastKnownName="boolean" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -247,7 +222,7 @@ http://www.asp.net/mvc/tutorials/older-versions/models-(data)/validating-with-a-
                 <parameter Id="562f7a55-7a30-43ae-b2b8-7fec0b102f02" direction="Return">
                   <elementDefinition Id="feb27fcb-54f3-4b40-839a-85bcea7670c2" />
                   <type_NamedElement>
-                    <referencedTypeMoniker Id="bf21ae33-4c8c-4bb1-b7e8-edb15f8bb650" LastKnownName="Boolean" />
+                    <referencedTypeMoniker Id="b993aeb9-f744-4486-aa89-00326881cbed" LastKnownName="boolean" />
                   </type_NamedElement>
                 </parameter>
               </operationHasOwnedParameters>
@@ -256,8 +231,67 @@ http://www.asp.net/mvc/tutorials/older-versions/models-(data)/validating-with-a-
         </ownedOperationsInternal>
       </class>
     </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="8a9ff72e-a0f8-4f4c-925e-44d6d4c2c16d" name="ValidationDictionary" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="6ac5f4c5-9d6e-47dc-9ba5-df9b152583c5" />
+        <suppliersInternal>
+          <interfaceRealization Id="e3195229-ffca-4535-8698-3d144d5122f5">
+            <interfaceMoniker Id="ece9c854-d114-4cde-9e7e-64bc66225de0" LastKnownName="IValidationDictionary" />
+            <elementDefinition Id="ed7971ef-74a0-48a4-9e57-b746424944c7" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <ownedOperationsInternal>
+          <operation Id="76bd514c-5736-49a3-aed6-40a57ff28041" name="AddError" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="f0db5c13-39d0-4bc5-9e47-06b69c8299e7" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ab696148-9a58-4b30-8ea7-30c05f5b6a02" name="subject" direction="In">
+                  <elementDefinition Id="ebce0ea0-5e0b-41cc-bec3-574c4e82db52" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="8a0697ea-0584-4241-9e8d-7bc868394a91" LastKnownName="string" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="20b4e2c6-b594-4571-8a77-cfe338c695c8" name="message" direction="In">
+                  <elementDefinition Id="d1d17abf-bce8-49ae-996a-8bc4df3f487f" />
+                  <type_NamedElement>
+                    <referencedTypeMoniker Id="8a0697ea-0584-4241-9e8d-7bc868394a91" LastKnownName="string" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <packageHasNamedElement>
+      <referencedType Id="b993aeb9-f744-4486-aa89-00326881cbed" name="boolean" isAbstract="false" isLeaf="false" cachedFullName="boolean">
+        <elementDefinition Id="c8108581-81bb-473e-9101-ebdf380b8fec" />
+      </referencedType>
+    </packageHasNamedElement>
   </packagedElements>
   <package Id="f36609fb-b920-46a9-9dcb-367153c8a72c" name="AKD">
     <elementDefinition Id="a5b95440-de55-412e-818f-8fb14b90b96b" />
+    <profileInstances>
+      <packageHasProfileInstances Id="56e1d2a1-08f7-4fbb-8627-58bf15799e24">
+        <profileInstance Id="88424a5e-5bae-4316-904a-6419b8f5347b" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="cbd4354f-9ef0-48f6-b63f-a4be57d4d23e">
+        <profileInstance Id="8dc252bf-6103-441b-8844-c2ebb764faf8" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="4ec039bf-fabb-4810-93e5-2f695d4b98ae">
+        <profileInstance Id="25ae5f15-9659-423a-961c-afca4f9a8d47" name="TextTemplateBindings">
+          <elementDefinition Id="e9fcbeb2-5544-457c-be58-97addb3df36a" />
+        </profileInstance>
+        <elementDefinition Id="c735b3e5-bc5a-4bb0-9554-35e17d10fb96" />
+      </packageHasProfileInstances>
+    </profileInstances>
   </package>
 </logicalClassDesignerModel>
