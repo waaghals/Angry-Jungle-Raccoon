@@ -52,7 +52,7 @@ Daarom is er gekozen voor de volgende architectuur ook wel bekent als Union Arch
 6. Presentatie laag; Views
 
 Hieronder is een diagram met een weergave hoe een request binnen komt en in welke volgorde de verschillende lagen hiermee omgaan. Elke pijl staat voor communicatie met een andere laag. Indien er een dubbele pijl staat dan doet de betreffende laag weer iets terug geven aan de laag welke de methode aanriep.
-![Request flow](Architectuur diagram/architectuur.svg)
+![Request flow](Architectuur diagram/Architectuur.png)
 
 Hierin wordt duidelijk dat Services aan meerdere Repositories kunnen werken. Dit kan een enkele Repository over meerdere Services zijn. Tevens hoeft er niet altijd een resultaat te zijn van een actie. Zo kan het bevoorbeeld zijn dat er alleen iets geupdate wordt in de models. Hier komt geen feedback voor terug. Indien een Service de status van de update wilt weten dan zou deze dat zelf moeten controleren.
 
