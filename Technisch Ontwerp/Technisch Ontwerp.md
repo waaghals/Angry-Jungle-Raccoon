@@ -51,6 +51,12 @@ Daarom is er gekozen voor de volgende architectuur ook wel bekent als Union Arch
 5. View Data laag; ViewModels, data voor gebruik in views
 6. Presentatie laag; Views
 
+Hieronder is een diagram met een weergave hoe een request binnen komt en in welke volgorde de verschillende lagen hiermee omgaan. Elke pijl staat voor communicatie met een andere laag. Indien er een dubbele pijl staat dan doet de betreffende laag weer iets terug geven aan de laag welke de methode aanriep.
+![Request flow](Architectuur diagram/architectuur.svg)
+
+Hierin wordt duidelijk dat Services aan meerdere Repositories kunnen werken. Dit kan een enkele Repository over meerdere Services zijn. Tevens hoeft er niet altijd een resultaat te zijn van een actie. Zo kan het bevoorbeeld zijn dat er alleen iets geupdate wordt in de models. Hier komt geen feedback voor terug. Indien een Service de status van de update wilt weten dan zou deze dat zelf moeten controleren.
+
+
 De union architecture nogal gefocused op interfaces. Door het gebruik van interfaces onstaat er een losse koppeling tussen de lagen en zijn de onderdelen makkelijke te veranderen of te vervangen zonder een groot gedeelte van de code te hoeven veranderen.[4] De classes in de lagen hebben dus geen of weinig dependecies op de andere lagen. Een uitzondering hierop is de View data laag en de Presentatie laag aangezien een ViewModel geschreven wordt voor een specifice view en dus een harde koppeling heeft.
 
 ## Design Patterns
