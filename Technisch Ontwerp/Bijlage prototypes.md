@@ -4,32 +4,32 @@
 Groepen toewijzen aan projecten
 ![Groep toewijzen aan projecten](../Prototypes/Docent/Groep toewijzen aan project.png)
 
-|Nummer|	Requirement|
-|:-|:-|
-|12.1.1|	Systeem geeft de optie om groepen toe te wijzen aan project|
-|12.1.2|	Systeem toont lijst met mogelijke projecten|
-|12.1.3|	Indien project-docent maar een project heeft: Systeem gaat verder naar groepen selecteren|
-|12.2.1|	Systeem laat project-docent een project selecteren|
-|12.3.1|	Systeem laat een lijst met mogelijke groepen zien|
-|12.3.2|	Systeem laat zien welke studenten in de groepen zitten|
-|12.4.1|	Systeem laat project-docent groep(en) selecteren|
-|12.4.2|	Systeem laat project-docent projectgroepen opslaan|
-|12.4.3|	Systeem stuurt de projectgroepen door naar de database|
-|12.5.1|	Systeem laat het zien als projectgroepen maken niet gelukt is|
-|12.5.2|	Systeem laat het zien als projectgroepen maken geslaagd is|
-|12.1.4|	Het systeem kan een lijst met projecten tonen.|
-|12.1.5|	Het systeem zal de gebruiker direct doorverwijzen naar een project wanneer de gebruiker maar één project heeft.|
-|12.1.6|	Gebruikers hebben projecten.|
-|12.2.2|	De gebruiker kan een project selecteren uit een lijst met projecten.|
-|12.3.3|	Het systeem kan van een project een lijst met groepen die deelnemen aan het project, en studenten die lid zijn van deze groepen weergeven.|
-|12.4.4|	Projecten kunnen verborgen zijn voor de deelnemende leden.|
-|12.4.5|	De gebruiker kan projecten zichtbaar maken voor de deelnemers.|
+|Nummer|Requirement|
+|:---|:---|
+|12.1.1|Systeem geeft de optie om groepen toe te wijzen aan project|
+|12.1.2|Systeem toont lijst met mogelijke projecten|
+|12.1.3|Indien project-docent maar een project heeft: Systeem gaat verder naar groepen selecteren|
+|12.2.1|Systeem laat project-docent een project selecteren|
+|12.3.1|Systeem laat een lijst met mogelijke groepen zien|
+|12.3.2|Systeem laat zien welke studenten in de groepen zitten|
+|12.4.1|Systeem laat project-docent groep(en) selecteren|
+|12.4.2|Systeem laat project-docent projectgroepen opslaan|
+|12.4.3|Systeem stuurt de projectgroepen door naar de database|
+|12.5.1|Systeem laat het zien als projectgroepen maken niet gelukt is|
+|12.5.2|Systeem laat het zien als projectgroepen maken geslaagd is|
+|12.1.4|Het systeem kan een lijst met projecten tonen.|
+|12.1.5|Het systeem zal de gebruiker direct doorverwijzen naar een project wanneer de gebruiker maar één project heeft.|
+|12.1.6|Gebruikers hebben projecten.|
+|12.2.2|De gebruiker kan een project selecteren uit een lijst met projecten.|
+|12.3.3|Het systeem kan van een project een lijst met groepen die deelnemen aan het project, en studenten die lid zijn van deze groepen weergeven.|
+|12.4.4|Projecten kunnen verborgen zijn voor de deelnemende leden.|
+|12.4.5|De gebruiker kan projecten zichtbaar maken voor de deelnemers.|
 
 Groepsindeling aanmaken
 ![Groepsindeling aanmaken](../Prototypes/Docent/Groepsindeling aanmaken.png)
 
 |Nummer|Requirement|
-|:-|:-|
+|:---|:---|
 |2.1.1|Systeem geeft de optie om groepen aan te maken.|
 |2.2.1|Systeem laat blokcoördinator naam voor de groepen invullen.|
 |2.3.1|Systeem leest bestand met groepen in.|
@@ -57,7 +57,7 @@ Mentor vooruitgang student inzien
 ![Mentor vooruitgng student inzien](../Prototypes/Docent/Mentor vooruitgang student inzien.png)
 
 |Nummer|Requirement|
-|:-|:-|
+|:---|:---|
 |13.1.1|Systeem geeft de optie om de vooruitgang van een student te volgen.|
 |13.2.1|Systeem controleert welke studenten mentorstudenten zijn van de mentor.|
 |13.2.2|Systeem toont een lijst met studenten.|
@@ -74,7 +74,7 @@ Onderbouwing aanvragen
 ![Onderbouwing aanvragen](../Prototypes/Docent/Onderbouwing aanvragen.png)
 
 |Nummer|Requirement|
-|:-|:-|
+|:---|:---|
 |10.1.1|Systeem geeft de optie om een project beoordeling te exporteren.|
 |10.2.1|Systeem toont het gekozen project.|
 |10.3.1|Systeem laat project-docent de beoordelingen exporteren naar een excel bestand.|
@@ -86,7 +86,7 @@ Project aanmaken (nieuw project)
 ![Project aanmaken](../Prototypes/Docent/Project aanmaken nieuw project.png)
 
 |Nummer|Requirement|
-|:-|:-|
+|:---|:---|
 |8.1.2|Systeem laat project-docent projectnaam toevoegen.|
 |8.1.3|Systeem laat project-docent projectomschrijving toevoegen.|
 |8.1.4|Systeem laat project-docent competenties toevoegen.|
@@ -97,7 +97,7 @@ Project aanmaken (gebaseerd op voorgaand project)
 ![Project aanmaken](../Prototypes/Docent/Project aanmaken gebaseerd op voorgaand project.png)
 
 |Nummer|Requirements|
-|:-|:-|
+|:---|:---|
 |8.2.1|Systeem geeft een scherm weer met voorgaande projecten.|
 |8.2.2|Systeem laat project-docent een project selecteren.|
 |8.2.3|Systeem laadt het project in.|
@@ -110,7 +110,7 @@ Student cijfer toekennen
 ![Student cijfer toekennen](../Prototypes/Docent/Student cijfer toekennen.png)
 
 |Nummer|Requirements|
-|:-|:-|
+|:---|:---|
 |6.1.1|Systeem geeft de optie om beoordelingsadviezen te zien.|
 |6.1.2|Systeem controleert van welke projecten de docent tutor is.|
 |6.1.3|Systeem laat een lijst met projecten zien.|
@@ -125,7 +125,7 @@ Student non-actief zetten
 ![Student non-actief zetten](../Prototypes/Docent/Student non-actief zetten.png)
 
 |Nummer|Requirements|
-|:-|:-|
+|:---|:---|
 |7.1.1|Systeem geeft de optie om een student op non actief te zetten.|
 |7.2.1|Systeem toont een veld met student namen.|
 |7.2.2|Systeem geeft hier automatisch autosuggesties bij.|
@@ -149,7 +149,7 @@ Tutor toewijzing
 ![Tutor toewijzing](../Prototypes/Docent/Ter beschikking stellen tutor toewijzing.png)
 
 |Nummer|Requirement|
-|:-|:-|
+|:---|:---|
 |11.1.1|Systeem toont een optie om tutoren toe te wijzen.|
 |11.1.2|Systeem toont een lijst met project waaraan tutoren toegewezen kunnen worden.|
 |11.2.1|Systeem laat inzetter een project selecteren.|
@@ -167,7 +167,7 @@ Tutor groep beoordelingen inzien
 ![Tutor groep beoordelingen inzien](../Prototypes/Docent/Tutor groep beoordelingen inzien.png)
 
 |Nummer|Requirement|
-|:-|:-|
+|:---|:---|
 |5.1.1|Systeem geeft optie om beoordelingen van studenten te bekijken.|
 |5.1.2|Systeem controleert van welke projecten de docent tutor is.|
 |5.1.3|Systeem laat een lijst zien van projecten.|
@@ -187,7 +187,7 @@ De volgende drie schermen horen bij het beoordelen van een medestudent
 ![project selecteren](../Prototypes/Student/Home Scherm student.png)
 
 |Nummer|Requirement|
-|:-|:-|
+|:---|:---|
 |1.1.1|Systeem laat student huidige projecten zien.|
 |1.1.2|Het systeem kan meerdere beoordelingsmogelijkheden hebben.|
 |1.1.3|Het systeem kan meerdere beoordelingsmogelijkheden weergeven.|
@@ -196,7 +196,7 @@ In het bovenstaande scherm kan een student het project selecteren. Door op de kn
 ![Project scherm](../Prototypes/Student/Project Scherm student.png)
 
 |Nummer|Requirement|
-|:-|:-|
+|:---|:---|
 |1.2.1|Systeem controleert of beoordelingsmoment open is.|
 |1.2.2|Systeem laat groepsleden zien.|
 |1.2.3|Beoordelingsmogelijkheden kunnen beschikbaar of onbeschikbaar gesteld worden.|
@@ -210,7 +210,7 @@ In het bovenstaande scherm worden meldingen weergegeven en kan de student de wee
 ![Beoordeling scherm](../Prototypes/Student/Beoordeling Scherm student.png)
 
 |Nummer|Requirement|
-|:-|:-|
+|:---|:---|
 |1.3.1|Systeem controleert of student nog niet beoordeeld is.|
 |1.3.2|Systeem laat beoordelingscriteria zien.|
 |1.4.1|Systeem geeft mogelijkheid tot invullen van de beoordelingscriteria.|
