@@ -118,7 +118,7 @@ Om iedereen een gelijke en makkelijk te gebruiken omgeving te geven voor het geb
 
 ##Coding guidelines
 
-Om de code overzichtelijk en eenduidig te houden heeft Patrick een stijlgids gemaakt waarin de stijl en naamgeving wordt uitgelegd die we aan gaan houden. Ook staan hierin regels opgesteld voor het aanmaken van bestanden en mappen om de folderstructuur overzichtelijk te houden. We hebben dan ook allemaal afgesproken onszelf aan de guidelines te houden zodat we het niet af hoeven te dwingen met een programma. Tijdens de code reviews wordt er dan ook op gelet dat de code aan de guidelines voldoet.
+Om de code overzichtelijk en eenduidig te houden heeft Patrick een stijlgids gemaakt waarin de stijl en naamgeving wordt uitgelegd die we aan gaan houden (Zie bijlage stijlgids). Ook staan hierin regels opgesteld voor het aanmaken van bestanden en mappen om de folderstructuur overzichtelijk te houden. We hebben dan ook allemaal afgesproken onszelf aan de guidelines te houden zodat we het niet af hoeven te dwingen met een programma. Tijdens de code reviews wordt er dan ook op gelet dat de code aan de guidelines voldoet.
 
 #Organisatie
 ##Code reviewing
@@ -181,6 +181,11 @@ De versiebeheerder:
 * Zorgt dat alle groepsleden begrijpen hoe Git werkt.
 * Zorgt dat er ten alle tijden een huidige versie van het project beschikbaar is om aan te werken.
 * Zorgt dat de Git repository goed georganiseerd en werkend blijft.
+
+#Bijlagen
+
+1. Stijlgids
+
 
 #Verwijzingen
 1. Cairns, Jon. "“Fat model, skinny controller” is a load of rubbish." *Jon Cairns*. N.p., 11 Apr. 2013. Web. 19 Nov. 2013. http://joncairns.com/2013/04/fat-model-skinny-controller-is-a-load-of-rubbish/.
