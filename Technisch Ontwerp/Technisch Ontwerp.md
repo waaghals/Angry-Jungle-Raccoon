@@ -186,8 +186,10 @@ De versiebeheerder:
 #Bijlagen
 
 1. Stijlgids
-2. Review checklist
 3. Prototypes
+4. Hoe te reviewen
+5. Review template
+6. Review overzicht
 
 
 #Verwijzingen
