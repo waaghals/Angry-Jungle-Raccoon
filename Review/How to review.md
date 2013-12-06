@@ -1,4 +1,4 @@
-#<font color='#5AC7F2'>How to review</font>
+#How to review
 
 ##Op welke manier word er gereviewd?
 
@@ -18,27 +18,42 @@ Op het moment dat je iemand moet gaan revieuwen moet je de onderstaande stappen 
 
 De uitleg van de tekst staat beschreven achter 2 slashes *"//"*.
 
+Template:
 ```markdown
-Gereviewed door: [eigen naam] // Hier komt jou eigen naam
+#Review
+Gereviewed door:
 
-Aan alle criteria voldaan: [Yes/No] // Hier vul je alleen Yes is als aan alle criteria is voldaan!
+* [eigen naam] // Hier komt jou eigen naam
+* [eigen naam] // Hier komt jou eigen naam
 
-Mocht de code niet voldoen aan het criteria geef dit dan in de kolom Voldaan aan doormiddel van het woord No.
+Onderwerp
 
-beoordelings punten
+* [Feature Branch naam]
 
-Nummer		Criteria																				Voldaan *
-1			Voldoet de code aan de algemene regeles beschreven in de stijlgids					   [Yes/No]
-2			Werkt de code op een correcte manier met andere classes, interfaces en methodes		  [Yes/No]
-3			Zijn de methodes logisch en makkelijk aan te passen geschreven						   [Yes/No]
-4			De code is konsekwent geschreven en heeft dezelfde structuur							 [Yes/No]
-5			Is het duidelijk wat ieder blok code doet(doormiddel van naamgeving en comentaar)?	   [Yes/No]
-6			Voldoet de code aan alle Functitonele requirements									   [Yes/No]
-7			Voldoet de code aan alle Gebruiksvriendelijke requirements							   [Yes/No]
-8			Voldoet de code aan alle veiligheids requirements										[Yes/No]
-*Mocht er code onvoldoende of niet goed zijn schrijf dan bij feedback op hoe je tot die conclusie bent gekomen.
+Gemaakt door:
 
-Feedback **
+* [naam]
+* [naam]
+
+ `Yes/No` Aan alle criteria voldaan
+
+## Beoordelings punten
+
+Nummer|Criteria|Voldaan
+---|---|---
+1|Voldoet de code aan de algemene regeles beschreven in de stijlgids| `Yes/No`
+2|Werkt de code op een correcte manier met andere classes, interfaces en methodes| `Yes/No`
+3|Zijn de methodes logisch en makkelijk aan te passen geschreven| `Yes/No`
+4|De code is consiquent geschreven en heeft dezelfde structuur| `Yes/No`
+5|Is het duidelijk wat ieder blok code doet(doormiddel van naamgeving en comentaar)?| `Yes/No`
+6|Voldoet de code aan alle Functitonele requirements| `Yes/No`
+7|Voldoet de code aan alle Gebruiksvriendelijke requirements| `Yes/No`
+8|Voldoet de code aan alle veiligheids requirements| `Yes/No`
+
+__Mocht er code onvoldoende of niet goed zijn schrijf dan bij feedback op hoe je tot die conclusie bent gekomen.__
+
+
+## Feedback
 
 1. - // op deze regels kun je de feedback zeteen en verwijzen naar code die je beneden kwijt kunt
 2. -
@@ -49,16 +64,4 @@ Feedback **
 7. -
 8. -
 9. -
-** Hieronder kunnen code sampels gegeven worden, hier kun je naar verwijzen! Dat is wel zo makkelijk voor de programmeur.
-
-Code samples // hier kun je je code samples kwijt.
-
-sample 1
-
-Console.WriteLine("Hier kunnen c# code samples worden gezet");
-
-sample 2
-
-<h1>Hier kunnen html code samples worden gezet</h1>
-
 ```
