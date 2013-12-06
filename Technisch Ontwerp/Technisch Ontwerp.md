@@ -16,6 +16,7 @@ Het systeem dat we willen gaan bouwen is een systeem waarmee studenten elkaar op
 |1.2|2-12-2013|Continuous Integration uitgebreid|Te kort|Patrick Berenschot|
 |1.13|5-12-2013|Architectuur diagram toegevoegd|Feedback presentatie|Patrick Berenschot|
 |1.14|6-12-2013|Checklist toegevoegd|Ontbrak|Patrick Berenschot|
+|1.15|6-12-2013|AKD als bijlage bijgevoegd|Yorick van Klinke|
 
 # Architectuur
 ## MVC
@@ -187,6 +188,7 @@ De versiebeheerder:
 
 1. Stijlgids
 2. Review checklist
+3. Applicatie klasse diagram
 
 
 #Verwijzingen
