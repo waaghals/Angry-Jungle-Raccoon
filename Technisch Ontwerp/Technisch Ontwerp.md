@@ -16,7 +16,8 @@ Het systeem dat we willen gaan bouwen is een systeem waarmee studenten elkaar op
 |1.2|2-12-2013|Continuous Integration uitgebreid|Te kort|Patrick Berenschot|
 |1.13|5-12-2013|Architectuur diagram toegevoegd|Feedback presentatie|Patrick Berenschot|
 |1.14|6-12-2013|Checklist toegevoegd|Ontbrak|Patrick Berenschot|
-|1.15|6-12-2013|AKD als bijlage bijgevoegd|Yorick van Klinke|
+|1.15|6-12-2013|AKD als bijlage bijgevoegd|Ontbrak|Yorick van Klinken|
+|1.16|6-12-2013|Checklist van Micheal toegevoegd||Micheal v/d Ven|
 
 # Architectuur
 ## MVC
@@ -187,10 +188,10 @@ De versiebeheerder:
 #Bijlagen
 
 1. Stijlgids
-2. Review checklist
-3. Prototypes
-4. Applicatie klasse diagram
-
+2. Prototypes
+3. Hoe te reviewen
+4. Review template
+5. Review overzicht
 
 #Verwijzingen
 1. Cairns, Jon. "“Fat model, skinny controller” is a load of rubbish." *Jon Cairns*. N.p., 11 Apr. 2013. Web. 19 Nov. 2013. http://joncairns.com/2013/04/fat-model-skinny-controller-is-a-load-of-rubbish/.
