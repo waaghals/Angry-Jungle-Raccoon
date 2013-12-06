@@ -15,6 +15,9 @@ Het systeem dat we willen gaan bouwen is een systeem waarmee studenten elkaar op
 |1.1|2-12-2013|Inleiding en context toegevoegd|Feedback gekregen|Jip Verhoeven|
 |1.2|2-12-2013|Continuous Integration uitgebreid|Te kort|Patrick Berenschot|
 |1.13|5-12-2013|Architectuur diagram toegevoegd|Feedback presentatie|Patrick Berenschot|
+|1.14|6-12-2013|Checklist toegevoegd|Ontbrak|Patrick Berenschot|
+|1.15|6-12-2013|AKD als bijlage bijgevoegd|Ontbrak|Yorick van Klinken|
+|1.16|6-12-2013|Checklist van Micheal toegevoegd||Micheal v/d Ven|
 
 # Architectuur
 ## MVC
@@ -103,6 +106,7 @@ Uiteindelijk is er gekozen voor het Entity Framework omdat:
 * Entity framework is ondersteund door Microsoft dus veel ondersteuning en informatie
 * Het Entity framework implenteerd al gedeeltelijk het Unit of Work en het Repository Pattern.
 
+Er is gekozen voor Entity framework 6 aangezien dit de laatste versie is deze open source is.
 ##Source control
 ###Git
 
@@ -118,7 +122,7 @@ Om iedereen een gelijke en makkelijk te gebruiken omgeving te geven voor het geb
 
 ##Coding guidelines
 
-Om de code overzichtelijk en eenduidig te houden heeft Patrick een stijlgids gemaakt waarin de stijl en naamgeving wordt uitgelegd die we aan gaan houden. Ook staan hierin regels opgesteld voor het aanmaken van bestanden en mappen om de folderstructuur overzichtelijk te houden. We hebben dan ook allemaal afgesproken onszelf aan de guidelines te houden zodat we het niet af hoeven te dwingen met een programma. Tijdens de code reviews wordt er dan ook op gelet dat de code aan de guidelines voldoet.
+Om de code overzichtelijk en eenduidig te houden heeft Patrick een stijlgids gemaakt waarin de stijl en naamgeving wordt uitgelegd die we aan gaan houden (Zie bijlage stijlgids). Ook staan hierin regels opgesteld voor het aanmaken van bestanden en mappen om de folderstructuur overzichtelijk te houden. We hebben dan ook allemaal afgesproken onszelf aan de guidelines te houden zodat we het niet af hoeven te dwingen met een programma. Tijdens de code reviews wordt er dan ook op gelet dat de code aan de guidelines voldoet.
 
 #Organisatie
 ##Code reviewing
@@ -182,7 +186,16 @@ De versiebeheerder:
 * Zorgt dat er ten alle tijden een huidige versie van het project beschikbaar is om aan te werken.
 * Zorgt dat de Git repository goed georganiseerd en werkend blijft.
 
+#Bijlagen
+
+1. Stijlgids
+2. Prototypes
+3. Hoe te reviewen
+4. Review template
+5. Review overzicht
+
 #Verwijzingen
+
 1. Cairns, Jon. "“Fat model, skinny controller” is a load of rubbish." *Jon Cairns*. N.p., 11 Apr. 2013. Web. 19 Nov. 2013. http://joncairns.com/2013/04/fat-model-skinny-controller-is-a-load-of-rubbish/.
 
 2. "Fat model / thin controller vs. Service layer [closed]." *Stack Overflow*. Version rev 2013.12.2.1186. stack exchange inc, 12 Jan. 2012. Web. 19 Nov. 2013. http://stackoverflow.com/a/8828946.
