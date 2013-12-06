@@ -13,7 +13,7 @@ Houd classes elk in zijn eigen bestand. Naamgeving van het bestand is gelijk aan
 
 ###1.2. Folderstructuur
 Houd de folder structuur logisch. Verplaats indien nodig bestanden.
-Een folder heeft altijd een meervoud van het zelfstandige naamwoord als naam. Er zitten immers meerdere van deze zelfstandige naamworden in de zelfde folder, anders voegt de folder niets toe. 
+Een folder heeft altijd een meervoud van het zelfstandige naamwoord als naam. Er zitten immers meerdere van deze zelfstandige naamworden in de zelfde folder, anders voegt de folder niets toe.
 _Uitzondering: als van te voren bekent is dat er later meerdere bestanden aangemaakt zullen worden._
 _Uitzondering: de volgende namen zijn tevens toegestaan: common, misc en config._
 
@@ -30,12 +30,12 @@ Elk commentaar is in het Engels, de code is immers ook Engels.
 Zie af van het gebruik van blok commentaar. Indien je dit nodig denkt te hebben naast het documentatie commentaar dan is je documentatie incompleet of je code te obscuur. Werk een van de twee beter uit.
 
 ###2.3. Lijn commentaar
-Gebruik lijn commentaar (_//_) voor het weg commentaren van een code blok. 
+Gebruik lijn commentaar (_//_) voor het weg commentaren van een code blok.
 _Tip: Gebruik ALT+SHIFT_
-Geef bij aannamen en onduidelijke code wat aanwijzingen in het commentaar. Zal over het algemeen nooit meer dan ��n regel overschrijden, zo niet dan is je code te obscuur.
+Geef bij aannamen en onduidelijke code wat aanwijzingen in het commentaar. Zal over het algemeen nooit meer dan één regel overschrijden, zo niet dan is je code te obscuur.
 
 ###2.4. Documentatie commentaar
-Zet boven elke methode minstens een summary block, wat doet de methode. 
+Zet boven elke methode minstens een summary block, wat doet de methode.
 _N.B. het resultaat is (als het goed is) af te lezen aan de methode naam. Daarop hoeft niet diep te worden ingegaan._
 ```C#
 /// <summary>
@@ -108,16 +108,16 @@ public void PerformIteration()
 ###3.7. Switch
 Switch altijd op een _IEnumerable_ of getal. Nooit op eens _string_ dit maakt onduidelijk wat de input voor de switch is.
 
-Indien altijd ��n van de cases dient te worden behandeld, gooi een _Exception_ in de _default:_ case.
+Indien altijd één van de cases dient te worden behandeld, gooi een _Exception_ in de _default:_ case.
 
 ***
 
 ##4. Naamgeving
 Volgende zijn aanbevelingen geen verplichtingen.
 
-Soort         | Hoofdletter gebruik | Woordsoort           | Opmerking 
+Soort         | Hoofdletter gebruik | Woordsoort           | Opmerking
 ------------- |---------------------| ---------------------|-----------
-Class         | PascalCase          | Zelfstandignaamwoord | 
+Class         | PascalCase          | Zelfstandignaamwoord |
 Interface     | PascalCase          | Zelfstandignaamwoord | Hoofdletter I gevolgd door PascalCase.
 Enum type     | PascalCase          | Zelfstandignaamwoord | Zelfstandignaamwoord is altijd enkelvoud.
 Enum waarde   | PascalCase          | Zelfstandignaamwoord |
@@ -132,7 +132,7 @@ Constants     | PascalCase          | Zelfstandignaamwoord |
 
 ##5. Vaste waarden
 Zet niet veranderende waarde altijd in een _const_ veld.
-Dan is het altijd duidelijk wat het inhoud (bijvoorbeeld: Height, of PlayersCount) en het vergemakkelijkt onderhoud. Er hoeft immers maar een waarde te worden ge�pdatet i.p.v. meerdere waardes in meerdere bestanden.
+Dan is het altijd duidelijk wat het inhoud (bijvoorbeeld: Height, of PlayersCount) en het vergemakkelijkt onderhoud. Er hoeft immers maar een waarde te worden geüpdatet i.p.v. meerdere waardes in meerdere bestanden.
 
 ***
 

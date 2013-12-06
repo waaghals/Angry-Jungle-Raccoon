@@ -182,6 +182,11 @@ De versiebeheerder:
 * Zorgt dat er ten alle tijden een huidige versie van het project beschikbaar is om aan te werken.
 * Zorgt dat de Git repository goed georganiseerd en werkend blijft.
 
+#Bijlagen
+
+1. Stijlgids
+
+
 #Verwijzingen
 1. Cairns, Jon. "“Fat model, skinny controller” is a load of rubbish." *Jon Cairns*. N.p., 11 Apr. 2013. Web. 19 Nov. 2013. http://joncairns.com/2013/04/fat-model-skinny-controller-is-a-load-of-rubbish/.
 
