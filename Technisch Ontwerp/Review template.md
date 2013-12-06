@@ -22,7 +22,7 @@ Nummer|Criteria|Voldaan
 1|Voldoet de code aan de algemene regeles beschreven in de stijlgids| `Yes/No`
 2|Werkt de code op een correcte manier met andere classes, interfaces en methodes| `Yes/No`
 3|Zijn de methodes logisch en makkelijk aan te passen geschreven| `Yes/No`
-4|De code is consiquent geschreven en heeft dezelfde structuur| `Yes/No`
+4|De code is consequent geschreven en heeft dezelfde structuur| `Yes/No`
 5|Is het duidelijk wat ieder blok code doet(doormiddel van naamgeving en comentaar)?| `Yes/No`
 6|Voldoet de code aan alle Functitonele requirements| `Yes/No`
 7|Voldoet de code aan alle Gebruiksvriendelijke requirements| `Yes/No`
