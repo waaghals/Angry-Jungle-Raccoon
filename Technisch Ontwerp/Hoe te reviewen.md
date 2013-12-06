@@ -2,12 +2,12 @@
 
 ##Op welke manier word er gereviewd?
 
-Op het moment dat je iemand moet gaan revieuwen moet je de onderstaande stappen doorlopen.
+Op het moment dat je iemand moet gaan reviewen moet je de onderstaande stappen doorlopen.
 
 ###Stappen
 
 1. Zorg dat je iemand zijn code locaal heb draaien.
-2. Maak een kopie van het **Review Format**, zet deze in de map *"Angry-Jungle-Raccoon/Review/Reviews"*.
+2. Maak een kopie van het **Review Format**, zet deze in de map *"Angry-Jungle-Raccoon/Reviews"*.
 3. Hernoem hem naar *"[onderdeelnaam]-[voornaamnaam van softwareschrijver]-[datum en tijd van review]"* vb. *"Repository-Michael-06\_12\_2013 18.50"*.
 4. Vul het gehele document in! een uitleg van alle beoordings criteria staat hieronder bij de kop Checklist.
 5. Mocht je het gehele document hebben ingevuld sla het dan op en vink in het "**review overzicht**" de review die je gedaan hebt af.
