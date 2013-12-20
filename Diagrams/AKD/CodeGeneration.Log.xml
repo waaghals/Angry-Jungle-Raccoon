@@ -1,20 +1,121 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="file:///C:/PROGRAM FILES (X86)/MICROSOFT VISUAL STUDIO 11.0/COMMON7/IDE/EXTENSIONS/MICROSOFT/ARCHITECTURE TOOLS/EXTENSIBILITY/Logging/CodeGenLog.xslt"?>
+<?xml-stylesheet type="text/xsl" href="file:///D:/PROGRAM FILES (X86)/MICROSOFT VISUAL STUDIO 11.0/COMMON7/IDE/EXTENSIONS/MICROSOFT/ARCHITECTURE TOOLS/EXTENSIBILITY/Logging/CodeGenLog.xslt"?>
 <Log xmlns="http://schemas.microsoft.com/VisualStudio/2010/CodeGen.RE.Log" Label="Code Generation/Text Transformation Log">
   <MessageClass Name="Message" Label="Message" Option="Show informational messages" />
   <MessageClass Name="Warning" Label="Warning" Option="Show warnings" />
   <MessageClass Name="Error" Label="Error" Option="Show errors" />
   <MessageClass Name="Property" Label="Property" Option="Show metadata" />
   <MessageClass Name="Diagnostic" Label="Message" Option="Show diagnostic messages" />
-  <Message Timestamp="2013-11-29T11:57:31" Importance="High" Text="Code generation or text transformation started." />
-  <Error Timestamp="2013-11-29T11:57:32" Importance="High" Text="No templates were found to process.  Configure templates by choosing 'Configure Default Code Generation Settings...' from the 'Architecture' menu, or change the selection for which code generation is launched." />
-  <Message Timestamp="2013-11-29T11:57:32" Importance="Diagnostic" Text="The selection included 7 elements which were not bound to a template." />
-  <Warning Timestamp="2013-11-29T11:57:32" Importance="Medium" Text="'AKD::IEvaluationAuthService' -  (Interface): no bound template." />
-  <Warning Timestamp="2013-11-29T11:57:32" Importance="Medium" Text="'AKD::IGroupAuthService' -  (Interface): no bound template." />
-  <Warning Timestamp="2013-11-29T11:57:32" Importance="Medium" Text="'AKD::IProjectAuthService' -  (Interface): no bound template." />
-  <Message Timestamp="2013-11-29T11:57:32" Importance="Diagnostic" Text="'AKD::' -  (InterfaceRealization): no bound template." />
-  <Warning Timestamp="2013-11-29T11:57:32" Importance="Medium" Text="'AKD::ProjectAuthService' -  (Class): no bound template." />
-  <Message Timestamp="2013-11-29T11:57:32" Importance="Diagnostic" Text="'AKD::' -  (InterfaceRealization): no bound template." />
-  <Warning Timestamp="2013-11-29T11:57:32" Importance="Medium" Text="'AKD::ICrudAuthService' -  (Interface): no bound template." />
-  <Message Timestamp="2013-11-29T11:57:32" Importance="High" Text="Code generation complete. Errors: 1. Warnings: 5." />
+  <Message Timestamp="2013-12-20T11:50:54" Importance="High" Text="Code generation or text transformation started." />
+  <Message Timestamp="2013-12-20T11:50:54" Importance="Diagnostic" Text="Name = ClassTemplate" />
+  <Message Timestamp="2013-12-20T11:50:54" Importance="Diagnostic" Text="Overwrite = True" />
+  <Message Timestamp="2013-12-20T11:50:54" Importance="Diagnostic" Text="ProjectPath = ..\AKDLib\AKDLib.csproj" />
+  <Message Timestamp="2013-12-20T11:50:54" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
+  <Message Timestamp="2013-12-20T11:50:54" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2013-12-20T11:50:54" Importance="Diagnostic" Text="TemplateFilePath = D:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
+  <Message Timestamp="2013-12-20T11:50:54" Importance="Diagnostic" Text="ResolvedTemplateFilePath = D:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
+  <Message Timestamp="2013-12-20T11:50:54" Importance="Medium" Text="AKD's Text Template Binding: 'ClassTemplate' will apply ClassTemplate.t4 to: 'AKD::Skill' -  (Class), 'AKD::Project' -  (Class), 'AKD::Evaluation' -  (Class), 'AKD::ProjectPeriod' -  (Class), 'AKD::Student' -  (Class), 'AKD::User' -  (Class), 'AKD::Group' -  (Class) " />
+  <Message Timestamp="2013-12-20T11:50:54" Importance="Medium" Text="Project Added: D:\GitHub\Angry-Jungle-Raccoon\Diagrams\AKDLib\AKDLib.csproj" />
+  <Message Timestamp="2013-12-20T11:50:54" Importance="Medium" Text="'AKD::Skill' -  (Class) : success (file replaced) - D:\GitHub\Angry-Jungle-Raccoon\Diagrams\AKDLib\GeneratedCode\Skill.cs" />
+  <Message Timestamp="2013-12-20T11:50:54" Importance="Medium" Text="'AKD::Project' -  (Class) : success (file replaced) - D:\GitHub\Angry-Jungle-Raccoon\Diagrams\AKDLib\GeneratedCode\Project.cs" />
+  <Message Timestamp="2013-12-20T11:50:54" Importance="Medium" Text="'AKD::Evaluation' -  (Class) : success (file replaced) - D:\GitHub\Angry-Jungle-Raccoon\Diagrams\AKDLib\GeneratedCode\Evaluation.cs" />
+  <Message Timestamp="2013-12-20T11:50:54" Importance="Medium" Text="'AKD::ProjectPeriod' -  (Class) : success (file replaced) - D:\GitHub\Angry-Jungle-Raccoon\Diagrams\AKDLib\GeneratedCode\ProjectPeriod.cs" />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Medium" Text="'AKD::Student' -  (Class) : success (file replaced) - D:\GitHub\Angry-Jungle-Raccoon\Diagrams\AKDLib\GeneratedCode\Student.cs" />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Medium" Text="'AKD::User' -  (Class) : success (file replaced) - D:\GitHub\Angry-Jungle-Raccoon\Diagrams\AKDLib\GeneratedCode\User.cs" />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Medium" Text="'AKD::Group' -  (Class) : success (file replaced) - D:\GitHub\Angry-Jungle-Raccoon\Diagrams\AKDLib\GeneratedCode\Group.cs" />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="Name = EnumTemplate" />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="Overwrite = True" />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="ProjectPath = ..\AKDLib\AKDLib.csproj" />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="TemplateFilePath = D:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\EnumTemplate.t4" />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="ResolvedTemplateFilePath = D:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\EnumTemplate.t4" />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Medium" Text="AKD's Text Template Binding: 'EnumTemplate' will apply EnumTemplate.t4 to: 'AKD::ScoreType' -  (Enumeration), 'AKD::RoleType' -  (Enumeration) " />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Medium" Text="'AKD::ScoreType' -  (Enumeration) : success (file replaced) - D:\GitHub\Angry-Jungle-Raccoon\Diagrams\AKDLib\GeneratedCode\ScoreType.cs" />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Medium" Text="'AKD::RoleType' -  (Enumeration) : success (file replaced) - D:\GitHub\Angry-Jungle-Raccoon\Diagrams\AKDLib\GeneratedCode\RoleType.cs" />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="Name = InterfaceTemplate" />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="Overwrite = True" />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="ProjectPath = ..\AKDLib\AKDLib.csproj" />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="TemplateFilePath = D:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4" />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="ResolvedTemplateFilePath = D:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4" />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Medium" Text="AKD's Text Template Binding: 'InterfaceTemplate' will apply InterfaceTemplate.t4 to: 'AKD::IEntety' -  (Interface) " />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Medium" Text="'AKD::IEntety' -  (Interface) : success (file replaced) - D:\GitHub\Angry-Jungle-Raccoon\Diagrams\AKDLib\GeneratedCode\IEntety.cs" />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="Name = StructTemplate" />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="Overwrite = True" />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="ProjectPath = ..\AKDLib\AKDLib.csproj" />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="TemplateFilePath = D:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="ResolvedTemplateFilePath = D:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Medium" Text="AKD's Text Template Binding: 'StructTemplate' will apply StructTemplate.t4 to: 'AKD::Skill' -  (Class), 'AKD::Project' -  (Class), 'AKD::Evaluation' -  (Class), 'AKD::ProjectPeriod' -  (Class), 'AKD::Student' -  (Class), 'AKD::User' -  (Class), 'AKD::Group' -  (Class) " />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="'AKD::Skill' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="'AKD::Project' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="'AKD::Evaluation' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="'AKD::ProjectPeriod' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="'AKD::Student' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="'AKD::User' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="'AKD::Group' -  (Class): no file generated because the 'AppliesToElement' method of the template 'StructTemplate.t4' evaluated to false." />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="Name = Template1" />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="Overwrite = True" />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="ProjectPath = ..\AKDLib\AKDLib.csproj" />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="TemplateFilePath = " />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="ResolvedTemplateFilePath = " />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Medium" Text="AKD's Text Template Binding: 'Template1' will apply  to: 'AKD::Skill' -  (Class), 'AKD::' -  (Association), 'AKD::Project' -  (Class), 'AKD::' -  (Association), 'AKD::' -  (Association), 'AKD::' -  (Association), 'AKD::ScoreType' -  (Enumeration), 'AKD::' -  (Association), 'AKD::Evaluation' -  (Class), 'AKD::' -  (Association), 'AKD::' -  (Association), 'AKD::' -  (Association), 'AKD::ProjectPeriod' -  (Class), 'AKD::' -  (Association), 'AKD::IEntety' -  (Interface), '055aa091-f6a1-41ae-b0b5-2cf7021c68c6' -  (Comment), 'AKD::Student' -  (Class), 'AKD::' -  (Association), '7c340e0f-f5ed-406f-a4d5-8c6b097c1fc7' -  (Generalization), 'AKD::' -  (Association), 'AKD::' -  (Association), 'AKD::User' -  (Class), 'AKD::' -  (Association), 'AKD::Group' -  (Class), 'AKD::RoleType' -  (Enumeration), 'AKD::' -  (Association) " />
+  <Error Timestamp="2013-12-20T11:50:55" Importance="High" Text="The following Template File Path property for 'AKD::Skill' -  (Class) does not exist: " />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="'AKD::Skill' -  (Class): no file generated because the 'AppliesToElement' method of the template '' evaluated to false." />
+  <Error Timestamp="2013-12-20T11:50:55" Importance="High" Text="The following Template File Path property for 'AKD::' -  (Association) does not exist: " />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="'AKD::' -  (Association): no file generated because the 'AppliesToElement' method of the template '' evaluated to false." />
+  <Error Timestamp="2013-12-20T11:50:55" Importance="High" Text="The following Template File Path property for 'AKD::Project' -  (Class) does not exist: " />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="'AKD::Project' -  (Class): no file generated because the 'AppliesToElement' method of the template '' evaluated to false." />
+  <Error Timestamp="2013-12-20T11:50:55" Importance="High" Text="The following Template File Path property for 'AKD::' -  (Association) does not exist: " />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="'AKD::' -  (Association): no file generated because the 'AppliesToElement' method of the template '' evaluated to false." />
+  <Error Timestamp="2013-12-20T11:50:55" Importance="High" Text="The following Template File Path property for 'AKD::' -  (Association) does not exist: " />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="'AKD::' -  (Association): no file generated because the 'AppliesToElement' method of the template '' evaluated to false." />
+  <Error Timestamp="2013-12-20T11:50:55" Importance="High" Text="The following Template File Path property for 'AKD::' -  (Association) does not exist: " />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="'AKD::' -  (Association): no file generated because the 'AppliesToElement' method of the template '' evaluated to false." />
+  <Error Timestamp="2013-12-20T11:50:55" Importance="High" Text="The following Template File Path property for 'AKD::ScoreType' -  (Enumeration) does not exist: " />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="'AKD::ScoreType' -  (Enumeration): no file generated because the 'AppliesToElement' method of the template '' evaluated to false." />
+  <Error Timestamp="2013-12-20T11:50:55" Importance="High" Text="The following Template File Path property for 'AKD::' -  (Association) does not exist: " />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="'AKD::' -  (Association): no file generated because the 'AppliesToElement' method of the template '' evaluated to false." />
+  <Error Timestamp="2013-12-20T11:50:55" Importance="High" Text="The following Template File Path property for 'AKD::Evaluation' -  (Class) does not exist: " />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="'AKD::Evaluation' -  (Class): no file generated because the 'AppliesToElement' method of the template '' evaluated to false." />
+  <Error Timestamp="2013-12-20T11:50:55" Importance="High" Text="The following Template File Path property for 'AKD::' -  (Association) does not exist: " />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="'AKD::' -  (Association): no file generated because the 'AppliesToElement' method of the template '' evaluated to false." />
+  <Error Timestamp="2013-12-20T11:50:55" Importance="High" Text="The following Template File Path property for 'AKD::' -  (Association) does not exist: " />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="'AKD::' -  (Association): no file generated because the 'AppliesToElement' method of the template '' evaluated to false." />
+  <Error Timestamp="2013-12-20T11:50:55" Importance="High" Text="The following Template File Path property for 'AKD::' -  (Association) does not exist: " />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="'AKD::' -  (Association): no file generated because the 'AppliesToElement' method of the template '' evaluated to false." />
+  <Error Timestamp="2013-12-20T11:50:55" Importance="High" Text="The following Template File Path property for 'AKD::ProjectPeriod' -  (Class) does not exist: " />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="'AKD::ProjectPeriod' -  (Class): no file generated because the 'AppliesToElement' method of the template '' evaluated to false." />
+  <Error Timestamp="2013-12-20T11:50:55" Importance="High" Text="The following Template File Path property for 'AKD::' -  (Association) does not exist: " />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="'AKD::' -  (Association): no file generated because the 'AppliesToElement' method of the template '' evaluated to false." />
+  <Error Timestamp="2013-12-20T11:50:55" Importance="High" Text="The following Template File Path property for 'AKD::IEntety' -  (Interface) does not exist: " />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="'AKD::IEntety' -  (Interface): no file generated because the 'AppliesToElement' method of the template '' evaluated to false." />
+  <Error Timestamp="2013-12-20T11:50:55" Importance="High" Text="The following Template File Path property for '055aa091-f6a1-41ae-b0b5-2cf7021c68c6' -  (Comment) does not exist: " />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="'055aa091-f6a1-41ae-b0b5-2cf7021c68c6' -  (Comment): no file generated because the 'AppliesToElement' method of the template '' evaluated to false." />
+  <Error Timestamp="2013-12-20T11:50:55" Importance="High" Text="The following Template File Path property for 'AKD::Student' -  (Class) does not exist: " />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="'AKD::Student' -  (Class): no file generated because the 'AppliesToElement' method of the template '' evaluated to false." />
+  <Error Timestamp="2013-12-20T11:50:55" Importance="High" Text="The following Template File Path property for 'AKD::' -  (Association) does not exist: " />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="'AKD::' -  (Association): no file generated because the 'AppliesToElement' method of the template '' evaluated to false." />
+  <Error Timestamp="2013-12-20T11:50:55" Importance="High" Text="The following Template File Path property for '7c340e0f-f5ed-406f-a4d5-8c6b097c1fc7' -  (Generalization) does not exist: " />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="'7c340e0f-f5ed-406f-a4d5-8c6b097c1fc7' -  (Generalization): no file generated because the 'AppliesToElement' method of the template '' evaluated to false." />
+  <Error Timestamp="2013-12-20T11:50:55" Importance="High" Text="The following Template File Path property for 'AKD::' -  (Association) does not exist: " />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="'AKD::' -  (Association): no file generated because the 'AppliesToElement' method of the template '' evaluated to false." />
+  <Error Timestamp="2013-12-20T11:50:55" Importance="High" Text="The following Template File Path property for 'AKD::' -  (Association) does not exist: " />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="'AKD::' -  (Association): no file generated because the 'AppliesToElement' method of the template '' evaluated to false." />
+  <Error Timestamp="2013-12-20T11:50:55" Importance="High" Text="The following Template File Path property for 'AKD::User' -  (Class) does not exist: " />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="'AKD::User' -  (Class): no file generated because the 'AppliesToElement' method of the template '' evaluated to false." />
+  <Error Timestamp="2013-12-20T11:50:55" Importance="High" Text="The following Template File Path property for 'AKD::' -  (Association) does not exist: " />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="'AKD::' -  (Association): no file generated because the 'AppliesToElement' method of the template '' evaluated to false." />
+  <Error Timestamp="2013-12-20T11:50:55" Importance="High" Text="The following Template File Path property for 'AKD::Group' -  (Class) does not exist: " />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="'AKD::Group' -  (Class): no file generated because the 'AppliesToElement' method of the template '' evaluated to false." />
+  <Error Timestamp="2013-12-20T11:50:55" Importance="High" Text="The following Template File Path property for 'AKD::RoleType' -  (Enumeration) does not exist: " />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="'AKD::RoleType' -  (Enumeration): no file generated because the 'AppliesToElement' method of the template '' evaluated to false." />
+  <Error Timestamp="2013-12-20T11:50:55" Importance="High" Text="The following Template File Path property for 'AKD::' -  (Association) does not exist: " />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="Diagnostic" Text="'AKD::' -  (Association): no file generated because the 'AppliesToElement' method of the template '' evaluated to false." />
+  <Message Timestamp="2013-12-20T11:50:55" Importance="High" Text="Code generation complete. Errors: 26. Warnings: 0." />
 </Log>
