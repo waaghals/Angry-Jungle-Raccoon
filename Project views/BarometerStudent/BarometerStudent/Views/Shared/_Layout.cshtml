@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - Avans Barometer</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <link href="../../Content/themes/base/jquery.selectbox.css" type="text/css" rel="stylesheet">
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+        <script type="text/javascript" language="javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css")
+
+        <script type="text/javascript" src="../../Scripts/jquery.selectbox-0.2.js"></script>
+	    <script type="text/javascript">
+	        $(function () {
+	            $(".fancy_selectbox").selectbox();
+	            $("#tabs").tabs();
+	        });
+		</script>
+    </head>
+    <body>
+        <header>
+            <div class="content-wrapper">
+                <a href="/Home/Index"><img src="../../Images/Avanslogo.png" /></a>
+            </div>
+        </header>
+        <div id="body">
+            <div class="navbar">
+                <div class="navbarcontent">
+                    <a href="~/Home">Home &gt;</a>
+                    <a href="~/Project/ProjectOverzicht">Project &gt;</a>
+                    <a href="~/Project/Beoordelen">Beoordeling &gt;</a>
+                </div>
+            </div>
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>Project Angry Jungle Raccoon &copy; @DateTime.Now.Year - 42IN06SOf - Eccentric Raccoons</p>
+                </div>
+            </div>
+        </footer>
+
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

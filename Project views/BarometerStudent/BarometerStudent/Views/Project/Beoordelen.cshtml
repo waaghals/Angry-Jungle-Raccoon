@@ -1,0 +1,44 @@
+﻿<div id="tabs">
+  <ul>
+    @{
+        int i = 1;
+        foreach(string s in ViewBag.Studenten)
+        {
+            <li><a href="#tabs-@i">@s</a></li>
+            i++;      
+        }
+    }
+  </ul>
+@{
+    i = 1;
+    foreach(string s in ViewBag.Studenten)
+    {
+      <div id="tabs-@i" class="tab">
+          <h1>Beoordeel @s</h1>
+          <div class ="tabcontainer">
+            <div class="competenties">
+                <h3>Competenties</h3>
+                    @{
+                            for(int i2 = 1; i2<=10;i2++)
+                            {
+                                <div class="rating">
+                                    competentie @i2 <input type="text" name="cijfer" class="cijferbox">
+                                </div>
+                            }
+                    }
+            </div>
+            <div class="opmerkingen">
+                <h3>Opmerkingen</h3>
+                <textarea name="opmerkingvak" cols="1" rows="1" class="opmerkingbox"></textarea>
+            </div>
+            <div class="buttonbox">
+                <button class="button">Opslaan</button>
+                <button class="button">Annuleren</button>
+            </div>
+        </div>
+      </div>
+        i++;
+    }
+}
+</div>
+
