@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/VisualStudio/TeamArchitect/SequenceDesigner"
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
   dslVersion="1.0.0.0"
   Id="a5b95440-de55-412e-818f-8fb14b90b96b"
   name="AKD" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
@@ -35,6 +35,88 @@ Nette manier vinden om de Database context over meerdere repositories te verdele
 </body>
     </comment>
   </ownedCommentsInternal>
+  <appliedStereotypesInternal>
+    <stereotypeInstance
+      Id="03f4bafd-63ff-40ec-8774-b4f0527804ea"
+      name="namespace"
+      profile="CSharpProfile">
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="b5923e9a-61ae-4d19-854a-bba0d9fdc8e8">
+          <propertyInstance
+            Id="dbf5f90d-1ff1-4648-a6d3-a6dafe89ee0d"
+            name="BaseName" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="ca939596-dfd6-4a59-81ba-6cce7e94ea7e">
+          <propertyInstance
+            Id="18e49a49-6a19-4377-9034-751732efbca6"
+            name="ClrAttributes" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="22774e89-06e3-4bd2-9a10-5cc8eab9e3c5">
+          <propertyInstance
+            Id="19d3434d-14f3-4221-8652-6a2e58781378"
+            name="Usings" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+    <stereotypeInstance
+      Id="bb2a6f92-480e-432d-a739-970c2291d57b"
+      name="TextTemplateBindings"
+      profile="TextTemplateBindings">
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="ddcbbfbd-bca7-4fbb-a252-6256fa869e4d">
+          <propertyInstance
+            Id="ad65a6cb-0ce3-42a8-be77-ebc60cf67156"
+            name="Alias"
+            value="ClassTemplate|EnumTemplate|InterfaceTemplate|StructTemplate|Template1" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="1a847bd3-2e1e-40e6-9e9e-61e1328e4fb9">
+          <propertyInstance
+            Id="8d4b8aaf-91a4-4e75-8e8d-df67a079732f"
+            name="TemplateFilePath"
+            value="ClassTemplate=D:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4|EnumTemplate=D:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\EnumTemplate.t4|InterfaceTemplate=D:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4|StructTemplate=D:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 11.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="cddef903-1ee3-47bc-a8b5-352e29d6fc56">
+          <propertyInstance
+            Id="9d5ff38b-94be-43cf-b0c3-b4beca1c74e0"
+            name="ProjectPath"
+            value="ClassTemplate=..\AKDLib\AKDLib.csproj|EnumTemplate=..\AKDLib\AKDLib.csproj|InterfaceTemplate=..\AKDLib\AKDLib.csproj|StructTemplate=..\AKDLib\AKDLib.csproj|Template1=..\AKDLib\AKDLib.csproj" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="7ebbfe9b-67b0-49e3-a900-bb0ec0b59a37">
+          <propertyInstance
+            Id="609ea35e-7a14-4930-9b97-e62d95d6b305"
+            name="TargetDirectory"
+            value="ClassTemplate=GeneratedCode\{PackageStructure}|EnumTemplate=GeneratedCode\{PackageStructure}|InterfaceTemplate=GeneratedCode\{PackageStructure}|StructTemplate=GeneratedCode\{PackageStructure}|Template1=GeneratedCode\{PackageStructure}" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="b5ace0b0-b21a-4011-ac5a-2cc83d94fed0">
+          <propertyInstance
+            Id="314a9c57-fff2-403d-86b2-fc92daf9b55c"
+            name="TargetName"
+            value="ClassTemplate={Name}|EnumTemplate={Name}|InterfaceTemplate={Name}|StructTemplate={Name}|Template1={Name}" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="1980cd2b-9486-41e5-a26a-26e6627ab359">
+          <propertyInstance
+            Id="a0d7bfcb-8a5c-4222-b1fe-27e79a2e6f53"
+            name="Overwrite"
+            value="ClassTemplate=True|EnumTemplate=True|InterfaceTemplate=True|StructTemplate=True|Template1=True" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="95126fe1-dff7-44fb-8af3-e11c77fe9f81">
+          <propertyInstance
+            Id="b9e4d585-d4d1-42e1-a35d-68869d536eb7"
+            name="Parameters" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+  </appliedStereotypesInternal>
   <profileInstances>
     <packageHasProfileInstances
       Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
@@ -53,6 +135,12 @@ Nette manier vinden om de Database context over meerdere repositories te verdele
       <profileInstance
         Id="e9fcbeb2-5544-457c-be58-97addb3df36a"
         name="TextTemplateBindings" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="6a249e52-981a-454e-acd3-7ed82e70d8eb">
+      <profileInstance
+        Id="10ba84fb-2db1-457a-938d-00f4bc785c13"
+        name="CSharpProfile" />
     </packageHasProfileInstances>
   </profileInstances>
   <packagedElements>
@@ -1252,6 +1340,49 @@ Nette manier vinden om de Database context over meerdere repositories te verdele
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="c4b57922-3e1e-4915-8234-c9ee8d893ae9"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="dab0e245-1b79-4581-aaea-00cfeba92600">
+                <propertyInstance
+                  Id="80e65ebb-339c-482d-853b-e0cb8218f20c"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="30f74233-b413-42b0-bf7a-48ca29efc291">
+                <propertyInstance
+                  Id="cac271d5-f1c6-4da3-a3c5-01d9f230c50b"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6b8b9d04-695b-4ff2-b5c3-8ff8af57ea86">
+                <propertyInstance
+                  Id="bd7a3d50-3e7e-4ea3-afb0-4cea3b21a0bd"
+                  name="IsStatic"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6b2b471d-d971-4de1-af90-d55471bcdc17">
+                <propertyInstance
+                  Id="3a109d30-c49e-4b04-b180-50c912dafb35"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="38a33fd7-524f-4cab-9837-72b7e66e18c2">
+                <propertyInstance
+                  Id="02fec9fd-4a24-4f47-9ef2-ecfb52b82536"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
         <targetEnds>
           <association
             Id="bc8189a8-de74-4fcc-982b-dc88487db82a"
@@ -1370,6 +1501,63 @@ Nette manier vinden om de Database context over meerdere repositories te verdele
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false">
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="e4a76f0e-08be-4c99-806a-2603560fe63c"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bbce8fa4-82cc-4285-ac84-8d1800a0106e">
+                    <propertyInstance
+                      Id="1808941a-d61a-4363-ade7-78aba48d6c58"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3ce59221-53e5-4eb1-96cc-89bac6c13c72">
+                    <propertyInstance
+                      Id="9ee0f5ba-6870-4254-b865-12eaf6a00c08"
+                      name="Get"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ce8dc622-7cfb-4900-a1ba-4c41e6c4b150">
+                    <propertyInstance
+                      Id="05942adf-4af2-403c-8cbe-b7d337a53326"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4f7c7a3c-274c-422d-946c-eeb648d191b2">
+                    <propertyInstance
+                      Id="c1adce84-3c88-4089-8b55-5b01cccf6c2d"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="711243d4-37a0-4c05-9e96-f0ba0bd1b31e">
+                    <propertyInstance
+                      Id="5b15bdbe-2030-468f-9fdc-4c5896c9d53e"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f8457207-5a1c-45eb-a2be-9bfe256d2915">
+                    <propertyInstance
+                      Id="329ea06e-af22-4b9d-8ae1-3faedad7a455"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="07e60bd3-9210-4f3d-bb1c-4290889d313c">
+                    <propertyInstance
+                      Id="91442d4e-37c4-4322-adfa-9ca4dd66bff1"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
             <type_NamedElement>
               <undefinedTypeMoniker
                 Id="0f0c2a0a-fab1-4a8b-87bc-96e002bdf536"
@@ -1388,6 +1576,63 @@ Nette manier vinden om de Database context over meerdere repositories te verdele
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false">
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="5f8c25a0-e928-4fdf-be46-a5dc9385b02e"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c6fe7e2a-7254-4139-9667-d8ef8095c527">
+                    <propertyInstance
+                      Id="9e6e0f05-ecdd-4a9f-be79-a0054813d8fc"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="019d104c-bd7f-4a09-ade5-d05e0864dcb8">
+                    <propertyInstance
+                      Id="d60029a0-e8a9-47df-ac81-f13d255905be"
+                      name="Get"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="74c55f8f-557d-4dd2-b142-6b3d36d2b5e8">
+                    <propertyInstance
+                      Id="dcf1e213-3de7-4f2b-a604-3f0f6b56f670"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="533d1f59-e676-4668-b614-96d07f22969e">
+                    <propertyInstance
+                      Id="1d20bbb9-32e7-46bd-b2e9-41d7c4c46f01"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7824aa0e-8b77-4b73-8f37-b57d2dd73f18">
+                    <propertyInstance
+                      Id="841e2a91-867c-41e2-b8c3-2c50100ba1c5"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f681c5df-6349-4152-ab0b-7f37ef5064e3">
+                    <propertyInstance
+                      Id="b988fd55-8263-4966-aa77-6c4fc35df1ef"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4caf15dc-91a3-4982-84f6-aaa4bac6dcfd">
+                    <propertyInstance
+                      Id="f6d18781-61da-4339-a159-cd04a54a9bff"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
             <type_NamedElement>
               <undefinedTypeMoniker
                 Id="0f0c2a0a-fab1-4a8b-87bc-96e002bdf536"
@@ -1405,6 +1650,49 @@ Nette manier vinden om de Database context over meerdere repositories te verdele
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="669a443b-3620-4636-a847-e48153d8a5c7"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0772237b-95bd-4479-b3b8-81aca59045e1">
+                <propertyInstance
+                  Id="64eda3d1-9080-4585-8690-34152b6e9bba"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="60030320-8472-49d4-88b7-9db6c84794ef">
+                <propertyInstance
+                  Id="f175e423-ec43-4de2-8754-bc4538aea0c8"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ebe73b26-7754-480d-abab-e79e1ebf72f5">
+                <propertyInstance
+                  Id="6af2fc05-91f3-4dd5-be57-031d5bc61037"
+                  name="IsStatic"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e6033236-4ec0-4e7f-a5af-8810965779ff">
+                <propertyInstance
+                  Id="250c2fde-1770-4a35-a1eb-a388a3af84cb"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b5a7a8e4-48da-43c4-a8ca-d927b0ec31ec">
+                <propertyInstance
+                  Id="77c516ac-5067-4595-a76f-a2834e24a894"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
         <targetEnds>
           <association
             Id="3ba6bb2a-1e6d-45ab-985f-f3f18297b67c"
@@ -1562,6 +1850,63 @@ Nette manier vinden om de Database context over meerdere repositories te verdele
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false">
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="6cd72ba9-9c18-4de9-bed3-a8d24fb927f1"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fcac9a28-e830-4256-9818-eed18a8c2be6">
+                    <propertyInstance
+                      Id="7ce6fde5-37ee-4bf9-a862-2de502c47416"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="507b1507-c118-4ef9-b971-4627a8a23692">
+                    <propertyInstance
+                      Id="6f18071f-4454-4690-820b-626aa4e8b159"
+                      name="Get"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6d1dad0a-0af3-4afe-a36a-f85843704958">
+                    <propertyInstance
+                      Id="3b40dc54-eebc-4216-b560-963e1cc8ddc2"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="69337289-954c-41cc-8195-572364071d31">
+                    <propertyInstance
+                      Id="47724a79-8cc6-4d91-8b26-8c6ca1c9b15a"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0ef09add-5e44-49cb-9a26-277913dbe39b">
+                    <propertyInstance
+                      Id="36efea2a-fa54-4a06-8f16-f92bb7f63fbd"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5c343ca1-6adf-49a8-b04d-2013509e5f95">
+                    <propertyInstance
+                      Id="ef495194-099c-48da-ba13-a9691c38f909"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="aa9130ac-01e4-4d38-bb97-ed00bb965018">
+                    <propertyInstance
+                      Id="f6a1218a-3131-4070-b223-d4db5bff405f"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
             <type_NamedElement>
               <undefinedTypeMoniker
                 Id="0f0c2a0a-fab1-4a8b-87bc-96e002bdf536"
@@ -1580,6 +1925,63 @@ Nette manier vinden om de Database context over meerdere repositories te verdele
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false">
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="f08a3686-e7fc-481f-912f-f444e6a4a3bd"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7726cd5a-d6a8-4722-84a1-af5f87d7eb01">
+                    <propertyInstance
+                      Id="0862b7dd-eaa8-41f0-b8a3-cdb761758c70"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8de28f14-f626-4680-9f3f-3bd3060825bf">
+                    <propertyInstance
+                      Id="bda94dd1-49cc-4523-93df-f93d7e5f4d2c"
+                      name="Get"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="91668c8e-8aa9-427c-b38a-7de2b1bb32f6">
+                    <propertyInstance
+                      Id="ef60ad66-0275-41eb-abe7-8e9b1d55fb0b"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6683c212-c055-4f9c-9452-d0c6aaab9632">
+                    <propertyInstance
+                      Id="5873a380-5bca-481d-b531-7470d0f6cdaf"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="87b562d8-40b9-4fcb-9465-9dc8e0ab1ef1">
+                    <propertyInstance
+                      Id="395ba7fe-8d85-4ab2-b268-e79b55d3ea9b"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bffbb55f-72a1-42ab-be20-55a5aeeded54">
+                    <propertyInstance
+                      Id="ee38a99c-25a3-4a73-98b6-018d39ad9e7a"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1caa06a1-8c01-4001-84bb-8d99e414c203">
+                    <propertyInstance
+                      Id="430acd73-9f7c-434d-a003-8fb42c3bfc56"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
             <type_NamedElement>
               <undefinedTypeMoniker
                 Id="0f0c2a0a-fab1-4a8b-87bc-96e002bdf536"
@@ -1598,6 +2000,63 @@ Nette manier vinden om de Database context over meerdere repositories te verdele
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false">
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="89c4b0ee-d4d7-4752-b994-32076ef7859c"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2088dfb2-e810-462f-a4a6-78800448324d">
+                    <propertyInstance
+                      Id="c476e493-b592-411f-80e2-fe2ff8286dad"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a0b3a360-165d-4228-b016-5faa7c8c676a">
+                    <propertyInstance
+                      Id="859258ff-1b13-4900-b62c-bd8f0bb4818e"
+                      name="Get"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="66e8515c-ac0d-4921-9e81-cc76b89d2c34">
+                    <propertyInstance
+                      Id="63c5bbd3-bb51-42be-a7d7-0c11cf44ba8f"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d3de544e-1883-426d-b946-50bbf42333fc">
+                    <propertyInstance
+                      Id="4c1b096c-457c-4da3-82a1-a19aff8ef13a"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0dc746a9-2023-47b6-8ee7-286869abcaa8">
+                    <propertyInstance
+                      Id="ad9eb6e2-49a0-4295-babf-f23c940e2eae"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="db12dadf-a276-4ccb-a5c5-beb89acd4be4">
+                    <propertyInstance
+                      Id="5ecf6a4a-715b-4dec-a200-0ad024699d49"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="67020ebf-08fc-47f0-ad5f-0044f8200079">
+                    <propertyInstance
+                      Id="850e9b00-6c9b-4b88-b676-f93c1d8cdca9"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
             <type_NamedElement>
               <primitiveTypeMoniker
                 Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
@@ -1615,6 +2074,49 @@ Nette manier vinden om de Database context over meerdere repositories te verdele
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="ed805365-f5ec-4b3a-854b-0786134897f1"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f3c7d7dd-4ebb-48c9-91f8-aeca6f33e68d">
+                <propertyInstance
+                  Id="7a6eb826-fdc3-4145-a52c-00b4f6d253b1"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2c57c631-f100-4f57-b59f-ae21d9e86943">
+                <propertyInstance
+                  Id="8fd99d62-8381-4cdf-a411-a6ed5f97f08f"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="912d0956-aeb6-4bef-b869-bf84b89aeb3b">
+                <propertyInstance
+                  Id="b52d0527-76a6-452b-ace0-dae4a0364183"
+                  name="IsStatic"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f209949e-2506-4094-867c-2f553fb4671f">
+                <propertyInstance
+                  Id="f8c324dc-1895-40e7-84f2-b53279685e8f"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3068d844-cc55-431e-b706-67cba6b37793">
+                <propertyInstance
+                  Id="92ef2db9-bc12-48c7-aacb-2e27beae14a1"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
         <ownedAttributesInternal>
           <property
             Id="9c6228e6-5328-4d8f-b81a-599cdd464928"
@@ -1627,6 +2129,63 @@ Nette manier vinden om de Database context over meerdere repositories te verdele
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false">
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="a3d818e1-ddba-4116-ae02-543705c0bf06"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b358d966-d749-4260-a175-1a215ee967cb">
+                    <propertyInstance
+                      Id="18fad41c-5ffd-47be-8382-9915665621b8"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b09c75bc-8b69-4e4a-84ef-843378d6d5ab">
+                    <propertyInstance
+                      Id="3e237f7b-60c5-4a38-aae1-8047dc36a94f"
+                      name="Get"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8ff2c376-57d8-40f0-ae0d-f68bfdaa3203">
+                    <propertyInstance
+                      Id="615d97f9-96e4-4719-be46-458cb307786f"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="14ef2298-7085-417c-ac72-968f645783a2">
+                    <propertyInstance
+                      Id="e1fec251-671d-48f1-b05f-619f92c28c09"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="51b904ae-ed42-448b-a610-16434993450d">
+                    <propertyInstance
+                      Id="52e73350-6868-46a9-b776-fb1ca07d5db3"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="83bd9c93-df79-413e-a381-3bbef984d767">
+                    <propertyInstance
+                      Id="097ae0b8-5910-4eba-94ec-9c191d6bacea"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7e1b246d-e1f0-4c58-8e0e-38df49a40ddc">
+                    <propertyInstance
+                      Id="215f93bd-f6ab-4b13-abde-cad89ade170c"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
             <type_NamedElement>
               <primitiveTypeMoniker
                 Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
@@ -1644,6 +2203,49 @@ Nette manier vinden om de Database context over meerdere repositories te verdele
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="66deeecf-fefc-45d8-9225-5361a9827368"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5e647769-2d45-40e1-a872-b9251b194ce7">
+                <propertyInstance
+                  Id="2527d279-9c39-48c4-a759-350862512543"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="e944e927-8a79-4a57-aa63-2ceb2b59eb3d">
+                <propertyInstance
+                  Id="7b2e9c68-467b-4ff8-807d-091342714049"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="beeeb4dd-8491-4535-b727-3de6254858a2">
+                <propertyInstance
+                  Id="c04b327e-ab60-4801-a96c-41f3c9d3f110"
+                  name="IsStatic"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="29bd865b-7c09-4a4f-9c27-50fd07adac2f">
+                <propertyInstance
+                  Id="db4d19b9-d003-4f80-a637-620baf0fbe24"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f2a39d65-73dd-4e4e-b813-68e81d4ace88">
+                <propertyInstance
+                  Id="96fe9e19-ab40-4c78-bc11-ebb10d22b736"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
         <generalsInternal>
           <generalization
             Id="7c340e0f-f5ed-406f-a4d5-8c6b097c1fc7"
@@ -1720,6 +2322,63 @@ Nette manier vinden om de Database context over meerdere repositories te verdele
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false">
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="6a53db81-8ad1-4cda-ac68-65df1f5a568f"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c7cc3006-f286-4376-aa75-6d91e1d3c462">
+                    <propertyInstance
+                      Id="c4746af4-0020-4755-af99-4eaaa6d72122"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d6426b4a-3650-4597-a669-a784e404b6fc">
+                    <propertyInstance
+                      Id="8a08de1d-8d83-4ea2-a491-b2d384d7a07b"
+                      name="Get"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e4ec1596-c43a-4724-82b3-a611e427bded">
+                    <propertyInstance
+                      Id="f3904a77-1441-43bb-b30d-8960f6718087"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="914c9852-4cd9-4e8a-a795-7b745049a7ab">
+                    <propertyInstance
+                      Id="96f6b472-1ba5-4eb6-9f9a-9a1bc2c502f6"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1a7731ae-e5bc-4782-bdf1-80b6dd9122d1">
+                    <propertyInstance
+                      Id="e00ca4d3-2288-4ddb-b3e1-0f5308d8c13c"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ea5c2245-b4b1-4e84-9680-0bc43e58efe7">
+                    <propertyInstance
+                      Id="0261e3a2-ac73-4184-b594-33cfa0ff3c61"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2fd3af83-e8d9-47d3-ab64-365984abf435">
+                    <propertyInstance
+                      Id="02d4a77d-fb18-460b-992f-f0bfd0b43c2f"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
             <type_NamedElement>
               <primitiveTypeMoniker
                 Id="220a3521-e091-4221-bae9-3ef9018e845c"
@@ -1737,6 +2396,49 @@ Nette manier vinden om de Database context over meerdere repositories te verdele
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="990da6b1-ebd0-4c3a-b02f-655ff98327b0"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3844efeb-2564-4952-95f6-3e80113b8351">
+                <propertyInstance
+                  Id="48795307-2edc-45ec-8844-7b10760117f1"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="8bdd5d0b-abb4-4866-b79d-f6ce434474ad">
+                <propertyInstance
+                  Id="b6790150-026e-43f9-bd50-512f2ea246dc"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5a7befa7-0bc3-493d-b6ec-4d465214a39b">
+                <propertyInstance
+                  Id="836c0b6c-d28c-4048-b839-044ecb01c4df"
+                  name="IsStatic"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="6904c377-b0a2-4e2a-9583-33fb92949ce5">
+                <propertyInstance
+                  Id="dee3321c-0975-4337-9dff-4242b31ecfe3"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="68ce5059-3fe6-4384-9c4e-a707dcb7c6a8">
+                <propertyInstance
+                  Id="4ea5e1c8-c285-49d0-9db1-3fdfe5f4b291"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
         <targetEnds>
           <association
             Id="eaa75d05-e0cd-4c9f-866c-97c7f25b821f"
@@ -1907,6 +2609,63 @@ Nette manier vinden om de Database context over meerdere repositories te verdele
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false">
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="1339a323-3cfb-4296-99a5-15c52195c2d3"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5ae7298a-5562-4d14-a16d-c8dceca5d165">
+                    <propertyInstance
+                      Id="62192458-078d-4e2b-a4c7-a6aca187790b"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a2241246-cc50-443b-b505-c820c2b55b50">
+                    <propertyInstance
+                      Id="7fa93fd3-b2d2-4c3c-a55e-72851f6c20bd"
+                      name="Get"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="63908613-cbe2-4274-8d54-4c98ddb6a435">
+                    <propertyInstance
+                      Id="10a09058-256e-4f8b-b1b8-b42b2c1cb265"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b7bee95e-1350-457a-98a7-79b24beac467">
+                    <propertyInstance
+                      Id="05a6173a-4a28-45cf-ade2-8189e97add82"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7b1d84cf-b854-4c0f-8bb2-a35e320f9cfd">
+                    <propertyInstance
+                      Id="633c472a-974e-4b98-9542-bd6cefa73e58"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5c7607fe-fad9-48c8-9bdc-763dafbe08de">
+                    <propertyInstance
+                      Id="02fba5b3-1ca8-42da-aacb-2da4eb02e430"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a48cb18c-4e6a-4006-a35d-f855244d0487">
+                    <propertyInstance
+                      Id="57d445c4-566d-4fe6-9b74-94e1f976bde7"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
             <type_NamedElement>
               <undefinedTypeMoniker
                 Id="0f0c2a0a-fab1-4a8b-87bc-96e002bdf536"
@@ -1924,6 +2683,49 @@ Nette manier vinden om de Database context over meerdere repositories te verdele
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="771e0357-8561-4bc5-852d-da2e7a5293f8"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2fa6e4f2-fcb6-4781-a878-51c28a44fde8">
+                <propertyInstance
+                  Id="c688e385-cd83-4dfd-b226-0dbff13e2cca"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a87deb8e-536f-4cef-9ebd-100db402de1c">
+                <propertyInstance
+                  Id="bc176e7c-e327-4745-a5b4-9e47500d6154"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="be7fb14e-fc7b-4c08-9f6e-d3da231495bc">
+                <propertyInstance
+                  Id="68cd9641-b058-4c1b-82f3-bc40d2262647"
+                  name="IsStatic"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3d832b69-37f5-4d17-95b3-443d16b29e34">
+                <propertyInstance
+                  Id="37243407-d8f5-4add-bd01-f779e2eac038"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="44d4541d-029b-4452-a7ba-f86b4a1ca830">
+                <propertyInstance
+                  Id="e4a745d5-b6f8-42de-96e1-d3ccf8ff1c3c"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
         <targetEnds>
           <association
             Id="b9d74bdb-f913-49af-886e-00e2ffc4b05a"
@@ -2055,6 +2857,63 @@ Nette manier vinden om de Database context over meerdere repositories te verdele
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false">
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="9ec2fc09-d150-4b0e-8698-763f78941bc8"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2a29ce78-eac2-40c6-935a-1dd1d432489e">
+                    <propertyInstance
+                      Id="32c525df-c00f-47ff-96da-ae730fe60ac2"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="32679c83-db8e-425c-bd50-e2058a075b81">
+                    <propertyInstance
+                      Id="14ae66d4-c823-404f-ac89-46874c79e137"
+                      name="Get"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="22111ec1-e5f0-4186-b81a-7f4a74c4d850">
+                    <propertyInstance
+                      Id="9c2d9776-31dd-432d-b955-625cc1a92777"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c96920f9-6ffe-4189-af7d-26a03a49c852">
+                    <propertyInstance
+                      Id="f2c419f2-8be9-471e-bf70-65413d160530"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e2b091cd-74af-45ed-b6b4-f9e12a899f98">
+                    <propertyInstance
+                      Id="674b06ed-88e4-49b2-a10a-5e587f7d8b24"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1e6e6081-0f19-408f-8b33-f11b60cc1965">
+                    <propertyInstance
+                      Id="24ea49f6-22f7-4e69-9b13-ee1b03fd185f"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="12c9485b-dc2d-412d-a374-619de78cb186">
+                    <propertyInstance
+                      Id="6d67f707-9dab-48ff-8fab-fce7f1d62d9f"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
             <type_NamedElement>
               <primitiveTypeMoniker
                 Id="220a3521-e091-4221-bae9-3ef9018e845c"
@@ -2071,6 +2930,35 @@ Nette manier vinden om de Database context over meerdere repositories te verdele
         name="RoleType"
         isAbstract="false"
         isLeaf="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="18e79832-32a0-465d-8b26-a65db61b43d1"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="fc6b5936-9a82-42dc-b98a-cc07b241004c">
+                <propertyInstance
+                  Id="0808a1b4-ddec-45ba-ab33-594b6bcf0ae0"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="049c59bc-be8e-4ab6-bf85-a4c602f62c52">
+                <propertyInstance
+                  Id="dc6f3173-0517-4eb0-8102-62a67842c1c5"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="66ac48c0-8df3-4ff4-b628-7ef7f20a55ec">
+                <propertyInstance
+                  Id="93307668-f337-4ebb-b810-afcdf74c2c50"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
         <ownedLiterals>
           <enumerationLiteral
             Id="f2707cb8-ec56-47d1-8969-0706a5c6ba26"
@@ -2090,6 +2978,35 @@ Nette manier vinden om de Database context over meerdere repositories te verdele
         name="ScoreType"
         isAbstract="false"
         isLeaf="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="60d5d5fa-13fc-43d8-879e-ead027e90878"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="72420701-a07b-44ea-889e-8dceb9970b31">
+                <propertyInstance
+                  Id="b2559592-98b4-4a85-b1bc-ed46fd6f4bb6"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f59f9a78-8131-407d-abc3-d21261876119">
+                <propertyInstance
+                  Id="abe5eca3-a8ac-41d4-ad4b-a30687214bd5"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f750b039-dec1-4c30-b1e9-cbb23096ca54">
+                <propertyInstance
+                  Id="97ba0ffa-f715-4ec3-ba4a-39fa6422de26"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
         <targetEnds>
           <association
             Id="58897c3e-93d3-454c-aedc-6d75025979ba"
@@ -2151,6 +3068,49 @@ Nette manier vinden om de Database context over meerdere repositories te verdele
         isAbstract="false"
         isLeaf="false"
         isActiveClass="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="d33880e4-5ff2-4c0e-91b7-4bfb20e2931b"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="331e0560-9fe7-41ba-8efc-bcc5450afa6f">
+                <propertyInstance
+                  Id="757cdc36-e92a-4e87-9866-92ab7d4a8c6c"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c99f62f1-fe95-430f-841f-7cee9a814ee0">
+                <propertyInstance
+                  Id="4da54e54-a903-468d-978c-651da3eb2861"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a2861626-fa4c-4a05-bcbc-cb1b34ce9efe">
+                <propertyInstance
+                  Id="2e4a29df-a836-4496-9a30-b3d1e1c02bb4"
+                  name="IsStatic"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="84733519-05aa-4376-8235-2ad1108cd42d">
+                <propertyInstance
+                  Id="b7456d09-db51-48f4-b87e-535717073b54"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="bdd1a528-5e79-4822-aec9-8be8a52688f5">
+                <propertyInstance
+                  Id="616834c2-349e-4fed-8c9c-c782623a234d"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
         <targetEnds>
           <association
             Id="126fde06-6366-4e1e-be12-f0c176f8d632"
@@ -2217,6 +3177,63 @@ Nette manier vinden om de Database context over meerdere repositories te verdele
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false">
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="5baaff92-e1ac-4d43-825a-6591fe93c4d6"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0fc9c506-e2a9-4682-8cc9-272b76e84ac8">
+                    <propertyInstance
+                      Id="dfc4517c-6746-4031-b736-8c9cc35529d4"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="11839322-9e76-4da1-ae67-a840be508536">
+                    <propertyInstance
+                      Id="2046b26f-5ffc-45e7-9cbb-9a9cb91a53db"
+                      name="Get"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7f50e824-578d-420e-9138-31f091e0249c">
+                    <propertyInstance
+                      Id="6b1dc908-1c25-445e-95c1-6f895954a7e8"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="44999ea9-0922-4945-879e-8784622f3835">
+                    <propertyInstance
+                      Id="e10664f4-4541-4505-ae8c-13c0087698bf"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1b666fc1-db04-4213-a174-317f9d574eec">
+                    <propertyInstance
+                      Id="295c765f-126c-42ec-a9e0-3c998106d231"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5900d209-be2e-4009-9e54-c2dfa9d6e799">
+                    <propertyInstance
+                      Id="200916d5-4a0b-4eae-b0f1-aa04573054c0"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="43726c12-5fbd-4daa-aa3b-bd8773c80a4a">
+                    <propertyInstance
+                      Id="a7762f5c-217f-4dd3-8e1c-83a15e345637"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
             <type_NamedElement>
               <undefinedTypeMoniker
                 Id="443930a5-83b8-4f98-9ef4-f6dd1c7751b3"
@@ -2235,6 +3252,63 @@ Nette manier vinden om de Database context over meerdere repositories te verdele
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false">
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="ac24dfa6-ad09-4759-91fb-8985dfa05d5c"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7f1086f6-fb2f-4919-b67f-8ca82a55b6de">
+                    <propertyInstance
+                      Id="064530eb-97d6-4344-b61f-40f39570338f"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3d1bfe1a-c619-4fc9-857f-b3a6f974b4a4">
+                    <propertyInstance
+                      Id="45fceb31-68a4-4c3e-b151-9d44836b0a1d"
+                      name="Get"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="53d9d8e5-0f98-4ed2-838e-6a7cfb11a3f6">
+                    <propertyInstance
+                      Id="ce352fb0-5f55-462d-8fb8-6f12e428c2bd"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="88c5eeed-9919-4eaa-9daa-6df0c6d48551">
+                    <propertyInstance
+                      Id="169e3e04-f5da-4758-9510-c84286114b0f"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2c551dbd-5989-4369-bcdf-2dc5f0b3edeb">
+                    <propertyInstance
+                      Id="1b9e5644-101b-45fe-983d-8457e93898cc"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9e0f32ef-124e-49ac-a827-520397c6c5d6">
+                    <propertyInstance
+                      Id="67c29335-5a77-440c-9c09-39f7019da88d"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8a965142-3381-40bc-a189-ba75c8452d1b">
+                    <propertyInstance
+                      Id="251d0e9c-b7a9-4ecc-aff7-52cfc9180ca1"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
             <type_NamedElement>
               <undefinedTypeMoniker
                 Id="443930a5-83b8-4f98-9ef4-f6dd1c7751b3"
@@ -2266,6 +3340,42 @@ Nette manier vinden om de Database context over meerdere repositories te verdele
         name="IEntety"
         isAbstract="false"
         isLeaf="false">
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="9cefc76f-6635-427d-b35c-3951129fda8d"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ab386d87-49f6-4fcf-b277-9ee4809d952b">
+                <propertyInstance
+                  Id="a7eb9d9f-ff57-40cb-a758-f3e431b69b73"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c967a1c8-6f92-4977-8d6b-8b671d4f958f">
+                <propertyInstance
+                  Id="3cb43a88-3584-47b3-9195-416a88ba129c"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="94584a1c-f00f-483f-99b0-122f3105bc4d">
+                <propertyInstance
+                  Id="fa9e3a32-461a-4361-bb35-c08a05194e95"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="28558b3d-d2ec-463e-b909-9cd63c074d4b">
+                <propertyInstance
+                  Id="72bdd03d-857c-470d-86e5-f17de80102c2"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
         <ownedAttributes>
           <property
             Id="2f455369-a83d-49bb-92b1-d3755797d5f1"
@@ -2278,6 +3388,63 @@ Nette manier vinden om de Database context over meerdere repositories te verdele
             isDerivedUnion="false"
             aggregation="None"
             isComposite="false">
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="4a478d85-3738-4867-8164-be2675b41997"
+                name="property"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f5950a8c-4586-45b0-9e56-f670b1a245b2">
+                    <propertyInstance
+                      Id="22231754-3676-4598-9475-37e718eb23c0"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4b61104e-7cf0-4b64-b26c-448d6d956277">
+                    <propertyInstance
+                      Id="3c2152cb-f722-4363-ad93-94d89db8ee58"
+                      name="Get"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="afa91782-5f7b-452e-8eeb-5b234b60b957">
+                    <propertyInstance
+                      Id="9c133b72-e021-4279-ac8c-9eaf2dec6317"
+                      name="HasBody"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="3d08449b-768b-4b75-9553-63e8725ed4e2">
+                    <propertyInstance
+                      Id="b2048366-fe3b-4abb-bf75-0f773786719b"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ee35fbb0-b255-4349-9fc5-a964f02c4bf3">
+                    <propertyInstance
+                      Id="cfc04e2a-ebb1-4586-90e5-dab649fa07e0"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="afef07c4-a4ce-4980-b690-a5836da098e7">
+                    <propertyInstance
+                      Id="b79fee35-f6a1-44b3-a060-9ff134dba6cd"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="672654aa-7a14-4bbf-8476-454547bfa6bc">
+                    <propertyInstance
+                      Id="6a9e21b3-2dab-4ff8-a29c-a7457e51c6bb"
+                      name="Set"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
             <type_NamedElement>
               <undefinedTypeMoniker
                 Id="aebac4e1-07da-44bc-be32-ea379819fdde"
@@ -2377,6 +3544,40 @@ Nette manier vinden om de Database context over meerdere repositories te verdele
               </stereotypeInstanceHasPropertyInstances>
             </propertyInstances>
           </stereotypeInstance>
+          <stereotypeInstance
+            Id="8be60b9a-7d5e-4b9f-991f-be9a6bd7a9f5"
+            name="interface"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="cb791fa0-d561-4e1e-a5b3-630c0bf10726">
+                <propertyInstance
+                  Id="97c55015-987c-47f4-84b6-a4b6d1504380"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="be5ed3a5-73a8-44a4-8751-746d59a13a50">
+                <propertyInstance
+                  Id="947156b0-f65f-4028-a174-35583c8be0c0"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d69473d7-872f-4c06-b408-70d6c1bc9fd1">
+                <propertyInstance
+                  Id="64809e1a-a696-432a-8fdb-0fe2569530a5"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b1cd9134-2ae0-4414-9536-7e2764f4ebc4">
+                <propertyInstance
+                  Id="45522220-8ec2-4a0b-b0d4-5a91f701618f"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
         </appliedStereotypesInternal>
         <ownedOperations>
           <operation
@@ -2387,6 +3588,56 @@ Nette manier vinden om de Database context over meerdere repositories te verdele
             isAbstract="true"
             concurrency="Sequential"
             isQuery="false">
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="95cfefd6-ebfc-4ca9-bd6e-f8ae084f12a2"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="af06f421-4093-4769-b9b1-37f55646532b">
+                    <propertyInstance
+                      Id="4a688665-a4ef-4c93-8f8e-dbe9fa15eb99"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="76ce3b95-1118-4c33-b520-ce66e1660c7a">
+                    <propertyInstance
+                      Id="6813ae93-f39c-4575-9f82-3cbcbef766f6"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="bbeca729-d080-4b0e-bdd1-a3bcdd3f00b1">
+                    <propertyInstance
+                      Id="828842c3-e262-479c-b54e-30535f065db8"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c5850bf8-a2df-46d4-a422-ddd71ace8192">
+                    <propertyInstance
+                      Id="3986284f-8b86-45a9-8816-f79adcb96cbc"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2490d78a-6a18-43e3-85b3-22b27846af5a">
+                    <propertyInstance
+                      Id="aebf7eb0-cc6d-4f05-b309-7d00aba9bdb6"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4b370070-fd71-41db-bd41-0cf1f5b5051e">
+                    <propertyInstance
+                      Id="efcb1742-00af-45b6-b036-362fbf5a1be2"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
@@ -2424,6 +3675,56 @@ Nette manier vinden om de Database context over meerdere repositories te verdele
             isAbstract="true"
             concurrency="Sequential"
             isQuery="false">
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="0efa2171-19d4-4a80-997c-781e983507a9"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fc1fb031-90f5-46d7-86c6-1a3825d9649c">
+                    <propertyInstance
+                      Id="5cc2a638-2c62-4dc0-b28a-64f82a8c4376"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0d0b16ad-1bf3-4a5b-8c5a-eae9725f3831">
+                    <propertyInstance
+                      Id="1e21f4d5-02a2-495a-a51f-20dbbbc36f63"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6643263e-c101-4b0d-92e6-58b775c6fe75">
+                    <propertyInstance
+                      Id="16fb58ce-76cc-4f5e-aa3c-e0f2d14cb7ea"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="70407fda-8e6c-4fd1-8d6c-7307758f4d3e">
+                    <propertyInstance
+                      Id="56a60cbd-d7e6-4963-80bc-b7db480aa9e2"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7a0e31cf-c907-402d-878d-251926d5ac51">
+                    <propertyInstance
+                      Id="dc4bd7e8-55d1-41ad-9384-3839df467f81"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9b047fee-9525-47a4-9e70-cf2daddbc72c">
+                    <propertyInstance
+                      Id="4cd02d50-280a-4ef5-93ba-68565f2b24a5"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
@@ -2460,6 +3761,56 @@ Nette manier vinden om de Database context over meerdere repositories te verdele
             isAbstract="true"
             concurrency="Sequential"
             isQuery="false">
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="bdd00530-1425-4406-b353-d99e0c8c7e31"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6f759813-a4c4-4769-87a9-d955e1884660">
+                    <propertyInstance
+                      Id="a572e904-6fcb-495b-85e0-4002872f3b63"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a13aea46-97fa-40f1-9736-9d93a1a7485a">
+                    <propertyInstance
+                      Id="8da3c2b4-c122-44a1-b3dd-a6f6b185d1cc"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="03981bd9-b51b-4b25-a2e8-0435c8e87d5c">
+                    <propertyInstance
+                      Id="722c6ee6-23f3-429c-9fd7-ddc4acbad27f"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="20e34fa2-d8be-415b-86c7-b760ad7e22d4">
+                    <propertyInstance
+                      Id="5eb119af-0993-4149-960f-703808a738bb"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dae306eb-78ed-4411-be68-aeddc73708a0">
+                    <propertyInstance
+                      Id="6e716bf2-3984-496d-87a5-11c9c95bf757"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7604d2bf-fa82-4fb7-bdd3-f11109e3efd6">
+                    <propertyInstance
+                      Id="030c1514-f86f-4485-bd75-8ff95605af13"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
@@ -2496,6 +3847,56 @@ Nette manier vinden om de Database context over meerdere repositories te verdele
             isAbstract="true"
             concurrency="Sequential"
             isQuery="false">
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="99345314-b86c-49cc-b4e5-42f251d80945"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="274e7850-d631-41fd-98da-d278ad3f2cd0">
+                    <propertyInstance
+                      Id="6687a0db-fcf9-463e-b914-445b2191b53d"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="515ad922-4919-4c48-978c-5e739a5203cf">
+                    <propertyInstance
+                      Id="8e5571e9-c86d-47bb-9c44-fb723bc24540"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="b613e2d4-45ef-4fb9-859d-853250ef9631">
+                    <propertyInstance
+                      Id="be6f0f86-def6-427c-b9dd-d00b74a06f82"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ddafd0ce-1bc5-4709-b36a-35e015506c2e">
+                    <propertyInstance
+                      Id="1140653d-2750-4cc6-ad62-a7dca91884c0"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fe4405ca-5338-4a70-9364-6bb023c6287c">
+                    <propertyInstance
+                      Id="ae0aed6c-2cda-491e-89f7-f8101841d8f4"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4954fbdd-a29e-49f3-9584-0b59d23d290f">
+                    <propertyInstance
+                      Id="72f83050-f046-494b-b6d4-2607cd55efaf"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
@@ -2533,6 +3934,56 @@ Nette manier vinden om de Database context over meerdere repositories te verdele
             isAbstract="true"
             concurrency="Sequential"
             isQuery="false">
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="c97bcf8f-e608-418f-ad46-5aa500764af1"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9ac280c7-4298-44b9-8a48-406805a96ccc">
+                    <propertyInstance
+                      Id="d70472b4-5b3f-4b65-a6dd-0fdd87d17a6b"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e46f51b0-f06c-4c0a-abdb-42423d297306">
+                    <propertyInstance
+                      Id="dcd5929a-64ff-40f7-884e-bca80ee25fce"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7967a100-08d6-4592-9817-ef252fdbf527">
+                    <propertyInstance
+                      Id="b78731ed-0d9d-4eeb-a088-3d11fd424897"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0b63dc90-754d-4e78-8f6a-afadc2bd90c7">
+                    <propertyInstance
+                      Id="3d6a515a-7836-4293-88fa-ea1f5d3b3bd4"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fff5357f-eb08-43dc-ad7e-a3be0ab144ad">
+                    <propertyInstance
+                      Id="d09e0016-4216-4abd-992a-8cf631f8863d"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="89447099-d346-42eb-8a70-a11d7037e8b4">
+                    <propertyInstance
+                      Id="51ad5063-28f0-491b-9872-e34cc0604d93"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
@@ -2556,6 +4007,56 @@ Nette manier vinden om de Database context over meerdere repositories te verdele
             isAbstract="true"
             concurrency="Sequential"
             isQuery="false">
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="5a6af7a1-ce97-476b-82ff-a625efc7b2ea"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="64de7ace-4799-45af-82e7-294e99f366c2">
+                    <propertyInstance
+                      Id="e18a1e04-4ea0-45b8-800b-c4df4a761356"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f38cc673-11c0-48a4-b796-3de0647c9a67">
+                    <propertyInstance
+                      Id="66615a64-304d-4f70-a091-4744fab25f5d"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="2f65007f-e22b-402f-9715-2e4fb25a72fb">
+                    <propertyInstance
+                      Id="154825a9-1861-4296-ac80-9c219a3b6b7b"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6c6ac7fd-2481-45d4-a6a9-3924f659f0e5">
+                    <propertyInstance
+                      Id="af578d0e-2225-4999-854a-eba4f9062eb9"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="1855b584-8f6e-4c73-b3af-2510a13babdd">
+                    <propertyInstance
+                      Id="e066558d-8774-48a5-b958-19aa2f2da423"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="dddbb445-a4d7-4cb9-b632-5ac40b0799a8">
+                    <propertyInstance
+                      Id="b752c7e3-96ce-44cc-af06-604539bd0cb2"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
@@ -2579,6 +4080,56 @@ Nette manier vinden om de Database context over meerdere repositories te verdele
             isAbstract="true"
             concurrency="Sequential"
             isQuery="false">
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="0290cf79-9ba2-429a-8c3a-946ea06ba939"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="5d02189f-7606-49da-a2f9-fa879f4edbaa">
+                    <propertyInstance
+                      Id="8318a5a0-ab53-4e4e-8a34-f2fa75e6e3a9"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c00f063c-4850-4dba-a177-1d7cc2e65ffe">
+                    <propertyInstance
+                      Id="b4848734-cab9-4dc4-b1c1-4b5ad0ee4989"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="01bc76b0-846f-4956-91d1-8f37af203f80">
+                    <propertyInstance
+                      Id="e6ee64a8-3d52-4fa1-a026-d4ae9d2081f0"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="f259e699-ec4c-488b-aa44-95d80ef35685">
+                    <propertyInstance
+                      Id="de4735fb-fb90-4c8e-aeab-318f960c4fa6"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="693ea303-110b-4d3f-a9f3-bb6cfcf072f3">
+                    <propertyInstance
+                      Id="f3d4f0fd-3215-459c-a0a4-3ef0744cb059"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="6a4ff94d-6ac2-49af-a6e0-f38758811725">
+                    <propertyInstance
+                      Id="6d9ad6a0-78c7-4943-933a-808b1775ff75"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
             <ownedParameters>
               <operationHasOwnedParameters>
                 <parameter
