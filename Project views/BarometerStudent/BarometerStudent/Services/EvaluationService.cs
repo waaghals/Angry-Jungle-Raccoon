@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class EvaluationService : ICrudService, IEvaluationService
+public class EvaluationService : ICrudService<Evaluation>, IEvaluationService
 {
 	public virtual IValidatorService<Evaluation> Validator
 	{
@@ -23,22 +23,22 @@ public class EvaluationService : ICrudService, IEvaluationService
 		set;
 	}
 
-	public virtual void Create(T subject)
+    public virtual void Create(Evaluation subject)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public virtual T Get(int id)
+    public virtual Evaluation Get(int id)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public virtual IEnumerable<T> GetAll()
+    public virtual IEnumerable<Evaluation> GetAll()
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public virtual void Delete(T subject)
+    public virtual void Delete(Evaluation subject)
 	{
 		throw new System.NotImplementedException();
 	}
@@ -48,7 +48,7 @@ public class EvaluationService : ICrudService, IEvaluationService
 		throw new System.NotImplementedException();
 	}
 
-	public virtual void Update(T subject)
+    public virtual void Update(Evaluation subject)
 	{
 		throw new System.NotImplementedException();
 	}
