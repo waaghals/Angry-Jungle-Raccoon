@@ -6,11 +6,13 @@
 //------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 
 public interface IEntety 
 {
+    [Key]
 	int Id { get;set; }
 
 }

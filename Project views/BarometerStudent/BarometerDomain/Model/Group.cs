@@ -9,8 +9,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class Group
+public class Group : IEntety
 {
+    public int Id { get; set; }
 	public string Name
 	{
 		get;
