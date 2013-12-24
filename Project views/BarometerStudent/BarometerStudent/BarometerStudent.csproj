@@ -169,6 +169,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\EvaluationService.cs" />
+    <Compile Include="Services\GroupService.cs" />
+    <Compile Include="Services\ICrudService.cs" />
+    <Compile Include="Services\IEvaluationService.cs" />
+    <Compile Include="Services\IGroupService.cs" />
+    <Compile Include="Services\IProjectService.cs" />
+    <Compile Include="Services\ProjectService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -289,6 +296,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BarometerDomain\BarometerDomain.csproj">
+      <Project>{7cc61b9f-42ed-4db8-8d39-1c212edb5304}</Project>
+      <Name>BarometerDomain</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
