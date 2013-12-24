@@ -12,6 +12,11 @@ using System.Text;
 
 public class Project : IEntety
 {
+    public Project()
+    {
+        ProjectPeriod = new List<ProjectPeriod>();
+        Skill = new List<Skill>();
+    }
     public int Id { get; set; }
     [Required]
 	public string Name
@@ -31,14 +36,14 @@ public class Project : IEntety
 		get;
 		set;
 	}
-    
-	public IEnumerable<ProjectPeriod> ProjectPeriod
+
+    public ICollection<ProjectPeriod> ProjectPeriod
 	{
 		get;
 		set;
 	}
 
-	public IEnumerable<Skill> Skill
+    public ICollection<Skill> Skill
 	{
 		get;
 		set;

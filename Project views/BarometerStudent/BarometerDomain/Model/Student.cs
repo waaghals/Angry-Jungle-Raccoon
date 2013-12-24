@@ -12,6 +12,11 @@ using System.Text;
 
 public class Student : User
 {
+
+    public Student() : base()
+    {
+        Project = new List<Project>();
+    }
     [Required]
 	public int Number
 	{
@@ -19,7 +24,7 @@ public class Student : User
 		set;
 	}
 
-	public IEnumerable<Project> Project
+    public ICollection<Project> Project
 	{
 		get;
 		set;
