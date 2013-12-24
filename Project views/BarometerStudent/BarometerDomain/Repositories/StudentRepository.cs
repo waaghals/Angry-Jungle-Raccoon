@@ -8,6 +8,10 @@ namespace BarometerDomain.Repositories
 {
     class StudentRepository : GenericRepository<Student>
     {
-        public StudentRepository(Context c) : base(c) { }
+        public StudentRepository(Context c)
+            : base(c)
+        {
+            table = database.Students;
+        }
     }
 }

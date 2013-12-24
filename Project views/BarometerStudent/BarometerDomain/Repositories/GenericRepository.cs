@@ -8,9 +8,10 @@ using  System.Data.Entity.ModelConfiguration.Conventions;
 
 namespace BarometerDomain.Repositories
 {
-    class GenericRepository<T> : IRepository<T>
+    class GenericRepository<T> : IRepository<T> where T : class, IEntity
     {
-        Context database;
+        protected Context database;
+        protected DbSet<T> table;
         public GenericRepository(Context context)
         {
             database = context;
@@ -18,57 +19,62 @@ namespace BarometerDomain.Repositories
 
         public bool Delete(T entity)
         {
-            
+            T deleteEntity = Get(entity.Id);
+            if (deleteEntity != default(T))
+            {
+                table.Remove(deleteEntity);
+                Save();
+                return true;
+            }
             return false;
         }
 
         public bool Delete(int id)
         {
+            T entity = Get(id);
+            if (entity != default(T))
+            {
+                table.Remove(entity);
+                Save();
+                return true;
+            }
             return false;
         }
         
         public T Get(int id)
         {
+            foreach (T entity in table)
+                if (entity.Id == id)
+                    return entity;
             return default(T);
         }
 
         public IEnumerable<T> GetAll()
         {
-            return null;
+            return table.ToList();
         }
 
         public void Insert(T entity)
         {
-
+            table.Add(entity);
+            Save();
         }
 
         public void Save()
         {
-
+            database.SaveChanges();
         }
 
         public bool Update(T entity)
         {
+            if (Delete(entity))
+            {
+                table.Add(entity);
+                Save();
+                return true;
+            }
             return false;
         }
 
-        private IEnumerable<IEntity> GetTable(T entity)
-        {
-            if (entity is Evaluation)
-                return database.Evaluations;
-            else if (entity is Group)
-                return database.Groups;
-            else if (entity is ProjectPeriod)
-                return database.ProjectPeriods;
-            else if (entity is Project)
-                return database.Projects;
-            else if (entity is Skill)
-                return database.Skills;
-            else if (entity is Student)
-                return database.Students;
-            else if (entity is User)
-                return database.Users;
-            return null;
-        }
     }
 }

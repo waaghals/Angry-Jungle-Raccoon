@@ -8,6 +8,10 @@ namespace BarometerDomain.Repositories
 {
     class GroupRepository : GenericRepository<Group>
     {
-        public GroupRepository(Context c) : base(c) { }
+        public GroupRepository(Context c) 
+            : base(c) 
+        {
+            table = database.Groups;
+        }
     }
 }
