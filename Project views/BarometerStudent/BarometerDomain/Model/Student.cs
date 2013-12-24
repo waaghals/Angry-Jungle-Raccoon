@@ -6,30 +6,25 @@
 //------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 
-public class User
+public class Student : User
 {
-	public string Login
+
+    public Student() : base()
+    {
+        Project = new List<Project>();
+    }
+    [Required]
+	public int Number
 	{
 		get;
 		set;
 	}
 
-	public string Name
-	{
-		get;
-		set;
-	}
-
-	public IEnumerable<RoleType> RoleType
-	{
-		get;
-		set;
-	}
-
-	public Student Student
+    public ICollection<Project> Project
 	{
 		get;
 		set;

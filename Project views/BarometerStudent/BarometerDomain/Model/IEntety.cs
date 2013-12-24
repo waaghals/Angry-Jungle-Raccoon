@@ -6,34 +6,16 @@
 //------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 
-public class Group
+public interface IEntity 
 {
-	public string Name
-	{
-		get;
-		set;
-	}
-
-	public User Tutor
-	{
-		get;
-		set;
-	}
-
-	public IEnumerable<Student> Student
-	{
-		get;
-		set;
-	}
-
-	public IEnumerable<Project> Project
-	{
-		get;
-		set;
-	}
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+	int Id { get;set; }
 
 }
 

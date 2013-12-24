@@ -6,24 +6,39 @@
 //------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 
-public class ProjectPeriod
+public class User : IEntity
 {
-	public DateTime Start
+    public User()
+    {
+        RoleType = new List<RoleType>();
+    }
+    public virtual int Id { get; set; }
+    [Required]
+	public string Login
 	{
 		get;
 		set;
 	}
 
-	public DateTime End
+    [Required]
+	public string Name
 	{
 		get;
 		set;
 	}
 
-	public IEnumerable<Evaluation> Evaluation
+    [Required]
+	public ICollection<RoleType> RoleType
+	{
+		get;
+		set;
+	}
+
+	public Student Student
 	{
 		get;
 		set;

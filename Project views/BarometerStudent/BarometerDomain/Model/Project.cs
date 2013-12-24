@@ -6,36 +6,44 @@
 //------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 
-public class Project
+public class Project : IEntity
 {
+    public Project()
+    {
+        ProjectPeriod = new List<ProjectPeriod>();
+        Skill = new List<Skill>();
+    }
+    public int Id { get; set; }
+    [Required]
 	public string Name
 	{
 		get;
 		set;
 	}
-
+    [Required]
 	public string Description
 	{
 		get;
 		set;
 	}
-
+    [Required]
 	public bool Anonymous
 	{
 		get;
 		set;
 	}
 
-	public IEnumerable<ProjectPeriod> ProjectPeriod
+    public ICollection<ProjectPeriod> ProjectPeriod
 	{
 		get;
 		set;
 	}
 
-	public IEnumerable<Skill> Skill
+    public ICollection<Skill> Skill
 	{
 		get;
 		set;

@@ -9,9 +9,28 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class Skill
+public class Evaluation : IEntity
 {
-	public string Category
+    public int Id { get; set; }
+	public int Grade
+	{
+		get;
+		set;
+	}
+
+	public Skill Skill
+	{
+		get;
+		set;
+	}
+
+	public Student By
+	{
+		get;
+		set;
+	}
+
+	public Student For
 	{
 		get;
 		set;
