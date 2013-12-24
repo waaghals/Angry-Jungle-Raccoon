@@ -12,7 +12,11 @@ using System.Text;
 
 public class User : IEntity
 {
-    public int Id { get; set; }
+    public User()
+    {
+        RoleType = new List<RoleType>();
+    }
+    public virtual int Id { get; set; }
     [Required]
 	public string Login
 	{
@@ -28,7 +32,7 @@ public class User : IEntity
 	}
 
     [Required]
-	public IEnumerable<RoleType> RoleType
+	public ICollection<RoleType> RoleType
 	{
 		get;
 		set;

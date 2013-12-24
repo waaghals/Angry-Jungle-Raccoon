@@ -11,6 +11,11 @@ using System.Text;
 
 public class Group : IEntity
 {
+    public Group()
+    {
+        Student = new List<Student>();
+        Project = new List<Project>();
+    }
     public int Id { get; set; }
 	public string Name
 	{
@@ -23,14 +28,14 @@ public class Group : IEntity
 		get;
 		set;
 	}
-
-	public IEnumerable<Student> Student
+    
+    public ICollection<Student> Student
 	{
 		get;
 		set;
 	}
 
-	public IEnumerable<Project> Project
+    public ICollection<Project> Project
 	{
 		get;
 		set;

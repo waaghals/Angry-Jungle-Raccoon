@@ -12,6 +12,10 @@ using System.Text;
 
 public class ProjectPeriod : IEntity
 {
+    public ProjectPeriod()
+    {
+        Evaluation = new List<Evaluation>();
+    }
     public int Id { get; set; }
     [Required]
 	public DateTime Start
@@ -26,7 +30,7 @@ public class ProjectPeriod : IEntity
 		set;
 	}
 
-	public IEnumerable<Evaluation> Evaluation
+    public ICollection<Evaluation> Evaluation
 	{
 		get;
 		set;
