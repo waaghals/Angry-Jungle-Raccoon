@@ -8,10 +8,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using BarometerDomain.Repositories;
+using BarometerStudent.Services.Validation;
 
-public class GroupService : IGroupService, ICrudService
+public class GroupService : IGroupService, ICrudService<Group>
 {
-	public virtual AKD::IValidationService<Group> Validater
+	public virtual IValidationService<Group> Validater
 	{
 		get;
 		set;
@@ -33,22 +35,22 @@ public class GroupService : IGroupService, ICrudService
 		throw new System.NotImplementedException();
 	}
 
-	public virtual void Create(T subject)
+	public virtual void Create(Group subject)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public virtual T Get(int id)
+    public virtual Group Get(int id)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public virtual IEnumerable<T> GetAll()
+    public virtual IEnumerable<Group> GetAll()
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public virtual void Delete(T subject)
+    public virtual void Delete(Group subject)
 	{
 		throw new System.NotImplementedException();
 	}
@@ -58,7 +60,7 @@ public class GroupService : IGroupService, ICrudService
 		throw new System.NotImplementedException();
 	}
 
-	public virtual void Update(T subject)
+    public virtual void Update(Group subject)
 	{
 		throw new System.NotImplementedException();
 	}

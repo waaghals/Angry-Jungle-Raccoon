@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BarometerDomain.Repositories
 {
-    class EvaluationRepository : GenericRepository<Evaluation>
+    public class EvaluationRepository : GenericRepository<Evaluation>
     {
         public EvaluationRepository(Context c)
             : base(c)

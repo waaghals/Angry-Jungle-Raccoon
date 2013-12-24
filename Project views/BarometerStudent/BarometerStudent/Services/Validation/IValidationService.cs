@@ -7,7 +7,7 @@ using BarometerDomain.Repositories;
 
 namespace BarometerStudent.Services.Validation
 {
-    interface IValidationService<T>
+    public interface IValidationService<T>
     {
         IRepository<T> Repository { get; set; }
         bool Validate(T item);

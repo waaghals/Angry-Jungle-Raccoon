@@ -9,10 +9,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using BarometerDomain.Repositories;
+using BarometerStudent.Services.Validation;
 
 public class EvaluationService : ICrudService<Evaluation>, IEvaluationService
 {
-	public virtual IValidatorService<Evaluation> Validator
+	public virtual IValidationService<Evaluation> Validator
 	{
 		get;
 		set;

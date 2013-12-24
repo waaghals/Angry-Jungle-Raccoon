@@ -8,10 +8,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using BarometerDomain.Repositories;
+using BarometerStudent.Services.Validation;
 
-public class ProjectService : ICrudService, IProjectService
+public class ProjectService : ICrudService<Project>, IProjectService
 {
-	public virtual IValidatorService<Project> Validator
+	public virtual IValidationService<Project> Validator
 	{
 		get;
 		set;
@@ -23,22 +25,22 @@ public class ProjectService : ICrudService, IProjectService
 		set;
 	}
 
-	public virtual void Create(T subject)
+	public virtual void Create(Project subject)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public virtual T Get(int id)
+	public virtual Project Get(int id)
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public virtual IEnumerable<T> GetAll()
+	public virtual IEnumerable<Project> GetAll()
 	{
 		throw new System.NotImplementedException();
 	}
 
-	public virtual void Delete(T subject)
+	public virtual void Delete(Project subject)
 	{
 		throw new System.NotImplementedException();
 	}
@@ -48,7 +50,7 @@ public class ProjectService : ICrudService, IProjectService
 		throw new System.NotImplementedException();
 	}
 
-	public virtual void Update(T subject)
+	public virtual void Update(Project subject)
 	{
 		throw new System.NotImplementedException();
 	}

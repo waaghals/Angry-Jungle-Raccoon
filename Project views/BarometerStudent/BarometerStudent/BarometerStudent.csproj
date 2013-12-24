@@ -176,6 +176,10 @@
     <Compile Include="Services\IGroupService.cs" />
     <Compile Include="Services\IProjectService.cs" />
     <Compile Include="Services\ProjectService.cs" />
+    <Compile Include="Services\Validation\EvaluationValidator.cs" />
+    <Compile Include="Services\Validation\IValidationDictionary.cs" />
+    <Compile Include="Services\Validation\IValidationService.cs" />
+    <Compile Include="Services\Validation\ValidationDictionary.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -319,7 +323,7 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>6143</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:5946/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
