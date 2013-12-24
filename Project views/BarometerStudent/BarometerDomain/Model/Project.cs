@@ -10,7 +10,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 
-public class Project : IEntety
+public class Project : IEntity
 {
     public int Id { get; set; }
     [Required]

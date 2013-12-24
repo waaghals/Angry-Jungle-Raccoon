@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class Evaluation : IEntety
+public class Evaluation : IEntity
 {
     public int Id { get; set; }
 	public int Grade
