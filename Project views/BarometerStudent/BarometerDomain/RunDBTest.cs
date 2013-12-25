@@ -20,7 +20,7 @@ namespace BarometerDomain
             {
                 db.Skills.Add(new Skill() { Category = "test skill" });
                 db.SaveChanges();
-                var query = from category in db.Skills select category;
+
                 foreach(Skill s in db.Skills)
                     Console.WriteLine(s.Id + ", " + s.Category);
             }
