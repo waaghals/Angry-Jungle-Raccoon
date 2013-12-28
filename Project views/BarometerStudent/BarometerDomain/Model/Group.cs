@@ -9,37 +9,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class Group : IEntity
+namespace BarometerDomain.Model
 {
-    public Group()
+    public class Group : IEntity
     {
-        Student = new List<Student>();
-        Project = new List<Project>();
+        public Group()
+        {
+            Student = new List<Student>();
+            Project = new List<Project>();
+        }
+        public int Id { get; set; }
+        public string Name
+        {
+            get;
+            set;
+        }
+
+        public User Tutor
+        {
+            get;
+            set;
+        }
+
+        public ICollection<Student> Student
+        {
+            get;
+            set;
+        }
+
+        public ICollection<Project> Project
+        {
+            get;
+            set;
+        }
+
     }
-    public int Id { get; set; }
-	public string Name
-	{
-		get;
-		set;
-	}
-
-	public User Tutor
-	{
-		get;
-		set;
-	}
-    
-    public ICollection<Student> Student
-	{
-		get;
-		set;
-	}
-
-    public ICollection<Project> Project
-	{
-		get;
-		set;
-	}
-
 }
-

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BarometerDomain.Model;
+
 
 namespace BarometerStudent.Controllers
 {
@@ -14,6 +16,8 @@ namespace BarometerStudent.Controllers
         public ActionResult Index()
         {
             return View();
+            //TEST CODE
+            Session["User"] = new User() { };
         }
 
         public ActionResult Create(/* viewModel model */)

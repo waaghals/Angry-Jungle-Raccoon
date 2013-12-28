@@ -10,39 +10,41 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 
-public class User : IEntity
+namespace BarometerDomain.Model
 {
-    public User()
+    public class User : IEntity
     {
-        RoleType = new List<RoleType>();
+        public User()
+        {
+            RoleType = new List<RoleType>();
+        }
+        public virtual int Id { get; set; }
+        [Required]
+        public string Login
+        {
+            get;
+            set;
+        }
+
+        [Required]
+        public string Name
+        {
+            get;
+            set;
+        }
+
+        [Required]
+        public ICollection<RoleType> RoleType
+        {
+            get;
+            set;
+        }
+
+        public Student Student
+        {
+            get;
+            set;
+        }
+
     }
-    public virtual int Id { get; set; }
-    [Required]
-	public string Login
-	{
-		get;
-		set;
-	}
-
-    [Required]
-	public string Name
-	{
-		get;
-		set;
-	}
-
-    [Required]
-	public ICollection<RoleType> RoleType
-	{
-		get;
-		set;
-	}
-
-	public Student Student
-	{
-		get;
-		set;
-	}
-
 }
-

@@ -11,11 +11,13 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 
-public interface IEntity 
+namespace BarometerDomain.Model
 {
-    [Key]
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-	int Id { get;set; }
+    public interface IEntity
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        int Id { get; set; }
 
+    }
 }
-

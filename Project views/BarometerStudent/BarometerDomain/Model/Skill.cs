@@ -10,15 +10,17 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 
-public class Skill : IEntity
+namespace BarometerDomain.Model
 {
-    public int Id { get; set; }
-    [Required]
-	public string Category
-	{
-		get;
-		set;
-	}
+    public class Skill : IEntity
+    {
+        public int Id { get; set; }
+        [Required]
+        public string Category
+        {
+            get;
+            set;
+        }
 
+    }
 }
-

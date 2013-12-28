@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
-using  System.Data.Entity.ModelConfiguration.Conventions;
+using System.Data.Entity.ModelConfiguration.Conventions;
+using BarometerDomain.Model;
 
 namespace BarometerDomain.Repositories
 {

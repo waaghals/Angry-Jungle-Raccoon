@@ -9,9 +9,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public enum RoleType
+namespace BarometerDomain.Model
 {
-	Student,
-	Teacher,
-	Administrator,
+    public enum RoleType
+    {
+        Student,
+        Teacher,
+        Administrator,
+    }
 }

@@ -10,50 +10,52 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 
-public class Project : IEntity
+namespace BarometerDomain.Model
 {
-    public Project()
+    public class Project : IEntity
     {
-        ProjectPeriod = new List<ProjectPeriod>();
-        Skill = new List<Skill>();
+        public Project()
+        {
+            ProjectPeriod = new List<ProjectPeriod>();
+            Skill = new List<Skill>();
+        }
+        public int Id { get; set; }
+        [Required]
+        public string Name
+        {
+            get;
+            set;
+        }
+        [Required]
+        public string Description
+        {
+            get;
+            set;
+        }
+        [Required]
+        public bool Anonymous
+        {
+            get;
+            set;
+        }
+
+        public ICollection<ProjectPeriod> ProjectPeriod
+        {
+            get;
+            set;
+        }
+
+        public ICollection<Skill> Skill
+        {
+            get;
+            set;
+        }
+
+        public User ProjectDocent
+        {
+            get;
+            set;
+        }
+
     }
-    public int Id { get; set; }
-    [Required]
-	public string Name
-	{
-		get;
-		set;
-	}
-    [Required]
-	public string Description
-	{
-		get;
-		set;
-	}
-    [Required]
-	public bool Anonymous
-	{
-		get;
-		set;
-	}
-
-    public ICollection<ProjectPeriod> ProjectPeriod
-	{
-		get;
-		set;
-	}
-
-    public ICollection<Skill> Skill
-	{
-		get;
-		set;
-	}
-
-	public User ProjectDocent
-	{
-		get;
-		set;
-	}
-
 }
-

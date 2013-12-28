@@ -9,32 +9,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-public class Evaluation : IEntity
+namespace BarometerDomain.Model
 {
-    public int Id { get; set; }
-	public int Grade
-	{
-		get;
-		set;
-	}
+    public class Evaluation : IEntity
+    {
+        public int Id { get; set; }
+        public int Grade
+        {
+            get;
+            set;
+        }
 
-	public Skill Skill
-	{
-		get;
-		set;
-	}
+        public Skill Skill
+        {
+            get;
+            set;
+        }
 
-	public Student By
-	{
-		get;
-		set;
-	}
+        public Student By
+        {
+            get;
+            set;
+        }
 
-	public Student For
-	{
-		get;
-		set;
-	}
+        public Student For
+        {
+            get;
+            set;
+        }
 
+    }
 }
-

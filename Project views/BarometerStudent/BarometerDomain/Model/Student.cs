@@ -10,25 +10,28 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 
-public class Student : User
+namespace BarometerDomain.Model
 {
-
-    public Student() : base()
+    public class Student : User
     {
-        Project = new List<Project>();
+
+        public Student()
+            : base()
+        {
+            Project = new List<Project>();
+        }
+        [Required]
+        public int Number
+        {
+            get;
+            set;
+        }
+
+        public ICollection<Project> Project
+        {
+            get;
+            set;
+        }
+
     }
-    [Required]
-	public int Number
-	{
-		get;
-		set;
-	}
-
-    public ICollection<Project> Project
-	{
-		get;
-		set;
-	}
-
 }
-
