@@ -1,0 +1,97 @@
+﻿<br/>
+
+@using (Html.BeginForm("ProjectGegevensOpslaan", "Project", FormMethod.Post))
+{
+    <span class="projectnaam">Voorgaand project:</span>
+    <select class="voorgaandProjectTextbox fancy_selectbox">
+        <option value="">-- Selecteer project --</option>
+	    <optgroup label="Blok 5">
+            <option value="1">Project waterval - ontwerp</option>
+	    </optgroup>
+	    <optgroup label="Blok 6">
+            <option value="2">Project waterval - bouw</option>
+	        <option value="2">Nog een project</option>
+	    </optgroup>
+    </select>
+    
+    <br/>
+    
+    <span class="projectnaam">Projectnaam:</span>
+    <input type="text" class="projectTextbox"/>
+}
+
+<br/>
+
+<div class="divLeft">
+
+    <div class="divLeft2">
+
+        <span>Competenties:</span>
+
+        <br/>
+
+        <select size="17" class="competentieListbox2">
+            @foreach(string c in ViewBag.Competenties) {
+                <option>@c</option>
+            }
+        </select>
+
+    </div>
+
+    <div class="divLeft2">
+
+        <span>Competenties voorgaand project:</span>
+
+        <br/>
+
+        <select size="17" class="competentieListbox3">
+            @foreach(string c in ViewBag.Competenties) {
+                <option>@c</option>
+            }
+        </select>
+
+        <br/>
+        <br/>
+
+        <button class="button competentieButton">Voeg competentie toe</button>
+
+        <br/>
+        <br/>
+        <br/>
+
+    </div>
+
+    <br/>
+
+    <div>
+
+        @using (Html.BeginForm("CompetentieAanmaken", "Project", FormMethod.Post))
+        {
+            <input type="text" name="competentie" class="competentieTextbox" />
+            <button class="button competentieButton">Voeg nieuwe competentie toe</button>
+        }
+
+        @using (Html.BeginForm("SubCompetentieAanmaken", "Project", FormMethod.Post))
+        {
+            <input type="text" name="competentie" class="competentieTextbox" />
+            <button class="button competentieButton">Voeg nieuwe sub-competentie toe</button>
+        } 
+
+    </div>
+
+</div>
+
+<div class="divRight">
+
+    <span>Informatie m.b.t. project:</span>
+
+    <br/>
+
+    <textarea class="projectInfobox2"></textarea>
+     
+    <br/>
+    <br/>
+
+    <button class="button float-right">Opslaan</button>
+
+</div>

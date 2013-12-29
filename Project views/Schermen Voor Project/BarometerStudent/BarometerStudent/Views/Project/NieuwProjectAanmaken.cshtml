@@ -1,0 +1,55 @@
+﻿<br/>
+
+@using (Html.BeginForm("ProjectGegevensOpslaan", "Project", FormMethod.Post))
+{
+    <span class="projectnaam">Projectnaam:</span>
+    <input type="text" class="projectTextbox"/>
+}
+
+<br/>
+
+<div class="divLeft">
+
+    <br/>
+
+    @using (Html.BeginForm("CompetentieAanmaken", "Project", FormMethod.Post))
+    {
+        <input type="text" name="competentie" class="competentieTextbox" />
+        <button class="button competentieButton">Voeg nieuwe competentie toe</button>
+    }
+
+    @using (Html.BeginForm("SubCompetentieAanmaken", "Project", FormMethod.Post))
+    {
+        <input type="text" name="competentie" class="competentieTextbox" />
+        <button class="button competentieButton">Voeg nieuwe sub-competentie toe</button>
+    } 
+
+    <br/>
+    <br/>
+
+    <span>Competenties:</span>
+
+    <br/>
+
+    <select size="16" class="competentieListbox">
+        @foreach(string c in ViewBag.Competenties) {
+            <option>@c</option>
+        }
+    </select> 
+
+</div>
+
+<div class="divRight">
+
+    <span>Informatie m.b.t. project:</span>
+
+    <br/>
+
+    <textarea class="projectInfobox"></textarea>
+     
+    <br/>
+    <br/>
+
+    <button class="button float-right">Opslaan</button>
+
+</div>

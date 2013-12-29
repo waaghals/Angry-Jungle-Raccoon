@@ -1,0 +1,95 @@
+﻿<br/>
+
+<div class="align-center">
+    <select name="ComboBoxProject">
+        <option value="">-- Selecteer project --</option>
+	    <optgroup label="Blok 5">
+            <option value="1">Project waterval - ontwerp</option>
+	    </optgroup>
+	    <optgroup label="Blok 6">
+            <option value="2">Project waterval - bouw</option>
+	        <option value="2">Nog een project</option>
+	    </optgroup>
+    </select>
+       
+    <br/>
+    
+    <select name="ComboBoxGroep">
+        @{
+            int i = 1;
+            foreach(string groep in ViewBag.Groepen)
+            {
+			    <option value="@i">@groep</option>
+                i++;
+            }
+        }
+    </select>
+
+    <select name="ComboBoxStudent">
+        @{
+            int i2 = 1;
+            foreach(string student in ViewBag.Studenten)
+            {
+			    <option value="@i2">@student</option>
+                i2++;
+            }
+        }
+        </select>
+</div>
+
+<br/>
+
+<div>
+    <select class="fancy_selectbox">
+        @{
+            int i3 = 1;
+            foreach(string week in ViewBag.BeoordelingsMomenten)
+            {
+			    <option value="@i3">@week</option>
+                i3++;
+            }
+        }
+    </select>
+
+<br/>
+              <table class="align-center">
+                  <tr>
+                      <th></th><th class="align-center">Gemiddelde</th>
+                      @{
+                            foreach (string student in ViewBag.Studenten)
+                            {
+                                if(student != "Henk")
+                                {
+                                    <th class="align-center">@student</th>
+                                }
+                            }
+                      }
+                  </tr>
+                  @{
+                        foreach (string c in ViewBag.Competenties)
+                        {
+                            <tr>
+                                <td>@c:</td>
+                                <td class="cijferOverzicht">6</td>
+                                @foreach (string student in ViewBag.Studenten)
+                                {
+                                    if (student != "Henk")
+                                    {
+                                        <td class="cijferOverzicht">6</td>
+                                    }
+                                }
+                            </tr>
+                        }
+                 }
+                <tr>
+                    <td></td><td></td>
+                    @foreach (string student in ViewBag.Studenten)
+                    {
+                        if (student != "Henk")
+                         {
+                                <td><br/><button class="button">Opmerkingen</button></td>
+                         }
+                    }
+                </tr>
+              </table>
+</div>
