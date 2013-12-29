@@ -13,17 +13,21 @@ namespace BarometerDomain
 
         static void Main(string[] args)
         {
-            Context context = new Context();
-            User user = new User() { Name = "test" };
-            context.Users.Add(user);
-
             using(var db = new Context())
             {
-                db.Skills.Add(new Skill() { Category = "test skill" });
+                Project proj6 =
+                    new Project()
+                    {
+                        Id = 06,
+                        Name = "waterval",
+                        Description = "In dit project zal je leren hoe ver je kan gaan in het gebruiken van het woord \"Dynamisch process\" als smoes",
+                        Anonymous = true
+                    };
+                db.Projects.Add(proj6);
                 db.SaveChanges();
 
-                foreach(Skill s in db.Skills)
-                    Console.WriteLine(s.Id + ", " + s.Category);
+                foreach(Project p in db.Projects)
+                    Console.WriteLine(p.Id + "," + p.Name + "," + p.Description + "," + p.Anonymous);
             }
             Console.ReadLine();
         }
