@@ -13,7 +13,7 @@ namespace BarometerDomain
         public Context()
             : base("AngryJungleRaccoon")
         {
-            Database.SetInitializer<Context>(new DropCreateDatabaseIfModelChanges<Context>());
+            
             
         }
         public DbSet<Evaluation> Evaluations { get; set; }
