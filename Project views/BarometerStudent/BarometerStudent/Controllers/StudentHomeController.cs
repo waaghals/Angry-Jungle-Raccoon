@@ -5,13 +5,14 @@ using System.Web;
 using System.Web.Mvc;
 using BarometerDomain.Model;
 using BarometerDomain.Repositories;
+using BarometerDomain;
 
 
 namespace BarometerStudent.Controllers
 {
     public class StudentHomeController : Controller
     {
-        private ProjectRepository pr = new ProjectRepository();
+        private ProjectRepository pr = new ProjectRepository(new Context());
         //
         // GET: /StudentHome/
 
