@@ -7,7 +7,7 @@ using System.Data.Entity;
 
 namespace BarometerDomain.Repositories
 {
-    interface IRepository<T>
+    public interface IRepository<T>
     {
 
         bool Delete(T entity);

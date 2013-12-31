@@ -9,7 +9,7 @@ using BarometerDomain.Model;
 
 namespace BarometerDomain.Repositories
 {
-    class GenericRepository<T> : IRepository<T> where T : class, IEntity
+    public class GenericRepository<T> : IRepository<T> where T : class, IEntity
     {
         protected Context database;
         protected DbSet<T> table;

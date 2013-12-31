@@ -7,7 +7,7 @@ using BarometerDomain.Model;
 
 namespace BarometerDomain.Repositories
 {
-    class StudentRepository : GenericRepository<Student>
+    public class StudentRepository : GenericRepository<Student>
     {
         public StudentRepository(Context c)
             : base(c)
