@@ -3,6 +3,11 @@
     @Html.Raw(ViewBag.Description)
 </p>
 <h2>Mededelingen</h2>
+    @if (ViewBag.Project != null) {
+
+    <div> You Selected:  @ViewBag.Project</div>
+
+}
 <p>
     @{
         foreach(String s in ViewBag.Mededelingen)
@@ -35,4 +40,10 @@
         </tr>
     </table>
     <br />
+ @using (@Html.BeginForm("Beoordelen", "Project", FormMethod.Post))
+    {
+        @Html.Hidden("SelectedProject",(Object)ViewBag.Project)
+        <input type="submit" name="beoordelen" value="Medestudent beoordelen" />
+        <input type="submit" name="bekijken" value="Beoordelingen Bekijken" />
+    }
     

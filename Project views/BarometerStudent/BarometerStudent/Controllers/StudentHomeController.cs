@@ -18,6 +18,16 @@ namespace BarometerStudent.Controllers
 
         public ActionResult Index()
         {
+            List<Project> test = new List<Project>();
+            test.Add(new Project()); 
+            test.Add(new Project());
+            test[0].Id = 1;
+            test[1].Id = 2;
+            test[0].Name = "Project 1";
+            test[1].Name = "Project 2";
+
+
+            ViewBag.Project = new SelectList(pr.GetAll(),"Id","Name");
             return View();
             //TEST CODE
             Session["User"] = new User() { };
