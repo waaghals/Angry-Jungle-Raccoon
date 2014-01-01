@@ -12,7 +12,7 @@ namespace BarometerStudent.Controllers
 {
     public class StudentHomeController : Controller
     {
-        private ProjectRepository pr = new ProjectRepository(new Context());
+        //private ProjectRepository pr = new ProjectRepository(new Context());
         //
         // GET: /StudentHome/
 
@@ -25,9 +25,13 @@ namespace BarometerStudent.Controllers
             test[1].Id = 2;
             test[0].Name = "Project 1";
             test[1].Name = "Project 2";
+            using (var db = new BarometerDomain.Context())
+            {
+                ProjectRepository pr = new ProjectRepository(db);
+                SelectList sl = new SelectList(pr.GetAll(), "Id", "Name");
 
-
-            ViewBag.Project = new SelectList(pr.GetAll(),"Id","Name");
+                ViewBag.Project = sl;
+            }
             return View();
             //TEST CODE
             Session["User"] = new User() { };
