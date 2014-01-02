@@ -39,5 +39,11 @@ namespace BarometerDomain.Model
             get;
             set;
         }
+
+        public Student MentorStudent
+        {
+            get;
+            set;
+        }
     }
 }
