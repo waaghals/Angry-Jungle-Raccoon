@@ -18,6 +18,7 @@ namespace BarometerDomain.Model
         {
             ProjectPeriod = new List<ProjectPeriod>();
             Skill = new List<Skill>();
+            Students = new List<Student>();
         }
         public int Id { get; set; }
         [Required]
@@ -50,6 +51,12 @@ namespace BarometerDomain.Model
             get;
             set;
         }
+
+        public ICollection<Student> Students
+        { get; set; }
+
+        public ICollection<Group> Groups
+        { get; set; }
 
         public User ProjectDocent
         {
