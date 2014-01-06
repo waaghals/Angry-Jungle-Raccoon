@@ -40,6 +40,13 @@ namespace BarometerDomain.Model
             set;
         }
 
+        [Required]
+        public ScoreType ScoreType
+        {
+            get;
+            set;
+        }
+
         public ICollection<ProjectPeriod> ProjectPeriod
         {
             get;
