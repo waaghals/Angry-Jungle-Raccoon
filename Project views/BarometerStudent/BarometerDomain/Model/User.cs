@@ -17,6 +17,7 @@ namespace BarometerDomain.Model
         public User()
         {
             RoleType = new List<RoleType>();
+            MentorStudent = new List<Student>();
         }
         public virtual int Id { get; set; }
         [Required]
@@ -40,7 +41,7 @@ namespace BarometerDomain.Model
             set;
         }
 
-        public Student MentorStudent
+        public ICollection<Student> MentorStudent
         {
             get;
             set;
