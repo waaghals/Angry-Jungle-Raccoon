@@ -88,7 +88,8 @@ namespace BarometerDomain
                     Description = "Barometer/waterval ontwikkelen",
                     Anonymous = true,
                     Groups = proj6groups,
-                    ProjectPeriod = proj6periods
+                    ProjectPeriod = proj6periods,
+                    Skill = new List<Skill> { skill1, skill2, skill3 }
                 };
 
                 //PROJ5
@@ -149,7 +150,8 @@ namespace BarometerDomain
                     Description = "Barometer/waterval ontwerp",
                     Anonymous = true,
                     Groups = proj5groups,
-                    ProjectPeriod = proj5periods
+                    ProjectPeriod = proj5periods,
+                    Skill = new List<Skill> { skill4, skill2, skill3 }
                 };
 
 
@@ -167,15 +169,20 @@ namespace BarometerDomain
                         s.Project.Add(p);
                     }
                     db.SaveChanges();
-                    projrepo.Insert(p);
                     foreach(ProjectPeriod pp in p.ProjectPeriod)
                     {
-                        projperiodrepo.Insert(pp);
+                        try
+                        {
+                            projperiodrepo.Insert(pp);
+                        }catch(Exception e)
+                        {
+                        }
                         foreach(Evaluation e in pp.Evaluation)
                         {
                             evalrepo.Insert(e);
                         }
                     }
+                    projrepo.Insert(p);
                 }
             }
         }
