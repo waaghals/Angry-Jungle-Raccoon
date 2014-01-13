@@ -35,13 +35,13 @@ namespace BarometerDomain.Model
         }
 
         [Required]
-        public ICollection<RoleType> RoleType
+        public virtual ICollection<RoleType> RoleType
         {
             get;
             set;
         }
 
-        public ICollection<Student> MentorStudent
+        public virtual ICollection<Student> MentorStudent
         {
             get;
             set;
