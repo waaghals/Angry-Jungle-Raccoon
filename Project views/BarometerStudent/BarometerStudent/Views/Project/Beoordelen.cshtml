@@ -1,4 +1,6 @@
-﻿@ViewBag.Beschrijving
+﻿@model BarometerDomain.Model.Evaluation
+
+@ViewBag.Beschrijving
 <div id="tabs">
     <ul>
         @{
@@ -27,7 +29,11 @@
                 {
                             <div class="rating">
                                 @skill
-                                <input type="text" name="skill-@skill" class="cijferbox">
+                                @*<input type="text" name="skill-@skill" class="cijferbox">*@
+                                @Html.Hidden("Skill", skill)
+                                @Html.Hidden("By", (Object) ViewBag.byStudent)
+                                @Html.EditorFor(model => model.Grade)
+
                             </div>
                 }
                         }

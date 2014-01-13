@@ -15,8 +15,8 @@ namespace BarometerStudent.Controllers
         //
         // GET: /Project/
 
-        ProjectRepository pr = new ProjectRepository(new Context());
-        int studentID = 1;
+        private ProjectRepository pr = new ProjectRepository(new Context());
+        private int studentID = 1;
 
         public ActionResult ProjectOverzicht()
         {
@@ -66,8 +66,10 @@ namespace BarometerStudent.Controllers
 
             foreach(Group g in project.Groups)
             {
-            if(g.Id == pr.ByStudentAndProject(studentID,project.Id).Id)
-                group = g;
+                if (g.Id == pr.ByStudentAndProject(studentID, project.Id).Id)
+                {
+                    group = g;
+                }
             }
 
             string periodName = "";
@@ -109,12 +111,16 @@ namespace BarometerStudent.Controllers
             }
             ViewBag.skills = skills;
 
+            ViewBag.byStudent = studentID;
+
             return View();
         }
 
         [HttpPost]
         public ActionResult Evaluate()
-        {
+        { 
+            
+            Request.Form[""]
             return View();
         }
     }
