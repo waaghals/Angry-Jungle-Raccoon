@@ -9,7 +9,7 @@ using BarometerDomain.Repositories;
 
 namespace BarometerDomain
 {
-    class RunDBTest
+    public class RunDBTest
     {
 
         static void Main(string[] args)
@@ -40,20 +40,23 @@ namespace BarometerDomain
                 skillrepo.Insert(skill3);
                 skillrepo.Insert(skill4);
 
-                Student henk = new Student() { Name = "henk" };
-                Student klaas = new Student() { Name = "klaas" };
-                Student pieter = new Student() { Name = "pieter" };
-                Student joop = new Student() { Name = "joop" };
+                Student henk = new Student() { Name = "henk", Login = "hdvries" }; henk.RoleType.Add(RoleType.Student);
+                Student klaas = new Student() { Name = "klaas", Login = "k_achternaam" }; henk.RoleType.Add(RoleType.Student);
+                Student pieter = new Student() { Name = "pieter", Login = "p_achternaam" }; henk.RoleType.Add(RoleType.Student);
+                Student joop = new Student() { Name = "joop", Login = "j_achternaam" }; henk.RoleType.Add(RoleType.Student);
                 StudentRepository studentrepo = new StudentRepository(db);
                 studentrepo.Insert(henk);
                 studentrepo.Insert(klaas);
                 studentrepo.Insert(pieter);
                 studentrepo.Insert(joop);
 
-                Group groep1 = new Group();
+                User tutor = new User() { Name = "dr henk", Login = "drhenk1" }; tutor.RoleType.Add(RoleType.Teacher);
+                UserRepository userrepo = new UserRepository(db);
+                userrepo.Insert(tutor);
+                Group groep1 = new Group() { Name = "42in01soa", Tutor = tutor };
                 groep1.Student.Add(henk);
                 groep1.Student.Add(klaas);
-                Group groep2 = new Group();
+                Group groep2 = new Group() { Name = "42in01sob", Tutor = tutor };
                 groep2.Student.Add(pieter);
                 groep2.Student.Add(joop);
                 GroupRepository grouprepo = new GroupRepository(db);
@@ -65,8 +68,10 @@ namespace BarometerDomain
                 proj6groups.Add(groep1);
 
                 List<ProjectPeriod> proj6periods = new List<ProjectPeriod>();
-                ProjectPeriod proj6period1 = new ProjectPeriod() { Name = "moment2", Start = new DateTime(2014, 01, 05), End = new DateTime(2014, 01, 10) };
-                ProjectPeriod proj6period2 = new ProjectPeriod() { Name = "moment1", Start = new DateTime(2013, 12, 05), End = new DateTime(2013, 12, 10) };
+                ProjectPeriod proj6period1 = new ProjectPeriod() { Name = "moment2", Start = new DateTime(2015, 01, 05), End = new DateTime(2015, 01, 10) };
+                ProjectPeriod proj6period2 = new ProjectPeriod() { Name = "moment1", Start = new DateTime(2014, 12, 05), End = new DateTime(2014, 12, 10) };
+                proj6periods.Add(proj6period1);
+                proj6periods.Add(proj6period2);
 
                 proj6period1.Evaluation.Add(new Evaluation() { Skill = skill1, By = henk, Grade = 6, For = klaas });
                 proj6period1.Evaluation.Add(new Evaluation() { Skill = skill1, By = klaas, Grade = 6, For = henk });
@@ -93,8 +98,10 @@ namespace BarometerDomain
                 proj5groups.Add(groep2);
 
                 List<ProjectPeriod> proj5periods = new List<ProjectPeriod>();
-                ProjectPeriod proj5period1 = new ProjectPeriod() { Name = "moment2", Start = new DateTime(2014, 01, 05), End = new DateTime(2014, 01, 10) };
-                ProjectPeriod proj5period2 = new ProjectPeriod() { Name = "moment1", Start = new DateTime(2013, 12, 05), End = new DateTime(2013, 12, 10) };
+                ProjectPeriod proj5period1 = new ProjectPeriod() { Name = "moment12", Start = new DateTime(2014, 01, 05), End = new DateTime(2014, 01, 10) };
+                ProjectPeriod proj5period2 = new ProjectPeriod() { Name = "moment11", Start = new DateTime(2013, 12, 05), End = new DateTime(2013, 12, 10) };
+                proj5periods.Add(proj5period1);
+                proj5periods.Add(proj5period2);
 
                 //PERIOD 1
                 //GROEP 1
@@ -144,11 +151,17 @@ namespace BarometerDomain
                     Groups = proj5groups,
                     ProjectPeriod = proj5periods
                 };
+
+
                 ProjectRepository projrepo = new ProjectRepository(db);
                 ProjectPeriodRepository projperiodrepo = new ProjectPeriodRepository(db);
                 EvaluationRepository evalrepo = new EvaluationRepository(db);
                 foreach(Project p in new List<Project>(){PROJ5, PROJ6})
                 {
+                    foreach (Group gr in p.Groups)
+                        foreach (Student s in gr.Student)
+                            p.Students.Add(s);
+
                     projrepo.Insert(p);
                     foreach(ProjectPeriod pp in p.ProjectPeriod)
                     {
