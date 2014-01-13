@@ -118,9 +118,7 @@ namespace BarometerStudent.Controllers
 
         [HttpPost]
         public ActionResult Evaluate()
-        { 
-            
-            Request.Form[""]
+        {
             return View();
         }
     }
