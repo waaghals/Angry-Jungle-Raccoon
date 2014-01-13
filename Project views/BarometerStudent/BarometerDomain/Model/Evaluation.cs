@@ -20,19 +20,19 @@ namespace BarometerDomain.Model
             set;
         }
 
-        public Skill Skill
+        public virtual Skill Skill
         {
             get;
             set;
         }
 
-        public Student By
+        public virtual Student By
         {
             get;
             set;
         }
 
-        public Student For
+        public virtual Student For
         {
             get;
             set;

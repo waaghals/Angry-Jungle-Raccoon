@@ -35,7 +35,7 @@ namespace BarometerDomain.Model
             set;
         }
 
-        public ICollection<Evaluation> Evaluation
+        public virtual ICollection<Evaluation> Evaluation
         {
             get;
             set;
