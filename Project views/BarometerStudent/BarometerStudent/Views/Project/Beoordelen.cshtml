@@ -1,4 +1,4 @@
-﻿@model BarometerDomain.Model.Evaluation
+﻿@model BarometerDomain.Model.ProjectPeriod
 
 @ViewBag.Beschrijving
 <div id="tabs">
@@ -27,14 +27,13 @@
                         @{
                 foreach (string skill in ViewBag.skills)
                 {
+                    int index = 0;
                             <div class="rating">
                                 @skill
-                                @*<input type="text" name="skill-@skill" class="cijferbox">*@
-                                @Html.Hidden("Skill", skill)
-                                @Html.Hidden("By", (Object) ViewBag.byStudent)
-                                @Html.EditorFor(model => model.Grade)
-
+                                <input type="text" name="skill-@skill" class="cijferbox">
+                             @Html.TextBoxFor(model => model.Evaluation[i].)
                             </div>
+                    index++;
                 }
                         }
                     </div>
@@ -43,10 +42,10 @@
                         <textarea name="opmerkingvak" cols="1" rows="1" class="opmerkingbox"></textarea>
                     </div>
                     <div class="buttonbox">
-                        <input type="submit" name="opslaan" value="Opslaan" />
-                        <input type="submit" name="annuleren" value="Annuleren" />
-                        <button class="button">Opslaan</button>
-                        <button class="button">Annuleren</button>
+                        <input class="button" type="submit" name="opslaan" value="Opslaan" />
+                        <input class="button" type="submit" name="annuleren" value="Annuleren" />
+                        @*<button class="button">Opslaan</button>
+                        <button class="button">Annuleren</button>*@
                     </div>
                 </div>
             }

@@ -144,7 +144,7 @@ h5, h6 {
     -moz-outline: 2px solid #e80c4d;
     outline: 2px solid #e80c4d;
     border: 0px;
-    background-color: #e80c4d;
+    background-color: #e80c4d !important;
     color: #fff;
     text-align: center;
     height: 30px;
