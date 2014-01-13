@@ -27,20 +27,12 @@ namespace BarometerDomain.Repositories
 
         public IEnumerable<Project> WithStudent(Student student)
         {
-            List<Project> ret = new List<Project>();
-            ret.AddRange(student.Project);
-            return ret;
+            return WithStudent(student.Id);
         }
         public IEnumerable<Project> WithStudent(int studentId)
         {
-            List<Project> ret = new List<Project>();
-            foreach(Student s in database.Students)
-                if (s.Id == studentId)
-                {
-                    ret.AddRange(s.Project);
-                    break;
-                }
-            return ret;
+            Student s = new StudentRepository(database).Get(studentId);
+            return s.Project.ToList();
         }
     }
 }

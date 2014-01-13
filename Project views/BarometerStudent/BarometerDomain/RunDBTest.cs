@@ -153,6 +153,7 @@ namespace BarometerDomain
                 };
 
 
+
                 ProjectRepository projrepo = new ProjectRepository(db);
                 ProjectPeriodRepository projperiodrepo = new ProjectPeriodRepository(db);
                 EvaluationRepository evalrepo = new EvaluationRepository(db);
@@ -161,7 +162,11 @@ namespace BarometerDomain
                     foreach (Group gr in p.Groups)
                         foreach (Student s in gr.Student)
                             p.Students.Add(s);
-
+                    foreach(Student s in p.Students)
+                    {
+                        s.Project.Add(p);
+                    }
+                    db.SaveChanges();
                     projrepo.Insert(p);
                     foreach(ProjectPeriod pp in p.ProjectPeriod)
                     {
