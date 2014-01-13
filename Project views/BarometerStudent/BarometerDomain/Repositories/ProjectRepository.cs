@@ -34,5 +34,17 @@ namespace BarometerDomain.Repositories
             Student s = new StudentRepository(database).Get(studentId);
             return s.Project.ToList();
         }
+
+        public Group ByStudentAndProject(int studentId, int ProjectId)
+        {
+            Project proj = this.Get(ProjectId);
+            Student student = new StudentRepository(database).Get(studentId);
+            foreach (Group g in proj.Groups)
+            {
+                if (g.Student.Contains(student))
+                    return g;
+            }
+            return null;
+        }
     }
 }

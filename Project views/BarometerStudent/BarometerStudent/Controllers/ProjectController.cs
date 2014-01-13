@@ -17,7 +17,6 @@ namespace BarometerStudent.Controllers
 
         ProjectRepository pr = new ProjectRepository(new Context());
         int studentID = 1;
-        int groepID = 1;
 
         public ActionResult ProjectOverzicht()
         {
@@ -67,7 +66,7 @@ namespace BarometerStudent.Controllers
 
             foreach(Group g in project.Groups)
             {
-            if(g.Id == groepID)
+            if(g.Id == pr.ByStudentAndProject(studentID,project.Id).Id)
                 group = g;
             }
 
