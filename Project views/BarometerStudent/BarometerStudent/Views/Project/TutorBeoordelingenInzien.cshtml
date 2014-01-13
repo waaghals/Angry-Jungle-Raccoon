@@ -1,0 +1,111 @@
+﻿<br/>
+<div class="align-center">
+@using (Html.BeginForm("BeoordelingenInzien", "Project", FormMethod.Post))
+{
+    <select>
+        <option value="">-- Selecteer project --</option>
+	    <optgroup label="Blok 5">
+            <option value="1">Project waterval - ontwerp</option>
+	    </optgroup>
+	    <optgroup label="Blok 6">
+            <option value="2">Project waterval - bouw</option>
+	        <option value="2">Nog een project</option>
+	    </optgroup>
+    </select>
+       
+    <br/>
+    <br/>
+    
+    <select>
+        @{
+            int i = 1;
+            foreach(string groep in ViewBag.Groepen)
+            {
+			    <option value="@i">@groep</option>
+                i++;
+            }
+        }
+    </select>
+
+    <select>
+        @{
+            int i2 = 1;
+            foreach(string week in ViewBag.BeoordelingsMomenten)
+            {
+			    <option value="@i2">@week</option>
+                i2++;
+            }
+        }
+    </select>
+
+    <button class="button">Toon beoordelingen</button>
+}
+</div>
+
+<br/>
+
+<div id="tabs">
+  <ul>
+    @{
+        int i3 = 1;
+        foreach(string s in ViewBag.Studenten)
+        {
+            <li><a href="#tabs-@i3">@s</a></li>
+            i3++;      
+        }
+    }
+  </ul>
+@{
+    i3 = 1;
+    foreach(string s in ViewBag.Studenten)
+    {
+      <div id="tabs-@i3" class="tab">
+          <button class="button float-right">Naar student</button>
+          <br/>
+          <div class ="tabcontainer">
+              <table>
+                  <tr>
+                      <th></th><th class="align-center">Gemiddelde</th>
+                      @{
+                            foreach (string student in ViewBag.Studenten)
+                            {
+                                if(student != s)
+                                {
+                                    <th class="align-center">@student</th>
+                                }
+                            }
+                      }
+                  </tr>
+                  @{
+                        foreach (string c in ViewBag.Competenties)
+                        {
+                            <tr>
+                                <td>@c:</td>
+                                <td class="cijferOverzicht">6</td>
+                                @foreach (string student in ViewBag.Studenten)
+                                {
+                                    if(student != s)
+                                    {
+                                        <td class="cijferOverzicht">6</td>
+                                    }
+                                }
+                            </tr>
+                        }
+                 }
+                <tr>
+                    <td></td><td></td>
+                    @foreach (string student in ViewBag.Studenten)
+                    {
+                         if(student != s)
+                         {
+                                <td><br/><button class="button buttonOpmerking">Opmerking</button></td>
+                         }
+                    }
+                </tr>
+              </table>
+        </div>
+      </div>
+        i3++;
+    }
+}
+</div>

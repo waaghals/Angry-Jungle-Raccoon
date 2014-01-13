@@ -285,6 +285,18 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Project\ProjectOverzicht.cshtml" />
     <Content Include="Views\Project\Beoordelen.cshtml" />
+    <Content Include="Views\Project\GroepsindelingAanmaken.cshtml" />
+    <Content Include="Views\Project\GroepToewijzenAanProject.cshtml" />
+    <Content Include="Views\Project\KlachtIndienen.cshtml" />
+    <Content Include="Views\Project\MentorVoortgangInzien.cshtml" />
+    <Content Include="Views\Project\NieuwProjectAanmaken.cshtml" />
+    <Content Include="Views\Project\OnderbouwingAanvragen.cshtml" />
+    <Content Include="Views\Project\OpmerkingScherm.cshtml" />
+    <Content Include="Views\Project\ProjectAanmaken.cshtml" />
+    <Content Include="Views\Project\StudentCijferToekennen.cshtml" />
+    <Content Include="Views\Project\StudentNonActiefZetten.cshtml" />
+    <Content Include="Views\Project\TutorBeoordelingenInzien.cshtml" />
+    <Content Include="Views\Project\TutorToewijzen.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
