@@ -3,47 +3,52 @@
     @Html.Raw(ViewBag.Description)
 </p>
 <h2>Mededelingen</h2>
-    @if (ViewBag.Project != null) {
+@if (ViewBag.Project != null)
+{
 
-    <div> You Selected:  @ViewBag.Project</div>
+    <div>You Selected:  @ViewBag.Project</div>
 
 }
 <p>
     @{
-        foreach(String s in ViewBag.Mededelingen)
+        foreach (String s in ViewBag.Mededelingen)
         {
-            @Html.Raw(s);
+        @Html.Raw(s);
         <br />
         }
         
     }
 </p>
-    <table>
-        <tr>
-            <td>
-                <select name="beoordelingsmoment" class="fancy_selectbox" tabindex="1">
-                    @{
-                        int i = 1;
-                        foreach(String s in ViewBag.BeoordelingsMomenten)
-                        {
-			                <option value="@i">@s</option>
+<table>
+    <tr>
+        <td>
+            <select name="beoordelingsmoment" class="fancy_selectbox" tabindex="1">
+                @{
+                    int i = 1;
+                    foreach (String s in ViewBag.BeoordelingsMomenten)
+                    {
+                    <option value="@i">@s</option>
             
-                            i++;
-                        }
+                        i++;
                     }
-                </select> 
-            </td>
-            <td><button class="button" style ="">Medestudent beoordelen</button></td>
-        </tr>
-        <tr>
-            <td><button class="button" style ="">Beoordelingen bekijken</button></td>
-        </tr>
-    </table>
+                }
+            </select>
+        </td>
+        <td>
+            <button class="button" style="">Medestudent beoordelen</button></td>
+    </tr>
+    <tr>
+        <td>
+            <button class="button" style="">Beoordelingen bekijken</button></td>
+    </tr>
+</table>
+<br />
+@using (@Html.BeginForm("Beoordelen", "Project", FormMethod.Post))
+{
+    @Html.DropDownList("ProjectPeriod")
     <br />
- @using (@Html.BeginForm("Beoordelen", "Project", FormMethod.Post))
-    {
-        @Html.Hidden("SelectedProject",(Object)ViewBag.Project)
-        <input type="submit" name="beoordelen" value="Medestudent beoordelen" />
-        <input type="submit" name="bekijken" value="Beoordelingen Bekijken" />
-    }
-    
+    @Html.Hidden("SelectedProject", (Object)ViewBag.Project)
+    <input type="submit" name="beoordelen" value="Medestudent beoordelen" />
+    <input type="submit" name="bekijken" value="Beoordelingen Bekijken" />
+}
+

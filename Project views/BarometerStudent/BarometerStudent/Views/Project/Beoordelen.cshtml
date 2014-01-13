@@ -1,45 +1,52 @@
 ﻿@ViewBag.Beschrijving
 <div id="tabs">
-  <ul>
-    @{
-        int i = 1;
-        foreach(string s in ViewBag.Studenten)
-        {
+    <ul>
+        @{
+            int i = 1;
+            foreach (string s in ViewBag.studenten)
+            {
             <li><a href="#tabs-@i">@s</a></li>
-            i++;      
+                i++;
+            }
+        }
+    </ul>
+    @{
+        i = 1;
+        foreach (string s in ViewBag.Studenten)
+        {
+        <div id="tabs-@i" class="tab">
+            @using (@Html.BeginForm("evaluate", "Project", FormMethod.Post))
+            {
+                    @Html.Hidden("forStudent", i)
+                <h1>Beoordeel @s</h1>
+                <div class="tabcontainer">
+                    <div class="competenties">
+                        <h3>Competenties</h3>
+                        @{
+                foreach (string skill in ViewBag.skills)
+                {
+                            <div class="rating">
+                                @skill
+                                <input type="text" name="skill-@skill" class="cijferbox">
+                            </div>
+                }
+                        }
+                    </div>
+                    <div class="opmerkingen">
+                        <h3>Opmerkingen</h3>
+                        <textarea name="opmerkingvak" cols="1" rows="1" class="opmerkingbox"></textarea>
+                    </div>
+                    <div class="buttonbox">
+                        <input type="submit" name="opslaan" value="Opslaan" />
+                        <input type="submit" name="annuleren" value="Annuleren" />
+                        <button class="button">Opslaan</button>
+                        <button class="button">Annuleren</button>
+                    </div>
+                </div>
+            }
+        </div>
+            i++;
         }
     }
-  </ul>
-@{
-    i = 1;
-    foreach(string s in ViewBag.Studenten)
-    {
-      <div id="tabs-@i" class="tab">
-          <h1>Beoordeel @s</h1>
-          <div class ="tabcontainer">
-            <div class="competenties">
-                <h3>Competenties</h3>
-                    @{
-                            for(int i2 = 1; i2<=10;i2++)
-                            {
-                                <div class="rating">
-                                    competentie @i2 <input type="text" name="cijfer" class="cijferbox">
-                                </div>
-                            }
-                    }
-            </div>
-            <div class="opmerkingen">
-                <h3>Opmerkingen</h3>
-                <textarea name="opmerkingvak" cols="1" rows="1" class="opmerkingbox"></textarea>
-            </div>
-            <div class="buttonbox">
-                <button class="button">Opslaan</button>
-                <button class="button">Annuleren</button>
-            </div>
-        </div>
-      </div>
-        i++;
-    }
-}
 </div>
 

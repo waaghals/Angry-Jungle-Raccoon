@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BarometerDomain;
+using BarometerDomain.Model;
+using BarometerDomain.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,9 +11,13 @@ namespace BarometerStudent.Controllers
 {
     public class ProjectController : Controller
     {
-        
+
         //
         // GET: /Project/
+
+        ProjectRepository pr = new ProjectRepository(new Context());
+        int studentID = 1;
+        int groepID = 1;
 
         public ActionResult ProjectOverzicht()
         {
@@ -33,8 +40,11 @@ namespace BarometerStudent.Controllers
         public ActionResult ProjectOverzicht(int Project)
         {
             ViewBag.Project = Project;
-            ViewBag.Title = "Project Barometer - Ontwerp";
-            ViewBag.Description = " Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada semper mi, id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut.<br />Lorem ipsum dolor sit amet, consectetur adipiscing elit fusce vel sapien elit in malesuada semper mi, id sollicitudin urna fermentum ut fusce varius nisl ac ipsum gravida vel pretium tellus.";
+
+            ViewBag.Title = pr.Get(Project).Name;
+            ViewBag.Description = pr.Get(Project).Description;
+            ViewBag.ProjectPeriod = new SelectList(pr.Get(Project).ProjectPeriod, "Id", "Name");
+
             ViewBag.Mededelingen = new string[] {
                 "25/10/2013 - Beoordelingsmoment week 9 is gesloten.",
                 "24/10/2013 - Waarschuwing, er is nog maar één dag om de beoordelingen in te vullen.",
@@ -48,39 +58,64 @@ namespace BarometerStudent.Controllers
             return View();
         }
 
+        [HttpPost]
         public ActionResult Beoordelen()
         {
-            ViewBag.Title = "Beoordelen";
-            ViewBag.Studenten = new string[] {
-                "Henk",
-                "Piet",
-                "Klaas"
-            };
-            return View();
-        }
+            Project project = pr.Get(Convert.ToInt32(Request.Form["SelectedProject"]));
+            Group group = new Group();
+            string name = project.Name;
 
-        [HttpPost]
-        public ActionResult Beoordelen(String beoordelen, int SelectedProject, String week)
-        {
-            ViewBag.Title = "Beoordelen van Project " + SelectedProject + " in week " + week;
-            if (beoordelen != null)
+            foreach(Group g in project.Groups)
+            {
+            if(g.Id == groepID)
+                group = g;
+            }
+
+            string periodName = "";
+
+            foreach (ProjectPeriod p in project.ProjectPeriod)
+            {
+                if (p.Id == Convert.ToInt32(Request.Form["ProjectPeriod"]))
+                {
+                    periodName = p.Name;
+                }
+            }
+
+            ViewBag.Title = "Beoordelen van Project " + name + " in periode " + periodName;
+            if (Request.Form["beoordelen"] != null)
             {
                 ViewBag.Beschrijving = "Hier beoordeel je je medestudenten";
-                ViewBag.Studenten = new string[] {
-                "Henk",
-                "Piet",
-                "Klaas"
-            };
             }
             else
             {
                 ViewBag.Beschrijving = "Hier zie je de beoordelingen van je medestudenten";
-                ViewBag.Studenten = new string[] {
-                "Henk",
-                "Piet",
-                "Klaas"
-            };
             }
+
+            List<string> names = new List<string>();
+
+            foreach (Student s in group.Student)
+            {
+                if (studentID != s.Id)
+                {
+                    names.Add(s.Name);
+                }
+            }
+            ViewBag.studenten = names;
+
+            List<string> skills = new List<string>();
+
+            foreach (Skill s in project.Skill)
+            {
+                skills.Add(s.Category);
+            }
+            ViewBag.skills = skills;
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Evaluate()
+        {
             return View();
         }
     }
