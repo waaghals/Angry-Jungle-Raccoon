@@ -47,22 +47,22 @@ namespace BarometerDomain.Model
             set;
         }
 
-        public virtual ICollection<ProjectPeriod> ProjectPeriod
+        public virtual IList<ProjectPeriod> ProjectPeriod
         {
             get;
             set;
         }
 
-        public virtual ICollection<Skill> Skill
+        public virtual IList<Skill> Skill
         {
             get;
             set;
         }
 
-        public virtual ICollection<Student> Students
+        public virtual IList<Student> Students
         { get; set; }
 
-        public virtual ICollection<Group> Groups
+        public virtual IList<Group> Groups
         { get; set; }
 
         public virtual User ProjectDocent

@@ -27,7 +27,7 @@ namespace BarometerDomain.Model
             set;
         }
 
-        public virtual ICollection<Project> Project
+        public virtual IList<Project> Project
         {
             get;
             set;
