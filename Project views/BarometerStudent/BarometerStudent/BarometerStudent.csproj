@@ -297,6 +297,7 @@
     <Content Include="Views\Project\StudentNonActiefZetten.cshtml" />
     <Content Include="Views\Project\TutorBeoordelingenInzien.cshtml" />
     <Content Include="Views\Project\TutorToewijzen.cshtml" />
+    <Content Include="Views\Project\Beoordelen2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
