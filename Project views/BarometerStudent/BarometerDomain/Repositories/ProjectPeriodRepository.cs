@@ -14,5 +14,18 @@ namespace BarometerDomain.Repositories
         {
             table = database.ProjectPeriods;
         }
+
+        public ICollection<Evaluation> GetEvaluations(int projectPeriodId, int byStudent, int forStudent)
+        {
+            List<Evaluation> ret = new List<Evaluation>();
+            ProjectPeriod period = Get(projectPeriodId);
+
+            foreach(Evaluation eval in period.Evaluation)
+            {
+                if (eval.By.Id == byStudent && eval.For.Id == forStudent)
+                    ret.Add(eval);
+            }
+            return ret;
+        }
     }
 }
