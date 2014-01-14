@@ -60,28 +60,28 @@ namespace BarometerStudent.Controllers
         [HttpPost]
         public ActionResult Beoordelen()
         {
+            ProjectPeriodRepository ppr = new ProjectPeriodRepository(new Context());
+
             Project project = pr.Get(Convert.ToInt32(Request.Form["SelectedProject"]));
-            Group group = new Group();
+            Group group = pr.ByStudentAndProject(studentID, project.Id);
+            List<Student> students = (List<Student>)group.Student;
+            List<Evaluation> evaluaties = new List<Evaluation>();
+            List<List<Evaluation>> evallist = new List<List<Evaluation>>();
+            List<string> names = new List<string>();
+
+            foreach (Student s in students)
+            {
+                if (s.Id != studentID)
+                {
+                    evaluaties = (List<Evaluation>)ppr.GetEvaluations(Convert.ToInt32(Request.Form["ProjectPeriod"]), studentID, s.Id);
+                    evallist.Add(evaluaties);
+                    names.Add(s.Name);
+                }
+            }
+            ViewBag.names = names;
+
             string name = project.Name;
-
-            foreach(Group g in project.Groups)
-            {
-                if (g.Id == pr.ByStudentAndProject(studentID, project.Id).Id)
-                {
-                    group = g;
-                }
-            }
-
-            string periodName = "";
-
-            foreach (ProjectPeriod p in project.ProjectPeriod)
-            {
-                if (p.Id == Convert.ToInt32(Request.Form["ProjectPeriod"]))
-                {
-                    periodName = p.Name;
-                }
-            }
-
+            string periodName = Request.Form["ProjectPeriod"];
             ViewBag.Title = "Beoordelen van Project " + name + " in periode " + periodName;
             if (Request.Form["beoordelen"] != null)
             {
@@ -92,48 +92,42 @@ namespace BarometerStudent.Controllers
                 ViewBag.Beschrijving = "Hier zie je de beoordelingen van je medestudenten";
             }
 
-            List<string> names = new List<string>();
-
-            foreach (Student s in group.Student)
-            {
-                if (studentID != s.Id)
-                {
-                    names.Add(s.Name);
-                }
-            }
-            ViewBag.studenten = names;
-
-            List<string> skills = new List<string>();
-
-            foreach (Skill s in project.Skill)
-            {
-                skills.Add(s.Category);
-            }
-            ViewBag.skills = skills;
-
-            ViewBag.byStudent = studentID;
-
-            StudentRepository sr = new StudentRepository(new Context());
-            TempData["curStudent"] = sr.Get(studentID);
-
-            return View();
+            return View(evallist);
         }
 
         [HttpPost]
-        public ActionResult Evaluate(ProjectPeriod pp)
+        public ActionResult Evaluate(List<List<Evaluation>> model)
         {
-
-            String[] tst = Request.Form.AllKeys;
-            List<Evaluation> evaluations = (List<Evaluation>) pp.Evaluation;
-            foreach (Evaluation e in evaluations)
+            if (Request.Form["annuleren"] != null)
             {
-                if (TempData.ContainsKey("curStudent"))
-                {
-                    e.By = (Student)TempData["curStudent"];
-                    //e.For = RequestForm[""];
-                }
+                return RedirectToAction("Index", "StudentHome");
             }
-            return View();
+            else
+            {
+                List<Evaluation> update = new List<Evaluation>();
+                foreach (List<Evaluation> l in model)
+                    foreach (Evaluation e in l)
+                        update.Add(e);
+
+                SkillRepository sr = new SkillRepository(new Context());
+                StudentRepository str = new StudentRepository(new Context());
+                EvaluationRepository er = new EvaluationRepository(new Context());
+
+                foreach (Evaluation e in update)
+                {
+                    e.Skill = sr.Get(e.Skill.Id);
+                    e.By = str.Get(e.By.Id);
+                    e.For = str.Get(e.For.Id);
+                    er.Update(e);
+                }
+
+                er.Save();
+                sr.Save();
+                str.Save();
+
+
+                return RedirectToAction("Index", "StudentHome");
+            }
         }
 
         public ActionResult Menu()
