@@ -68,12 +68,9 @@ namespace BarometerDomain.Repositories
 
         public bool Update(T entity)
         {
-            if (Delete(entity))
-            {
-                table.Add(entity);
-                Save();
-                return true;
-            }
+            table.Attach(entity);
+            database.Entry(entity).State = EntityState.Modified;
+            Save();
             return false;
         }
 
