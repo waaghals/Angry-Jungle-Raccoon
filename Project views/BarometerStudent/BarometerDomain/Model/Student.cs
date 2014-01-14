@@ -28,7 +28,7 @@ namespace BarometerDomain.Model
             set;
         }
 
-        public IList<Group> Groups { get; set; }
+        public virtual IList<Group> Groups { get; set; }
 
     }
 }
