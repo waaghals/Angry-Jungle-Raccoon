@@ -14,7 +14,7 @@ namespace BarometerDomain
 
         static void Main(string[] args)
         {
-            //RunDBTest.fillScript();
+            RunDBTest.fillScript();
             using(var db = new Context())
             {
                     foreach(Project p in db.Projects)
@@ -34,34 +34,19 @@ namespace BarometerDomain
                 Skill skill2 = new Skill() { Category = "meepraten" };
                 Skill skill3 = new Skill() { Category = "plannen" };
                 Skill skill4 = new Skill() { Category = "testplan kennis" };
-                SkillRepository skillrepo = new SkillRepository(db);
-                skillrepo.Insert(skill1);
-                skillrepo.Insert(skill2);
-                skillrepo.Insert(skill3);
-                skillrepo.Insert(skill4);
 
                 Student henk = new Student() { Name = "henk", Login = "hdvries" }; henk.RoleType.Add(RoleType.Student);
                 Student klaas = new Student() { Name = "klaas", Login = "k_achternaam" }; henk.RoleType.Add(RoleType.Student);
                 Student pieter = new Student() { Name = "pieter", Login = "p_achternaam" }; henk.RoleType.Add(RoleType.Student);
                 Student joop = new Student() { Name = "joop", Login = "j_achternaam" }; henk.RoleType.Add(RoleType.Student);
-                StudentRepository studentrepo = new StudentRepository(db);
-                studentrepo.Insert(henk);
-                studentrepo.Insert(klaas);
-                studentrepo.Insert(pieter);
-                studentrepo.Insert(joop);
 
                 User tutor = new User() { Name = "dr henk", Login = "drhenk1" }; tutor.RoleType.Add(RoleType.Teacher);
-                UserRepository userrepo = new UserRepository(db);
-                userrepo.Insert(tutor);
                 Group groep1 = new Group() { Name = "42in01soa", Tutor = tutor };
                 groep1.Student.Add(henk);
                 groep1.Student.Add(klaas);
                 Group groep2 = new Group() { Name = "42in01sob", Tutor = tutor };
                 groep2.Student.Add(pieter);
                 groep2.Student.Add(joop);
-                GroupRepository grouprepo = new GroupRepository(db);
-                grouprepo.Insert(groep1);
-                grouprepo.Insert(groep2);
 
                 //PROJ6
                 List<Group> proj6groups = new List<Group>();
@@ -157,31 +142,8 @@ namespace BarometerDomain
 
 
                 ProjectRepository projrepo = new ProjectRepository(db);
-                ProjectPeriodRepository projperiodrepo = new ProjectPeriodRepository(db);
-                EvaluationRepository evalrepo = new EvaluationRepository(db);
                 foreach(Project p in new List<Project>(){PROJ5, PROJ6})
                 {
-                    /*foreach (Group gr in p.Groups)
-                        foreach (Student s in gr.Student)
-                            p.Students.Add(s);
-                    foreach(Student s in p.Students)
-                    {
-                        s.Project.Add(p);
-                    }*/
-                    db.SaveChanges();
-                    foreach(ProjectPeriod pp in p.ProjectPeriod)
-                    {
-                        try
-                        {
-                            projperiodrepo.Insert(pp);
-                        }catch(Exception e)
-                        {
-                        }
-                        foreach(Evaluation e in pp.Evaluation)
-                        {
-                            evalrepo.Insert(e);
-                        }
-                    }
                     projrepo.Insert(p);
                 }
             }
