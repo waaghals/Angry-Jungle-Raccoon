@@ -18,8 +18,9 @@ namespace BarometerDomain.Model
         public Student()
             : base()
         {
-            Project = new List<Project>();
+            Groups = new List<Group>();
         }
+
         [Required]
         public int Number
         {
@@ -27,11 +28,7 @@ namespace BarometerDomain.Model
             set;
         }
 
-        public virtual IList<Project> Project
-        {
-            get;
-            set;
-        }
+        public IList<Group> Groups { get; set; }
 
     }
 }

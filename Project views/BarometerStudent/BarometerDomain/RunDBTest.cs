@@ -14,7 +14,7 @@ namespace BarometerDomain
 
         static void Main(string[] args)
         {
-            RunDBTest.fillScript();
+            //RunDBTest.fillScript();
             using(var db = new Context())
             {
                     foreach(Project p in db.Projects)
@@ -161,13 +161,13 @@ namespace BarometerDomain
                 EvaluationRepository evalrepo = new EvaluationRepository(db);
                 foreach(Project p in new List<Project>(){PROJ5, PROJ6})
                 {
-                    foreach (Group gr in p.Groups)
+                    /*foreach (Group gr in p.Groups)
                         foreach (Student s in gr.Student)
                             p.Students.Add(s);
                     foreach(Student s in p.Students)
                     {
                         s.Project.Add(p);
-                    }
+                    }*/
                     db.SaveChanges();
                     foreach(ProjectPeriod pp in p.ProjectPeriod)
                     {

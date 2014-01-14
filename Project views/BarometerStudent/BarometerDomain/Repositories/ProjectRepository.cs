@@ -31,8 +31,13 @@ namespace BarometerDomain.Repositories
         }
         public IEnumerable<Project> WithStudent(int studentId)
         {
-            Student s = new StudentRepository(database).Get(studentId);
-            return s.Project.ToList();
+            Student student = new StudentRepository(database).Get(studentId);
+            List<Project> templist = new List<Project>();
+            foreach(Group group in student.Groups)
+            {
+                templist.AddRange(group.Project);
+            }
+            return templist;
         }
 
         public Group ByStudentAndProject(int studentId, int ProjectId)
