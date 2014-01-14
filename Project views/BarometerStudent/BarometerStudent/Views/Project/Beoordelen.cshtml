@@ -11,6 +11,7 @@
                 i++;
             }
         }
+        @{ BarometerDomain.Model.Student myStudent = (TempData["currentStudent"] as BarometerDomain.Model.Student)}
         
     </ul>
     @{
@@ -35,6 +36,7 @@
                                 @skill
                                 @*<input type="text" name="skill-@skill" class="cijferbox">*@
                                 @Html.EditorFor(model => model.Evaluation[index].Grade)
+                              
                             </div>
                     index++;
                 }
