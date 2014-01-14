@@ -122,13 +122,15 @@ namespace BarometerStudent.Controllers
         [HttpPost]
         public ActionResult Evaluate(ProjectPeriod pp)
         {
+
+            String[] tst = Request.Form.AllKeys;
             List<Evaluation> evaluations = (List<Evaluation>) pp.Evaluation;
             foreach (Evaluation e in evaluations)
             {
                 if (TempData.ContainsKey("curStudent"))
                 {
                     e.By = (Student)TempData["curStudent"];
-                    //e.For = (Student) Request.Form["forStudent"];
+                    //e.For = RequestForm[""];
                 }
             }
             return View();
