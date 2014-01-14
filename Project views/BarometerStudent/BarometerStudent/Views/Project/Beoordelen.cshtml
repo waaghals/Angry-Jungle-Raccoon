@@ -11,6 +11,7 @@
                 i++;
             }
         }
+        
     </ul>
     @{
         i = 1;
@@ -25,13 +26,15 @@
                     <div class="competenties">
                         <h3>Competenties</h3>
                         @{
+                    int index = 0;
+                    
                 foreach (string skill in ViewBag.skills)
                 {
-                    int index = 0;
+                    
                             <div class="rating">
                                 @skill
-                                <input type="text" name="skill-@skill" class="cijferbox">
-                             @*Html.TextBoxFor(model => model.Evaluation[i].)*@
+                                @*<input type="text" name="skill-@skill" class="cijferbox">*@
+                                @Html.EditorFor(model => model.Evaluation[index].Grade)
                             </div>
                     index++;
                 }

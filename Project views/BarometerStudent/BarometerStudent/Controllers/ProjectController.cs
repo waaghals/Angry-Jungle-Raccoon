@@ -113,12 +113,24 @@ namespace BarometerStudent.Controllers
 
             ViewBag.byStudent = studentID;
 
+            StudentRepository sr = new StudentRepository(new Context());
+            TempData["curStudent"] = sr.Get(studentID);
+
             return View();
         }
 
         [HttpPost]
-        public ActionResult Evaluate()
+        public ActionResult Evaluate(ProjectPeriod pp)
         {
+            List<Evaluation> evaluations = (List<Evaluation>) pp.Evaluation;
+            foreach (Evaluation e in evaluations)
+            {
+                if (TempData.ContainsKey("curStudent"))
+                {
+                    e.By = (Student)TempData["curStudent"];
+                    //e.For = (Student) Request.Form["forStudent"];
+                }
+            }
             return View();
         }
     }
