@@ -71,24 +71,29 @@ namespace BarometerDomain.Model
         public IList<Evaluation> GetAverageEvaluations(Student student)
         {
             IList<Evaluation> evaluationList = new List<Evaluation>();
-            foreach(ProjectPeriod projectPeriod in ProjectPeriod)
+            foreach (ProjectPeriod projectPeriod in ProjectPeriod)
             {
-                foreach(Evaluation evaluation in projectPeriod.Evaluation)
+                foreach (Evaluation evaluation in projectPeriod.Evaluation)
                 {
-                    Boolean added = false;
-                    foreach(Evaluation averageEvaluation in evaluationList)
+                    if (evaluation.For.Id == student.Id)
                     {
-                        if (averageEvaluation != null)
+                        Boolean added = false;
+                        if (evaluationList.Count != 0)
                         {
-                            if(evaluation.By == averageEvaluation.By && evaluation.For == averageEvaluation.For && evaluation.Skill == averageEvaluation.Skill && !added)
+                            if (!added)
                             {
-                                averageEvaluation.Grade = averageEvaluation.Grade + evaluation.Grade;
-                                added = true;
+                                foreach (Evaluation averageEvaluation in evaluationList)
+                                {
+                                    if (evaluation.By.Id == averageEvaluation.By.Id  && evaluation.Skill.Category == averageEvaluation.Skill.Category)
+                                    {
+                                        averageEvaluation.Grade = averageEvaluation.Grade + evaluation.Grade;
+                                        added = true;
+                                    }
+                                }
                             }
-                            else if (!added)
+                            if (!added)
                             {
                                 evaluationList.Add(evaluation);
-                                added = true;
                             }
                         }
                         else if (!added)
@@ -96,11 +101,10 @@ namespace BarometerDomain.Model
                             added = true;
                             evaluationList.Add(evaluation);
                         }
-                        
                     }
                 }
             }
-            foreach(Evaluation evaluation in evaluationList)
+            foreach (Evaluation evaluation in evaluationList)
             {
                 evaluation.Grade = evaluation.Grade / ProjectPeriod.Count;
             }
