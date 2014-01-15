@@ -166,6 +166,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
+    <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\StudentHomeController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -298,6 +299,7 @@
     <Content Include="Views\Project\TutorBeoordelingenInzien.cshtml" />
     <Content Include="Views\Project\TutorToewijzen.cshtml" />
     <Content Include="Views\Project\Beoordelen2.cshtml" />
+    <Content Include="Views\Student\VoortgangInzien.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
