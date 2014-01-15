@@ -16,7 +16,7 @@ namespace BarometerStudent.Controllers
         // GET: /Project/
 
         private ProjectRepository pr = new ProjectRepository(new Context());
-        private int studentID = 1;
+        private int studentID = 2;
 
         public ActionResult ProjectOverzicht()
         {
