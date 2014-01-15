@@ -41,8 +41,8 @@ public class StudentController : Controller
                 if ((evaluationList[inner].CompareTo(evaluationList[inner + 1]) == -1))
                 {
                     Evaluation temp = evaluationList[inner];
-                    evaluationList[inner] = evaluationList[inner - 1];
-                    evaluationList[inner - 1] = temp;
+                    evaluationList[inner] = evaluationList[inner + 1];
+                    evaluationList[inner + 1] = temp;
                 }
         return evaluationList;
     }
