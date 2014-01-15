@@ -68,5 +68,44 @@ namespace BarometerDomain.Model
             set;
         }
 
+        public IList<Evaluation> GetAverageEvaluations(Student student)
+        {
+            IList<Evaluation> evaluationList = new List<Evaluation>();
+            foreach(ProjectPeriod projectPeriod in ProjectPeriod)
+            {
+                foreach(Evaluation evaluation in projectPeriod.Evaluation)
+                {
+                    Boolean added = false;
+                    foreach(Evaluation averageEvaluation in evaluationList)
+                    {
+                        if (averageEvaluation != null)
+                        {
+                            if(evaluation.By == averageEvaluation.By && evaluation.For == averageEvaluation.For && evaluation.Skill == averageEvaluation.Skill && !added)
+                            {
+                                averageEvaluation.Grade = averageEvaluation.Grade + evaluation.Grade;
+                                added = true;
+                            }
+                            else if (!added)
+                            {
+                                evaluationList.Add(evaluation);
+                                added = true;
+                            }
+                        }
+                        else if (!added)
+                        {
+                            added = true;
+                            evaluationList.Add(evaluation);
+                        }
+                        
+                    }
+                }
+            }
+            foreach(Evaluation evaluation in evaluationList)
+            {
+                evaluation.Grade = evaluation.Grade / ProjectPeriod.Count;
+            }
+            return evaluationList;
+        }
+
     }
 }
