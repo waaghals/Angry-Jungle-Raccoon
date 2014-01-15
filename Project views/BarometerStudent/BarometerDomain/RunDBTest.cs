@@ -15,6 +15,7 @@ namespace BarometerDomain
         static void Main(string[] args)
         {
             RunDBTest.fillScript();
+
             using(var db = new Context())
             {
                     foreach(Project p in db.Projects)
@@ -41,6 +42,11 @@ namespace BarometerDomain
                 Student joop = new Student() { Name = "joop", Login = "j_achternaam" }; henk.RoleType.Add(RoleType.Student);
 
                 User tutor = new User() { Name = "dr henk", Login = "drhenk1" }; tutor.RoleType.Add(RoleType.Teacher);
+                tutor.MentorStudent.Add(henk);
+                tutor.MentorStudent.Add(klaas);
+                tutor.MentorStudent.Add(pieter);
+                tutor.MentorStudent.Add(joop);
+
                 Group groep1 = new Group() { Name = "42in01soa", Tutor = tutor };
                 groep1.Student.Add(henk);
                 groep1.Student.Add(klaas);
