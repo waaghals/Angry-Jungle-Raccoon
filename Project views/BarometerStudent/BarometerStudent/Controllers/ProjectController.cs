@@ -140,11 +140,14 @@ namespace BarometerStudent.Controllers
             System.Diagnostics.Debug.WriteLine("file uploaded: " + file);
             if (file != null)
             {
+                //zoek bestand en sla het op
                 string fileName = Path.GetFileName(file.FileName);
                 string path = Path.Combine(Server.MapPath("~/App_Data/uploads"), fileName);
                 file.SaveAs(path);
-
+                //zet het in de db
                 new Services.ExcelReader(path).ToDatabase();
+                //verwijder het
+                System.IO.File.Delete(path);
                 
                 
             }

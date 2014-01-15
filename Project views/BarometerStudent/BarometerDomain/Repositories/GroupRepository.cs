@@ -57,11 +57,14 @@ namespace BarometerDomain.Repositories
         {
             Group grp = null;
             foreach (Group g in table)
+            {
+                System.Diagnostics.Debug.WriteLine("search string: " + grpName + ", groupname: " + g.Name);
                 if (g.Name.Equals(grpName))
                 {
                     grp = g;
                     break;
                 }
+            }
             return grp;
         }
 

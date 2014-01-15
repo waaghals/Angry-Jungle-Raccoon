@@ -119,9 +119,9 @@ namespace BarometerStudent.Services
             Group group = groupRepo.ByName(name);
             if (group == null) //als de groep niet bestaat
             {
-                System.Diagnostics.Debug.WriteLine("New group: " + name);
                 group = new Group() { Name = name };
                 groupRepo.Insert(group);
+                groupRepo.Save();
             }
             
             return group;
