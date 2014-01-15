@@ -65,33 +65,39 @@ namespace BarometerStudent.Services
             Context db = new Context();
             StudentRepository studentRepo = new StudentRepository(db);
             GroupRepository groupRepo = new GroupRepository(db);
+            List<Group> ChangedGroups = new List<Group>();
             int idColumn = 0;
             int fNameColumn = 1;
             int preFixColumn = 2;
             int lNameColumn = 3;
             int grpNameColumn = 4;
-            for (int row = 0; row < StringTable.GetLength(1); row++)
+            for (int row = 0; row < StringTable.GetLength(0); row++)
             {
                 string name = StringTable[row, fNameColumn];
                 string prefix = StringTable[row, preFixColumn];
                 string lastName = StringTable[row, lNameColumn];
                 string grpName = StringTable[row, grpNameColumn];
+                System.Diagnostics.Debug.WriteLine("processing" + name + " " + lastName + ", " + grpName);
                 if (name != null && lastName != null && grpName != null)
                 {
                     int id = Convert.ToInt32(StringTable[row, idColumn]);
-                    Student student = TryFindStudent(id, studentRepo, name, prefix, lastName);
+                    bool newStudent;
+                    Student student = TryFindStudent(id, studentRepo, name, prefix, lastName, out newStudent);
                     //zoek groep
                     Group group = TryFindGroup(grpName, groupRepo);
-                    group.Student.Add(student);
-                    groupRepo.Update(group);
+                    student.Groups.Add(group);
+                    if (!newStudent)
+                        studentRepo.Update(student);
+
                 }
             }
             db.SaveChanges();
         }
 
-        private Student TryFindStudent(int id, StudentRepository studentRepo, string prefix, string name, string lName)
+        private Student TryFindStudent(int id, StudentRepository studentRepo, string prefix, string name, string lName, out bool newStudent)
         {
             Student student = studentRepo.ByNumber(id);
+            newStudent = false;
             if (student == null) //als student null is, maak een nieuwe
             {
                 //naam samenstellen
@@ -102,7 +108,9 @@ namespace BarometerStudent.Services
                 student = new Student() { Name = name, Number = id };
                 student.RoleType.Add(RoleType.Student);
                 studentRepo.Insert(student);
+                newStudent = true;
             }
+
             return student;
         }
 
@@ -111,9 +119,11 @@ namespace BarometerStudent.Services
             Group group = groupRepo.ByName(name);
             if (group == null) //als de groep niet bestaat
             {
+                System.Diagnostics.Debug.WriteLine("New group: " + name);
                 group = new Group() { Name = name };
                 groupRepo.Insert(group);
             }
+            
             return group;
         }
     }
