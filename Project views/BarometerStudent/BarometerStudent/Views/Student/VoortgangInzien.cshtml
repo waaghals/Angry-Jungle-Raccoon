@@ -20,19 +20,21 @@
                 <div class="tabcontainer">
                     <div class="competenties">
                         <h3>Competenties</h3>
-                        @{
-
-            for (int n = 0; n < pair.Value.Count; n++)
-            {
-
+                  
+                            @{
+                                
+                            }
+                @*for (int n = 0; n < pair.Value.Count; n++)
+                {
                 <div class="rating">
-                    @pair.Key
+                    
                     @Html.DisplayFor(model => pair.Value[n].Skill.Category)
                     @Html.DisplayFor(model => pair.Value[n].Grade)
 
                 </div>
-            }
-                        }
+                }*@
+            
+                        
                     </div>
                 </div>
             </div>
