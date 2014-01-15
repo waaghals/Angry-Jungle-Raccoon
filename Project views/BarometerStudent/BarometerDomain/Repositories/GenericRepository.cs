@@ -70,8 +70,7 @@ namespace BarometerDomain.Repositories
         {
             table.Attach(entity);
             database.Entry(entity).State = EntityState.Modified;
-            Save();
-            return false;
+            return true;
         }
 
     }
