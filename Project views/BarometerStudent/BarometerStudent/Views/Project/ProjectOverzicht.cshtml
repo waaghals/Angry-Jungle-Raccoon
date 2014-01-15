@@ -19,33 +19,10 @@
         
     }
 </p>
-<table>
-    <tr>
-        <td>
-            <select name="beoordelingsmoment" class="fancy_selectbox" tabindex="1">
-                @{
-                    int i = 1;
-                    foreach (String s in ViewBag.BeoordelingsMomenten)
-                    {
-                    <option value="@i">@s</option>
-            
-                        i++;
-                    }
-                }
-            </select>
-        </td>
-        <td>
-            <button class="button" style="">Medestudent beoordelen</button></td>
-    </tr>
-    <tr>
-        <td>
-            <button class="button" style="">Beoordelingen bekijken</button></td>
-    </tr>
-</table>
 <br />
 @using (@Html.BeginForm("Beoordelen", "Project", FormMethod.Post))
 {
-    @Html.DropDownList("ProjectPeriod")
+    @Html.DropDownList("ProjectPeriod", (IEnumerable<SelectListItem>)ViewBag.ProjectPeriod ,  new { @class = "fancy_selectbox" })
     <br />
     @Html.Hidden("SelectedProject", (Object)ViewBag.Project)
     <input type="submit" name="beoordelen" value="Medestudent beoordelen" />

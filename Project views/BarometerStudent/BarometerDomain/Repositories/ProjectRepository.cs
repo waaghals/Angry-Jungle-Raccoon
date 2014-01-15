@@ -51,5 +51,27 @@ namespace BarometerDomain.Repositories
             }
             return null;
         }
+
+        public IEnumerable<String> GenerateAnnouncements(int projectId)
+        {
+            LinkedList<String> ret = new LinkedList<String>();
+
+            foreach (ProjectPeriod pp in Get(projectId).ProjectPeriod)
+            {
+                if (pp.Start.Date < DateTime.Now)
+                {
+                    ret.AddFirst(pp.Start.ToShortDateString() + " - Beoordelingsmoment " + pp.Name + " is nu geopend");
+                    if (pp.End.Date < DateTime.Now)
+                        ret.AddFirst(pp.End.ToShortDateString() + " - Beoordelingsmoment " + pp.Name + "Is nu gesloten");
+                    else
+                    {
+                        TimeSpan ts = pp.End - DateTime.Now;
+                        ret.AddFirst("Je hebt nog " + ts.Days + " dag(en) om beoordelingsmoment " + pp.Name + " in te vullen");
+                    }
+                }
+            }
+
+            return ret;
+        }
     }
 }

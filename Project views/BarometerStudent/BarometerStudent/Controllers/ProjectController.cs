@@ -16,7 +16,7 @@ namespace BarometerStudent.Controllers
         // GET: /Project/
 
         private ProjectRepository pr = new ProjectRepository(new Context());
-        private int studentID = 1;
+        private int studentID = 2;
 
         public ActionResult ProjectOverzicht()
         {
@@ -44,16 +44,7 @@ namespace BarometerStudent.Controllers
             ViewBag.Description = pr.Get(Project).Description;
             ViewBag.ProjectPeriod = new SelectList(pr.Get(Project).ProjectPeriod, "Id", "Name");
 
-            ViewBag.Mededelingen = new string[] {
-                "25/10/2013 - Beoordelingsmoment week 9 is gesloten.",
-                "24/10/2013 - Waarschuwing, er is nog maar één dag om de beoordelingen in te vullen.",
-                "21/10/2013 - Beoordelingsmoment week 9 is opengesteld."
-            };
-            ViewBag.BeoordelingsMomenten = new string[] {
-                "Week 3",
-                "Week 6",
-                "Week 9"
-            };
+            ViewBag.Mededelingen = new ProjectRepository(new Context()).GenerateAnnouncements(Project);
             return View();
         }
 
@@ -98,6 +89,7 @@ namespace BarometerStudent.Controllers
         [HttpPost]
         public ActionResult Evaluate(List<List<Evaluation>> model)
         {
+            Context context = new Context();
             if (Request.Form["annuleren"] != null)
             {
                 return RedirectToAction("Index", "StudentHome");
@@ -109,9 +101,9 @@ namespace BarometerStudent.Controllers
                     foreach (Evaluation e in l)
                         update.Add(e);
 
-                SkillRepository sr = new SkillRepository(new Context());
-                StudentRepository str = new StudentRepository(new Context());
-                EvaluationRepository er = new EvaluationRepository(new Context());
+                SkillRepository sr = new SkillRepository(context);
+                StudentRepository str = new StudentRepository(context);
+                EvaluationRepository er = new EvaluationRepository(context);
 
                 foreach (Evaluation e in update)
                 {
