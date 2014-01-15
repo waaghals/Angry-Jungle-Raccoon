@@ -20,7 +20,6 @@ namespace BarometerDomain.Model
             MentorStudent = new List<Student>();
         }
         public virtual int Id { get; set; }
-        [Required]
         public string Login
         {
             get;

@@ -53,5 +53,17 @@ namespace BarometerDomain.Repositories
             return ret;
         }
 
+        public Group ByName(string grpName)
+        {
+            Group grp = null;
+            foreach (Group g in table)
+                if (g.Name.Equals(grpName))
+                {
+                    grp = g;
+                    break;
+                }
+            return grp;
+        }
+
     }
 }

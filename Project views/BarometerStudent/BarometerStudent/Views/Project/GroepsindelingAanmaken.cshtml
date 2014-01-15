@@ -1,6 +1,10 @@
 ﻿<br/>
 
-<button class="button">Importeren excel sheet</button>
+@using (@Html.BeginForm("ImporterenExelSheet", "Project", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="file" name="file">
+    <input type="submit" value="Importeren excel sheet" />
+}
 
 <br/>
 <br/>

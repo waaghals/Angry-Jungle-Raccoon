@@ -3,6 +3,7 @@ using BarometerDomain.Model;
 using BarometerDomain.Repositories;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -129,7 +130,25 @@ namespace BarometerStudent.Controllers
 
         public ActionResult GroepsindelingAanmaken()
         {
+            /**/
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult ImporterenExelSheet(HttpPostedFileBase file)
+        {
+            System.Diagnostics.Debug.WriteLine("file uploaded: " + file);
+            if (file != null)
+            {
+                string fileName = Path.GetFileName(file.FileName);
+                string path = Path.Combine(Server.MapPath("~/App_Data/uploads"), fileName);
+                file.SaveAs(path);
+
+                new Services.ExcelReader(path).ToDatabase();
+                
+                
+            }
+            return View("GroepsindelingAanmaken");
         }
 
     }

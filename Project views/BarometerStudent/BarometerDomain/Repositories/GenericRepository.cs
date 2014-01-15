@@ -24,7 +24,6 @@ namespace BarometerDomain.Repositories
             if (deleteEntity != default(T))
             {
                 table.Remove(deleteEntity);
-                Save();
                 return true;
             }
             return false;
@@ -36,7 +35,6 @@ namespace BarometerDomain.Repositories
             if (entity != default(T))
             {
                 table.Remove(entity);
-                Save();
                 return true;
             }
             return false;
@@ -58,7 +56,6 @@ namespace BarometerDomain.Repositories
         public void Insert(T entity)
         {
             table.Add(entity);
-            Save();
         }
 
         public void Save()

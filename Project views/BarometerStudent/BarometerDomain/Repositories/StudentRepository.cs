@@ -14,5 +14,17 @@ namespace BarometerDomain.Repositories
         {
             table = database.Students;
         }
+
+        public Student ByNumber(int number)
+        {
+            Student student = null;
+            foreach(Student s in table)
+                if (s.Number == number)
+                {
+                    student = s;
+                    break;
+                }
+            return student;
+        }
     }
 }
