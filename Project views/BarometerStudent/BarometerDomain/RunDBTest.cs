@@ -14,7 +14,7 @@ namespace BarometerDomain
 
         static void Main(string[] args)
         {
-            RunDBTest.fillScript();
+            //RunDBTest.fillScript();
 
             using (var db = new Context())
             {
@@ -194,6 +194,7 @@ namespace BarometerDomain
                 {
                     projrepo.Insert(p);
                 }
+                db.SaveChanges();
             }
         }
     }
