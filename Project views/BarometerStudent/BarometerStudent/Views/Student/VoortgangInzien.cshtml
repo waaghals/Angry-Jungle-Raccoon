@@ -1,0 +1,42 @@
+﻿@model Dictionary<string, List<BarometerDomain.Model.Evaluation>>
+
+<div id="tabs">
+    <ul>
+        @{
+            int i = 0;
+            foreach (string s in ViewBag.ProjectNames)
+            {
+                <li><a href="#tabs-@i">@s</a></li>
+                i++;
+            }
+        }
+
+    </ul>
+    @{
+        i = 0;
+        foreach (KeyValuePair<string, List<BarometerDomain.Model.Evaluation>> pair in Model)
+        {
+            <div id="tabs-@i" class="tab">
+                <div class="tabcontainer">
+                    <div class="competenties">
+                        <h3>Competenties</h3>
+                        @{
+
+            for (int n = 0; n < pair.Value.Count; n++)
+            {
+
+                <div class="rating">
+                    @pair.Key
+                    @Html.DisplayFor(model => pair.Value[n].Skill.Category)
+                    @Html.DisplayFor(model => pair.Value[n].Grade)
+
+                </div>
+            }
+                        }
+                    </div>
+                </div>
+            </div>
+            i++;
+        }
+    }
+</div>

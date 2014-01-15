@@ -68,5 +68,55 @@ namespace BarometerDomain.Model
             set;
         }
 
+        public IList<Evaluation> GetAverageEvaluations(Student student)
+        {
+            IList<Evaluation> averageEvaluationList = new List<Evaluation>();
+            int projectperiods = 0;
+            foreach (ProjectPeriod projectPeriod in ProjectPeriod)
+            {
+                Boolean counted = false;
+                foreach (Evaluation evaluation in projectPeriod.Evaluation)
+                {
+                    if (!counted)
+                    {
+                        projectperiods += 1;
+                        counted = true;
+                    }
+                   if (evaluation.For.Id == student.Id)
+                    {
+                        Boolean added = false;
+                        if (averageEvaluationList.Count != 0)
+                        {
+                            if (!added)
+                            {
+                                foreach (Evaluation averageEvaluation in averageEvaluationList)
+                                {
+                                    if (evaluation.By.Id == averageEvaluation.By.Id  && evaluation.Skill.Category == averageEvaluation.Skill.Category)
+                                    {
+                                        averageEvaluation.Grade = averageEvaluation.Grade + evaluation.Grade;
+                                        added = true;
+                                    }
+                                }
+                            }
+                            if (!added)
+                            {
+                                averageEvaluationList.Add(evaluation);
+                            }
+                        }
+                        else if (!added)
+                        {
+                            added = true;
+                            averageEvaluationList.Add(evaluation);
+                        }
+                    }
+                }
+            }
+            foreach (Evaluation evaluation in averageEvaluationList)
+            {
+                evaluation.Grade = evaluation.Grade / projectperiods;
+            }
+            return averageEvaluationList;
+        }
+
     }
 }
