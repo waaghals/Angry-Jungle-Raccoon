@@ -18,17 +18,19 @@ public class StudentController : Controller
         //List projectnames
         IList<string> projectNames = new List<string>();
         List<Evaluation> evaluationList = new List<Evaluation>();
+        Dictionary<string, List<Evaluation>> projectsAvgEvaluations = new Dictionary<string, List<Evaluation>>();
         foreach(Group group in student.Groups)
         {
             foreach(Project project in group.Project)
             {
                 projectNames.Add(project.Name);
-                evaluationList = project.GetAverageEvaluation(student);
+                evaluationList = (List<Evaluation>) project.GetAverageEvaluations(student);
+                projectsAvgEvaluations.Add(project.Name, evaluationList);
             }
         }
         ViewBag.projectNames = projectNames;
         
-        return View(evaluationList);
+        return View(projectsAvgEvaluations);
     }
 }
 
