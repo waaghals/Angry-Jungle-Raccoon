@@ -19,22 +19,56 @@
             <div id="tabs-@i" class="tab">
                 <div class="tabcontainer">
                     <div class="competenties">
-                        <h3>Competenties</h3>
-                  
+                        <h3>Resultaten</h3>
+                        <table>
                             @{
-                                
-                            }
-                @*for (int n = 0; n < pair.Value.Count; n++)
-                {
-                <div class="rating">
-                    
-                    @Html.DisplayFor(model => pair.Value[n].Skill.Category)
-                    @Html.DisplayFor(model => pair.Value[n].Grade)
 
-                </div>
-                }*@
-            
-                        
+            List<string> nameslist = new List<string>();
+            List<string> competentielist = new List<string>();
+            foreach (BarometerDomain.Model.Evaluation eval in pair.Value)
+            {
+                if (!nameslist.Contains(eval.By.Name))
+                {
+                    nameslist.Add(eval.By.Name);
+                }
+                if (!competentielist.Contains(eval.Skill.Category))
+                {
+                    competentielist.Add(eval.Skill.Category);
+                }
+            }
+            <tr style="border-bottom:1px solid #bebebe">
+                <td></td>
+                @foreach (string name in nameslist)
+                {
+                    <td style="font-weight:bold">@name</td>
+                }
+                <td style="font-weight:bold; color:red;">Gemiddeld</td>
+            </tr>
+            foreach (string competentie in competentielist)
+            {
+                <tr style="border-bottom:1px solid #bebebe">
+                    <td style="font-weight:bold">@competentie</td>
+                    @{int avgGrade = 0;
+                    foreach (BarometerDomain.Model.Evaluation eval in pair.Value)
+                    {
+                        if (eval.Skill.Category == competentie)
+                        {
+                            double curGrade = Convert.ToDouble(eval.Grade);
+                            curGrade /= 10;
+                            <td>@curGrade</td>
+                            avgGrade += eval.Grade;
+                        }
+                    }
+                    avgGrade /= nameslist.Count;
+                    double avgGradeDouble = Convert.ToDouble(avgGrade);
+                    avgGradeDouble /= 10;
+                    }
+                    <td>@avgGradeDouble</td>
+                </tr>
+            }
+
+                            }
+                        </table>
                     </div>
                 </div>
             </div>
