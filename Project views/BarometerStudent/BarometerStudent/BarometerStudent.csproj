@@ -170,6 +170,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\DocentController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\StudentHomeController.cs" />
@@ -306,6 +307,9 @@
     <Content Include="Views\Project\TutorToewijzen.cshtml" />
     <Content Include="Views\Project\Beoordelen2.cshtml" />
     <Content Include="Views\Student\VoortgangInzien.cshtml" />
+    <Content Include="Views\Docent\MentorStudenten.cshtml" />
+    <Content Include="Views\Project\Menu.cshtml" />
+    <Content Include="Views\Docent\SelecteerProject.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
