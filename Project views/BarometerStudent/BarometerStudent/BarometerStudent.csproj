@@ -307,6 +307,7 @@
     <Content Include="Views\Student\VoortgangInzien.cshtml" />
     <Content Include="Views\Docent\MentorStudenten.cshtml" />
     <Content Include="Views\Project\Menu.cshtml" />
+    <Content Include="Views\Docent\SelecteerProject.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

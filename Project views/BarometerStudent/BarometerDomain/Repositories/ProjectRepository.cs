@@ -40,6 +40,23 @@ namespace BarometerDomain.Repositories
             return templist;
         }
 
+        public IEnumerable<Project> ByTutor(int tutor)
+        {
+            List<Project> projects = new List<Project>();
+            foreach(Group group in database.Groups.ToList<Group>())
+            {
+                if(group.Tutor.Id == tutor)
+                {
+                    foreach(Project project in group.Project)
+                    {
+                        if(!projects.Contains(project))
+                            projects.Add(project);
+                    }
+                }
+            }
+            return projects;
+        }
+
         public Group ByStudentAndProject(int studentId, int ProjectId)
         {
             Project proj = this.Get(ProjectId);

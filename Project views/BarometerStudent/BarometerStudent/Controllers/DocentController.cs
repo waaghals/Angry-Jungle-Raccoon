@@ -28,5 +28,24 @@ namespace BarometerStudent.Controllers
             return View(studenten);
         }
 
+        [HttpGet]
+        public ActionResult SelecteerProject()
+        {
+            ProjectRepository pr = new ProjectRepository(new Context());
+            SelectList sl = new SelectList(pr.ByTutor(/*tutorid*/1), "Id", "Name");
+            ViewBag.Project = sl;
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult SelecteerProject(Project project)
+        {
+            if(ModelState.IsValid)
+            {
+                //TO DO
+                return View();
+            }
+            return View();
+        }
     }
 }
