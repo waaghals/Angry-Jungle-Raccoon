@@ -84,6 +84,14 @@ namespace BarometerStudent.Controllers
                 ViewBag.Beschrijving = "Hier zie je de beoordelingen van je medestudenten";
             }
 
+            foreach(List<Evaluation> eval in evallist)
+            {
+                foreach(Evaluation evalInner in eval)
+                {
+                    evalInner.Grade /= 10;
+                }
+            }
+
             return View(evallist);
         }
 
@@ -100,7 +108,11 @@ namespace BarometerStudent.Controllers
                 List<Evaluation> update = new List<Evaluation>();
                 foreach (List<Evaluation> l in model)
                     foreach (Evaluation e in l)
+                    {
+                        // bij het invoegen keer 10
+                        e.Grade *= 10;
                         update.Add(e);
+                    }
 
                 SkillRepository sr = new SkillRepository(context);
                 StudentRepository str = new StudentRepository(context);
