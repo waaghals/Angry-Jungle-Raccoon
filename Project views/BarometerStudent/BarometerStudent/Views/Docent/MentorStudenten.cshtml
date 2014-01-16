@@ -1,0 +1,28 @@
+﻿@model List<BarometerDomain.Model.Student>
+
+@{
+    ViewBag.Title = "MentorStudenten";
+}
+
+<h2>MentorStudenten</h2>
+
+<table>
+    <tr><th>Student Nr</th><th>Naam</th><th></th></tr>
+
+    @{
+        foreach(BarometerDomain.Model.Student student in Model)
+        {
+            <tr>
+                <td>
+                    @student.Number
+                </td>
+                <td>
+                    @student.Name
+                </td>
+                <td>
+                    @Html.ActionLink("Bekijk voortgang", "VoortgangInzien", "Student", new { studentId = student.Id }, new { @class = "tableLink" } )
+                </td>
+            </tr>
+        }
+    }
+</table>
