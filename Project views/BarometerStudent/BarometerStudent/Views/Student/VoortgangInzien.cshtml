@@ -1,12 +1,12 @@
 ﻿@model Dictionary<string, List<BarometerDomain.Model.Evaluation>>
 
-<div id="tabs">
+<div id="tabs" class="box_shadow">
     <ul>
         @{
             int i = 0;
             foreach (string s in ViewBag.ProjectNames)
             {
-                <li><a href="#tabs-@i">@s</a></li>
+            <li><a href="#tabs-@i">@s</a></li>
                 i++;
             }
         }
@@ -16,12 +16,10 @@
         i = 0;
         foreach (KeyValuePair<string, List<BarometerDomain.Model.Evaluation>> pair in Model)
         {
-            <div id="tabs-@i" class="tab">
-                <div class="tabcontainer">
-                    <div class="competenties">
-                        <h3>Resultaten</h3>
-                        <table>
-                            @{
+        <div id="tabs-@i" class="tab">
+            <h3>Resultaten van @pair.Value[0].For.Name</h3>
+            <table class="student_avrage_tabel">
+                @{
 
             List<string> nameslist = new List<string>();
             List<string> competentielist = new List<string>();
@@ -36,43 +34,46 @@
                     competentielist.Add(eval.Skill.Category);
                 }
             }
-            <tr style="border-bottom:1px solid #bebebe">
-                <td></td>
-                @foreach (string name in nameslist)
-                {
-                    <td style="font-weight:bold">@name</td>
-                }
-                <td style="font-weight:bold; color:red;">Gemiddeld</td>
-            </tr>
-            foreach (string competentie in competentielist)
-            {
-                <tr style="border-bottom:1px solid #bebebe">
-                    <td style="font-weight:bold">@competentie</td>
-                    @{int avgGrade = 0;
-                    foreach (BarometerDomain.Model.Evaluation eval in pair.Value)
-                    {
-                        if (eval.Skill.Category == competentie)
+                    <tr style="border-bottom: 1px solid #bebebe">
+                        <td></td>
+                        @foreach (string name in nameslist)
                         {
-                            double curGrade = Convert.ToDouble(eval.Grade);
-                            curGrade /= 10;
-                            <td>@curGrade</td>
-                            avgGrade += eval.Grade;
+                            <td class="student_average_name">@name</td>
                         }
-                    }
-                    avgGrade /= nameslist.Count;
-                    double avgGradeDouble = Convert.ToDouble(avgGrade);
-                    avgGradeDouble /= 10;
-                    }
-                    <td>@avgGradeDouble</td>
-                </tr>
-            }
+                        <td style="font-weight: bold; color: red;">Gemiddeld</td>
+                    </tr>
+                        foreach (string competentie in competentielist)
+                        {
+                    <tr class="student_average_row">
+                        <td class="student_average_competentie">@competentie</td>
+                        @{int avgGrade = 0;
+                          foreach (BarometerDomain.Model.Evaluation eval in pair.Value)
+                          {
+                              if (eval.Skill.Category == competentie)
+                              {
+                                  double curGrade = Convert.ToDouble(eval.Grade);
+                                  curGrade /= 10;
+                            <td class="student_average_cyfer">@curGrade</td>
+                                  avgGrade += eval.Grade;
+                              }
+                          }
+                          avgGrade /= nameslist.Count;
+                          double avgGradeDouble = Convert.ToDouble(avgGrade);
+                          avgGradeDouble /= 10;
+                        }
+                        <td>@avgGradeDouble</td>
+                    </tr>
+                        }
 
-                            }
-                        </table>
-                    </div>
-                </div>
-            </div>
-            i++;
+                }
+            </table>
+        </div>
+                        i++;
         }
     }
+
+    <p class="linkBack">
+        @Html.ActionLink("Terug naar mentor studenten", "MentorStudenten", "Docent", null, new { @class = "tableLink" })
+    </p>
+
 </div>
