@@ -40,11 +40,31 @@ namespace BarometerStudent.Controllers
         [HttpPost]
         public ActionResult SelecteerProject(Project project)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                //TO DO
-                return View();
+                TempData["myProject"] = project;
+                return RedirectToAction("SelecteerTutorGroep", "Docent");
             }
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult SelecteerTutorGroep()
+        {
+            if (TempData.ContainsKey("myProject"))
+            {
+                Project myProject = (Project)TempData["myProject"];
+                return View(myProject);
+            }
+            else
+            {
+                return RedirectToAction("SelecteerProject", "Docent");
+            }
+        }
+
+        [HttpPost]
+        public ActionResult SelecteerTutorgroep(Group group)
+        {
             return View();
         }
     }

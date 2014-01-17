@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "SelecteerTutorGroep";
+}
+
+<h2>SelecteerTutorGroep</h2>
+
+@using (Html.BeginForm("SelecteerProject", "Docent", FormMethod.Post))
+{
+    @Html.DropDownList("Project", (IEnumerable<SelectListItem>)ViewBag.Project, new { @class = "fancy_selectbox" })
+    <input type="submit" value="Naar Project" />
+}
