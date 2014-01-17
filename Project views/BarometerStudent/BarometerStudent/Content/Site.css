@@ -1004,6 +1004,22 @@ tr.pager td
     padding-left: 4px;
 }
 
+.student_average_gemiddelde
+{
+    font-weight: bold;
+     color: blue;
+}
+
+.student_average_good
+{
+    color:darkgreen;
+}
+
+.student_average_bad
+{
+    color:red;
+}
+
 /*tabel link
         ----------------------------------*/
 .linkBack

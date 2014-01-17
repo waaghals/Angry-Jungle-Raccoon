@@ -40,7 +40,7 @@
                         {
                             <td class="student_average_name">@name</td>
                         }
-                        <td style="font-weight: bold; color: red;">Gemiddeld</td>
+                        <td class="student_average_gemiddelde">Gemiddeld</td>
                     </tr>
                         foreach (string competentie in competentielist)
                         {
@@ -61,7 +61,14 @@
                           double avgGradeDouble = Convert.ToDouble(avgGrade);
                           avgGradeDouble /= 10;
                         }
-                        <td>@avgGradeDouble</td>
+                        @if (avgGradeDouble >= 5.5) 
+                        {
+                            <td class="student_average_good">@avgGradeDouble</td>
+                        }
+                        else
+                        {
+                            <td class="student_average_bad">@avgGradeDouble</td>
+                        }
                     </tr>
                         }
 
