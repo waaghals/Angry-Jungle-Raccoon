@@ -832,6 +832,12 @@ input[type="submit"]
     padding: 0px 10px;
 }
 
+.dropdown_submit
+{
+    margin-top:10px;
+    margin-left:10px;
+}
+
 td input[type="submit"],
 td input[type="button"],
 td button

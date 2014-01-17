@@ -24,9 +24,9 @@
                 </tr>
             </table>*@             
             
-    @using (@Html.BeginForm("ProjectOverzicht", "Project", FormMethod.Post))
+    @using (@Html.BeginForm("ProjectOverzicht", "Project", FormMethod.Post, new { @class = "dropdown_submit"}))
     {
-        @Html.DropDownList("Project", null,  new { @class = "fancy_selectbox" })
+        @Html.DropDownList("Project", null, new { @class = "fancy_selectbox" })
         <input type="submit" value="Naar Project" />
     }
             
