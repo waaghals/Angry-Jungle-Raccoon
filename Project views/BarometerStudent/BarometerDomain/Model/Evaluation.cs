@@ -38,6 +38,12 @@ namespace BarometerDomain.Model
             set;
         }
 
+        public virtual ProjectPeriod ProjectPeriod
+        {
+            get;
+            set;
+        }
+
         public int CompareTo(Evaluation evaluation)
         {
             int compare = Skill.Category.CompareTo(evaluation.Skill.Category);
