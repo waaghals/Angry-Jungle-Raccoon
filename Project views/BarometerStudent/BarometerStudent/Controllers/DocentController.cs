@@ -33,7 +33,7 @@ namespace BarometerStudent.Controllers
         {
             ProjectRepository pr = new ProjectRepository(new Context());
             SelectList sl = new SelectList(pr.ByTutor(/*tutorid*/1), "Id", "Name");
-            ViewBag.Project = sl;
+            ViewBag.project = sl;
             return View();
         }
 
@@ -54,7 +54,18 @@ namespace BarometerStudent.Controllers
             if (TempData.ContainsKey("myProject"))
             {
                 Project myProject = (Project)TempData["myProject"];
-                return View(myProject);
+                ViewBag.curProject = myProject;
+                List<Group> tutorGroupList = new List<Group>();
+                foreach(Group group in myProject.Groups)
+                {
+                    if (group.Tutor.Id == userID)
+                    {
+                        tutorGroupList.Add(group);
+                    }
+                }
+                SelectList sl = new SelectList(tutorGroupList, "Id", "Name");
+                ViewBag.groups = sl; 
+                return View();
             }
             else
             {
