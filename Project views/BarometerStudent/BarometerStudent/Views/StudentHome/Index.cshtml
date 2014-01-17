@@ -8,20 +8,21 @@
     
             @*<table>
                 <tr>
-                    <td><select name="project_naam" class="fancy_selectbox" tabindex="1">
-			    <option value="">-- Selecteer project --</option>
-			    <optgroup label="Blok 5">
-				    <option value="1">Project waterval - ontwerp</option>
-			    </optgroup>
-			    <optgroup label="Blok 6">
-				    <option value="2">Project waterval - bouw</option>
-				    <option value="2">Nog een project</option>
-			    </optgroup>
-		    </select> </td>
+                    <td>
+                        <select name="project_naam" class="fancy_selectbox" tabindex="1">
+			                <option value="">-- Selecteer project --</option>
+			                <optgroup label="Blok 5">
+				                <option value="1">Project waterval - ontwerp</option>
+			                </optgroup>
+			                <optgroup label="Blok 6">
+				                <option value="2">Project waterval - bouw</option>
+				                <option value="2">Nog een project</option>
+			                </optgroup>
+		                </select> 
+                    </td>
                     <td><button class="button" style ="">Naar project</button></td>
                 </tr>
-                
-            </table>     *@           
+            </table>*@             
             
     @using (@Html.BeginForm("ProjectOverzicht", "Project", FormMethod.Post))
     {
