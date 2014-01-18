@@ -1,13 +1,17 @@
-﻿@model SelectList
-
-@{
+﻿@{
     ViewBag.Title = "SelecteerTutorGroep";
 }
 
 <h2>Selecteer TutorGroep</h2>
 
-@using (Html.BeginForm("ViewGroep", "Docent", FormMethod.Post))
+@using (Html.BeginForm())
 {
-    @Html.DropDownList("Group", Model , new { @class = "fancy_selectbox" })
-    <input type="submit" value="Naar Group" />
+    <div>
+        @Html.DropDownList("group", (SelectList) ViewBag.selectListGroups , new { @class = "fancy_selectbox" })
+    </div>
+    
+    <div>
+        <input type="submit" value="Naar Groep" />
+    </div>
+    
 }

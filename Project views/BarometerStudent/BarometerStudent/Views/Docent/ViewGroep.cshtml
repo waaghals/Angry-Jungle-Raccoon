@@ -1,7 +1,32 @@
-﻿@model BarometerDomain.Model.Group
+﻿@model List<BarometerDomain.Model.ProjectPeriod>
 
 @{
     ViewBag.Title = "ViewGroep";
 }
 
 <h2>Groeps Resultaten</h2>
+
+<div id="tabs" class="box_shadow">
+    <ul>
+        @{
+            int i = 0;
+
+            foreach(BarometerDomain.Model.ProjectPeriod period in Model)
+            { 
+                    <li><a href="#tabs-@i">@period.Name</a></li>
+                    i++;   
+            }
+        }
+
+    </ul>
+    @{
+        @*i = 0;
+
+        i++;*@
+    }
+
+    <p class="linkBack">
+        @Html.ActionLink("Terug naar project selecteren", "SelecteerProject", "Docent", null, new { @class = "tableLink" })
+    </p>
+
+</div>
