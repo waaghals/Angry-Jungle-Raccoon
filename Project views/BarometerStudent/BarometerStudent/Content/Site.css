@@ -1057,7 +1057,7 @@ a.tableLink, a.tableLink:visited
 a.tableLink:hover, a.tableLink:active
 {
     color: #e80c4d;
-    background-color:white;
+    background-color:transparent;
 }
 
 
