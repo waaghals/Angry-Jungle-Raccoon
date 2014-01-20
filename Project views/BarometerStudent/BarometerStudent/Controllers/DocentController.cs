@@ -98,10 +98,12 @@ namespace BarometerStudent.Controllers
             MultiSelectList skillsProject = new MultiSelectList(p.Skill.ToList(), "Id", "Category");
             ViewBag.CompetentiesProject = skillsProject;
             List<Skill> skillLijst = pr.Get(baseProjectId).Skill.ToList();
+            System.Diagnostics.Debug.WriteLine(skillLijst.Count);
             foreach (Skill s in p.Skill)
             {
                 if (skillLijst.Contains(s))
                 {
+                    System.Diagnostics.Debug.WriteLine("Skill " + s.Category);
                     skillLijst.Remove(s);
                 }
             }
@@ -116,11 +118,27 @@ namespace BarometerStudent.Controllers
         {
             Project project = (Project)Session["newProject"];
             SkillRepository skillRepo = new SkillRepository(new Context());
-            string Ids = Request.Form["competentiesVoorgaandProject"];
-            string[] IdArray = Ids.Split(',');
-            foreach (string IdString in IdArray)
+
+            string IdsVoorgaandProject = Request.Form["competentiesVoorgaandProject"];
+            string IdsProject = Request.Form["competentiesProject"];
+
+
+            if (IdsVoorgaandProject != null)
             {
-                project.Skill.Add(new Skill(){ Category = skillRepo.Get(Convert.ToInt32(IdString)).Category});
+                string[] IdArrayVoorgaandProject = IdsVoorgaandProject.Split(',');
+                foreach (string IdString in IdArrayVoorgaandProject)
+                {
+                    project.Skill.Add(skillRepo.Get(Convert.ToInt32(IdString)));
+                }
+            }
+
+            if (IdsProject != null)
+            {
+                string[] IdArrayProject = IdsProject.Split(',');
+                foreach (string IdString in IdArrayProject)
+                {
+                    project.Skill.Remove(skillRepo.Get(Convert.ToInt32(IdString)));
+                }
             }
             Session["newProject"] = project;
             return RedirectToAction("CompetentiesToevoegenAanProject", (Project)null);

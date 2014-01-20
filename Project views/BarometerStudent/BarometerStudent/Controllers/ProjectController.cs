@@ -19,6 +19,11 @@ namespace BarometerStudent.Controllers
         private ProjectRepository pr = new ProjectRepository(new Context());
         private int studentID = 2;
 
+        public ActionResult Menu()
+        {
+            return View();
+        }
+
         public ActionResult ProjectOverzicht()
         {
             ViewBag.Title = "Project Barometer - Ontwerp";
