@@ -68,7 +68,7 @@ namespace BarometerStudent.Controllers
                 Project myProject = (Project)TempData["myProject"];
                 IList<Group> tutorGroupList = new List<Group>();
 
-                foreach(Group group in myProject.Groups)
+                foreach (Group group in myProject.Groups)
                 {
                     if (group.Tutor.Id == userID)
                     {
@@ -113,15 +113,12 @@ namespace BarometerStudent.Controllers
                 Project project = (Project)TempData["myProject"];
 
                 List<ProjectPeriod> projectPeriodList = new List<ProjectPeriod>();
-                
-                foreach(Project pr in group.Project)
+
+                foreach (ProjectPeriod period in group.Project.ProjectPeriod)
                 {
-                    foreach(ProjectPeriod period in pr.ProjectPeriod)
+                    if (group.Project.Id == project.Id)
                     {
-                        if(pr.Id == project.Id)
-                        {
-                            projectPeriodList.Add(period);
-                        }
+                        projectPeriodList.Add(period);
                     }
                 }
 

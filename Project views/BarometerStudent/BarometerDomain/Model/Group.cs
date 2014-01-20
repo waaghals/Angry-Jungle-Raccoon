@@ -16,7 +16,6 @@ namespace BarometerDomain.Model
         public Group()
         {
             Student = new List<Student>();
-            Project = new List<Project>();
         }
         public int Id { get; set; }
         public string Name
@@ -37,7 +36,7 @@ namespace BarometerDomain.Model
             set;
         }
 
-        public virtual IList<Project> Project
+        public virtual Project Project
         {
             get;
             set;
