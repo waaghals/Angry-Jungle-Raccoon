@@ -292,7 +292,7 @@
     <Content Include="Views\Project\ProjectOverzicht.cshtml" />
     <Content Include="Views\Project\Beoordelen.cshtml" />
     <Content Include="Views\Project\GroepsindelingAanmaken.cshtml" />
-    <Content Include="Views\Project\GroepToewijzenAanProject.cshtml" />
+    <Content Include="Views\Docent\GroepToewijzenAanProject.cshtml" />
     <Content Include="Views\Project\KlachtIndienen.cshtml" />
     <Content Include="Views\Project\MentorVoortgangInzien.cshtml" />
     <Content Include="Views\Project\NieuwProjectAanmaken.cshtml" />

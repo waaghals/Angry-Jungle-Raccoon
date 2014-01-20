@@ -50,6 +50,16 @@ namespace BarometerDomain.Repositories
             return ret;
         }
 
+        public IEnumerable<Group> NotInProject()
+        {
+            List<Group> ret = new List<Group>();
+            Group d = table.First();
+            foreach (Group groep in table.ToList())
+                    if (groep.Project == null)
+                        ret.Add(groep);
+            return ret;
+        }
+
         public Group ByName(string grpName)
         {
             Group grp = null;
