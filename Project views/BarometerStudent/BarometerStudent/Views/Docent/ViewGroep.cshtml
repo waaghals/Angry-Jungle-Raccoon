@@ -1,0 +1,84 @@
+﻿@model Dictionary<string, List<BarometerDomain.Model.Evaluation>>
+
+@{
+    ViewBag.Title = "ViewGroep";
+}
+
+<h2>Groeps Resultaten</h2>
+
+<div id="tabs" class="box_shadow">
+    <ul>
+        @{
+            int i = 0;
+
+            foreach (string key in Model.Keys)
+            {
+                <li><a href="#tabs-@i">@key</a></li>
+                i++;
+            }
+        }
+
+    </ul>
+    @{
+        i = 0;
+        foreach (KeyValuePair<string, List<BarometerDomain.Model.Evaluation>> pair in Model)
+        {
+            <div id="tabs-@i" class="tab">
+
+                <h3>Resultaten van @pair.Value[0].For.Name</h3>
+                <table class="student_avrage_tabel">
+                    @{
+
+            BarometerDomain.Model.Project projectinfo = (BarometerDomain.Model.Project)ViewBag.project;
+            int periods = (int)ViewBag.periodsCount;
+            List<string> nameslist = new List<string>();
+            List<string> competentielist = new List<string>();
+            foreach (BarometerDomain.Model.Evaluation eval in pair.Value)
+            {
+                if (!nameslist.Contains(eval.By.Name))
+                {
+                    nameslist.Add(eval.By.Name);
+                }
+                if (!competentielist.Contains(eval.Skill.Category))
+                {
+                    competentielist.Add(eval.Skill.Category);
+                }
+            }
+            <tr style="border-bottom: 1px solid #bebebe">
+                <td></td>
+                @foreach (string name in nameslist)
+                {
+                    <td colspan="@periods" class="student_average_name">@name</td>
+                }
+            </tr>
+            <tr>
+                    <td></td>
+                @foreach (string name in nameslist)
+                {
+                    for (int pp = 0; pp < periods; pp++ )
+                    { 
+                        <td>@projectinfo.ProjectPeriod[pp].Name</td>
+                    }
+                }
+            </tr>
+                int projectperiodnumber = 0;
+                string competentie = ""; 
+                foreach(BarometerDomain.Model.Evaluation eval in pair.Value)
+                {
+                    
+                }
+
+                    }
+                </table>
+
+            </div>
+            i++;
+        }
+    }
+
+
+    <p class="linkBack">
+        @Html.ActionLink("Terug naar project selecteren", "SelecteerProject", "Docent", null, new { @class = "tableLink" })
+    </p>
+
+</div>

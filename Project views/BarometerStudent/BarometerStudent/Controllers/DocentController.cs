@@ -14,8 +14,14 @@ namespace BarometerStudent.Controllers
         //
         // GET: /Docent/
         private int userID = 1;
+        private int userProjectID = 1;
 
         public ActionResult Index()
+        {
+            return View();
+        }
+
+        public ActionResult Menu()
         {
             return View();
         }
@@ -25,38 +31,45 @@ namespace BarometerStudent.Controllers
             UserRepository userrep = new UserRepository(new Context());
             User user = userrep.Get(userID);
             List<Student> studenten = user.MentorStudent.ToList<Student>();
+
             return View(studenten);
         }
 
-        [HttpGet]
         public ActionResult SelecteerProject()
         {
             ProjectRepository pr = new ProjectRepository(new Context());
-            SelectList sl = new SelectList(pr.ByTutor(/*tutorid*/1), "Id", "Name");
-            ViewBag.project = sl;
+
+            ViewBag.selectListProjects = new SelectList(pr.ByTutor(/*tutorid*/userID), "Id", "Name", "1");
             return View();
         }
 
         [HttpPost]
-        public ActionResult SelecteerProject(Project project)
+        public ActionResult SelecteerProject(string project)
         {
-            if (ModelState.IsValid)
+            if (project != null)
             {
-                TempData["myProject"] = project;
+                int projectId = Convert.ToInt32(project);
+
+                ProjectRepository pr = new ProjectRepository(new Context());
+                Project myProject = pr.Get(projectId);
+
+                TempData["myProject"] = myProject;
+
                 return RedirectToAction("SelecteerTutorGroep", "Docent");
             }
             return View();
         }
 
-        [HttpGet]
         public ActionResult SelecteerTutorGroep()
         {
             if (TempData.ContainsKey("myProject"))
             {
+                TempData.Keep();
+
                 Project myProject = (Project)TempData["myProject"];
-                ViewBag.curProject = myProject;
-                List<Group> tutorGroupList = new List<Group>();
-                foreach(Group group in myProject.Groups)
+                IList<Group> tutorGroupList = new List<Group>();
+
+                foreach (Group group in myProject.Groups)
                 {
                     if (group.Tutor.Id == userID)
                     {
@@ -64,7 +77,8 @@ namespace BarometerStudent.Controllers
                     }
                 }
                 SelectList sl = new SelectList(tutorGroupList, "Id", "Name");
-                ViewBag.groups = sl; 
+
+                ViewBag.selectListGroups = sl;
                 return View();
             }
             else
@@ -74,9 +88,127 @@ namespace BarometerStudent.Controllers
         }
 
         [HttpPost]
-        public ActionResult SelecteerTutorgroep(Group group)
+        public ActionResult SelecteerTutorgroep(string group)
         {
+            if (group != null)
+            {
+                int groupId = Convert.ToInt32(group);
+
+                GroupRepository gr = new GroupRepository(new Context());
+                Group myGroup = gr.Get(groupId);
+
+                TempData["myGroup"] = myGroup;
+
+                return RedirectToAction("ViewGroep", "Docent");
+            }
             return View();
+        }
+
+        public ActionResult ViewGroep()
+        {
+            if (TempData.ContainsKey("myGroup") && TempData.ContainsKey("myProject"))
+            {
+                TempData.Keep();
+
+                Group group = (Group)TempData["myGroup"];
+                Project project = (Project)TempData["myProject"];
+
+                List<ProjectPeriod> projectPeriodList = new List<ProjectPeriod>();
+
+                foreach (ProjectPeriod period in group.Project.ProjectPeriod)
+                {
+                    if (group.Project.Id == project.Id)
+                    {
+                        projectPeriodList.Add(period);
+                    }
+                }
+                List<Student> studentList = new List<Student>();
+                Dictionary<string, List<Evaluation>> evalutionsPerForStudent = new Dictionary<string, List<Evaluation>>();
+
+                foreach (Student student in group.Student)
+                {
+                    if (!(studentList.Contains(student)))
+                    {
+                        studentList.Add(student);
+                        List<Evaluation> sortedList = BubbleSort((List<Evaluation>)project.GetEvaluations(student));
+                        evalutionsPerForStudent.Add(student.Name, sortedList);
+                    }
+                }
+
+                ViewBag.studenten = studentList;
+                ViewBag.project = project;
+                ViewBag.periodsCount = project.ProjectPeriod.Count;
+                ViewBag.group = group;
+                return View(evalutionsPerForStudent);
+            }
+            else
+            {
+                return RedirectToAction("SelecteerProject", "Docent");
+            }
+        }
+
+        private List<Evaluation> BubbleSort(List<Evaluation> evaluationList)
+        {
+            for (int outer = evaluationList.Count - 1; outer >= 1; outer--)
+                for (int inner = 0; inner < outer; inner++) // inner loop (forward)
+                    if ((evaluationList[inner].CompareToWithPeriod(evaluationList[inner + 1]) == -1))
+                    {
+                        Evaluation temp = evaluationList[inner];
+                        evaluationList[inner] = evaluationList[inner + 1];
+                        evaluationList[inner + 1] = temp;
+                    }
+            return evaluationList;
+        }
+
+        public ActionResult GroepToewijzenAanProject()
+        {
+            GroupRepository gr = new GroupRepository(new Context());
+            ViewBag.addGroups = new MultiSelectList(gr.NotInProject(), "Id", "Name");
+            ViewBag.deleteGroups = new MultiSelectList(gr.InProject(userProjectID), "Id", "Name");
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult DeleteGroup()
+        {
+            GroupRepository gr = new GroupRepository(new Context());
+            string[] groups;
+            if (true)
+            {
+
+            }
+            groups = Request.Form["Groups"].Split(',');
+            foreach (string group in groups)
+            {
+                Group g = gr.Get(Convert.ToInt32(group));
+                if (g.Project.Id == userProjectID)
+                {
+                    g.Project = null;
+                }
+                gr.Update(g);
+                gr.Save();
+            }
+            return RedirectToAction("GroepToewijzenAanProject");
+
+        }
+
+        [HttpPost]
+        public ActionResult AddGroup()
+        {
+            Context c = new Context();
+            GroupRepository gr = new GroupRepository(c);
+            ProjectRepository pr = new ProjectRepository(c);
+            string[] groups = Request.Form["Groups"].Split(',');
+            foreach (string group in groups)
+            {
+                Group g = gr.Get(Convert.ToInt32(group));
+                Project p = pr.Get(userProjectID);
+                p.Groups.Add(g);
+                pr.Update(p);
+                pr.Save();
+            }
+            return RedirectToAction("GroepToewijzenAanProject");
+
         }
     }
 }

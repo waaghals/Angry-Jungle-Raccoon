@@ -21,13 +21,10 @@ public class StudentController : Controller
         Dictionary<string, List<Evaluation>> projectsAvgEvaluations = new Dictionary<string, List<Evaluation>>();
         foreach (Group group in student.Groups)
         {
-            foreach (Project project in group.Project)
-            {
-                projectNames.Add(project.Name);
-                evaluationList = (List<Evaluation>)project.GetAverageEvaluations(student);
-                evaluationList = BubbleSort(evaluationList);
-                projectsAvgEvaluations.Add(project.Name, evaluationList);
-            }
+            projectNames.Add(group.Project.Name);
+            evaluationList = (List<Evaluation>) group.Project.GetAverageEvaluations(student);
+            evaluationList = BubbleSort(evaluationList);
+            projectsAvgEvaluations.Add(group.Project.Name, evaluationList);
         }
 
         ViewBag.projectNames = projectNames;

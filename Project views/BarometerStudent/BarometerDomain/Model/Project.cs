@@ -118,5 +118,21 @@ namespace BarometerDomain.Model
             return averageEvaluationList;
         }
 
+        public IList<Evaluation> GetEvaluations(Student student)
+        {
+            IList<Evaluation> evaluationList = new List<Evaluation>();
+            foreach(ProjectPeriod projectperiod in ProjectPeriod)
+            {
+                foreach (Evaluation evaluation in projectperiod.Evaluation)
+                {
+                    if (evaluation.For.Id == student.Id)
+                    {
+                        evaluationList.Add(evaluation);
+                    }
+                }
+            }
+            return evaluationList;
+        }
+
     }
 }

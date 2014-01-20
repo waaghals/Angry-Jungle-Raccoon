@@ -14,5 +14,19 @@ namespace BarometerDomain.Repositories
         {
             table = database.Users;
         }
+
+        public User ByLogin(string login)
+        {
+            User user = null;
+            foreach (User u in table)
+            {
+                if (u.Login == login)
+                {
+                    user = u;
+                    break;
+                }
+            }
+            return user;
+        }
     }
 }
