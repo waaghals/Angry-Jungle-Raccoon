@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using BarometerDomain.Model;
 using BarometerDomain.Repositories;
 using BarometerDomain;
+using BarometerStudent.Services;
 
 
 namespace BarometerStudent.Controllers
@@ -18,13 +19,15 @@ namespace BarometerStudent.Controllers
 
         public ActionResult Index()
         {
-            List<Project> test = new List<Project>();
-            test.Add(new Project()); 
-            test.Add(new Project());
-            test[0].Id = 1;
-            test[1].Id = 2;
-            test[0].Name = "Project 1";
-            test[1].Name = "Project 2";
+            //zoek de user
+            /*
+            UserService uService = new UserService();
+            User user = uService.Login(studentNumber, login);
+            Session["User"] = user; //sla de user op in de sessie
+            if(user.RoleType.Contains(RoleType.Teacher) || user.RoleType.Contains(RoleType.Administrator))
+                RedirectToAction("Menu","Docent"); //redirect de user naar de juiste startpagina gebaseerd op login data
+            */
+
             using (var db = new BarometerDomain.Context())
             {
                 ProjectRepository pr = new ProjectRepository(db);

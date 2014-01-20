@@ -773,7 +773,7 @@ input, textarea
     background: #fff;
     color: #333;
     font-size: 1.2em;
-    margin: 5px 0 6px 0;
+    margin: 5px 0px 6px 0px;
     padding: 5px;
     width: 300px;
     resize: none;
@@ -797,7 +797,6 @@ input[type="checkbox"]
     width: auto;
 }
 
-input[type="submit"],
 input[type="button"],
 button
 {
@@ -811,6 +810,23 @@ button
     width: auto;
     min-width: 150px;
     margin-left: 5px;
+    font-weight: bold;
+    font-size: 11pt;
+    padding: 0px 10px;
+}
+
+input[type="submit"]
+{
+    -moz-outline: 2px solid #e80c4d;
+    outline: 2px solid #e80c4d;
+    border: 0px;
+    background-color: #e80c4d !important;
+    color: #fff;
+    text-align: center;
+    height: 30px;
+    width: auto;
+    min-width: 150px;
+    margin-left: 2px;
     font-weight: bold;
     font-size: 11pt;
     padding: 0px 10px;

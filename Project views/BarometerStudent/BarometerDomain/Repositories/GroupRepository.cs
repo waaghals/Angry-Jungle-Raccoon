@@ -38,18 +38,25 @@ namespace BarometerDomain.Repositories
         {
             List<Group> ret = new List<Group>();
             foreach (Group g in table)
-                if (g.Project.Contains(project) && !ret.Contains(g))
+                if (g.Project.Equals(project) && !ret.Contains(g))
                     ret.Add(g);
             return ret;
         }
 
         public IEnumerable<Group> InProject(int ProjectId)
         {
+            IList<Group> ret = new List<Group>();
+            ret = new ProjectRepository(database).Get(ProjectId).Groups;
+            return ret;
+        }
+
+        public IEnumerable<Group> NotInProject()
+        {
             List<Group> ret = new List<Group>();
-            foreach (Group g in table)
-                foreach (Project p in g.Project)
-                    if (p.Id == ProjectId&& !ret.Contains(g))
-                        ret.Add(g);
+            Group d = table.First();
+            foreach (Group groep in table.ToList())
+                    if (groep.Project == null)
+                        ret.Add(groep);
             return ret;
         }
 
