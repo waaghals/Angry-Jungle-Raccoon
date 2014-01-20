@@ -123,7 +123,7 @@ namespace BarometerDomain.Model
             IList<Evaluation> evaluationList = new List<Evaluation>();
             foreach(ProjectPeriod projectperiod in ProjectPeriod)
             {
-                foreach (Evaluation evaluation in evaluationList)
+                foreach (Evaluation evaluation in projectperiod.Evaluation)
                 {
                     if (evaluation.For.Id == student.Id)
                     {

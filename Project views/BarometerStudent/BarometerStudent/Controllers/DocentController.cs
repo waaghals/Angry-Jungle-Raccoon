@@ -113,24 +113,41 @@ namespace BarometerStudent.Controllers
                 Project project = (Project)TempData["myProject"];
 
                 List<Student> studentList = new List<Student>();
-                
-                foreach(Student student in group.Student)
+                Dictionary<string, List<Evaluation>> evalutionsPerForStudent = new Dictionary<string, List<Evaluation>>();
+
+                foreach (Student student in group.Student)
                 {
-                    if(!(studentList.Contains(student)))
+                    if (!(studentList.Contains(student)))
                     {
                         studentList.Add(student);
+                        List<Evaluation> sortedList = BubbleSort((List<Evaluation>) project.GetEvaluations(student));
+                        evalutionsPerForStudent.Add(student.Name, sortedList);
                     }
-                }
+                }                
                 
                 ViewBag.studenten = studentList;
                 ViewBag.project = project;
+                ViewBag.periodsCount = project.ProjectPeriod.Count;
                 ViewBag.group = group;
-                return View();
+                return View(evalutionsPerForStudent);
             }
             else
             {
                 return RedirectToAction("SelecteerProject", "Docent");
             }
+        }
+
+        private List<Evaluation> BubbleSort(List<Evaluation> evaluationList)
+        {
+            for (int outer = evaluationList.Count - 1; outer >= 1; outer--)
+                for (int inner = 0; inner < outer; inner++) // inner loop (forward)
+                    if ((evaluationList[inner].CompareToWithPeriod(evaluationList[inner + 1]) == -1))
+                    {
+                        Evaluation temp = evaluationList[inner];
+                        evaluationList[inner] = evaluationList[inner + 1];
+                        evaluationList[inner + 1] = temp;
+                    }
+            return evaluationList;
         }
     }
 }
