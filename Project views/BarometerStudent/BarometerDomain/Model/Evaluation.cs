@@ -55,5 +55,21 @@ namespace BarometerDomain.Model
             return compare;
         }
 
+        public int CompareToWithPeriod(Evaluation evaluation)
+        {
+            int compare = Skill.Category.CompareTo(evaluation.Skill.Category);
+            if (compare == 0)
+            {
+                compare = By.Name.CompareTo(evaluation.By.Name);
+                if (compare == 0)
+                {
+                    return ProjectPeriod.Start.CompareTo(evaluation.ProjectPeriod.Start);
+                }
+            }
+            return compare;
+        }
+
+        
+
     }
 }

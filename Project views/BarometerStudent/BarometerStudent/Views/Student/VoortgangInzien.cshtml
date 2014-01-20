@@ -6,7 +6,7 @@
             int i = 0;
             foreach (string s in ViewBag.ProjectNames)
             {
-            <li><a href="#tabs-@i">@s</a></li>
+                <li><a href="#tabs-@i">@s</a></li>
                 i++;
             }
         }
@@ -16,10 +16,10 @@
         i = 0;
         foreach (KeyValuePair<string, List<BarometerDomain.Model.Evaluation>> pair in Model)
         {
-        <div id="tabs-@i" class="tab">
-            <h3>Resultaten van @pair.Value[0].For.Name</h3>
-            <table class="student_avrage_tabel">
-                @{
+            <div id="tabs-@i" class="tab">
+                <h3>Resultaten van @pair.Value[0].For.Name</h3>
+                <table class="student_avrage_tabel">
+                    @{
 
             List<string> nameslist = new List<string>();
             List<string> competentielist = new List<string>();
@@ -34,48 +34,60 @@
                     competentielist.Add(eval.Skill.Category);
                 }
             }
-                    <tr style="border-bottom: 1px solid #bebebe">
-                        <td></td>
-                        @foreach (string name in nameslist)
-                        {
-                            <td class="student_average_name">@name</td>
-                        }
-                        <td class="student_average_gemiddelde">Gemiddeld</td>
-                    </tr>
-                        foreach (string competentie in competentielist)
-                        {
-                    <tr class="student_average_row">
-                        <td class="student_average_competentie">@competentie</td>
-                        @{int avgGrade = 0;
-                          foreach (BarometerDomain.Model.Evaluation eval in pair.Value)
-                          {
-                              if (eval.Skill.Category == competentie)
-                              {
-                                  double curGrade = Convert.ToDouble(eval.Grade);
-                                  curGrade /= 10;
-                            <td class="student_average_cyfer">@curGrade</td>
-                                  avgGrade += eval.Grade;
-                              }
-                          }
-                          avgGrade /= nameslist.Count;
-                          double avgGradeDouble = Convert.ToDouble(avgGrade);
-                          avgGradeDouble /= 10;
-                        }
-                        @if (avgGradeDouble >= 5.5) 
-                        {
-                            <td class="student_average_good">@avgGradeDouble</td>
-                        }
-                        else
-                        {
-                            <td class="student_average_bad">@avgGradeDouble</td>
-                        }
-                    </tr>
-                        }
-
+            <tr style="border-bottom: 1px solid #bebebe">
+                <td></td>
+                @foreach (string name in nameslist)
+                {
+                    <td class="student_average_name">@name</td>
                 }
-            </table>
-        </div>
-                        i++;
+                <td class="student_average_gemiddelde">Gemiddeld</td>
+            </tr>
+            foreach (string competentie in competentielist)
+            {
+                <tr class="student_average_row">
+                    <td class="student_average_competentie">@competentie</td>
+                    @{int avgGrade = 0;
+                      int amountOfZero = 0;
+                    foreach (BarometerDomain.Model.Evaluation eval in pair.Value)
+                    {
+                        if (eval.Skill.Category == competentie)
+                        {
+                            double curGrade = Convert.ToDouble(eval.Grade);
+                            curGrade /= 10;
+                            <td class="student_average_cyfer">
+                                @if(curGrade == 0)
+                                {
+                                    <text>-</text>
+                                    amountOfZero++;
+                                }
+                                else
+                                {
+                                    @curGrade
+                                }
+                            </td>
+                            avgGrade += eval.Grade;
+                        }
+                    }
+
+                    avgGrade /= (nameslist.Count - amountOfZero);
+                    double avgGradeDouble = Convert.ToDouble(avgGrade);
+                    avgGradeDouble /= 10;
+                    }
+                    @if (avgGradeDouble >= 5.5)
+                    {
+                        <td class="student_average_good">@avgGradeDouble</td>
+                    }
+                    else
+                    {
+                        <td class="student_average_bad">@avgGradeDouble</td>
+                    }
+                </tr>
+            }
+
+                    }
+                </table>
+            </div>
+            i++;
         }
     }
 
