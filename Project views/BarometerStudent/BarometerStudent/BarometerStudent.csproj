@@ -298,7 +298,7 @@
     <Content Include="Views\Project\NieuwProjectAanmaken.cshtml" />
     <Content Include="Views\Project\OnderbouwingAanvragen.cshtml" />
     <Content Include="Views\Project\OpmerkingScherm.cshtml" />
-    <Content Include="Views\Project\ProjectAanmaken.cshtml" />
+    <Content Include="Views\Docent\ProjectAanmaken.cshtml" />
     <Content Include="Views\Project\StudentCijferToekennen.cshtml" />
     <Content Include="Views\Project\StudentNonActiefZetten.cshtml" />
     <Content Include="Views\Project\TutorBeoordelingenInzien.cshtml" />
@@ -309,6 +309,8 @@
     <Content Include="Views\Project\Menu.cshtml" />
     <Content Include="Views\Docent\SelecteerProject.cshtml" />
     <Content Include="Views\Docent\SelecteerTutorGroep.cshtml" />
+    <Content Include="Views\Docent\CompetentiesToevoegenAanProject.cshtml" />
+    <Content Include="Views\Docent\BeoordelingsmomentenToevoegen.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

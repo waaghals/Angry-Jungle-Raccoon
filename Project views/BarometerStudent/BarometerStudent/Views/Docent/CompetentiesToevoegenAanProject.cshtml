@@ -1,0 +1,58 @@
+﻿
+<br/>
+
+@using (@Html.BeginForm("CompetentiesToevoegenAanLijst", "Docent", FormMethod.Post))
+{
+    @Html.ListBox("competentiesVoorgaandProject", ViewBag.CompetentiesVoorgaandProject as MultiSelectList)
+    @Html.ListBox("competenties", ViewBag.CompetentiesProject as MultiSelectList)
+    <input type="submit" value="Toevoegen">
+}
+
+@*<span>
+    Sleep de competenties die u wilt gebruiken uit de lijst met de competenties van het voorgaande project 
+    naar de lijst met competenties voor dit project. <br/> U kunt ook niewe competenties toevoegen.
+</span>
+
+<br/><br/>
+
+<span>Competenties voorgaand project:</span>
+
+@using (@Html.BeginForm("CompetentiesToevoegenAanLijst", "Docent", FormMethod.Post))
+{
+    <ul id="sortablefirst">
+        @foreach (BarometerDomain.Model.Skill skill in ViewBag.CompetentiesVoorgaandProject)
+        {
+            <li class="ui-state-default"><span class="ui-icon-arrowthick-2-n-s" id="@skill.Id"></span>@skill.Category</li>
+        }
+    </ul>
+}
+
+@*<ul id="sortablefirst">
+    <li class="ui-state-default"><span class="ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+    <li class="ui-state-default"><span class="ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+    <li class="ui-state-default"><span class="ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+</ul>
+
+<span>Competenties:</span>
+<ul id="sortablesecond">
+    <li class="ui-state-default"><span class="ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+    <li class="ui-state-default"><span class="ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+    <li class="ui-state-default"><span class="ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+</ul>
+
+<br/>
+
+@using (@Html.BeginForm("CompetentiesToevoegenAanLijst", "Docent", FormMethod.Post))
+{
+    <input type="text" name ="skill">
+    <input type="submit" value="Competentie toevoegen">
+}
+
+<br/>
+<br/>
+
+@using (@Html.BeginForm("BeoordelingsmomentenToevoegen", "Docent", FormMethod.Post, new { Id = "comptoevoegform" }))
+{
+    <input type="hidden" name="order">
+    <input type="submit" value="Verder">
+}*@

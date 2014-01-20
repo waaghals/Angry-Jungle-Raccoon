@@ -1,0 +1,40 @@
+﻿@model BarometerDomain.Model.ProjectPeriod
+
+<h2>BeoordelingsmomentenToevoegen</h2>
+
+<br/>
+
+<table>
+    <tr>
+        <th>Naam</th>
+        <th>Startdatum</th>
+        <th>Einddatum</th>
+        <th></th>
+    </tr>
+    @foreach (BarometerDomain.Model.ProjectPeriod moment in ViewBag.Beoordelingsmomenten)
+    {
+        <tr>
+            <td>@moment.Name</td>
+            <td>@moment.Start.ToShortDateString()</td>
+            <td>@moment.End.ToShortDateString()</td>
+            <td></td>
+        </tr>
+    }
+    @using (Html.BeginForm("BeoordelingsmomentToevoegen", "Docent", FormMethod.Post))
+    {
+        <tr>
+            <td>@Html.TextBoxFor(model => model.Name)</td>
+            <td>@Html.TextBoxFor(model => model.Start)</td>
+            <td>@Html.TextBoxFor(model => model.End)</td>
+            <td><input type="submit" value="Toevoegen"></td>
+        </tr>
+    }
+</table>
+
+<br/>
+<br/>
+
+@using (Html.BeginForm("ProjectToevoegen", "Docent", FormMethod.Post))
+{
+    <input type="submit" value="Project aanmaken">
+}

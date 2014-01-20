@@ -1,23 +1,50 @@
-﻿<br/>
+﻿@model BarometerDomain.Model.Project
+
+<br/>
+
+@using (@Html.BeginForm("CompetentiesToevoegenAanProject", "Docent", FormMethod.Post))
+{
+    <span>Projectnaam:&nbsp;</span>
+    @Html.TextBoxFor(model => model.Name)
+
+    <br/>
+    
+    <span>Omschrijving:</span>
+    @Html.TextBoxFor(model => model.Description)
+
+    <br/><br/>
+    
+    @Html.CheckBoxFor(model => model.Anonymous, "Anoniem")
+    <span>Anoniem</span>
+    
+    <br/><br/>
+    
+    <span>Selecteer hieronder een project wanneer u competenties uit een ander project wilt gebruiken.</span>
+    
+    <br/><br/>
+     
+    <span>Voorgaand project:</span>
+    
+    <br/>
+    
+    @Html.DropDownList("Project", (IEnumerable<SelectListItem>)ViewBag.projecten, new { @class = "fancy_selectbox" })
+
+    <br/><br/>
+    
+    <input type="submit" value="Verder">
+}
+
+@*<br/>
 
 @using (Html.BeginForm("ProjectGegevensOpslaan", "Project", FormMethod.Post))
 {
     <span class="projectnaam">Voorgaand project:</span>
-    <select class="voorgaandProjectTextbox fancy_selectbox">
-        <option value="">-- Selecteer project --</option>
-	    <optgroup label="Blok 5">
-            <option value="1">Project waterval - ontwerp</option>
-	    </optgroup>
-	    <optgroup label="Blok 6">
-            <option value="2">Project waterval - bouw</option>
-	        <option value="2">Nog een project</option>
-	    </optgroup>
-    </select>
-    
+    @Html.DropDownList("Project", (IEnumerable<SelectListItem>)ViewBag.projecten,  new { @class = "fancy_selectbox" })
+
     <br/>
     
-    <span class="projectnaam">Projectnaam:</span>
-    <input type="text" class="projectTextbox"/>
+    <span class="projectnaam">Projectnaam:</span><br/>
+    <input type="text" name="projectnaam"/>
 }
 
 <br/>
@@ -95,3 +122,15 @@
     <button class="button float-right">Opslaan</button>
 
 </div>
+
+<ul id="sortablefirst">
+    <li class="ui-state-default"><span class="ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+    <li class="ui-state-default"><span class="ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+    <li class="ui-state-default"><span class="ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+</ul>
+
+<ul id="sortablesecond">
+    <li class="ui-state-default"><span class="ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+    <li class="ui-state-default"><span class="ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+    <li class="ui-state-default"><span class="ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+</ul>*@
