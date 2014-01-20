@@ -16,13 +16,14 @@ namespace BarometerDomain
         {
             RunDBTest.fillScript();
 
-            using (var db = new Context())
+            /*using (var db = new Context())
             {
                 foreach (Project p in db.Projects)
                     Console.WriteLine(p.Id + "," + p.Name + "," + p.Description + "," + p.Anonymous);
                 foreach (Student s in db.Students)
                     Console.WriteLine(s.Id + "," + s.Name);
-            }
+            }*/
+
             Console.ReadLine();
         }
 
@@ -65,10 +66,15 @@ namespace BarometerDomain
                 Group groep2 = new Group() { Name = "42in01sob", Tutor = tutor };
                 groep2.Student.Add(pieter);
                 groep2.Student.Add(joop);
+                Group groep3 = new Group() { Name = "42in01soc", Tutor = tutor };
+                groep3.Student.Add(henk);
+                groep3.Student.Add(klaas);
+                groep3.Student.Add(robin);
+                groep3.Student.Add(jaap);
 
                 //PROJ6
                 List<Group> proj6groups = new List<Group>();
-                proj6groups.Add(groep1);
+                proj6groups.Add(groep3);
 
                 List<ProjectPeriod> proj6periods = new List<ProjectPeriod>();
                 ProjectPeriod proj6period1 = new ProjectPeriod() { Name = "moment2", Start = new DateTime(2015, 01, 05), End = new DateTime(2015, 01, 10) };
