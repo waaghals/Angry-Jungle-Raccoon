@@ -107,22 +107,20 @@ namespace BarometerStudent.Controllers
                 Group group = (Group)TempData["myGroup"];
                 Project project = (Project)TempData["myProject"];
 
-                List<ProjectPeriod> projectPeriodList = new List<ProjectPeriod>();
+                List<Student> studentList = new List<Student>();
                 
-                foreach(Project pr in group.Project)
+                foreach(Student student in group.Student)
                 {
-                    foreach(ProjectPeriod period in pr.ProjectPeriod)
+                    if(!(studentList.Contains(student)))
                     {
-                        if(pr.Id == project.Id)
-                        {
-                            projectPeriodList.Add(period);
-                        }
+                        studentList.Add(student);
                     }
                 }
-
+                
+                ViewBag.studenten = studentList;
                 ViewBag.project = project;
                 ViewBag.group = group;
-                return View(projectPeriodList);
+                return View();
             }
             else
             {
