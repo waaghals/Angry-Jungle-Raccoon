@@ -20,6 +20,11 @@ namespace BarometerStudent.Controllers
             return View();
         }
 
+        public ActionResult Menu()
+        {
+            return View();
+        }
+
         public ActionResult MentorStudenten()
         {
             UserRepository userrep = new UserRepository(new Context());

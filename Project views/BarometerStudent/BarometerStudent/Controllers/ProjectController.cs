@@ -135,11 +135,6 @@ namespace BarometerStudent.Controllers
             }
         }
 
-        public ActionResult Menu()
-        {
-            return View();
-        }
-
         public ActionResult GroepsindelingAanmaken()
         {
             /**/
