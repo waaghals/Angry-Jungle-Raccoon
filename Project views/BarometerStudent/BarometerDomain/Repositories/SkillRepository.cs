@@ -14,5 +14,17 @@ namespace BarometerDomain.Repositories
         {
             table = database.Skills;
         }
+
+        public Skill SkillExists(string category)
+        {
+            foreach (Skill s in table)
+            {
+                if(s.Category.Equals(category))
+                {
+                    return s;
+                }
+            }
+            return null;
+        }
     }
 }
