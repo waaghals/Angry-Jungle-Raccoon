@@ -1,0 +1,64 @@
+﻿﻿@{
+
+    ViewBag.Title = "Groep Toewijzen en Verwijderen aan/van Project";
+
+}
+
+
+
+@if (ViewBag.YouSelected != null) {
+
+    <div> You Selected:  @ViewBag.YouSelected</div>
+
+}
+<div style="float: left;">
+@using (Html.BeginForm("AddGroup", "Docent", FormMethod.Post))
+{
+
+    <fieldset>
+
+        <legend>Multi-Select Demo</legend>
+
+        <div class="editor-field">
+
+            @Html.ListBox("Groups", ViewBag.addGroups as MultiSelectList)
+
+        </div>
+
+        <p>
+
+            <input type="submit" value="Voeg groep(en) toe" />
+
+        </p>
+
+    </fieldset>
+}
+</div>
+    
+    <div style="float: right;">
+@using (Html.BeginForm("DeleteGroup","Docent",FormMethod.Post)) {
+
+    <fieldset>
+
+        <legend>Multi-Select Demo</legend>
+
+        <div class="editor-field">
+
+            @Html.ListBox("Groups", ViewBag.deleteGroups as MultiSelectList)
+
+        </div>
+
+        <p>
+
+            <input type="submit" value="Verwijder groep(en)" />
+
+        </p>
+
+    </fieldset>
+}
+</div>
+@{
+    ViewBag.Title = "GroepToewijzenAanProject";
+}
+
+<h2>GroepToewijzenAanProject</h2>

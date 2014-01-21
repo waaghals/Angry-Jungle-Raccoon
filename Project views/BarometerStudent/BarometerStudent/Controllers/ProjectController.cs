@@ -1,4 +1,6 @@
-﻿using BarometerDomain.Model;
+﻿using BarometerDomain;
+using BarometerDomain.Model;
+using BarometerDomain.Repositories;
 using BarometerStudent.Services;
 using System;
 using System.Collections.Generic;
@@ -15,6 +17,7 @@ namespace BarometerStudent.Controllers
         //
         // GET: /Project/
         private int studentID = 2;
+        private int userProjectID = 1;
 
         public ActionResult Menu()
         {
@@ -142,6 +145,59 @@ namespace BarometerStudent.Controllers
             }
             return View("GroepsindelingAanmaken");
         }
+
+
+        public ActionResult GroepToewijzenAanProject()
+        {
+            GroupRepository gr = new GroupRepository(new Context());
+            ViewBag.addGroups = new MultiSelectList(gr.NotInProject(), "Id", "Name");
+            ViewBag.deleteGroups = new MultiSelectList(gr.InProject(userProjectID), "Id", "Name");
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult DeleteGroup()
+        {
+            GroupRepository gr = new GroupRepository(new Context());
+            string[] groups;
+            if (true)
+            {
+
+            }
+            groups = Request.Form["Groups"].Split(',');
+            foreach (string group in groups)
+            {
+                Group g = gr.Get(Convert.ToInt32(group));
+                if (g.Project.Id == userProjectID)
+                {
+                    g.Project = null;
+                }
+                gr.Update(g);
+                gr.Save();
+            }
+            return RedirectToAction("GroepToewijzenAanProject");
+
+        }
+
+        [HttpPost]
+        public ActionResult AddGroup()
+        {
+            Context c = new Context();
+            GroupRepository gr = new GroupRepository(c);
+            ProjectRepository pr = new ProjectRepository(c);
+            string[] groups = Request.Form["Groups"].Split(',');
+            foreach (string group in groups)
+            {
+                Group g = gr.Get(Convert.ToInt32(group));
+                Project p = pr.Get(userProjectID);
+                p.Groups.Add(g);
+                pr.Update(p);
+                pr.Save();
+            }
+            return RedirectToAction("GroepToewijzenAanProject");
+
+        }
+
 
     }
 }
