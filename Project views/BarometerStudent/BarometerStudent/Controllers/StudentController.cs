@@ -5,7 +5,6 @@ using System.Text;
 using System.Web.Mvc;
 using BarometerStudent.Services;
 using BarometerDomain.Model;
-using BarometerStudent.Services;
 
 public class StudentController : Controller
 {
