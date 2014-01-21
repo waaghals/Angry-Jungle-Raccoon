@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BarometerDomain.Model;
+using BarometerStudent.Services;
 
 namespace BarometerStudent.Controllers
 {
@@ -65,127 +66,28 @@ namespace BarometerStudent.Controllers
 
         public ActionResult SelecteerProject()
         {
-            ProjectRepository pr = new ProjectRepository(new Context());
-
-            ViewBag.selectListProjects = new SelectList(pr.ByTutor(/*tutorid*/userID), "Id", "Name", "1");
+            ProjectService ps = new ProjectService();
+            ViewBag.selectListProjects = ps.GetTutorProject(/*tutorid*/userID);
             return View();
         }
 
         [HttpPost]
-        public ActionResult SelecteerProject(string project)
+        public ActionResult SelecteerTutorGroep(int project)
         {
-            if (project != null)
-            {
-                int projectId = Convert.ToInt32(project);
-
-                ProjectRepository pr = new ProjectRepository(new Context());
-                Project myProject = pr.Get(projectId);
-
-                TempData["myProject"] = myProject;
-
-                return RedirectToAction("SelecteerTutorGroep", "Docent");
-            }
+            ProjectService ps = new ProjectService();
+            ViewBag.selectListGroups = ps.GetTutorGroup(project, userID);
             return View();
-        }
-
-        public ActionResult SelecteerTutorGroep()
-        {
-            if (TempData.ContainsKey("myProject"))
-            {
-                TempData.Keep();
-
-                Project myProject = (Project)TempData["myProject"];
-                IList<Group> tutorGroupList = new List<Group>();
-
-                foreach (Group group in myProject.Groups)
-                {
-                    if (group.Tutor.Id == userID)
-                    {
-                        tutorGroupList.Add(group);
-                    }
-                }
-                SelectList sl = new SelectList(tutorGroupList, "Id", "Name");
-
-                ViewBag.selectListGroups = sl;
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("SelecteerProject", "Docent");
-            }
         }
 
         [HttpPost]
-        public ActionResult SelecteerTutorgroep(string group)
+        public ActionResult ViewGroep(int groep)
         {
-            if (group != null)
-            {
-                int groupId = Convert.ToInt32(group);
-
-                GroupRepository gr = new GroupRepository(new Context());
-                Group myGroup = gr.Get(groupId);
-
-                TempData["myGroup"] = myGroup;
-
-                return RedirectToAction("ViewGroep", "Docent");
-            }
-            return View();
-        }
-
-        public ActionResult ViewGroep()
-        {
-            if (TempData.ContainsKey("myGroup") && TempData.ContainsKey("myProject"))
-            {
-                TempData.Keep();
-
-                Group group = (Group)TempData["myGroup"];
-                Project project = (Project)TempData["myProject"];
-
-                List<ProjectPeriod> projectPeriodList = new List<ProjectPeriod>();
-
-                foreach (ProjectPeriod period in group.Project.ProjectPeriod)
-                {
-                    if (group.Project.Id == project.Id)
-                    {
-                        projectPeriodList.Add(period);
-                    }
-                }
-                List<Student> studentList = new List<Student>();
-                Dictionary<string, List<Evaluation>> evalutionsPerForStudent = new Dictionary<string, List<Evaluation>>();
-
-                foreach (Student student in group.Student)
-                {
-                    if (!(studentList.Contains(student)))
-                    {
-                        studentList.Add(student);
-                        List<Evaluation> sortedList = BubbleSort((List<Evaluation>)project.GetEvaluations(student));
-                        evalutionsPerForStudent.Add(student.Name, sortedList);
-                    }
-                }
-
-                ViewBag.studenten = studentList;
-                ViewBag.project = project;
-                ViewBag.periodsCount = project.ProjectPeriod.Count;
-                ViewBag.group = group;
-                return View(evalutionsPerForStudent);
-            }
-            else
-            {
-                return RedirectToAction("SelecteerProject", "Docent");
-            }
-        }
-
-        private List<Evaluation> BubbleSort(List<Evaluation> evaluationList)
-        {
-            for (int outer = evaluationList.Count - 1; outer >= 1; outer--)
-                for (int inner = 0; inner < outer; inner++) // inner loop (forward)
-                    if ((evaluationList[inner].CompareToWithPeriod(evaluationList[inner + 1]) == -1))
-                    {
-                        Evaluation temp = evaluationList[inner];
-                        evaluationList[inner] = evaluationList[inner + 1];
-                        evaluationList[inner + 1] = temp;
-                    }
-            return evaluationList;
+            ProjectService ps = new ProjectService();
+            EvaluationService es = new EvaluationService();
+            Project project = ps.GetProjectFromGroup(groep);
+            ViewBag.project = project;
+            ViewBag.periodsCount = project.ProjectPeriod.Count;
+            return View(es.GetGroupEvaluation(groep));
         }
 
         public ActionResult ProjectAanmaken()
