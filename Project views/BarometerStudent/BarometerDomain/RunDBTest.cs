@@ -77,11 +77,11 @@ namespace BarometerDomain
                 proj6groups.Add(groep3);
 
                 List<ProjectPeriod> proj6periods = new List<ProjectPeriod>();
-                ProjectPeriod proj6period1 = new ProjectPeriod() { Name = "moment2", Start = new DateTime(2015, 01, 05), End = new DateTime(2015, 01, 10) };
-                ProjectPeriod proj6period2 = new ProjectPeriod() { Name = "moment1", Start = new DateTime(2014, 12, 05), End = new DateTime(2014, 12, 10) };
+                ProjectPeriod proj6period1 = new ProjectPeriod() { Name = "moment1", Start = new DateTime(2015, 01, 05), End = new DateTime(2015, 01, 10) };
+                ProjectPeriod proj6period2 = new ProjectPeriod() { Name = "moment2", Start = new DateTime(2014, 12, 05), End = new DateTime(2014, 12, 10) };
                 proj6periods.Add(proj6period1);
                 proj6periods.Add(proj6period2);
-
+                //period1
                 proj6period1.Evaluation.Add(new Evaluation() { Skill = technischontwerp, By = henk, Grade = 60, For = klaas });
                 proj6period1.Evaluation.Add(new Evaluation() { Skill = technischontwerp, By = klaas, Grade = 60, For = henk });
                 proj6period1.Evaluation.Add(new Evaluation() {Skill=technischontwerp,By=henk,Grade=60,For=robin});
@@ -94,9 +94,6 @@ namespace BarometerDomain
                 proj6period1.Evaluation.Add(new Evaluation() { Skill = technischontwerp, By = jaap, Grade = 20, For = henk });
                 proj6period1.Evaluation.Add(new Evaluation() { Skill = technischontwerp, By = jaap, Grade = 80, For = robin });
                 proj6period1.Evaluation.Add(new Evaluation() { Skill = technischontwerp, By = jaap, Grade = 90, For = klaas });
-
-                
-
 
                 proj6period1.Evaluation.Add(new Evaluation() { Skill = meepraten, By = henk, Grade = 50, For = klaas });
                 proj6period1.Evaluation.Add(new Evaluation() { Skill = meepraten, By = klaas, Grade = 70, For = henk });
@@ -123,6 +120,45 @@ namespace BarometerDomain
                 proj6period1.Evaluation.Add(new Evaluation() { Skill = plannen, By = jaap, Grade = 50, For = henk });
                 proj6period1.Evaluation.Add(new Evaluation() { Skill = plannen, By = jaap, Grade = 30, For = robin });
                 proj6period1.Evaluation.Add(new Evaluation() { Skill = plannen, By = jaap, Grade = 100, For = klaas });
+                //period2
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = technischontwerp, By = henk, For = klaas });
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = technischontwerp, By = klaas, For = henk });
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = technischontwerp, By = henk, For = robin });
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = technischontwerp, By = robin, For = henk });
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = technischontwerp, By = klaas,For = robin });
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = technischontwerp, By = robin, For = klaas });
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = technischontwerp, By = henk,  For = jaap });
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = technischontwerp, By = klaas, For = jaap });
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = technischontwerp, By = robin, For = jaap });
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = technischontwerp, By = jaap,  For = henk });
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = technischontwerp, By = jaap, For = robin });
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = technischontwerp, By = jaap,  For = klaas });
+
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = meepraten, By = henk,  For = klaas });
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = meepraten, By = klaas,For = henk });
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = meepraten, By = henk,  For = robin });
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = meepraten, By = robin, For = henk });
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = meepraten, By = klaas,For = robin });
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = meepraten, By = robin, For = klaas });
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = meepraten, By = jaap,  For = klaas });
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = meepraten, By = jaap,  For = henk });
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = meepraten, By = jaap, For = robin });
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = meepraten, By = robin, For = jaap });
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = meepraten, By = klaas, For = jaap });
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = meepraten, By = henk, For = jaap });
+
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = plannen, By = henk,  For = klaas });
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = plannen, By = klaas, For = henk });
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = plannen, By = henk,  For = robin });
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = plannen, By = robin,For = henk });
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = plannen, By = klaas, For = robin });
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = plannen, By = robin,  For = klaas });
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = plannen, By = henk, For = jaap });
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = plannen, By = klaas, For = jaap });
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = plannen, By = robin,  For = jaap });
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = plannen, By = jaap, For = henk });
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = plannen, By = jaap, For = robin });
+                proj6period2.Evaluation.Add(new Evaluation() { Skill = plannen, By = jaap,  For = klaas });
 
                 Project PROJ6 = new Project()
                 {
@@ -141,8 +177,8 @@ namespace BarometerDomain
                 proj5groups.Add(groep2);
 
                 List<ProjectPeriod> proj5periods = new List<ProjectPeriod>();
-                ProjectPeriod proj5period1 = new ProjectPeriod() { Name = "moment12", Start = new DateTime(2014, 01, 05), End = new DateTime(2014, 01, 10) };
-                ProjectPeriod proj5period2 = new ProjectPeriod() { Name = "moment11", Start = new DateTime(2013, 12, 05), End = new DateTime(2013, 12, 10) };
+                ProjectPeriod proj5period1 = new ProjectPeriod() { Name = "moment11", Start = new DateTime(2014, 01, 05), End = new DateTime(2014, 01, 10) };
+                ProjectPeriod proj5period2 = new ProjectPeriod() { Name = "moment12", Start = new DateTime(2013, 12, 05), End = new DateTime(2013, 12, 10) };
                 proj5periods.Add(proj5period1);
                 proj5periods.Add(proj5period2);
 
