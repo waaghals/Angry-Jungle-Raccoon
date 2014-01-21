@@ -16,6 +16,12 @@
 	        $(function () {
 	            $(".fancy_selectbox").selectbox();
 	            $("#tabs").tabs();
+	            $("#sortablefirst").sortable({ connectWith: '#sortablesecond' });
+	            $("#sortablesecond").sortable({ connectWith: '#sortablefirst' });
+	            $("#comptoevoegform").submit(function () {
+	                $("#order").val($("#sortablefirst").sortable("serialize"));
+	                return false;
+	            });
 	        });
 		</script>
     </head>

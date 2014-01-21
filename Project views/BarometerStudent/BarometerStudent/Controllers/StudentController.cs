@@ -3,45 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web.Mvc;
+using BarometerStudent.Services;
 using BarometerDomain.Model;
-using BarometerDomain.Repositories;
-using BarometerDomain;
 
 public class StudentController : Controller
 {
 
     public ActionResult VoortgangInzien(int studentId)
     {
-        StudentRepository studentRepo = new StudentRepository(new Context());
-        Student student = studentRepo.Get(studentId);
-
-        //List projectnames
-        IList<string> projectNames = new List<string>();
-        List<Evaluation> evaluationList = new List<Evaluation>();
-        Dictionary<string, List<Evaluation>> projectsAvgEvaluations = new Dictionary<string, List<Evaluation>>();
-        foreach (Group group in student.Groups)
-        {
-            projectNames.Add(group.Project.Name);
-            evaluationList = (List<Evaluation>) group.Project.GetAverageEvaluations(student);
-            evaluationList = BubbleSort(evaluationList);
-            projectsAvgEvaluations.Add(group.Project.Name, evaluationList);
-        }
-
-        ViewBag.projectNames = projectNames;
+        EvaluationService es = new EvaluationService();
+        Dictionary<string, List<Evaluation>> projectsAvgEvaluations = es.GetAvgEvaluations(studentId);
+        ViewBag.projectNames = projectsAvgEvaluations.Keys.ToList();
         return View(projectsAvgEvaluations);
-    }
-
-    private List<Evaluation> BubbleSort(List<Evaluation> evaluationList)
-    {
-        for (int outer = evaluationList.Count - 1; outer >= 1; outer--)
-            for (int inner = 0; inner < outer; inner++) // inner loop (forward)
-                if ((evaluationList[inner].CompareTo(evaluationList[inner + 1]) == -1))
-                {
-                    Evaluation temp = evaluationList[inner];
-                    evaluationList[inner] = evaluationList[inner + 1];
-                    evaluationList[inner + 1] = temp;
-                }
-        return evaluationList;
     }
 }
 

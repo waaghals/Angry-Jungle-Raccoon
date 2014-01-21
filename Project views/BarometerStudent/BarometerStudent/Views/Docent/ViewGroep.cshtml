@@ -61,11 +61,28 @@
                     }
                 }
             </tr>
-                int projectperiodnumber = 0;
-                string competentie = ""; 
-                foreach(BarometerDomain.Model.Evaluation eval in pair.Value)
+                foreach(string competentie in competentielist)
                 {
-                    
+                    <tr>
+                        <td>@competentie</td>
+                        @foreach(BarometerDomain.Model.Evaluation eval in pair.Value)
+                        {
+                            if(eval.Skill.Category == competentie)
+                            {
+                                if(eval.Grade == 0)
+                                {
+                                    <td>-</td>
+                                }
+                                else
+                                {
+                                    double toGrade = Convert.ToDouble(eval.Grade);
+                                    toGrade /= 10;
+                                    <td>@toGrade</td>
+                                }
+
+                            }
+                        }
+                    </tr>
                 }
 
                     }

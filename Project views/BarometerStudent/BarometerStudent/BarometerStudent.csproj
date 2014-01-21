@@ -180,7 +180,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\EvaluationService.cs" />
     <Compile Include="Services\ExcelReader.cs" />
+    <Compile Include="Services\ProjectService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
@@ -286,13 +288,13 @@
     <Content Include="Views\Project\ProjectOverzicht.cshtml" />
     <Content Include="Views\Project\Beoordelen.cshtml" />
     <Content Include="Views\Project\GroepsindelingAanmaken.cshtml" />
-    <Content Include="Views\Docent\GroepToewijzenAanProject.cshtml" />
+    <Content Include="Views\Project\GroepToewijzenAanProject.cshtml" />
     <Content Include="Views\Project\KlachtIndienen.cshtml" />
     <Content Include="Views\Project\MentorVoortgangInzien.cshtml" />
     <Content Include="Views\Project\NieuwProjectAanmaken.cshtml" />
     <Content Include="Views\Project\OnderbouwingAanvragen.cshtml" />
     <Content Include="Views\Project\OpmerkingScherm.cshtml" />
-    <Content Include="Views\Project\ProjectAanmaken.cshtml" />
+    <Content Include="Views\Docent\ProjectAanmaken.cshtml" />
     <Content Include="Views\Project\StudentCijferToekennen.cshtml" />
     <Content Include="Views\Project\StudentNonActiefZetten.cshtml" />
     <Content Include="Views\Project\TutorBeoordelingenInzien.cshtml" />
@@ -306,6 +308,11 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Login\AuthenticationPosibilitys.cshtml" />
+    <Content Include="Views\Docent\CompetentiesToevoegenAanProject.cshtml" />
+    <Content Include="Views\Docent\BeoordelingsmomentenToevoegen.cshtml" />
+    <Content Include="Views\Docent\Index.cshtml" />
+    <Content Include="Views\Docent\ViewGroep.cshtml" />
+    <Content Include="Views\Docent\GroepToewijzenAanProject.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
