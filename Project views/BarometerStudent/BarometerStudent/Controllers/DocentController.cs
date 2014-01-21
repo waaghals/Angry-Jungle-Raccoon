@@ -260,7 +260,18 @@ namespace BarometerStudent.Controllers
         public ActionResult CompetentiesToevoegen(Skill skill)
         {
             Project project = (Project)Session["newProject"];
-            project.Skill.Add(skill);
+            SkillRepository skillRepo = new SkillRepository(new Context());
+            Skill s = skillRepo.SkillExists(skill.Category);
+            if (s == null)
+            {
+                project.Skill.Add(skill);
+                System.Diagnostics.Debug.WriteLine("Nieuwe skill toegevoegd: " + skill.Category);
+            }
+            else
+            {
+                System.Diagnostics.Debug.WriteLine("Bestaande skill toegevoegd: " + s.Category);
+                project.Skill.Add(s);
+            }
             return RedirectToAction("CompetentiesToevoegenAanProject", (Project)null);
         }
 
