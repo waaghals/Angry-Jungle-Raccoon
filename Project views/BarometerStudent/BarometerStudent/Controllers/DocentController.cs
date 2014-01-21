@@ -14,11 +14,40 @@ namespace BarometerStudent.Controllers
         //
         // GET: /Docent/
         private int userID = 1;
+        private int userProjectID = 1;
 
         public ActionResult Index()
         {
             return View();
         }
+
+        public ActionResult GroepToewijzenAanProject()
+        {
+            GroupRepository gr = new GroupRepository(new Context());
+            ViewBag.addGroups = new MultiSelectList(gr.NotInProject(), "Id", "Name");
+            ViewBag.deleteGroups = new MultiSelectList(gr.InProject(userProjectID), "Id", "Name");
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult DeleteGroup()
+        {
+            GroupRepository gr = new GroupRepository(new Context());
+            string[] groups;
+            groups = Request.Form["Groups"].Split(',');
+            foreach (string group in groups)
+            {
+                Group g = gr.Get(Convert.ToInt32(group));
+                if (g.Project.Id == userProjectID)
+                {
+                    g.Project = null;
+                }
+                gr.Update(g);
+                gr.Save();
+            }
+            return RedirectToAction("GroepToewijzenAanProject");
+        }
+
 
         public ActionResult MentorStudenten()
         {
@@ -71,7 +100,7 @@ namespace BarometerStudent.Controllers
         public ActionResult ProjectAanmaken()
         {
             ProjectRepository pr = new ProjectRepository(new Context());
-            SelectList projecten = new SelectList(pr.GetAll(),"Id", "Name");
+            SelectList projecten = new SelectList(pr.GetAll(), "Id", "Name");
             ViewBag.projecten = projecten;
             return View(new Project());
         }
@@ -108,7 +137,7 @@ namespace BarometerStudent.Controllers
                 }
             }
             MultiSelectList skillsVoorgaandProject = new MultiSelectList(skillLijst, "Id", "Category");
-            
+
             ViewBag.CompetentiesVoorgaandProject = skillsVoorgaandProject;
             return View();
         }
