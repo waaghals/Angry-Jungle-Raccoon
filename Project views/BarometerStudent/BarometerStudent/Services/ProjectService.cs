@@ -87,5 +87,29 @@ namespace BarometerStudent.Services
             int id = gr.Get(groep).Project.Id;
             return GetProject(id);
         }
+
+        public void DeleteGroup(int groupId, int projectId)
+        {
+            GroupRepository gr = new GroupRepository(context);
+            Group g = gr.Get(groupId);    
+            if (g.Project.Id == projectId)
+                {
+                    g.Project = null;
+                }
+
+            gr.Update(g);
+            gr.Save();
+        }
+
+        public void AddGroup(int groupId, int projectId)
+        {
+            GroupRepository gr = new GroupRepository(context);
+            ProjectRepository pr = new ProjectRepository(context);
+            Group g = gr.Get(groupId);
+            Project p = pr.Get(projectId);
+            p.Groups.Add(g);
+            pr.Update(p);
+            pr.Save();
+        }
     }
 }

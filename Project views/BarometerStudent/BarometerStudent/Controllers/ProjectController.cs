@@ -91,7 +91,7 @@ namespace BarometerStudent.Controllers
             }
             else
             {
-                return RedirectToAction("Index","StudentHome");
+                return RedirectToAction("Index", "StudentHome");
             }
 
             foreach (List<Evaluation> eval in evaluationList)
@@ -158,23 +158,29 @@ namespace BarometerStudent.Controllers
         [HttpPost]
         public ActionResult DeleteGroup()
         {
-            GroupRepository gr = new GroupRepository(new Context());
-            string[] groups;
-            if (true)
-            {
+            string varGroups = Request.Form["Groups"];
+            List<string> groups = new List<string>();
 
+            if (varGroups == null)
+            {
+                return RedirectToAction("GroepToewijzenAanProject");
             }
-            groups = Request.Form["Groups"].Split(',');
+            else if (varGroups.Length < 2)
+            {
+                groups.Add(varGroups);
+            }
+            else
+            {
+                groups = varGroups.Split(',').ToList(); ;
+            }
+
+            ProjectService ps = new ProjectService();
+
             foreach (string group in groups)
             {
-                Group g = gr.Get(Convert.ToInt32(group));
-                if (g.Project.Id == userProjectID)
-                {
-                    g.Project = null;
-                }
-                gr.Update(g);
-                gr.Save();
+                ps.DeleteGroup(Convert.ToInt32(group), userProjectID);
             }
+
             return RedirectToAction("GroepToewijzenAanProject");
 
         }
@@ -182,17 +188,27 @@ namespace BarometerStudent.Controllers
         [HttpPost]
         public ActionResult AddGroup()
         {
-            Context c = new Context();
-            GroupRepository gr = new GroupRepository(c);
-            ProjectRepository pr = new ProjectRepository(c);
-            string[] groups = Request.Form["Groups"].Split(',');
+            string varGroups = Request.Form["Groups"];
+            List<string> groups = new List<string>();
+
+            if (varGroups == null)
+            {
+                return RedirectToAction("GroepToewijzenAanProject");
+            }
+            else if (varGroups.Length < 2)
+            {
+                groups.Add(varGroups);
+            }
+            else
+            {
+                groups = varGroups.Split(',').ToList(); ;
+            }
+
+            ProjectService ps = new ProjectService();
+
             foreach (string group in groups)
             {
-                Group g = gr.Get(Convert.ToInt32(group));
-                Project p = pr.Get(userProjectID);
-                p.Groups.Add(g);
-                pr.Update(p);
-                pr.Save();
+                ps.AddGroup(Convert.ToInt32(group), userProjectID);
             }
             return RedirectToAction("GroepToewijzenAanProject");
 
