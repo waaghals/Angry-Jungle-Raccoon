@@ -19,7 +19,7 @@ namespace BarometerDomain.Repositories
         {
             foreach (Skill s in table)
             {
-                if(s.Category.Equals(category))
+                if(s.Category.ToLower().Equals(category.ToLower()))
                 {
                     return s;
                 }
