@@ -135,6 +135,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Context.cs" />
+    <Compile Include="Model\AccountModel.cs" />
     <Compile Include="Model\Evaluation.cs" />
     <Compile Include="Model\Group.cs" />
     <Compile Include="Model\IEntety.cs" />
@@ -146,6 +147,7 @@
     <Compile Include="Model\Student.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="OAuth\AvansOAuthClient.cs" />
+    <Compile Include="OAuth\AvansUser.cs" />
     <Compile Include="OAuth\OAuthUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\EvaluationRepository.cs" />

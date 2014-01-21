@@ -27,7 +27,7 @@ namespace BarometerStudent
             //    appId: "",
             //    appSecret: "");
 
-            OAuthWebSecurity.RegisterGoogleClient();
+            //OAuthWebSecurity.RegisterGoogleClient();
 
             OAuthWebSecurity.RegisterClient(new AvansOAuthClient("022dd5cca2fa5cc3b6db3233933f980fc10cb2b4", "f35d8a5e685018bc2208fc0b9eeca5cac0c855c1"), "Avans", null);
         }

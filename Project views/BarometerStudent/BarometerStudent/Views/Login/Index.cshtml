@@ -1,20 +1,11 @@
-﻿@model ICollection<AuthenticationClientData>
-@{
+﻿@{
     ViewBag.Title = "Login";
 }
 
 <h2>Inloggen</h2>
 
-<p>Om je groepsgenoten te kunnen beoordelen moet je ingeloged zijn. <br /> Klik hier onder om in te loggen via <a href="http://Avans.nl" title="Avans Hogeschool" class="tableLink">Avans</a>.</p>
+<p>Om je groepsgenoten te kunnen beoordelen moet je ingeloged zijn.<br />Klik hier onder om in te loggen via <a href="http://Avans.nl" title="Avans Hogeschool" class="tableLink">Avans</a>.</p>
 
-using (Html.BeginForm("ExternalLogin", "Account", new { ReturnUrl = ViewBag.ReturnUrl }))
-{
-    @Html.AntiForgeryToken()
-
-    @foreach (AuthenticationClientData p in Model)
-    {
-        <button type="submit" name="provider" value="@p.AuthenticationClient.ProviderName" title="Log in met je @p.DisplayName account">@p.DisplayName</button>
-    }
-}
+@Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
 
 

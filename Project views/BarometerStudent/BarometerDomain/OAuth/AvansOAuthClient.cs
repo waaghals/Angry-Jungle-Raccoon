@@ -45,7 +45,16 @@ namespace BarometerDomain.OAuth
 
         protected override AuthenticationResult VerifyAuthenticationCore(AuthorizedTokenResponse response)
         {
-            var profileEndpoint = new MessageReceivingEndpoint("https://publicapi.avans.nl/oauth/api/user/?format=json", HttpDeliveryMethods.GetRequest);
+            /*var profileEndpoint = new MessageReceivingEndpoint("https://publicapi.avans.nl/oauth/api/user/?format=json", HttpDeliveryMethods.GetRequest);
+            string accessToken = response.AccessToken;
+
+            InMemoryOAuthTokenManager tokenManager = new InMemoryOAuthTokenManager(consumerKey, consumerSecret);
+            tokenManager.ExpireRequestTokenAndStoreNewAccessToken(String.Empty, String.Empty, accessToken, (response as ITokenSecretContainingMessage).TokenSecret);
+            WebConsumer webConsumer = new WebConsumer(AvansServiceDescription, tokenManager);
+
+            HttpWebRequest request = webConsumer.PrepareAuthorizedRequest(profileEndpoint, accessToken);*/
+
+            var profileEndpoint = new MessageReceivingEndpoint("https://publicapi.avans.nl/oauth/studentnummer/?format=json", HttpDeliveryMethods.GetRequest);
             string accessToken = response.AccessToken;
 
             InMemoryOAuthTokenManager tokenManager = new InMemoryOAuthTokenManager(consumerKey, consumerSecret);
@@ -55,6 +64,39 @@ namespace BarometerDomain.OAuth
             HttpWebRequest request = webConsumer.PrepareAuthorizedRequest(profileEndpoint, accessToken);
 
             try
+            {
+                using (WebResponse profileResponse = request.GetResponse())
+                {
+                    using (Stream profileResponseStream = profileResponse.GetResponseStream())
+                    {
+                        using (StreamReader reader = new StreamReader(profileResponseStream))
+                        {
+                            string jsonText = reader.ReadToEnd();
+
+                            var user = JsonConvert.DeserializeObject<List<AvansUser>>(jsonText);
+
+                            Dictionary<string, string> extraData = new Dictionary<string, string>();
+                            extraData.Add("Studentnummer", user[0].Studentnummer ?? "Onbekend");
+                            extraData.Add("Login", user[0].Inlognaam ?? "Onbekend");
+                            return new DotNetOpenAuth.AspNet.AuthenticationResult(true, ProviderName, extraData["Studentnummer"], extraData["Login"], extraData);
+                        }
+                    }
+                }
+                return new AuthenticationResult(false);
+            }
+            catch (WebException ex)
+            {
+                using (Stream s = ex.Response.GetResponseStream())
+                {
+                    using (StreamReader sr = new StreamReader(s))
+                    {
+                        string body = sr.ReadToEnd();
+                        return new DotNetOpenAuth.AspNet.AuthenticationResult(new Exception(body, ex));
+                    }
+                }
+            }
+
+            /*try
             {
                 using (WebResponse profileResponse = request.GetResponse())
                 {
@@ -85,7 +127,7 @@ namespace BarometerDomain.OAuth
                         return new DotNetOpenAuth.AspNet.AuthenticationResult(new Exception(body, ex));
                     }
                 }
-            }
+            }*/
         }
     }
 }
