@@ -49,6 +49,10 @@ namespace BarometerDomain
                 robin.RoleType.Add(RoleType.Student);
                 Student jaap = new Student() { Name = "Jaap Jaapsen", Login = "jjaapsen" }; 
                 jaap.RoleType.Add(RoleType.Student);
+                Student michael = new Student() { Name="Michael Michaelson", Login="mmichael"};
+                michael.RoleType.Add(RoleType.Student);
+                Student arnout = new Student() { Name = "Arnout van Steen", Login = "avsteen" };
+                arnout.RoleType.Add(RoleType.Student);
 
                 User tutor = new User() { Name = "Dr Henk", Login = "drhenk1" }; tutor.RoleType.Add(RoleType.Teacher);
                 tutor.MentorStudent.Add(henk);
@@ -57,12 +61,16 @@ namespace BarometerDomain
                 tutor.MentorStudent.Add(joop);
                 tutor.MentorStudent.Add(robin);
                 tutor.MentorStudent.Add(jaap);
+                tutor.MentorStudent.Add(michael);
+                tutor.MentorStudent.Add(arnout);
 
                 Group groep1 = new Group() { Name = "42in01soa", Tutor = tutor };
                 groep1.Student.Add(henk);
                 groep1.Student.Add(klaas);
                 groep1.Student.Add(robin);
                 groep1.Student.Add(jaap);
+                groep1.Student.Add(michael);
+                groep1.Student.Add(arnout);
                 Group groep2 = new Group() { Name = "42in01sob", Tutor = tutor };
                 groep2.Student.Add(pieter);
                 groep2.Student.Add(joop);
@@ -112,8 +120,8 @@ namespace BarometerDomain
                 proj6period1.Evaluation.Add(new Evaluation() { Skill = plannen, By = klaas, Grade = 100, For = henk });
                 proj6period1.Evaluation.Add(new Evaluation() {Skill=plannen,By=henk,Grade=80,For=robin});
                 proj6period1.Evaluation.Add(new Evaluation() {Skill=plannen,By=robin,Grade=50,For=henk});
-                proj6period1.Evaluation.Add(new Evaluation() {Skill=plannen,By=klaas,Grade=30,For=robin});
-                proj6period1.Evaluation.Add(new Evaluation() {Skill=plannen,By=robin,Grade=100,For=klaas});
+                proj6period1.Evaluation.Add(new Evaluation() { Skill = plannen, By = klaas, Grade = 30, For = robin });
+                proj6period1.Evaluation.Add(new Evaluation() { Skill = plannen, By = robin, Grade = 100, For = klaas });
                 proj6period1.Evaluation.Add(new Evaluation() { Skill = plannen, By = henk, Grade = 10, For = jaap });
                 proj6period1.Evaluation.Add(new Evaluation() { Skill = plannen, By = klaas, Grade = 100, For = jaap });
                 proj6period1.Evaluation.Add(new Evaluation() { Skill = plannen, By = robin, Grade = 80, For = jaap });
@@ -196,6 +204,24 @@ namespace BarometerDomain
                 proj5period1.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = robin, Grade = 90, For = jaap });
                 proj5period1.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = klaas, Grade = 80, For = jaap });
                 proj5period1.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = henk, Grade = 70, For = jaap });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = michael, Grade = 100, For = robin });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = michael, Grade = 90, For = henk });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = michael, Grade = 80, For = robin });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = michael, Grade = 70, For = klaas });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = jaap, Grade = 100, For = michael });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = robin, Grade = 90, For = michael });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = klaas, Grade = 80, For = michael });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = henk, Grade = 70, For = michael });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = arnout, Grade = 80, For = jaap });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = arnout, Grade = 70, For = klaas });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = arnout, Grade = 100, For = robin });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = arnout, Grade = 90, For = henk });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = arnout, Grade = 80, For = michael });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = michael, Grade = 70, For = arnout });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = jaap, Grade = 100, For = arnout });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = robin, Grade = 90, For = arnout });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = klaas, Grade = 80, For = arnout });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = henk, Grade = 70, For = arnout });
 
                 proj5period1.Evaluation.Add(new Evaluation() { Skill = meepraten, By = henk, Grade = 50, For = klaas });
                 proj5period1.Evaluation.Add(new Evaluation() { Skill = meepraten, By = klaas, Grade = 70, For = henk });
@@ -209,9 +235,25 @@ namespace BarometerDomain
                 proj5period1.Evaluation.Add(new Evaluation() { Skill = meepraten, By = robin, Grade = 50, For = jaap });
                 proj5period1.Evaluation.Add(new Evaluation() { Skill = meepraten, By = klaas, Grade = 40, For = jaap });
                 proj5period1.Evaluation.Add(new Evaluation() { Skill = meepraten, By = henk, Grade = 30, For = jaap });
-
-
-
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = meepraten, By = michael, Grade = 100, For = robin });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = meepraten, By = michael, Grade = 90, For = henk });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = meepraten, By = michael, Grade = 80, For = robin });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = meepraten, By = michael, Grade = 70, For = klaas });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = meepraten, By = jaap, Grade = 100, For = michael });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = meepraten, By = robin, Grade = 90, For = michael });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = meepraten, By = klaas, Grade = 80, For = michael });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = meepraten, By = henk, Grade = 70, For = michael });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = meepraten, By = arnout, Grade = 80, For = jaap });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = meepraten, By = arnout, Grade = 70, For = klaas });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = meepraten, By = arnout, Grade = 100, For = robin });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = meepraten, By = arnout, Grade = 90, For = henk });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = meepraten, By = arnout, Grade = 80, For = michael });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = meepraten, By = michael, Grade = 70, For = arnout });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = meepraten, By = jaap, Grade = 100, For = arnout });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = meepraten, By = robin, Grade = 90, For = arnout });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = meepraten, By = klaas, Grade = 80, For = arnout });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = meepraten, By = henk, Grade = 70, For = arnout });
+                
                 proj5period1.Evaluation.Add(new Evaluation() { Skill = plannen, By = henk, Grade = 10, For = klaas });
                 proj5period1.Evaluation.Add(new Evaluation() { Skill = plannen, By = klaas, Grade = 100, For = henk });
                 proj5period1.Evaluation.Add(new Evaluation() {Skill=plannen,By=henk,Grade=20,For=robin});
@@ -224,6 +266,24 @@ namespace BarometerDomain
                 proj5period1.Evaluation.Add(new Evaluation() { Skill = plannen, By = robin, Grade = 50, For = jaap });
                 proj5period1.Evaluation.Add(new Evaluation() { Skill = plannen, By = klaas, Grade = 40, For = jaap });
                 proj5period1.Evaluation.Add(new Evaluation() { Skill = plannen, By = henk, Grade = 30, For = jaap });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = plannen, By = michael, Grade = 100, For = robin });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = plannen, By = michael, Grade = 90, For = henk });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = plannen, By = michael, Grade = 80, For = robin });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = plannen, By = michael, Grade = 70, For = klaas });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = plannen, By = jaap, Grade = 100, For = michael });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = plannen, By = robin, Grade = 90, For = michael });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = plannen, By = klaas, Grade = 80, For = michael });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = plannen, By = henk, Grade = 70, For = michael });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = plannen, By = arnout, Grade = 80, For = jaap });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = plannen, By = arnout, Grade = 70, For = klaas });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = plannen, By = arnout, Grade = 100, For = robin });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = plannen, By = arnout, Grade = 90, For = henk });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = plannen, By = arnout, Grade = 80, For = michael });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = plannen, By = michael, Grade = 70, For = arnout });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = plannen, By = jaap, Grade = 100, For = arnout });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = plannen, By = robin, Grade = 90, For = arnout });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = plannen, By = klaas, Grade = 80, For = arnout });
+                proj5period1.Evaluation.Add(new Evaluation() { Skill = plannen, By = henk, Grade = 70, For = arnout });
 
                 //GROEP 2
                 proj5period1.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = pieter, Grade = 60, For = joop });
@@ -249,7 +309,24 @@ namespace BarometerDomain
                 proj5period2.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = robin, Grade = 50, For = jaap });
                 proj5period2.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = klaas, Grade = 60, For = jaap });
                 proj5period2.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = henk, Grade = 70, For = jaap });
-
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = michael, Grade = 100, For = robin });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = michael, Grade = 90, For = henk });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = michael, Grade = 80, For = robin });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = michael, Grade = 70, For = klaas });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = jaap, Grade = 100, For = michael });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = robin, Grade = 90, For = michael });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = klaas, Grade = 80, For = michael });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = henk, Grade = 70, For = michael });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = arnout, Grade = 80, For = jaap });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = arnout, Grade = 70, For = klaas });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = arnout, Grade = 100, For = robin });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = arnout, Grade = 90, For = henk });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = arnout, Grade = 80, For = michael });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = michael, Grade = 70, For = arnout });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = jaap, Grade = 100, For = arnout });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = robin, Grade = 90, For = arnout });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = klaas, Grade = 80, For = arnout });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = henk, Grade = 70, For = arnout });
 
                 proj5period2.Evaluation.Add(new Evaluation() { Skill = meepraten, By = henk, Grade = 10, For = klaas });
                 proj5period2.Evaluation.Add(new Evaluation() { Skill = meepraten, By = klaas, Grade = 60, For = henk });
@@ -263,6 +340,24 @@ namespace BarometerDomain
                 proj5period2.Evaluation.Add(new Evaluation() { Skill = meepraten, By = robin, Grade = 90, For = jaap });
                 proj5period2.Evaluation.Add(new Evaluation() { Skill = meepraten, By = klaas, Grade = 100, For = jaap });
                 proj5period2.Evaluation.Add(new Evaluation() { Skill = meepraten, By = henk, Grade = 90, For = jaap });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = meepraten, By = michael, Grade = 100, For = robin });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = meepraten, By = michael, Grade = 90, For = henk });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = meepraten, By = michael, Grade = 80, For = robin });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = meepraten, By = michael, Grade = 70, For = klaas });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = meepraten, By = jaap, Grade = 100, For = michael });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = meepraten, By = robin, Grade = 90, For = michael });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = meepraten, By = klaas, Grade = 80, For = michael });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = meepraten, By = henk, Grade = 70, For = michael });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = meepraten, By = arnout, Grade = 80, For = jaap });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = meepraten, By = arnout, Grade = 70, For = klaas });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = meepraten, By = arnout, Grade = 100, For = robin });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = meepraten, By = arnout, Grade = 90, For = henk });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = meepraten, By = arnout, Grade = 80, For = michael });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = meepraten, By = michael, Grade = 70, For = arnout });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = meepraten, By = jaap, Grade = 100, For = arnout });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = meepraten, By = robin, Grade = 90, For = arnout });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = meepraten, By = klaas, Grade = 80, For = arnout });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = meepraten, By = henk, Grade = 70, For = arnout });
 
                 proj5period2.Evaluation.Add(new Evaluation() { Skill = plannen, By = henk, Grade = 70, For = klaas });
                 proj5period2.Evaluation.Add(new Evaluation() { Skill = plannen, By = klaas, Grade = 40, For = henk });
@@ -276,6 +371,25 @@ namespace BarometerDomain
                 proj5period2.Evaluation.Add(new Evaluation() { Skill = plannen, By = robin, Grade = 70, For = jaap });
                 proj5period2.Evaluation.Add(new Evaluation() { Skill = plannen, By = klaas, Grade = 60, For = jaap });
                 proj5period2.Evaluation.Add(new Evaluation() { Skill = plannen, By = henk, Grade = 50, For = jaap });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = plannen, By = michael, Grade = 100, For = robin });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = plannen, By = michael, Grade = 90, For = henk });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = plannen, By = michael, Grade = 80, For = robin });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = plannen, By = michael, Grade = 70, For = klaas });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = plannen, By = jaap, Grade = 100, For = michael });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = plannen, By = robin, Grade = 90, For = michael });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = plannen, By = klaas, Grade = 80, For = michael });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = plannen, By = henk, Grade = 70, For = michael });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = plannen, By = arnout, Grade = 80, For = jaap });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = plannen, By = arnout, Grade = 70, For = klaas });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = plannen, By = arnout, Grade = 100, For = robin });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = plannen, By = arnout, Grade = 90, For = henk });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = plannen, By = arnout, Grade = 80, For = michael });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = plannen, By = michael, Grade = 70, For = arnout });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = plannen, By = jaap, Grade = 100, For = arnout });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = plannen, By = robin, Grade = 90, For = arnout });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = plannen, By = klaas, Grade = 80, For = arnout });
+                proj5period2.Evaluation.Add(new Evaluation() { Skill = plannen, By = henk, Grade = 70, For = arnout });
+
                 //GROEP 2
                 proj5period2.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = pieter, Grade = 80, For = joop });
                 proj5period2.Evaluation.Add(new Evaluation() { Skill = testplankennis, By = joop, Grade = 20, For = pieter });
