@@ -314,7 +314,6 @@
     <Content Include="Views\Docent\BeoordelingsmomentenToevoegen.cshtml" />
     <Content Include="Views\Docent\Index.cshtml" />
     <Content Include="Views\Docent\ViewGroep.cshtml" />
-    <Content Include="Views\Docent\GroepToewijzenAanProject.cshtml" />
     <Content Include="Views\Project\GroepToewijzenAanProject.cshtml" />
   </ItemGroup>
   <ItemGroup>

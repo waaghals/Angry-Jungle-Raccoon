@@ -28,33 +28,6 @@ namespace BarometerStudent.Controllers
             Session["newProject"] = null;
             return RedirectToAction("ProjectAanmaken");
         }
-        public ActionResult GroepToewijzenAanProject()
-        {
-            GroupRepository gr = new GroupRepository(new Context());
-            ViewBag.addGroups = new MultiSelectList(gr.NotInProject(), "Id", "Name");
-            ViewBag.deleteGroups = new MultiSelectList(gr.InProject(userProjectID), "Id", "Name");
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult DeleteGroup()
-        {
-            GroupRepository gr = new GroupRepository(new Context());
-            string[] groups;
-            groups = Request.Form["Groups"].Split(',');
-            foreach (string group in groups)
-            {
-                Group g = gr.Get(Convert.ToInt32(group));
-                if (g.Project.Id == userProjectID)
-                {
-                    g.Project = null;
-                }
-                gr.Update(g);
-                gr.Save();
-            }
-            return RedirectToAction("GroepToewijzenAanProject");
-        }
-
 
         public ActionResult MentorStudenten()
         {
@@ -62,131 +35,6 @@ namespace BarometerStudent.Controllers
             User user = userrep.Get(userID);
             List<Student> studenten = user.MentorStudent.ToList<Student>();
             return View(studenten);
-        }
-
-        public ActionResult SelecteerProject()
-        {
-            ProjectRepository pr = new ProjectRepository(new Context());
-
-            ViewBag.selectListProjects = new SelectList(pr.ByTutor(/*tutorid*/userID), "Id", "Name", "1");
-            return View();
-        }
-
-        [HttpPost]
-        public ActionResult SelecteerProject(string project)
-        {
-            if (project != null)
-            {
-                int projectId = Convert.ToInt32(project);
-
-                ProjectRepository pr = new ProjectRepository(new Context());
-                Project myProject = pr.Get(projectId);
-
-                TempData["myProject"] = myProject;
-
-                return RedirectToAction("SelecteerTutorGroep", "Docent");
-            }
-            return View();
-        }
-
-        public ActionResult SelecteerTutorGroep()
-        {
-            if (TempData.ContainsKey("myProject"))
-            {
-                TempData.Keep();
-
-                Project myProject = (Project)TempData["myProject"];
-                IList<Group> tutorGroupList = new List<Group>();
-
-                foreach (Group group in myProject.Groups)
-                {
-                    if (group.Tutor.Id == userID)
-                    {
-                        tutorGroupList.Add(group);
-                    }
-                }
-                SelectList sl = new SelectList(tutorGroupList, "Id", "Name");
-
-                ViewBag.selectListGroups = sl;
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("SelecteerProject", "Docent");
-            }
-        }
-
-        [HttpPost]
-        public ActionResult SelecteerTutorgroep(string group)
-        {
-            if (group != null)
-            {
-                int groupId = Convert.ToInt32(group);
-
-                GroupRepository gr = new GroupRepository(new Context());
-                Group myGroup = gr.Get(groupId);
-
-                TempData["myGroup"] = myGroup;
-
-                return RedirectToAction("ViewGroep", "Docent");
-            }
-            return View();
-        }
-
-        public ActionResult ViewGroep()
-        {
-            if (TempData.ContainsKey("myGroup") && TempData.ContainsKey("myProject"))
-            {
-                TempData.Keep();
-
-                Group group = (Group)TempData["myGroup"];
-                Project project = (Project)TempData["myProject"];
-
-                List<ProjectPeriod> projectPeriodList = new List<ProjectPeriod>();
-
-                foreach (ProjectPeriod period in group.Project.ProjectPeriod)
-                {
-                    if (group.Project.Id == project.Id)
-                    {
-                        projectPeriodList.Add(period);
-                    }
-                }
-                List<Student> studentList = new List<Student>();
-                Dictionary<string, List<Evaluation>> evalutionsPerForStudent = new Dictionary<string, List<Evaluation>>();
-
-                foreach (Student student in group.Student)
-                {
-                    if (!(studentList.Contains(student)))
-                    {
-                        studentList.Add(student);
-                        List<Evaluation> sortedList = BubbleSort((List<Evaluation>)project.GetEvaluations(student));
-                        evalutionsPerForStudent.Add(student.Name, sortedList);
-                    }
-                }
-
-                ViewBag.studenten = studentList;
-                ViewBag.project = project;
-                ViewBag.periodsCount = project.ProjectPeriod.Count;
-                ViewBag.group = group;
-                return View(evalutionsPerForStudent);
-            }
-            else
-            {
-                return RedirectToAction("SelecteerProject", "Docent");
-            }
-        }
-
-        private List<Evaluation> BubbleSort(List<Evaluation> evaluationList)
-        {
-            for (int outer = evaluationList.Count - 1; outer >= 1; outer--)
-                for (int inner = 0; inner < outer; inner++) // inner loop (forward)
-                    if ((evaluationList[inner].CompareToWithPeriod(evaluationList[inner + 1]) == -1))
-                    {
-                        Evaluation temp = evaluationList[inner];
-                        evaluationList[inner] = evaluationList[inner + 1];
-                        evaluationList[inner + 1] = temp;
-                    }
-            return evaluationList;
         }
 
         public ActionResult ProjectAanmaken()
@@ -197,7 +45,7 @@ namespace BarometerStudent.Controllers
             Project sessionProject = (Project)Session["newProject"];
             return View(sessionProject);
         }
-        
+
         public ActionResult CompetentiesToevoegenAanProject()
         {
             Project p = (Project)Session["newProject"];
@@ -229,17 +77,17 @@ namespace BarometerStudent.Controllers
 
         public ActionResult ProjectOpslaan(Project p)
         {
-            if(Session["newProject"] == null)
+            if (Session["newProject"] == null)
             {
                 Session["newProject"] = p;
             }
             Session["baseProject"] = Request.Form["Project"];
 
-            if(Request.Form["competenties"] != null)
+            if (Request.Form["competenties"] != null)
             {
                 return RedirectToAction("CompetentiesToevoegenAanProject");
-            } 
-            else if(Request.Form["beoordelingsmoment"] != null)
+            }
+            else if (Request.Form["beoordelingsmoment"] != null)
             {
                 return RedirectToAction("BeoordelingsmomentenToevoegen");
             }
@@ -271,7 +119,7 @@ namespace BarometerStudent.Controllers
                     project.Skill.Add(toevoegSkill);
                 }
             }
-            
+
             if (IdsProject != null)
             {
                 string[] IdArrayProject = IdsProject.Split(',');
@@ -301,12 +149,12 @@ namespace BarometerStudent.Controllers
             bool canAdd = true;
             foreach (Skill sk in project.Skill)
             {
-                if((s.Category.ToLower().Equals(sk.Category.ToLower())) ||  (s.Id == sk.Id))
+                if ((s.Category.ToLower().Equals(sk.Category.ToLower())) || (s.Id == sk.Id))
                 {
                     canAdd = false;
                 }
             }
-            if(canAdd)
+            if (canAdd)
             {
                 project.Skill.Add(s);
             }
@@ -352,6 +200,83 @@ namespace BarometerStudent.Controllers
             projrepo.Save();
             Session["newProject"] = null;
             return RedirectToAction("Index", "Docent");
+        }
+
+        //public ActionResult GroepToewijzenAanProject()
+        //{
+        //    GroupRepository gr = new GroupRepository(new Context());
+        //    ViewBag.addGroups = new MultiSelectList(gr.NotInProject(), "Id", "Name");
+        //    ViewBag.deleteGroups = new MultiSelectList(gr.InProject(userProjectID), "Id", "Name");
+        //    return View();
+        //}
+        //
+        //[HttpPost]
+        //public ActionResult DeleteGroup()
+        //{
+        //    GroupRepository gr = new GroupRepository(new Context());
+        //    string[] groups;
+        //    if (true)
+        //    {
+        //
+        //    }
+        //    groups = Request.Form["Groups"].Split(',');
+        //    foreach (string group in groups)
+        //    {
+        //        Group g = gr.Get(Convert.ToInt32(group));
+        //        if (g.Project.Id == userProjectID)
+        //        {
+        //            g.Project = null;
+        //        }
+        //        gr.Update(g);
+        //        gr.Save();
+        //    }
+        //    return RedirectToAction("GroepToewijzenAanProject");
+        //
+        //}
+        //
+        //[HttpPost]
+        //public ActionResult AddGroup()
+        //{
+        //    Context c = new Context();
+        //    GroupRepository gr = new GroupRepository(c);
+        //    ProjectRepository pr = new ProjectRepository(c);
+        //    string[] groups = Request.Form["Groups"].Split(',');
+        //    foreach (string group in groups)
+        //    {
+        //        Group g = gr.Get(Convert.ToInt32(group));
+        //        Project p = pr.Get(userProjectID);
+        //        p.Groups.Add(g);
+        //        pr.Update(p);
+        //        pr.Save();
+        //    }
+        //    return RedirectToAction("GroepToewijzenAanProject");
+        //
+        //}
+
+        public ActionResult SelecteerProject()
+        {
+            ProjectService ps = new ProjectService();
+            ViewBag.selectListProjects = ps.GetTutorProject(/*tutorid*/userID);
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult SelecteerTutorGroep(int project)
+        {
+            ProjectService ps = new ProjectService();
+            ViewBag.selectListGroups = ps.GetTutorGroup(project, userID);
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ViewGroep(int groep)
+        {
+            ProjectService ps = new ProjectService();
+            EvaluationService es = new EvaluationService();
+            Project project = ps.GetProjectFromGroup(groep);
+            ViewBag.project = project;
+            ViewBag.periodsCount = project.ProjectPeriod.Count;
+            return View(es.GetGroupEvaluation(groep));
         }
 
     }
