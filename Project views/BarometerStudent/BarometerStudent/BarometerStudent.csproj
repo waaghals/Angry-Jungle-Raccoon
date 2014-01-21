@@ -177,6 +177,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\EvaluationService.cs" />
     <Compile Include="Services\ExcelReader.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -311,6 +312,7 @@
     <Content Include="Views\Docent\SelecteerTutorGroep.cshtml" />
     <Content Include="Views\Docent\CompetentiesToevoegenAanProject.cshtml" />
     <Content Include="Views\Docent\BeoordelingsmomentenToevoegen.cshtml" />
+    <Content Include="Views\Docent\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
