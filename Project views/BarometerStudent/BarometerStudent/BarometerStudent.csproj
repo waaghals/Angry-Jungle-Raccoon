@@ -313,6 +313,7 @@
     <Content Include="Views\Docent\CompetentiesToevoegenAanProject.cshtml" />
     <Content Include="Views\Docent\BeoordelingsmomentenToevoegen.cshtml" />
     <Content Include="Views\Docent\Index.cshtml" />
+    <Content Include="Views\Docent\ViewGroep.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
