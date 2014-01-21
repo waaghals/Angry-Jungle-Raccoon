@@ -11,6 +11,7 @@ using WebMatrix.WebData;
 using BarometerDomain.OAuth;
 using BarometerDomain.Model;
 using BarometerDomain.Models;
+using BarometerStudent.Services;
 
 namespace BarometerStudent.Controllers
 {
@@ -51,9 +52,9 @@ namespace BarometerStudent.Controllers
             }
 
             //naar yannicks code
-            AuthorizationSplitter(result.ProviderUserId, result.UserName);
+            //AuthorizationSplitter(result.ProviderUserId, result.UserName);
 
-            return RedirectToAction("ExternalLoginFailure");
+            return AuthorizationSplitter(result.ProviderUserId, result.UserName);
         }
 
         //
@@ -119,10 +120,16 @@ namespace BarometerStudent.Controllers
         public ActionResult AuthorizationSplitter(string studentNumber, string login)
         {
             UserService uService = new UserService();
-            User user = uService.Login(studentNumber, login);
+            User user = uService.Login(Convert.ToInt32(studentNumber), login);
             Session["User"] = user; //sla de user op in de sessie
-            if(user.RoleType.Contains(RoleType.Teacher) || user.RoleType.Contains(RoleType.Administrator))
-                RedirectToAction("Menu","Docent"); //redirect de user naar de juiste startpagina gebaseerd op login data
+            if (user.RoleType.Contains(RoleType.Teacher) || user.RoleType.Contains(RoleType.Administrator))
+            {
+                return RedirectToAction("Menu", "Docent");
+            }
+            else
+            {
+                return RedirectToAction("Index", "StudentHome"); //redirect de user naar de juiste startpagina gebaseerd op login data
+            }
         }
     }
 }
