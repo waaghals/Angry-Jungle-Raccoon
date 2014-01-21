@@ -21,6 +21,12 @@ namespace BarometerStudent.Controllers
             return View();
         }
 
+        public ActionResult ProjectAanmakenRedirect()
+        {
+            Session["ProjectContext"] = new Context();
+            Session["newProject"] = null;
+            return RedirectToAction("ProjectAanmaken");
+        }
         public ActionResult GroepToewijzenAanProject()
         {
             GroupRepository gr = new GroupRepository(new Context());
@@ -184,22 +190,16 @@ namespace BarometerStudent.Controllers
 
         public ActionResult ProjectAanmaken()
         {
-            ProjectRepository pr = new ProjectRepository(new Context());
+            ProjectRepository pr = new ProjectRepository((Context)Session["ProjectContext"]);
             SelectList projecten = new SelectList(pr.GetAll(), "Id", "Name");
             ViewBag.projecten = projecten;
-            return View(new Project());
+            Project sessionProject = (Project)Session["newProject"];
+            return View(sessionProject);
         }
-
-        public ActionResult CompetentiesToevoegenAanProject(Project p)
+        
+        public ActionResult CompetentiesToevoegenAanProject()
         {
-            if (Session["newProject"] == null)
-            {
-                Session["newProject"] = p;
-            }
-            else
-            {
-                p = (Project)Session["newProject"];
-            }
+            Project p = (Project)Session["newProject"];
 
             int baseProjectId = Convert.ToInt32(Session["baseProject"]);
             if (baseProjectId == 0)
@@ -208,49 +208,79 @@ namespace BarometerStudent.Controllers
                 baseProjectId = (int)Session["baseProject"];
             }
 
-            ProjectRepository pr = new ProjectRepository(new Context());
+            ProjectRepository pr = new ProjectRepository((Context)Session["ProjectContext"]);
             MultiSelectList skillsProject = new MultiSelectList(p.Skill.ToList(), "Id", "Category");
             ViewBag.CompetentiesProject = skillsProject;
+
             List<Skill> skillLijst = pr.Get(baseProjectId).Skill.ToList();
-            System.Diagnostics.Debug.WriteLine(skillLijst.Count);
             foreach (Skill s in p.Skill)
             {
                 if (skillLijst.Contains(s))
                 {
-                    System.Diagnostics.Debug.WriteLine("Skill " + s.Category);
                     skillLijst.Remove(s);
                 }
             }
-            MultiSelectList skillsVoorgaandProject = new MultiSelectList(skillLijst, "Id", "Category");
 
+            MultiSelectList skillsVoorgaandProject = new MultiSelectList(skillLijst, "Id", "Category");
             ViewBag.CompetentiesVoorgaandProject = skillsVoorgaandProject;
             return View();
+        }
+
+        public ActionResult ProjectOpslaan(Project p)
+        {
+            if(Session["newProject"] == null)
+            {
+                Session["newProject"] = p;
+            }
+            Session["baseProject"] = Request.Form["Project"];
+
+            if(Request.Form["competenties"] != null)
+            {
+                return RedirectToAction("CompetentiesToevoegenAanProject");
+            } 
+            else if(Request.Form["beoordelingsmoment"] != null)
+            {
+                return RedirectToAction("BeoordelingsmomentenToevoegen");
+            }
+            else if (Request.Form["bevestigen"] != null)
+            {
+                return RedirectToAction("ProjectToevoegen");
+            }
+
+
+            return RedirectToAction("ProjectAanmaken");
         }
 
         [HttpPost]
         public ActionResult CompetentiesToevoegenAanLijst()
         {
             Project project = (Project)Session["newProject"];
-            SkillRepository skillRepo = new SkillRepository(new Context());
+            SkillRepository skillRepo = new SkillRepository((Context)Session["ProjectContext"]);
 
             string IdsVoorgaandProject = Request.Form["competentiesVoorgaandProject"];
-            string IdsProject = Request.Form["competentiesProject"];
+            string IdsProject = Request.Form["competenties"];
 
             if (IdsVoorgaandProject != null)
             {
                 string[] IdArrayVoorgaandProject = IdsVoorgaandProject.Split(',');
+
                 foreach (string IdString in IdArrayVoorgaandProject)
                 {
-                    project.Skill.Add(skillRepo.Get(Convert.ToInt32(IdString)));
+                    Skill toevoegSkill = skillRepo.Get(Convert.ToInt32(IdString));
+                    project.Skill.Add(toevoegSkill);
                 }
             }
-
+            
             if (IdsProject != null)
             {
                 string[] IdArrayProject = IdsProject.Split(',');
                 foreach (string IdString in IdArrayProject)
                 {
-                    project.Skill.Remove(skillRepo.Get(Convert.ToInt32(IdString)));
+                    Skill verwijder = skillRepo.Get(Convert.ToInt32(IdString));
+                    if (project.Skill.Contains(verwijder))
+                    {
+                        project.Skill.Remove(verwijder);
+                    }
                 }
             }
             Session["newProject"] = project;
@@ -260,18 +290,26 @@ namespace BarometerStudent.Controllers
         public ActionResult CompetentiesToevoegen(Skill skill)
         {
             Project project = (Project)Session["newProject"];
-            SkillRepository skillRepo = new SkillRepository(new Context());
+            SkillRepository skillRepo = new SkillRepository((Context)Session["ProjectContext"]);
             Skill s = skillRepo.SkillExists(skill.Category);
             if (s == null)
             {
-                project.Skill.Add(skill);
-                System.Diagnostics.Debug.WriteLine("Nieuwe skill toegevoegd: " + skill.Category);
+                s = skill;
             }
-            else
+
+            bool canAdd = true;
+            foreach (Skill sk in project.Skill)
             {
-                System.Diagnostics.Debug.WriteLine("Bestaande skill toegevoegd: " + s.Category);
+                if((s.Category.ToLower().Equals(sk.Category.ToLower())) ||  (s.Id == sk.Id))
+                {
+                    canAdd = false;
+                }
+            }
+            if(canAdd)
+            {
                 project.Skill.Add(s);
             }
+
             return RedirectToAction("CompetentiesToevoegenAanProject", (Project)null);
         }
 
@@ -295,8 +333,24 @@ namespace BarometerStudent.Controllers
         public ActionResult ProjectToevoegen()
         {
             Project project = (Project)Session["newProject"];
+            /*System.Diagnostics.Debug.WriteLine("Naam:" + project.Name);
+            System.Diagnostics.Debug.WriteLine("Omschrijving:" + project.Description);
+            System.Diagnostics.Debug.WriteLine("Anoniem:" + project.Anonymous);
+            System.Diagnostics.Debug.WriteLine("Skills:");
+            foreach (Skill s in project.Skill)
+            {
+                 System.Diagnostics.Debug.WriteLine(s.Category);
+            }
+            System.Diagnostics.Debug.WriteLine("Beoordelingsmomenten:");
+            foreach (ProjectPeriod p in project.ProjectPeriod)
+            {
+                System.Diagnostics.Debug.WriteLine(p.Name + " " + p.Start + " " + p.End);
+            }*/
+            ProjectRepository projrepo = new ProjectRepository((Context)Session["ProjectContext"]);
+            projrepo.Insert(project);
+            projrepo.Save();
             Session["newProject"] = null;
-            return RedirectToAction("ProjectAanmaken", "Docent");
+            return RedirectToAction("Index", "Docent");
         }
 
     }
