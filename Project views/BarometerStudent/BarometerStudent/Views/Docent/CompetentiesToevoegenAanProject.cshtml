@@ -1,4 +1,5 @@
-﻿
+﻿@model BarometerDomain.Model.Skill
+
 <br/>
 
 @using (@Html.BeginForm("CompetentiesToevoegenAanLijst", "Docent", FormMethod.Post))
@@ -6,6 +7,12 @@
     @Html.ListBox("competentiesVoorgaandProject", ViewBag.CompetentiesVoorgaandProject as MultiSelectList)
     @Html.ListBox("competenties", ViewBag.CompetentiesProject as MultiSelectList)
     <input type="submit" value="<< >>">
+}
+
+@using (@Html.BeginForm("CompetentiesToevoegen", "Docent", FormMethod.Post))
+{
+    @Html.TextBoxFor(model => model.Category);
+    <input type="submit" value="Competentie toevoegen">
 }
 
 @*<span>

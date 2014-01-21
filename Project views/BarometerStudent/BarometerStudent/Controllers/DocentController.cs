@@ -236,7 +236,6 @@ namespace BarometerStudent.Controllers
             string IdsVoorgaandProject = Request.Form["competentiesVoorgaandProject"];
             string IdsProject = Request.Form["competentiesProject"];
 
-
             if (IdsVoorgaandProject != null)
             {
                 string[] IdArrayVoorgaandProject = IdsVoorgaandProject.Split(',');
@@ -255,6 +254,13 @@ namespace BarometerStudent.Controllers
                 }
             }
             Session["newProject"] = project;
+            return RedirectToAction("CompetentiesToevoegenAanProject", (Project)null);
+        }
+
+        public ActionResult CompetentiesToevoegen(Skill skill)
+        {
+            Project project = (Project)Session["newProject"];
+            project.Skill.Add(skill);
             return RedirectToAction("CompetentiesToevoegenAanProject", (Project)null);
         }
 
