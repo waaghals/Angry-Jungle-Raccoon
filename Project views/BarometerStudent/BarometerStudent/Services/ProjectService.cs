@@ -5,12 +5,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace BarometerStudent.Services
 {
     public class ProjectService
     {
         Context context;
+        public ProjectService()
+        {
+            context = new Context();
+        }
         public Group ByStudentAndProject(int studentId, int ProjectId)
         {
             Project project = GetProject(ProjectId);
@@ -49,10 +54,38 @@ namespace BarometerStudent.Services
 
         public Project GetProject(int id)
         {
-            context = new Context();
             ProjectRepository pr = new ProjectRepository(context);
             return pr.Get(id);
         }
 
+        public SelectList GetTutorProject(int id)
+        {
+            ProjectRepository pr = new ProjectRepository(new Context());
+
+            return new SelectList(pr.ByTutor(/*tutorid*/id), "Id", "Name", "1");
+        }
+
+        public SelectList GetTutorGroup(int projectId, int userId)
+        {
+            Project myProject = GetProject(projectId);
+            IList<Group> tutorGroupList = new List<Group>();
+
+            foreach (Group group in myProject.Groups)
+            {
+                if (group.Tutor.Id == userId)
+                {
+                    tutorGroupList.Add(group);
+                }
+            }
+            return new SelectList(tutorGroupList, "Id", "Name");
+        }
+
+
+        public Project GetProjectFromGroup(int groep)
+        {
+            GroupRepository gr = new GroupRepository(context);
+            int id = gr.Get(groep).Project.Id;
+            return GetProject(id);
+        }
     }
 }

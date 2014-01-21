@@ -4,10 +4,10 @@
 
 <h2>Selecteer TutorGroep</h2>
 
-@using (Html.BeginForm())
+@using (@Html.BeginForm("ViewGroep", "Docent", FormMethod.Post))
 {
     <div>
-        @Html.DropDownList("group", (SelectList) ViewBag.selectListGroups , new { @class = "fancy_selectbox" })
+        @Html.DropDownList("groep", (SelectList) ViewBag.selectListGroups , new { @class = "fancy_selectbox" })
     </div>
     
     <div>

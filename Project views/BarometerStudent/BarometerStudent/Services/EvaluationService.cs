@@ -10,6 +10,12 @@ namespace BarometerStudent.Services
 {
     public class EvaluationService
     {
+        Context context;
+        public EvaluationService()
+        {
+            context = new Context();
+        }
+
         private List<Evaluation> BubbleSort(List<Evaluation> evaluationList)
         {
             for (int outer = evaluationList.Count - 1; outer >= 1; outer--)
@@ -23,9 +29,21 @@ namespace BarometerStudent.Services
             return evaluationList;
         }
 
+        private List<Evaluation> BubbleSortPeriod(List<Evaluation> evaluationList)
+        {
+            for (int outer = evaluationList.Count - 1; outer >= 1; outer--)
+                for (int inner = 0; inner < outer; inner++) // inner loop (forward)
+                    if ((evaluationList[inner].CompareToWithPeriod(evaluationList[inner + 1]) == -1))
+                    {
+                        Evaluation temp = evaluationList[inner];
+                        evaluationList[inner] = evaluationList[inner + 1];
+                        evaluationList[inner + 1] = temp;
+                    }
+            return evaluationList;
+        }
+
         public void Evaluate(List<List<Evaluation>> evaluations)
         {
-            Context context = new Context();
                 List<Evaluation> update = new List<Evaluation>();
                 foreach (List<Evaluation> l in evaluations)
                     foreach (Evaluation e in l)
@@ -54,7 +72,7 @@ namespace BarometerStudent.Services
 
         public Dictionary<string, List<Evaluation>> GetAvgEvaluations(int studentId)
         {
-            StudentRepository studentRepo = new StudentRepository(new Context());
+            StudentRepository studentRepo = new StudentRepository(context);
             Student student = studentRepo.Get(studentId);
 
             List<Evaluation> evaluationList = new List<Evaluation>();
@@ -72,7 +90,7 @@ namespace BarometerStudent.Services
         public ICollection<Evaluation> GetEvaluations(int projectPeriodId, int byStudent, int forStudent)
         {
             List<Evaluation> ret = new List<Evaluation>();
-            ProjectPeriodRepository ppr = new ProjectPeriodRepository(new Context());
+            ProjectPeriodRepository ppr = new ProjectPeriodRepository(context);
             ProjectPeriod period = ppr.Get(projectPeriodId);
 
             foreach (Evaluation eval in period.Evaluation)
@@ -81,6 +99,32 @@ namespace BarometerStudent.Services
                     ret.Add(eval);
             }
             return ret;
+        }
+
+        public Dictionary<string, List<Evaluation>> GetGroupEvaluation(int groepId)
+        {
+            GroupRepository gr = new GroupRepository(context);
+            Group group = gr.Get(groepId);
+            Project project = group.Project;
+
+            List<ProjectPeriod> projectPeriodList = new List<ProjectPeriod>();
+
+            foreach (ProjectPeriod period in group.Project.ProjectPeriod)
+            {
+                if (group.Project.Id == project.Id)
+                {
+                    projectPeriodList.Add(period);
+                }
+            }
+            Dictionary<string, List<Evaluation>> evalutionsPerForStudent = new Dictionary<string, List<Evaluation>>();
+
+            foreach (Student student in group.Student)
+            {
+                List<Evaluation> sortedList = BubbleSortPeriod((List<Evaluation>)project.GetEvaluations(student));
+                evalutionsPerForStudent.Add(student.Name, sortedList);
+            }
+
+            return evalutionsPerForStudent;
         }
     }
 }
