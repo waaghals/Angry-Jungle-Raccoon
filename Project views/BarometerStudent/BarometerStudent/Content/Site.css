@@ -36,8 +36,12 @@ a
         background-color: #c7d1d6;
     }
 
+header
+{
+    display: block;
+}
 
-header, footer, hgroup,
+footer, hgroup,
 nav, section
 {
     display: block;
@@ -135,6 +139,13 @@ h5, h6
 {
     margin: 0 auto;
     max-width: 960px;
+    display:block;
+}
+
+.content-wrapper1
+{
+    margin: 0 auto;
+    max-width: 960px;
 }
 
 a:hover.logo
@@ -144,7 +155,14 @@ a:hover.logo
 
 .logo
 {
+    float:left;
     height:140px;
+    margin-bottom:5px;
+}
+
+.login_top
+{
+    float:right;
 }
 
 
@@ -159,7 +177,7 @@ a:hover.logo
 .main-content
 {
     padding-left: 10px;
-    padding-top: 5px;
+    padding-top: 0px;
 }
 
 .button_select
@@ -1155,6 +1173,23 @@ a.tableLink:hover, a.tableLink:active
     .featured .content-wrapper
     {
         padding: 10px;
+    }
+
+    .logo_top
+    {
+        display:inline-block;
+        width:300px;
+        float:left;
+        background-color:yellow;
+    }
+
+    .login_top
+    {
+        display:inline-block;
+        width:100px;
+        background-color:blue;
+        float:right;
+        padding-left:500px;
     }
 
     /* page content */

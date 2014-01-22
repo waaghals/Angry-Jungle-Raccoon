@@ -29,6 +29,14 @@
         <header>
             <div class="content-wrapper">
                 <a href="../" class="logo"><img src="../../Images/AvansBanner1.png" class="logo"/></a>
+                @if(HttpContext.Current.Session["user"] == null)
+                {
+                    <p class="login_top">U bent niet ingelocht</p>
+                }
+                else
+                {
+                    <p class="login_top">Welkom @HttpContext.Current.Session["user"].ToString().</p>
+                }
             </div>
         </header>
         <div id="body">

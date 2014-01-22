@@ -122,7 +122,7 @@ namespace BarometerStudent.Controllers
             UserService uService = new UserService();
             User user = uService.Login(Convert.ToInt32(studentNumber), login);
             Session["User"] = user; //sla de user op in de sessie
-            if (user.RoleType.Contains(RoleType.Teacher) || user.RoleType.Contains(RoleType.Administrator))
+            if (user.RoleType.Equals("Docent") || user.RoleType.Equals("Administrator"))
             {
                 return RedirectToAction("Menu", "Docent");
             }

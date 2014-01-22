@@ -106,7 +106,7 @@ namespace BarometerStudent.Services
                 name += " " + lName;
                 //maak student met naam, studentnummer en rol
                 student = new Student() { Name = name, Number = id };
-                student.RoleType.Add(RoleType.Student);
+                student.RoleType = "Student";
                 studentRepo.Insert(student);
                 newStudent = true;
             }

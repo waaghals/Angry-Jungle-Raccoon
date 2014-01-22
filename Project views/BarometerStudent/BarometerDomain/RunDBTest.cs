@@ -38,23 +38,23 @@ namespace BarometerDomain
                 Skill testplankennis = new Skill() { Category = "Testplan kennis" };
 
                 Student henk = new Student() { Name = "Henk de Vries", Login = "hdvries" }; 
-                henk.RoleType.Add(RoleType.Student);
+                henk.RoleType = "Student";
                 Student klaas = new Student() { Name = "Klaas Achternaam", Login = "k_achternaam" };
-                klaas.RoleType.Add(RoleType.Student);
-                Student pieter = new Student() { Name = "Pieter Achternaam", Login = "p_achternaam" }; 
-                pieter.RoleType.Add(RoleType.Student);
+                klaas.RoleType = "Student";
+                Student pieter = new Student() { Name = "Pieter Achternaam", Login = "p_achternaam" };
+                pieter.RoleType = "Student";
                 Student joop = new Student() { Name = "Joop Achternaam", Login = "j_achternaam" };
-                joop.RoleType.Add(RoleType.Student);
-                Student robin = new Student() {Name ="Robin Collard", Login = "r_collard"}; 
-                robin.RoleType.Add(RoleType.Student);
-                Student jaap = new Student() { Name = "Jaap Jaapsen", Login = "jjaapsen" }; 
-                jaap.RoleType.Add(RoleType.Student);
+                joop.RoleType = "Student";
+                Student robin = new Student() {Name ="Robin Collard", Login = "r_collard"};
+                robin.RoleType = "Student"; 
+                Student jaap = new Student() { Name = "Jaap Jaapsen", Login = "jjaapsen" };
+                jaap.RoleType = "Student";
                 Student michael = new Student() { Name="Michael Michaelson", Login="mmichael"};
-                michael.RoleType.Add(RoleType.Student);
+                michael.RoleType = "Student";
                 Student arnout = new Student() { Name = "Arnout van Steen", Login = "avsteen" };
-                arnout.RoleType.Add(RoleType.Student);
+                arnout.RoleType = "Student";
 
-                User tutor = new User() { Name = "Dr Henk", Login = "drhenk1" }; tutor.RoleType.Add(RoleType.Teacher);
+                User tutor = new User() { Name = "Dr Henk", Login = "drhenk1" }; tutor.RoleType = "Teacher";
                 tutor.MentorStudent.Add(henk);
                 tutor.MentorStudent.Add(klaas);
                 tutor.MentorStudent.Add(pieter);
