@@ -75,6 +75,21 @@ namespace BarometerStudent.Controllers
             return View();
         }
 
+        public ActionResult ProjectWijzigen()
+        {
+            Session["ProjectContext"] = new Context();
+            ProjectRepository pr = new ProjectRepository((Context)Session["ProjectContext"]);
+            SelectList projecten = new SelectList(pr.GetAll(), "Id", "Name");
+            ViewBag.projecten = projecten;
+            return View("ProjectAanmaken");
+        }
+        public ActionResult GeselecteerdProjectWijzigen()
+        { 
+            ProjectRepository pr = new ProjectRepository((Context)Session["ProjectContext"]);
+            Session["newProject"] = pr.Get(Convert.ToInt32(Request.Form["Project"]));
+            return View("ProjectWijzigen");
+        }
+
         public ActionResult ProjectOpslaan(Project p)
         {
             if (Session["newProject"] == null)
