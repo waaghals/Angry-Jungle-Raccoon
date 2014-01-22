@@ -16,50 +16,61 @@ public class StudentController : Controller
     {
         ProjectService ps = new ProjectService();
         SelectList sl = ps.WithStudent(studentId);
-        ViewBag.Project = sl;
+        ViewBag.projectId = sl;
         return View();
     }
 
     [HttpPost]
-    public ActionResult ProjectOverzicht()
+    public ActionResult ProjectOverzicht(int projectId)
     {
-        int id = Convert.ToInt32(Request.Form["Project"]);
         ProjectService ps = new ProjectService();
-        Project project = ps.GetProject(id);
+        Project project = ps.GetProject(projectId);
 
         ViewBag.Project = project.Id;
         ViewBag.Title = project.Name;
         ViewBag.Description = project.Description;
-        ViewBag.ProjectPeriod = new SelectList(project.ProjectPeriod, "Id", "Name");
-        ViewBag.Mededelingen = ps.GenerateAnnouncements(id);
+        ViewBag.projectPeriodId = new SelectList(project.ProjectPeriod, "Id", "Name");
+        ViewBag.Mededelingen = ps.GenerateAnnouncements(projectId);
+        return View();
+    }
+
+    public ActionResult ProjectOverzicht()
+    {
+        TempData.Keep();
+        ProjectService ps = new ProjectService();
+        int projectId = Convert.ToInt32(TempData["ProjectId"]);
+        Project project = ps.GetProject(projectId);
+
+        ViewBag.Project = project.Id;
+        ViewBag.Title = project.Name;
+        ViewBag.Description = project.Description;
+        ViewBag.projectPeriodId = new SelectList(project.ProjectPeriod, "Id", "Name");
+        ViewBag.Mededelingen = ps.GenerateAnnouncements(projectId);
         return View();
     }
 
     [HttpPost]
-    public ActionResult Beoordelen()
+    public ActionResult Beoordelen(int projectId, int projectPeriodId)
     {
         ProjectService ps = new ProjectService();
         EvaluationService es = new EvaluationService();
-        Project project = ps.GetProject(Convert.ToInt32(Request.Form["SelectedProject"]));
+        Project project = ps.GetProject(projectId);
         Group group = ps.ByStudentAndProject(studentId, project.Id);
         List<Student> students = group.Student.ToList();
         List<Evaluation> evaluaties = new List<Evaluation>();
         List<List<Evaluation>> evaluationList = new List<List<Evaluation>>();
         List<string> names = new List<string>();
-        string periodName = Request.Form["ProjectPeriod"];
-        string name = project.Name;
 
         if (Request.Form["beoordelen"] != null)
         {
             ViewBag.Beschrijving = "Hier beoordeel je je medestudenten";
             ViewBag.Actie = "geef";
-            ViewBag.Title = "Beoordelen van Project " + name + " in periode " + periodName;
 
             foreach (Student s in students)
             {
                 if (s.Id != studentId)
                 {
-                    evaluaties = es.GetEvaluations(Convert.ToInt32(periodName), studentId, s.Id).ToList();
+                    evaluaties = es.GetEvaluations(projectPeriodId, studentId, s.Id).ToList();
                     evaluationList.Add(evaluaties);
                     names.Add(s.Name);
                 }
@@ -71,13 +82,12 @@ public class StudentController : Controller
         {
             ViewBag.Beschrijving = "Hier zie je de beoordelingen van je medestudenten";
             ViewBag.Actie = "kijk";
-            ViewBag.Title = "Bekijken van Beoordelingen van Project " + name + " in periode " + periodName;
 
             foreach (Student s in students)
             {
                 if (s.Id != studentId)
                 {
-                    evaluaties = es.GetEvaluations(Convert.ToInt32(periodName), s.Id, studentId).ToList();
+                    evaluaties = es.GetEvaluations(projectPeriodId, s.Id, studentId).ToList();
                     evaluationList.Add(evaluaties);
                     names.Add(s.Name);
                 }
@@ -98,6 +108,52 @@ public class StudentController : Controller
             }
         }
 
+        ViewBag.projectPeriodId = projectPeriodId;
+        ViewBag.projectId = projectId;
+        return View(evaluationList);
+    }
+
+    public ActionResult Beoordelen()
+    {
+        TempData.Keep();
+        int projectId = Convert.ToInt32(TempData["ProjectId"]);
+        int projectPeriodId = Convert.ToInt32(TempData["projectPeriodId"]);
+
+        ProjectService ps = new ProjectService();
+        EvaluationService es = new EvaluationService();
+        Project project = ps.GetProject(projectId);
+        Group group = ps.ByStudentAndProject(studentId, project.Id);
+        List<Student> students = group.Student.ToList();
+        List<Evaluation> evaluaties = new List<Evaluation>();
+        List<List<Evaluation>> evaluationList = new List<List<Evaluation>>();
+        List<string> names = new List<string>();
+
+        ViewBag.Beschrijving = "Hier beoordeel je je medestudenten";
+        ViewBag.Actie = "geef";
+
+        foreach (Student s in students)
+        {
+            if (s.Id != studentId)
+            {
+                evaluaties = es.GetEvaluations(projectPeriodId, studentId, s.Id).ToList();
+                evaluationList.Add(evaluaties);
+                names.Add(s.Name);
+            }
+        }
+
+        ViewBag.names = names;
+
+
+        foreach (List<Evaluation> eval in evaluationList)
+        {
+            foreach (Evaluation evalInner in eval)
+            {
+                evalInner.Grade /= 10;
+            }
+        }
+        ViewBag.warning = "Zorg dat alle Evaluatie cijfers tussen de 1 en de 10 zitten";
+        ViewBag.projectPeriodId = projectPeriodId;
+        ViewBag.projectId = projectId;
         return View(evaluationList);
     }
 
@@ -106,13 +162,25 @@ public class StudentController : Controller
     {
         if (Request.Form["annuleren"] != null)
         {
-            return RedirectToAction("Index", "StudentHome");
+            TempData["ProjectId"] = Request.Form["projectIdFrom"];
+            return RedirectToAction("ProjectOverzicht");
         }
         else
         {
+            foreach (List<Evaluation> list in model)
+                foreach (Evaluation evaluation in list)
+                {
+                    if (evaluation.Grade < 1 || evaluation.Grade > 10)
+                    {
+                        TempData["ProjectPeriodId"] = Request.Form["projectPeriodIdFrom"];
+                        TempData["ProjectId"] = Request.Form["projectIdFrom"];
+                        return RedirectToAction("Beoordelen");
+                    }
+                }
             EvaluationService es = new EvaluationService();
             es.Evaluate(model);
-            return RedirectToAction("Index", "StudentHome");
+            TempData["ProjectId"] = Request.Form["projectIdFrom"];
+            return RedirectToAction("ProjectOverzicht");
         }
     }
 

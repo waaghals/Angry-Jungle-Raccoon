@@ -20,15 +20,15 @@
         <div id="tabs-@i" class="tab">
             @using (@Html.BeginForm("Evaluate", "Student", FormMethod.Post))
             {
+                @Html.Hidden("projectIdFrom", (Object)ViewBag.projectId);
+                @Html.Hidden("projectPeriodIdFrom", (Object)ViewBag.projectPeriodId);
                 <h1>Beoordeel @ViewBag.names[i]</h1>
                 <div class="tabcontainer">
                     <div class="competenties">
                         <h3>Competenties</h3>
                         @{
-                                       
-                for (int n = 0; n < Model[k].Count; n++)
-                {
-                    
+                                                                                    for (int n = 0; n < Model[k].Count; n++)
+                                                                                    {
                             <div class="rating">
                                 @Model[k][n].Skill.Category
                                 @Html.HiddenFor(model => model[k][n].By.Id)
@@ -38,9 +38,10 @@
                                 @Html.EditorFor(model => model[k][n].Grade)
 
                             </div>
-                }
+                                                                                    }
                         }
                     </div>
+                    @ViewBag.warning
                     <div class="buttonbox">
                         <input class="button" type="submit" name="opslaan" value="Opslaan" />
                         <input class="button" type="submit" name="annuleren" value="Annuleren" />

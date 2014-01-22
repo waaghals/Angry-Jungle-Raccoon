@@ -26,7 +26,7 @@
             
     @using (@Html.BeginForm("ProjectOverzicht", "Student", FormMethod.Post))
     {
-        @Html.DropDownList("Project", null,  new { @class = "fancy_selectbox" })
+        @Html.DropDownList("projectId", null,  new { @class = "fancy_selectbox" })
         <input type="submit" value="Naar Project" />
     }
             
