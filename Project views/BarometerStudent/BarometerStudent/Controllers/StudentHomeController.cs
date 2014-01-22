@@ -23,7 +23,7 @@ namespace BarometerStudent.Controllers
             if(user.RoleType.Contains(RoleType.Teacher) || user.RoleType.Contains(RoleType.Administrator))
                 RedirectToAction("Menu","Docent"); //redirect de user naar de juiste startpagina gebaseerd op login data
             */
-            return RedirectToAction("Index", "Student");
+            return RedirectToAction("Index", "Docent");
         }
     }
 }

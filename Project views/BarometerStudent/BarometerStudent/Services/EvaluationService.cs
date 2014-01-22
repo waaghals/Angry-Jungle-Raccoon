@@ -79,9 +79,12 @@ namespace BarometerStudent.Services
             Dictionary<string, List<Evaluation>> projectsAvgEvaluations = new Dictionary<string, List<Evaluation>>();
             foreach (Group group in student.Groups)
             {
-                evaluationList = group.Project.GetAverageEvaluations(student).ToList();
-                evaluationList = BubbleSort(evaluationList);
-                projectsAvgEvaluations.Add(group.Project.Name, evaluationList);
+                if (group.Project != null)
+                {
+                    evaluationList = group.Project.GetAverageEvaluations(student).ToList<Evaluation>();
+                    evaluationList = BubbleSort(evaluationList);
+                    projectsAvgEvaluations.Add(group.Project.Name, evaluationList);
+                }
             }
 
             return projectsAvgEvaluations;
