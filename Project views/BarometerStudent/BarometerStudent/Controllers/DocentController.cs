@@ -149,7 +149,7 @@ namespace BarometerStudent.Controllers
             bool canAdd = true;
             foreach (Skill sk in project.Skill)
             {
-                if ((s.Category.ToLower().Equals(sk.Category.ToLower())) || (s.Id == sk.Id))
+                if ((s.Category.ToLower().Equals(sk.Category.ToLower())) || (s.Id == sk.Id) && s.Id != 0)
                 {
                     canAdd = false;
                 }
