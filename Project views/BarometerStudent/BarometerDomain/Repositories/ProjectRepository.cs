@@ -29,6 +29,7 @@ namespace BarometerDomain.Repositories
         {
             return WithStudent(student.Id);
         }
+
         public IEnumerable<Project> WithStudent(int studentId)
         {
             Student student = new StudentRepository(database).Get(studentId);

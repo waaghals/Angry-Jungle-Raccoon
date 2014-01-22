@@ -111,5 +111,11 @@ namespace BarometerStudent.Services
             pr.Update(p);
             pr.Save();
         }
+
+        public SelectList WithStudent(int studentId)
+        {
+            ProjectRepository pr = new ProjectRepository(context);
+            return new SelectList(pr.WithStudent(studentId), "Id", "Name");
+        }
     }
 }

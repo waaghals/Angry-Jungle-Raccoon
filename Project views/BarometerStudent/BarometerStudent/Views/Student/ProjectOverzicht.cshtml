@@ -20,7 +20,7 @@
     }
 </p>
 <br />
-@using (@Html.BeginForm("Beoordelen", "Project", FormMethod.Post))
+@using (@Html.BeginForm("Beoordelen", "Student", FormMethod.Post))
 {
     @Html.DropDownList("ProjectPeriod", (IEnumerable<SelectListItem>)ViewBag.ProjectPeriod ,  new { @class = "fancy_selectbox" })
     <br />
