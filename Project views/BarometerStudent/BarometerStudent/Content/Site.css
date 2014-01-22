@@ -156,13 +156,42 @@ a:hover.logo
 .logo
 {
     float:left;
-    height:140px;
+    height:110px;
     margin-bottom:5px;
 }
 
 .login_top
 {
     float:right;
+    color:white;
+    background-color:#D21D40;
+    line-height:45px;
+    margin:0px;
+    padding-left:0px;
+    font-weight: bold;
+    font-size: 11pt;
+}
+
+.loginBalk
+{
+    float:right;
+    display:block;
+    height:45px;
+}
+
+.balk_image_left
+{
+    float:left;
+    height:45px;
+    margin:0px;
+    padding:0px;
+}
+
+.balk_image_right
+{
+    float:right;
+    height:45px;
+    width:15px;
 }
 
 

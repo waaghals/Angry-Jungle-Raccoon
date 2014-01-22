@@ -124,7 +124,7 @@ namespace BarometerStudent.Controllers
             Session["User"] = user; //sla de user op in de sessie
             if (user.RoleType.Equals("Docent") || user.RoleType.Equals("Administrator"))
             {
-                return RedirectToAction("Menu", "Docent");
+                return RedirectToAction("Index", "Docent");
             }
             else
             {
