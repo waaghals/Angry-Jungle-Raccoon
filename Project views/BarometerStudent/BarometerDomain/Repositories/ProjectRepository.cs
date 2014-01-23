@@ -47,7 +47,7 @@ namespace BarometerDomain.Repositories
             List<Project> projects = new List<Project>();
             foreach(Group group in database.Groups.ToList<Group>())
             {
-                if(group.Tutor.Id == tutor)
+                //if(group.Tutor.Id == tutor)
                 {
                     if(!projects.Contains(group.Project))
                         projects.Add(group.Project);
