@@ -148,6 +148,18 @@ h5, h6
     max-width: 960px;
 }
 
+a.loginLink
+{
+    text-decoration:none;
+}
+
+a:hover.loginLink
+{
+    background-color:#D21D40;
+    text-decoration:underline;
+    color:blue;
+}
+
 a:hover.logo
 {
     background-color:white;

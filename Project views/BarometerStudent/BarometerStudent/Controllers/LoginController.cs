@@ -27,6 +27,16 @@ namespace BarometerStudent.Controllers
         }
 
         //
+        // POST: /Account/Logout
+
+        public ActionResult Logout()
+        {
+            Session["User"] = null;
+
+            return RedirectToAction("Index", "Login");
+        }
+
+        //
         // POST: /login/ExternalLogin
 
         [HttpPost]

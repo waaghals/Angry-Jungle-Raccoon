@@ -95,39 +95,6 @@ namespace BarometerDomain.OAuth
                     }
                 }
             }
-
-            /*try
-            {
-                using (WebResponse profileResponse = request.GetResponse())
-                {
-                    using (Stream profileResponseStream = profileResponse.GetResponseStream())
-                    {
-                        using (StreamReader reader = new StreamReader(profileResponseStream))
-                        {
-                            string jsonText = reader.ReadToEnd();
-
-                            var user = JsonConvert.DeserializeObject<List<OAuthUser>>(jsonText); 
-
-                            Dictionary<string, string> extraData = new Dictionary<string, string>();
-                            extraData.Add("Id", user[0].Id ?? "Onbekend");
-                            extraData.Add("Login", user[0].Login ?? "Onbekend");
-                            return new DotNetOpenAuth.AspNet.AuthenticationResult(true, ProviderName, extraData["Id"], extraData["Login"], extraData);
-                        }
-                    }
-                }
-                return new AuthenticationResult(false);
-            }
-            catch (WebException ex)
-            {
-                using (Stream s = ex.Response.GetResponseStream())
-                {
-                    using (StreamReader sr = new StreamReader(s))
-                    {
-                        string body = sr.ReadToEnd();
-                        return new DotNetOpenAuth.AspNet.AuthenticationResult(new Exception(body, ex));
-                    }
-                }
-            }*/
         }
     }
 }
