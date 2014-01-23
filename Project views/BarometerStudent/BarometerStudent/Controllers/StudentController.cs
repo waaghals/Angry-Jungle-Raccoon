@@ -170,7 +170,7 @@ public class StudentController : Controller
             foreach (List<Evaluation> list in model)
                 foreach (Evaluation evaluation in list)
                 {
-                    if (evaluation.Grade < 1 || evaluation.Grade > 10)
+                    if (evaluation.Grade < 0 || evaluation.Grade > 10)
                     {
                         TempData["ProjectPeriodId"] = Request.Form["projectPeriodIdFrom"];
                         TempData["ProjectId"] = Request.Form["projectIdFrom"];
