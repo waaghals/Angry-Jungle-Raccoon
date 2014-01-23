@@ -165,32 +165,38 @@ a:hover.logo
     float:right;
     color:white;
     background-color:#D21D40;
-    line-height:45px;
+    line-height:36px;
     margin:0px;
     padding-left:0px;
     font-weight: bold;
     font-size: 11pt;
 }
 
-.loginBalk
+.loginBlock
 {
     float:right;
     display:block;
-    height:45px;
+    height:72px;
+}
+
+.loginBalk, .loginBalkAction
+{
+    height:36px;
 }
 
 .balk_image_left
 {
     float:left;
-    height:45px;
+    height:36px;
     margin:0px;
     padding:0px;
+    background-color:white;
 }
 
 .balk_image_right
 {
     float:right;
-    height:45px;
+    height:36px;
     width:15px;
 }
 

@@ -32,17 +32,22 @@
                 @if (HttpContext.Current.Session["user"] != null)
                 {
                     BarometerDomain.Model.User loggedinUser = (BarometerDomain.Model.User)Session["user"];
-                    <div class="loginBalk">
-                        <img src="../../Images/left.png" class="balk_image_left"/>
-                        <p class="login_top">Welkom @loggedinUser.Name<img src="../../Images/right.png" class="balk_image_right"/></p>
+                    <div class="loginBlock">
+                        <div class="loginBalk">
+                            <p class="login_top"><img src="../../Images/left.png" class="balk_image_left"/>Welkom @loggedinUser.Name<img src="../../Images/right.png" class="balk_image_right"/></p>
+                        </div>
+                        <div class="loginBalkAction">
+                            <p class="login_top"><img src="../../Images/left.png" class="balk_image_left"/>Uitloggen<img src="../../Images/right.png" class="balk_image_right"/></p>
+                        </div>
                     </div>
                 }
                 else
                 {
                     <div class="loginBalk">
-                        <img src="../../Images/left.png" class="balk_image_left"/>
-                        <p class="login_top">U bent niet ingelogd<img src="../../Images/right.png" class="balk_image_right"/></p>
-                        
+                        <p class="login_top"><img src="../../Images/left.png" class="balk_image_left"/>U bent niet ingelogd<img src="../../Images/right.png" class="balk_image_right"/></p>
+                    </div>
+                    <div class="loginBalkAction">
+                        <p class="login_top"><img src="../../Images/left.png" class="balk_image_left"/>Inloggen<img src="../../Images/right.png" class="balk_image_right"/></p>
                     </div>
                 }
             </div>
