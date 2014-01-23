@@ -37,7 +37,7 @@
                             <p class="login_top"><img src="../../Images/left.png" class="balk_image_left"/>Welkom @loggedinUser.Name<img src="../../Images/right.png" class="balk_image_right"/></p>
                         </div>
                         <div class="loginBalkAction">
-                            <p class="login_top"><img src="../../Images/left.png" class="balk_image_left"/> @Html.ActionLink("Uitloggen", "Logout", "Login", null, null )<img src="../../Images/right.png" class="balk_image_right"/></p>
+                            <p class="login_top"><img src="../../Images/left.png" class="balk_image_left"/> @Html.ActionLink("Uitloggen", "Logout", "Login", null ,new { @class = "loginLink" })<img src="../../Images/right.png" class="balk_image_right"/></p>
                         </div>
                     </div>
                 }
