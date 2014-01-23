@@ -13,12 +13,17 @@ namespace BarometerStudent.Controllers
     {
         //
         // GET: /Docent/
-        private int userID = 1;
+        private int userID;
         private int userProjectID = 1;
 
         public ActionResult Index()
         {
             return View();
+        }
+
+        private DocentController()
+        {
+            userID = ((User)this.Session["user"]).Id;
         }
 
         public ActionResult GroepToewijzenAanProject()

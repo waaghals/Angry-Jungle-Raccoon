@@ -14,11 +14,16 @@ namespace BarometerStudent.Controllers
 
         //
         // GET: /Project/
-        private int studentID = 2;
+        private int studentID;
 
         public ActionResult Menu()
         {
             return View();
+        }
+
+        private ProjectController()
+        {
+            studentID = ((User)this.Session["user"]).Id;
         }
 
         [HttpPost]

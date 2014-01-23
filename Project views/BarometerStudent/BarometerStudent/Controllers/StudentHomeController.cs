@@ -36,8 +36,6 @@ namespace BarometerStudent.Controllers
                 ViewBag.Project = sl;
             }
             return View();
-            //TEST CODE
-            Session["User"] = new User() { };
         }
 
         public ActionResult Create(/* viewModel model */)
