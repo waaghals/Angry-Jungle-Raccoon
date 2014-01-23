@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BarometerDomain.Model;
+using BarometerStudent.Services;
 
 namespace BarometerStudent.Controllers
 {
@@ -21,9 +22,20 @@ namespace BarometerStudent.Controllers
             return View();
         }
 
-        private DocentController()
+        public DocentController()
         {
-            userID = ((User)this.Session["user"]).Id;
+            var henk = HttpContext.Session.Keys;
+
+            if (Session["user"] != null)
+            {
+                User user = (User)Session["user"];
+                userID = user.Id;
+                AuthorizationServices AS = new AuthorizationServices(user);
+                if (!AS.IsDocent())
+                {
+                    RedirectToAction("Index", "Login");
+                }
+            }
         }
 
         public ActionResult GroepToewijzenAanProject()
