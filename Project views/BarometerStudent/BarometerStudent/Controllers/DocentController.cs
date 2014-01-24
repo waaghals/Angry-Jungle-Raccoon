@@ -53,7 +53,7 @@ namespace BarometerStudent.Controllers
         {
             GroupRepository gr = new GroupRepository(new Context());
             ViewBag.addGroups = new MultiSelectList(gr.NotInProject(), "Id", "Name");
-            ViewBag.deleteGroups = new MultiSelectList(gr.InProject(userProjectID), "Id", "Name");
+            ViewBag.deleteGroups = new MultiSelectList(gr.InProject((Project)Session["newProject"]), "Id", "Name");
             return View();
         }
 
@@ -171,17 +171,23 @@ namespace BarometerStudent.Controllers
 
         public ActionResult ProjectWijzigen()
         {
-            Session["ProjectContext"] = new Context();
+            if (Session["ProjectContext"] == null)
+            {
+                Session["ProjectContext"] = new Context();
+            }
+
             ProjectRepository pr = new ProjectRepository((Context)Session["ProjectContext"]);
-            SelectList projecten = new SelectList(pr.GetAll(), "Id", "Name");
+            List<Project> projectList = pr.GetAll().ToList();
+
+            SelectList projecten = new SelectList(pr.AllOpen(projectList), "Id", "Name");
             ViewBag.projecten = projecten;
-            return View("ProjectAanmaken");
+            return View();
         }
         public ActionResult GeselecteerdProjectWijzigen()
         {
             ProjectRepository pr = new ProjectRepository((Context)Session["ProjectContext"]);
             Session["newProject"] = pr.Get(Convert.ToInt32(Request.Form["Project"]));
-            return View("ProjectWijzigen");
+            return RedirectToAction("ProjectAanmaken");
         }
 
         public ActionResult ProjectOpslaan(Project p)
@@ -203,6 +209,10 @@ namespace BarometerStudent.Controllers
             else if (Request.Form["bevestigen"] != null)
             {
                 return RedirectToAction("ProjectToevoegen");
+            }
+            else if (Request.Form["toewijzen"] != null)
+            {
+                return RedirectToAction("GroepToewijzenAanProject");
             }
 
 
@@ -265,10 +275,29 @@ namespace BarometerStudent.Controllers
             }
             if (canAdd)
             {
+                Context con = (Context)Session["ProjectContext"];
+                SkillRepository skillrepo = new SkillRepository(con);
+                if(!skillrepo.GetAll().Contains(s))
+                {
+                    skillrepo.Insert(s); 
+                    skillrepo.Save();
+                }
                 project.Skill.Add(s);
             }
 
             return RedirectToAction("CompetentiesToevoegenAanProject", (Project)null);
+        }
+
+        public ActionResult BeoordelingsmomentVerwijderen(int id)
+        {
+            System.Diagnostics.Debug.WriteLine(id);
+            ProjectPeriodRepository pprepo = new ProjectPeriodRepository((Context)Session["ProjectContext"]);
+            ProjectPeriod pp = pprepo.Get(id);
+            Project proj = (Project)Session["newProject"];
+            proj.ProjectPeriod.Remove(pp);
+            pprepo.Delete(id);
+            pprepo.Save();
+            return RedirectToAction("BeoordelingsmomentenToevoegen", "Docent");
         }
 
         public ActionResult BeoordelingsmomentenToevoegen()
@@ -283,7 +312,12 @@ namespace BarometerStudent.Controllers
         public ActionResult BeoordelingsmomentToevoegen(ProjectPeriod p)
         {
             Project project = (Project)Session["newProject"];
-            project.ProjectPeriod.Add(new ProjectPeriod() { Name = p.Name, Start = p.Start, End = p.End });
+            ProjectPeriod projperiod = new ProjectPeriod() { Name = p.Name, Start = p.Start, End = p.End };
+            Context con = (Context)Session["ProjectContext"];
+            ProjectPeriodRepository projperiodrepo = new ProjectPeriodRepository(con);
+            projperiodrepo.Insert(projperiod);
+            projperiodrepo.Save();
+            project.ProjectPeriod.Add(projperiod);
             Session["newProject"] = project;
             return RedirectToAction("BeoordelingsmomentenToevoegen", "Docent");
         }

@@ -1,13 +1,26 @@
 ﻿@model BarometerDomain.Model.Skill
 
+<h2>Competenties toevoegen</h2>
+
 <br/>
 
 @using (@Html.BeginForm("CompetentiesToevoegenAanLijst", "Docent", FormMethod.Post))
 {
-    @Html.ListBox("competentiesVoorgaandProject", ViewBag.CompetentiesVoorgaandProject as MultiSelectList)
-    <input type="submit" value="<< >>">
-    @Html.ListBox("competenties", ViewBag.CompetentiesProject as MultiSelectList)
+    <div class="links">
+        <span>Competenties voorgaand project:</span><br/>
+        @Html.ListBox("competentiesVoorgaandProject", ViewBag.CompetentiesVoorgaandProject as MultiSelectList)
+    </div>
+    <div class="float-left">
+        <br/><br/>
+        <input type="submit" value="<< >>">
+    </div>
+    <div class="rechts">
+        <span>Competenties project:</span><br/>
+        @Html.ListBox("competenties", ViewBag.CompetentiesProject as MultiSelectList)
+    </div>        
 }
+
+<br/><br/><br/><br/><br/><br/>
 
 @using (@Html.BeginForm("CompetentiesToevoegen", "Docent", FormMethod.Post))
 {
