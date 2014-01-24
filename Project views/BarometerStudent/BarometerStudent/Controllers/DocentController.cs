@@ -25,6 +25,7 @@ namespace BarometerStudent.Controllers
         public DocentController()
         {
             var henk = HttpContext.Session.Keys;
+            var klaas = HttpContext.Session["user"];
 
             if (Session["user"] != null)
             {
