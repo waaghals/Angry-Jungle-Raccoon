@@ -38,8 +38,15 @@ namespace BarometerStudent.Controllers
                 string fileName = Path.GetFileName(file.FileName);
                 string path = Path.Combine(Server.MapPath("~/App_Data/uploads"), fileName);
                 file.SaveAs(path);
-                //zet het in de db
-                new Services.ExcelReader(path).ToDatabase();
+                try
+                {
+                    //zet het in de db
+                    new Services.ExcelReader(path).ToDatabase();
+                }
+                catch (Exception e)
+                {
+                    System.Diagnostics.Debug.WriteLine(e.Message);
+                }
                 //verwijder het
                 System.IO.File.Delete(path);
 
