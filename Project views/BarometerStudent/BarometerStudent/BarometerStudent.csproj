@@ -179,6 +179,7 @@
     <Compile Include="Services\EvaluationService.cs" />
     <Compile Include="Services\ExcelReader.cs" />
     <Compile Include="Services\ProjectService.cs" />
+    <Compile Include="Services\StudentService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />

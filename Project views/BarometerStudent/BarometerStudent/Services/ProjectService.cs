@@ -91,11 +91,11 @@ namespace BarometerStudent.Services
         public void DeleteGroup(int groupId, int projectId)
         {
             GroupRepository gr = new GroupRepository(context);
-            Group g = gr.Get(groupId);    
+            Group g = gr.Get(groupId);
             if (g.Project.Id == projectId)
-                {
-                    g.Project = null;
-                }
+            {
+                g.Project = null;
+            }
 
             gr.Update(g);
             gr.Save();
@@ -105,8 +105,49 @@ namespace BarometerStudent.Services
         {
             GroupRepository gr = new GroupRepository(context);
             ProjectRepository pr = new ProjectRepository(context);
+            EvaluationRepository er = new EvaluationRepository(context);
             Group g = gr.Get(groupId);
             Project p = pr.Get(projectId);
+            bool createEvals = true;
+            foreach (Evaluation evaluation in p.ProjectPeriod.First().Evaluation)
+            {
+                foreach (Student byStudent in g.Student)
+                {
+                    foreach (ProjectPeriod projectPeriod in p.ProjectPeriod)
+                    {
+                        foreach (Skill skill in p.Skill)
+                        {
+                            foreach (Student forStudent in g.Student)
+                            {
+                                if (evaluation.For.Id == forStudent.Id && evaluation.By.Id == byStudent.Id && evaluation.ProjectPeriod.Id == projectPeriod.Id && evaluation.Skill.Id == skill.Id)
+                                {
+                                    createEvals = false;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            if (createEvals)
+            {
+                foreach (Student byStudent in g.Student)
+                {
+                    foreach (ProjectPeriod projectPeriod in p.ProjectPeriod)
+                    {
+                        foreach (Skill skill in p.Skill)
+                        {
+                            foreach (Student forStudent in g.Student)
+                            {
+                                if (byStudent.Id != forStudent.Id)
+                                {
+                                    Evaluation eval = new Evaluation() { For = forStudent, By = byStudent, ProjectPeriod = projectPeriod, Skill = skill };
+                                    er.Insert(eval);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
             p.Groups.Add(g);
             pr.Update(p);
             pr.Save();
