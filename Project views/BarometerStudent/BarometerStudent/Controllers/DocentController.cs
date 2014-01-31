@@ -14,22 +14,25 @@ namespace BarometerStudent.Controllers
     {
         //
         // GET: /Docent/
-        private int userID;
-        private int userProjectID = 1;
 
         public ActionResult Index()
         {
             return View();
         }
 
-        public DocentController()
+        private User getSessionUser() 
         {
-            var henk = HttpContext.Session.Keys;
-            var klaas = HttpContext.Session["user"];
+            UserRepository userrep = new UserRepository(new Context());
+            User user = userrep.Get(((User)HttpContext.Session["User"]).Id);
+            return user;
+        }
 
-            if (Session["user"] != null)
+        /*public DocentController()
+        {
+           User user = getSessionUser();
+
+            if (user != null)
             {
-                User user = (User)Session["user"];
                 userID = user.Id;
                 AuthorizationServices AS = new AuthorizationServices(user);
                 if (!AS.IsDocent())
@@ -37,26 +40,28 @@ namespace BarometerStudent.Controllers
                     RedirectToAction("Index", "Login");
                 }
             }
-        }
+        }*/
 
         public ActionResult GroepToewijzenAanProject()
         {
+            User user = getSessionUser();
             GroupRepository gr = new GroupRepository(new Context());
             ViewBag.addGroups = new MultiSelectList(gr.NotInProject(), "Id", "Name");
-            ViewBag.deleteGroups = new MultiSelectList(gr.InProject(userProjectID), "Id", "Name");
+            ViewBag.deleteGroups = new MultiSelectList(gr.InProject(user.Id), "Id", "Name");
             return View();
         }
 
         [HttpPost]
         public ActionResult DeleteGroup()
         {
+            User user = getSessionUser();
             GroupRepository gr = new GroupRepository(new Context());
             string[] groups;
             groups = Request.Form["Groups"].Split(',');
             foreach (string group in groups)
             {
                 Group g = gr.Get(Convert.ToInt32(group));
-                if (g.Project.Id == userProjectID)
+                if (g.Project.Id == user.Id)
                 {
                     g.Project = null;
                 }
@@ -69,8 +74,8 @@ namespace BarometerStudent.Controllers
 
         public ActionResult MentorStudenten()
         {
+            User user = getSessionUser();
             UserRepository userrep = new UserRepository(new Context());
-            User user = userrep.Get(userID);
             List<Student> studenten = user.MentorStudent.ToList<Student>();
             return View(studenten);
         }
@@ -78,8 +83,8 @@ namespace BarometerStudent.Controllers
         public ActionResult SelecteerProject()
         {
             ProjectRepository pr = new ProjectRepository(new Context());
-
-            ViewBag.selectListProjects = new SelectList(pr.ByTutor(/*tutorid*/userID), "Id", "Name", "1");
+            User user = getSessionUser();
+            ViewBag.selectListProjects = new SelectList(pr.ByTutor(user.Id), "Id", "Name", "1");
             return View();
         }
 
@@ -102,6 +107,7 @@ namespace BarometerStudent.Controllers
 
         public ActionResult SelecteerTutorGroep()
         {
+            User user = getSessionUser();
             if (TempData.ContainsKey("myProject"))
             {
                 TempData.Keep();
@@ -111,7 +117,7 @@ namespace BarometerStudent.Controllers
 
                 foreach (Group group in myProject.Groups)
                 {
-                    if (group.Tutor.Id == userID)
+                    if (group.Tutor.Id == user.Id)
                     {
                         tutorGroupList.Add(group);
                     }

@@ -6,6 +6,8 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using BarometerDomain.Repositories;
+using BarometerDomain;
 
 namespace BarometerStudent.Controllers
 {
@@ -14,16 +16,17 @@ namespace BarometerStudent.Controllers
 
         //
         // GET: /Project/
-        private int studentID;
 
         public ActionResult Menu()
         {
             return View();
         }
 
-        private ProjectController()
+        private Student getSessionStudent()
         {
-            studentID = ((User)this.Session["user"]).Id;
+            StudentRepository studentrep = new StudentRepository(new Context());
+            Student student = studentrep.Get(((User)HttpContext.Session["User"]).Id);
+            return student;
         }
 
         [HttpPost]
@@ -44,10 +47,11 @@ namespace BarometerStudent.Controllers
         [HttpPost]
         public ActionResult Beoordelen()
         {
+            Student student = getSessionStudent();
             ProjectService ps = new ProjectService();
             EvaluationService es = new EvaluationService();
             Project project = ps.GetProject(Convert.ToInt32(Request.Form["SelectedProject"]));
-            Group group = ps.ByStudentAndProject(studentID, project.Id);
+            Group group = ps.ByStudentAndProject(student.Id, project.Id);
             List<Student> students = group.Student.ToList();
             List<Evaluation> evaluaties = new List<Evaluation>();
             List<List<Evaluation>> evaluationList = new List<List<Evaluation>>();
@@ -63,9 +67,9 @@ namespace BarometerStudent.Controllers
 
                 foreach (Student s in students)
                 {
-                    if (s.Id != studentID)
+                    if (s.Id != student.Id)
                     {
-                        evaluaties = es.GetEvaluations(Convert.ToInt32(periodName), studentID, s.Id).ToList();
+                        evaluaties = es.GetEvaluations(Convert.ToInt32(periodName), student.Id, s.Id).ToList();
                         evaluationList.Add(evaluaties);
                         names.Add(s.Name);
                     }
@@ -81,9 +85,9 @@ namespace BarometerStudent.Controllers
 
                 foreach (Student s in students)
                 {
-                    if (s.Id != studentID)
+                    if (s.Id != student.Id)
                     {
-                        evaluaties = es.GetEvaluations(Convert.ToInt32(periodName), s.Id, studentID).ToList();
+                        evaluaties = es.GetEvaluations(Convert.ToInt32(periodName), s.Id, student.Id).ToList();
                         evaluationList.Add(evaluaties);
                         names.Add(s.Name);
                     }
