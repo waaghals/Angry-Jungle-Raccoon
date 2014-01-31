@@ -1,6 +1,6 @@
 ﻿@model BarometerDomain.Model.ProjectPeriod
 
-<h2>BeoordelingsmomentenToevoegen</h2>
+<h2>Beoordelingsmomenten toevoegen</h2>
 
 <br/>
 
@@ -17,15 +17,18 @@
             <td>@moment.Name</td>
             <td>@moment.Start.ToShortDateString()</td>
             <td>@moment.End.ToShortDateString()</td>
-            <td></td>
+            <td>@if(moment.Start > DateTime.Now) {
+                    @Html.ActionLink("Verwijderen", "BeoordelingsmomentVerwijderen", new { id = moment.Id });
+                }
+            </td>
         </tr>
     }
     @using (Html.BeginForm("BeoordelingsmomentToevoegen", "Docent", FormMethod.Post))
     {
         <tr>
             <td>@Html.TextBoxFor(model => model.Name)</td>
-            <td>@Html.TextBoxFor(model => model.Start)</td>
-            <td>@Html.TextBoxFor(model => model.End)</td>
+            <td>@Html.EditorFor(model => model.Start)</td>
+            <td>@Html.EditorFor(model => model.End)</td>
             <td><input type="submit" value="Toevoegen"></td>
         </tr>
     }
@@ -34,7 +37,7 @@
 <br/>
 <br/>
 
-@using (Html.BeginForm("ProjectToevoegen", "Docent", FormMethod.Post))
+@using (Html.BeginForm("ProjectAanmaken", "Docent", FormMethod.Post))
 {
-    <input type="submit" value="Project aanmaken">
+    <input type="submit" value="Terug">
 }

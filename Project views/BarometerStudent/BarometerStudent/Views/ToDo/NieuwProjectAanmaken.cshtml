@@ -1,6 +1,6 @@
 ﻿<br/>
 
-@using (Html.BeginForm("ProjectGegevensOpslaan", "Project", FormMethod.Post))
+@using (Html.BeginForm("ProjectGegevensOpslaan", "Docent", FormMethod.Post))
 {
     <span class="projectnaam">Projectnaam:</span>
     <input type="text" class="projectTextbox"/>
@@ -12,13 +12,13 @@
 
     <br/>
 
-    @using (Html.BeginForm("CompetentieAanmaken", "Project", FormMethod.Post))
+    @using (Html.BeginForm("CompetentieAanmaken", "Docent", FormMethod.Post))
     {
         <input type="text" name="competentie" class="competentieTextbox" />
         <button class="button competentieButton">Voeg nieuwe competentie toe</button>
     }
 
-    @using (Html.BeginForm("SubCompetentieAanmaken", "Project", FormMethod.Post))
+    @using (Html.BeginForm("SubCompetentieAanmaken", "Docent", FormMethod.Post))
     {
         <input type="text" name="competentie" class="competentieTextbox" />
         <button class="button competentieButton">Voeg nieuwe sub-competentie toe</button>

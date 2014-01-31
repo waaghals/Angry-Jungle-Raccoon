@@ -22,13 +22,22 @@ namespace BarometerDomain.Model
         [Required]
         public string Name
         { get; set; }
-        [Required]
+
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+        [Required(ErrorMessage = "Dit veld is verplicht.")]
+        [Display(Name = "Start datum: ")]
         public DateTime Start
         {
             get;
             set;
         }
-        [Required]
+
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+        [Required(ErrorMessage = "Dit veld is verplicht.")]
+        [Display(Name = "Eind datum: ")]
         public DateTime End
         {
             get;

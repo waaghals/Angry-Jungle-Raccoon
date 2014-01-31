@@ -77,10 +77,12 @@ namespace BarometerStudent.Services
                 string prefix = StringTable[row, preFixColumn];
                 string lastName = StringTable[row, lNameColumn];
                 string grpName = StringTable[row, grpNameColumn];
+                string IdString = StringTable[row, idColumn];
                 System.Diagnostics.Debug.WriteLine("processing" + name + " " + lastName + ", " + grpName);
-                if (name != null && lastName != null && grpName != null)
+                if (name != null && lastName != null && grpName != null &&
+                    System.Text.RegularExpressions.Regex.IsMatch(IdString, @"^\d+$", System.Text.RegularExpressions.RegexOptions.IgnoreCase))
                 {
-                    int id = Convert.ToInt32(StringTable[row, idColumn]);
+                    int id = Convert.ToInt32(IdString);
                     bool newStudent;
                     Student student = TryFindStudent(id, studentRepo, name, prefix, lastName, out newStudent);
                     //zoek groep

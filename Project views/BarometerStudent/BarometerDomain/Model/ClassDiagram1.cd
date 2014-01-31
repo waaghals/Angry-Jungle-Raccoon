@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BarometerDomain.Model.Evaluation" BaseTypeListCollapsed="true">
+    <Position X="4.75" Y="3.25" Width="1.5" />
+    <AssociationLine Name="By" Type="BarometerDomain.Model.Student" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.125" Y="3.25" />
+        <Point X="5.125" Y="2.125" />
+        <Point X="2.688" Y="2.125" />
+        <Point X="2.688" Y="2.5" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="For" Type="BarometerDomain.Model.Student" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.75" Y="4.5" />
+        <Point X="4.375" Y="4.5" />
+        <Point X="4.375" Y="3.25" />
+        <Point X="3.25" Y="3.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>EAACAAAAAAAAIAQAAAAAAAAAIAAAABAIAAAAAAEAAAA=</HashCode>
+      <FileName>Model\Evaluation.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="By" />
+      <Property Name="For" />
+      <Property Name="ProjectPeriod" />
+      <Property Name="Skill" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BarometerDomain.Model.Group" BaseTypeListCollapsed="true">
+    <Position X="4.75" Y="5.5" Width="1.5" />
+    <AssociationLine Name="Tutor" Type="BarometerDomain.Model.User" FixedToPoint="true">
+      <Path>
+        <Point X="4.75" Y="6.625" />
+        <Point X="3.25" Y="6.625" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAACAAAAQAAAAAAAAAAACAQAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Group.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Project" />
+      <Property Name="Tutor" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Student" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BarometerDomain.Model.Project" BaseTypeListCollapsed="true">
+    <Position X="10" Y="5" Width="1.5" />
+    <AssociationLine Name="ProjectDocent" Type="BarometerDomain.Model.User" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10" Y="7.408" />
+        <Point X="3.125" Y="7.408" />
+        <Point X="3.125" Y="7.132" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>EAACAEBAAAAgAAAQAAAACAQAAAAAABABAAAAAAAAAgA=</HashCode>
+      <FileName>Model\Project.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ProjectDocent" />
+      <Property Name="ScoreType" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Groups" />
+      <Property Name="ProjectPeriod" />
+      <Property Name="Skill" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BarometerDomain.Model.ProjectPeriod" BaseTypeListCollapsed="true">
+    <Position X="7" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAICgAAAACAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\ProjectPeriod.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Evaluation" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BarometerDomain.Model.Skill" BaseTypeListCollapsed="true">
+    <Position X="7.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACQA=</HashCode>
+      <FileName>Model\Skill.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Projects" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BarometerDomain.Model.Student">
+    <Position X="1.75" Y="2.5" Width="1.5" />
+    <AssociationLine Name="Groups" Type="BarometerDomain.Model.Group" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="3.25" Y="3.639" />
+        <Point X="3.625" Y="3.639" />
+        <Point X="3.625" Y="6.188" />
+        <Point X="4.75" Y="6.188" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Student.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Groups" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="BarometerDomain.Model.User">
+    <Position X="1.75" Y="5" Width="1.5" />
+    <AssociationLine Name="MentorStudent" Type="BarometerDomain.Model.Student" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="2.094" Y="7.132" />
+        <Point X="2.094" Y="7.507" />
+        <Point X="1.375" Y="7.507" />
+        <Point X="1.375" Y="2.125" />
+        <Point X="1.938" Y="2.125" />
+        <Point X="1.938" Y="2.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAICAAAAAAAAACAAAAAAAAQAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Model\User.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="MentorStudent" />
+    </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="BarometerDomain.Model.IEntity">
+    <Position X="12.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\IEntety.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="BarometerDomain.Model.ScoreType" Collapsed="true">
+    <Position X="12.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAA=</HashCode>
+      <FileName>Model\ScoreType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

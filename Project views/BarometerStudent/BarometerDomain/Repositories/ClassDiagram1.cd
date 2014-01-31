@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BarometerDomain.Repositories.EvaluationRepository">
+    <Position X="10.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\EvaluationRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BarometerDomain.Repositories.GenericRepository&lt;T&gt;">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAMAAAAAAAABAAAAAAAAAAAEAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Repositories\GenericRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="BarometerDomain.Repositories.GroupRepository">
+    <Position X="15" Y="3.75" Width="1.5" />
+    <InheritanceLine Type="BarometerDomain.Repositories.GenericRepository&lt;T&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="14.25" Y="2.75" />
+        <Point X="15.75" Y="2.75" />
+        <Point X="15.75" Y="3.75" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>CAAAAIAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Repositories\GroupRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BarometerDomain.Repositories.ProjectPeriodRepository">
+    <Position X="11.25" Y="4.25" Width="1.5" />
+    <InheritanceLine Type="BarometerDomain.Repositories.GenericRepository&lt;T&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="13.125" Y="3.401" />
+        <Point X="13.125" Y="3.701" />
+        <Point X="12.625" Y="3.701" />
+        <Point X="12.625" Y="4.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\ProjectPeriodRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BarometerDomain.Repositories.ProjectRepository">
+    <Position X="16.5" Y="1.75" Width="1.5" />
+    <InheritanceLine Type="BarometerDomain.Repositories.GenericRepository&lt;T&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="14.25" Y="2.375" />
+        <Point X="16.5" Y="2.375" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAEAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\ProjectRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BarometerDomain.Repositories.SkillRepository">
+    <Position X="10.25" Y="2.5" Width="1.5" />
+    <InheritanceLine Type="BarometerDomain.Repositories.GenericRepository&lt;T&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="12.75" Y="3.125" />
+        <Point X="11.75" Y="3.125" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\SkillRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BarometerDomain.Repositories.StudentRepository">
+    <Position X="13.25" Y="4" Width="1.5" />
+    <InheritanceLine Type="BarometerDomain.Repositories.GenericRepository&lt;T&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="14" Y="3.401" />
+        <Point X="14" Y="4" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\StudentRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BarometerDomain.Repositories.UserRepository">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <InheritanceLine Type="BarometerDomain.Repositories.GenericRepository&lt;T&gt;" FixedFromPoint="true">
+      <Path>
+        <Point X="14.25" Y="1.062" />
+        <Point X="14.75" Y="1.062" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>ACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\UserRepository.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="BarometerDomain.Repositories.IRepository&lt;T&gt;" Collapsed="true">
+    <Position X="16.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAMAAAAAAAABAAAAAAAAAAAEAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Repositories\IRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

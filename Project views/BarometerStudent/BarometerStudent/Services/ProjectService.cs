@@ -5,12 +5,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace BarometerStudent.Services
 {
     public class ProjectService
     {
         Context context;
+        public ProjectService()
+        {
+            context = new Context();
+        }
         public Group ByStudentAndProject(int studentId, int ProjectId)
         {
             Project project = GetProject(ProjectId);
@@ -49,10 +54,109 @@ namespace BarometerStudent.Services
 
         public Project GetProject(int id)
         {
-            context = new Context();
             ProjectRepository pr = new ProjectRepository(context);
             return pr.Get(id);
         }
 
+        public SelectList GetTutorProject(int id)
+        {
+            ProjectRepository pr = new ProjectRepository(new Context());
+
+            return new SelectList(pr.ByTutor(/*tutorid*/id), "Id", "Name", "1");
+        }
+
+        public SelectList GetTutorGroup(int projectId, int userId)
+        {
+            Project myProject = GetProject(projectId);
+            IList<Group> tutorGroupList = new List<Group>();
+
+            foreach (Group group in myProject.Groups)
+            {
+                if (group.Tutor.Id == userId)
+                {
+                    tutorGroupList.Add(group);
+                }
+            }
+            return new SelectList(tutorGroupList, "Id", "Name");
+        }
+
+
+        public Project GetProjectFromGroup(int groep)
+        {
+            GroupRepository gr = new GroupRepository(context);
+            int id = gr.Get(groep).Project.Id;
+            return GetProject(id);
+        }
+
+        public void DeleteGroup(int groupId, int projectId)
+        {
+            GroupRepository gr = new GroupRepository(context);
+            Group g = gr.Get(groupId);
+            if (g.Project.Id == projectId)
+            {
+                g.Project = null;
+            }
+
+            gr.Update(g);
+            gr.Save();
+        }
+
+        public void AddGroup(int groupId, int projectId)
+        {
+            GroupRepository gr = new GroupRepository(context);
+            ProjectRepository pr = new ProjectRepository(context);
+            EvaluationRepository er = new EvaluationRepository(context);
+            Group g = gr.Get(groupId);
+            Project p = pr.Get(projectId);
+            bool createEvals = true;
+            foreach (Evaluation evaluation in p.ProjectPeriod.First().Evaluation)
+            {
+                foreach (Student byStudent in g.Student)
+                {
+                    foreach (ProjectPeriod projectPeriod in p.ProjectPeriod)
+                    {
+                        foreach (Skill skill in p.Skill)
+                        {
+                            foreach (Student forStudent in g.Student)
+                            {
+                                if (evaluation.For.Id == forStudent.Id && evaluation.By.Id == byStudent.Id && evaluation.ProjectPeriod.Id == projectPeriod.Id && evaluation.Skill.Id == skill.Id)
+                                {
+                                    createEvals = false;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            if (createEvals)
+            {
+                foreach (Student byStudent in g.Student)
+                {
+                    foreach (ProjectPeriod projectPeriod in p.ProjectPeriod)
+                    {
+                        foreach (Skill skill in p.Skill)
+                        {
+                            foreach (Student forStudent in g.Student)
+                            {
+                                if (byStudent.Id != forStudent.Id)
+                                {
+                                    Evaluation eval = new Evaluation() { For = forStudent, By = byStudent, ProjectPeriod = projectPeriod, Skill = skill };
+                                    er.Insert(eval);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            p.Groups.Add(g);
+            pr.Update(p);
+            pr.Save();
+        }
+
+        public SelectList WithStudent(int studentId)
+        {
+            ProjectRepository pr = new ProjectRepository(context);
+            return new SelectList(pr.WithStudent(studentId), "Id", "Name");
+        }
     }
 }

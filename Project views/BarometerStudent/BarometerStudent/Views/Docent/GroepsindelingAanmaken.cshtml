@@ -1,0 +1,7 @@
+﻿<br/>
+
+@using (@Html.BeginForm("ImporterenExelSheet", "Docent", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="file" name="file">
+    <input type="submit" value="Importeren excel sheet" />
+}

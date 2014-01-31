@@ -1,0 +1,10 @@
+﻿@using (@Html.BeginForm("GeselecteerdProjectWijzigen", "Docent", FormMethod.Post))
+{
+    <span>Selecteer project:</span>
+    
+    <br/>
+    
+    @Html.DropDownList("Project", (IEnumerable<SelectListItem>)ViewBag.projecten, new { @class = "fancy_selectbox" })
+    
+    <input type="submit" value="Wijzigen">
+}

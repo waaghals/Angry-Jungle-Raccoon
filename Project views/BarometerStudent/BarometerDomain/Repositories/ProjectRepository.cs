@@ -15,13 +15,19 @@ namespace BarometerDomain.Repositories
             table = database.Projects;
         }
 
-        public IEnumerable<Project> AllOpen()
+        public IEnumerable<Project> AllOpen(List<Project> projects)
         {
             List<Project> ret = new List<Project>();
-            foreach (Project p in table)
-                foreach (ProjectPeriod pPeriod in p.ProjectPeriod)
-                    if (pPeriod.Start < DateTime.Now && pPeriod.End > DateTime.Now && !ret.Contains(p))
+            foreach (Project p in projects)
+            {
+                foreach (ProjectPeriod pp in p.ProjectPeriod)
+                {
+                    if (pp.End > DateTime.Now && !ret.Contains(p))
+                    {
                         ret.Add(p);
+                    }
+                }
+            }
             return ret;
         }
 

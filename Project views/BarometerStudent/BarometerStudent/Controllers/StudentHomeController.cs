@@ -13,10 +13,6 @@ namespace BarometerStudent.Controllers
 {
     public class StudentHomeController : Controller
     {
-        //private ProjectRepository pr = new ProjectRepository(new Context());
-        //
-        // GET: /StudentHome/
-
         public ActionResult Index()
         {
             //zoek de user
