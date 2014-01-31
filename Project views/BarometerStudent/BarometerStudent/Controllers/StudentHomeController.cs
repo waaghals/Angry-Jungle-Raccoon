@@ -30,7 +30,8 @@ namespace BarometerStudent.Controllers
             using (var db = new BarometerDomain.Context())
             {
                 ProjectRepository pr = new ProjectRepository(db);
-                SelectList sl = new SelectList(pr.WithStudent(2), "Id", "Name");
+                Student s = (Student)Session["User"];
+                SelectList sl = new SelectList(pr.WithStudent(s.Id), "Id", "Name");
 
                 ViewBag.Project = sl;
             }

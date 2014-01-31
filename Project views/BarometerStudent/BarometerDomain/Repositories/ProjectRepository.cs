@@ -35,7 +35,8 @@ namespace BarometerDomain.Repositories
             List<Project> templist = new List<Project>();
             foreach(Group group in student.Groups)
             {
-                templist.Add(group.Project);
+                if(group.Project != null)
+                    templist.Add(group.Project);
             }
             return templist;
         }
