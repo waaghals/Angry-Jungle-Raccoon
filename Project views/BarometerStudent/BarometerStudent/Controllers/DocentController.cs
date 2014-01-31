@@ -80,6 +80,7 @@ namespace BarometerStudent.Controllers
             return View(studenten);
         }
 
+        [HttpGet]
         public ActionResult SelecteerProject()
         {
             ProjectRepository pr = new ProjectRepository(new Context());
