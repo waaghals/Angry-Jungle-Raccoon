@@ -38,7 +38,7 @@ public class StudentController : Controller
     {
         TempData.Keep();
         ProjectService ps = new ProjectService();
-        int projectId = Convert.ToInt32(TempData["ProjectId"]);
+        int projectId = Convert.ToInt32(TempData["projectId"]);
         Project project = ps.GetProject(projectId);
 
         ViewBag.Project = project.Id;
@@ -108,15 +108,15 @@ public class StudentController : Controller
             }
         }
 
-        ViewBag.projectPeriodId = projectPeriodId;
-        ViewBag.projectId = projectId;
+        TempData["projectPeriodId"] = projectPeriodId;
+        TempData["projectId"] = projectId;
         return View(evaluationList);
     }
 
     public ActionResult Beoordelen()
     {
         TempData.Keep();
-        int projectId = Convert.ToInt32(TempData["ProjectId"]);
+        int projectId = Convert.ToInt32(TempData["projectId"]);
         int projectPeriodId = Convert.ToInt32(TempData["projectPeriodId"]);
 
         ProjectService ps = new ProjectService();
@@ -152,17 +152,17 @@ public class StudentController : Controller
             }
         }
         ViewBag.warning = "Zorg dat alle Evaluatie cijfers tussen de 1 en de 10 zitten";
-        ViewBag.projectPeriodId = projectPeriodId;
-        ViewBag.projectId = projectId;
+        TempData["projectPeriodId"] = projectPeriodId;
+        TempData["projectId"] = projectId;
         return View(evaluationList);
     }
 
     [HttpPost]
     public ActionResult Evaluate(List<List<Evaluation>> model)
     {
+        TempData.Keep();
         if (Request.Form["annuleren"] != null)
         {
-            TempData["ProjectId"] = Request.Form["projectIdFrom"];
             return RedirectToAction("ProjectOverzicht");
         }
         else
@@ -172,14 +172,11 @@ public class StudentController : Controller
                 {
                     if (evaluation.Grade < 0 || evaluation.Grade > 10)
                     {
-                        TempData["ProjectPeriodId"] = Request.Form["projectPeriodIdFrom"];
-                        TempData["ProjectId"] = Request.Form["projectIdFrom"];
                         return RedirectToAction("Beoordelen");
                     }
                 }
             EvaluationService es = new EvaluationService();
             es.Evaluate(model);
-            TempData["ProjectId"] = Request.Form["projectIdFrom"];
             return RedirectToAction("ProjectOverzicht");
         }
     }
