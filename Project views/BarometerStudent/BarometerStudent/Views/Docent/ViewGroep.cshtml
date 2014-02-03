@@ -4,7 +4,7 @@
     ViewBag.Title = "ViewGroep";
 }
 
-<h2>Groeps Resultaten</h2>
+<h2>Resultaten @ViewBag.groupName</h2>
 
 <div id="tabs" class="box_shadow">
     <ul>
@@ -57,7 +57,7 @@
                 {
                     for (int pp = 0; pp < periods; pp++ )
                     { 
-                        <td>@projectinfo.ProjectPeriod[pp].Name</td>
+                        <td>@projectinfo.ProjectPeriod[pp].Start.ToString("d-M-yy")</td>
                     }
                 }
             </tr>

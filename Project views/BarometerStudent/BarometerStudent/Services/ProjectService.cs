@@ -158,5 +158,11 @@ namespace BarometerStudent.Services
             ProjectRepository pr = new ProjectRepository(context);
             return new SelectList(pr.WithStudent(studentId), "Id", "Name");
         }
+
+        public Group GetGroupById(int groupId)
+        {
+            GroupRepository gr = new GroupRepository(context);
+            return gr.Get(groupId);
+        }
     }
 }
