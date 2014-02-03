@@ -140,7 +140,7 @@ namespace BarometerStudent.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "StudentHome"); //redirect de user naar de juiste startpagina gebaseerd op login data
+                return RedirectToAction("Index", "Student"); //redirect de user naar de juiste startpagina gebaseerd op login data
             }
         }
     }

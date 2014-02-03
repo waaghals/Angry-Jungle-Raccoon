@@ -15,13 +15,19 @@ namespace BarometerDomain.Repositories
             table = database.Projects;
         }
 
-        public IEnumerable<Project> AllOpen()
+        public IEnumerable<Project> AllOpen(List<Project> projects)
         {
             List<Project> ret = new List<Project>();
-            foreach (Project p in table)
-                foreach (ProjectPeriod pPeriod in p.ProjectPeriod)
-                    if (pPeriod.Start < DateTime.Now && pPeriod.End > DateTime.Now && !ret.Contains(p))
+            foreach (Project p in projects)
+            {
+                foreach (ProjectPeriod pp in p.ProjectPeriod)
+                {
+                    if (pp.End > DateTime.Now && !ret.Contains(p))
+                    {
                         ret.Add(p);
+                    }
+                }
+            }
             return ret;
         }
 
@@ -29,14 +35,15 @@ namespace BarometerDomain.Repositories
         {
             return WithStudent(student.Id);
         }
+
         public IEnumerable<Project> WithStudent(int studentId)
         {
             Student student = new StudentRepository(database).Get(studentId);
             List<Project> templist = new List<Project>();
             foreach(Group group in student.Groups)
             {
-                if(group.Project != null)
-                    templist.Add(group.Project);
+                if (group.Project!=null)
+                templist.Add(group.Project);
             }
             return templist;
         }
@@ -46,15 +53,10 @@ namespace BarometerDomain.Repositories
             List<Project> projects = new List<Project>();
             foreach(Group group in database.Groups.ToList<Group>())
             {
-                if (group.Tutor != null)
+                //if(group.Tutor.Id == tutor)
                 {
-                    if (group.Tutor.Id == tutor)
-                    {
-                        if (!projects.Contains(group.Project))
-                        {
-                            projects.Add(group.Project);
-                        }
-                    }
+                    if(!projects.Contains(group.Project))
+                        projects.Add(group.Project);
                 }
             }
             return projects;

@@ -38,8 +38,9 @@ namespace BarometerDomain.Repositories
         {
             List<Group> ret = new List<Group>();
             foreach (Group g in table)
-                if (g.Project.Equals(project) && !ret.Contains(g))
-                    ret.Add(g);
+                if(g.Project != null)
+                    if (g.Project.Equals(project) && !ret.Contains(g))
+                        ret.Add(g);
             return ret;
         }
 
