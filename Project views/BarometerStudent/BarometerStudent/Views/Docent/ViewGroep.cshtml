@@ -77,7 +77,17 @@
                                 {
                                     double toGrade = Convert.ToDouble(eval.Grade);
                                     toGrade /= 10;
-                                    <td>@toGrade</td>
+                                    if(toGrade >= 6){
+                                        <td class="grade_high">@toGrade</td>
+                                    }
+                                    else if (toGrade >= 5)
+                                    {
+                                        <td class="grade_medium">@toGrade</td>
+                                    }
+                                    else
+                                    {
+                                        <td class="grade_low">@toGrade</td>
+                                    }
                                 }
 
                             }

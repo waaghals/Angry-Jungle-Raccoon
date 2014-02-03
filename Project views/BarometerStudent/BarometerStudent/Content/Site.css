@@ -227,6 +227,27 @@ input[type="submit"]:disabled
     color:gray;
 }
 
+.grade_low
+{
+    background-color:red;
+    color:white;
+    font-weight:bold;
+}
+
+.grade_medium
+{
+    background-color:orange;
+    color:white;
+    font-weight:bold;
+}
+
+.grade_high
+{
+    background-color:limegreen;
+    color:white;
+    font-weight:bold;
+}
+
 #body
 {
     background-color: #efeeef;
@@ -266,7 +287,7 @@ input[type="submit"]:disabled
 
 .tab
 {
-    overflow: hidden;
+    overflow: auto;
     padding: 10px;
 }
 
