@@ -3,20 +3,13 @@
     @Html.Raw(ViewBag.Description)
 </p>
 <h2>Mededelingen</h2>
-@if (ViewBag.Project != null)
-{
 
-    <div>You Selected:  @ViewBag.Project</div>
-
-}
 <p>
     @{
         foreach (String s in ViewBag.Mededelingen)
         {
-        @Html.Raw(s);
-        <br />
+             <p>@s</p>    
         }
-        
     }
 </p>
 <br />
