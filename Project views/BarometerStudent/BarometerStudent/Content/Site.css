@@ -212,6 +212,16 @@ a:hover.logo
     width:15px;
 }
 
+.indent_small
+{
+    padding-left:10px;
+}
+
+.button_container
+{
+    padding-left:10px;
+}
+
 
 #body
 {

@@ -1,24 +1,23 @@
 ﻿<h1>@ViewBag.Title</h1>
-<p>
-    @Html.Raw(ViewBag.Description)
-</p>
+
+<p class="indent_small">@Html.Raw(ViewBag.Description)</p>
+
 <h2>Mededelingen</h2>
 
-<p>
     @{
         foreach (String s in ViewBag.Mededelingen)
         {
-             <p>@s</p>    
+             <p class="indent_small">@s</p>    
         }
     }
-</p>
 <br />
-@using (@Html.BeginForm("Beoordelen", "Student", FormMethod.Post))
-{
-    @Html.DropDownList("projectPeriodId", (IEnumerable<SelectListItem>)ViewBag.ProjectPeriod ,  new { @class = "fancy_selectbox" })
-    <br />
-    @Html.Hidden("projectId", (Object)ViewBag.Project)
-    <input type="submit" name="beoordelen" value="Medestudent beoordelen" />
-    <input type="submit" name="bekijken" value="Beoordelingen Bekijken" />
-}
-
+<div class="button_container">
+    @using (@Html.BeginForm("Beoordelen", "Student", FormMethod.Post))
+    {
+        @Html.DropDownList("projectPeriodId", (IEnumerable<SelectListItem>)ViewBag.ProjectPeriod ,  new { @class = "fancy_selectbox" })
+        <br />
+        @Html.Hidden("projectId", (Object)ViewBag.Project)
+        <input type="submit" name="beoordelen" value="Medestudent beoordelen" />
+        <input type="submit" name="bekijken" value="Beoordelingen Bekijken" />
+    }
+</div>

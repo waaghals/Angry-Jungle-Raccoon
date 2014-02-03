@@ -3,7 +3,7 @@
         Home
     </h2>
 
-    <p>Kies een project en daarna een beoordelingsmoment om je medestudenten te beoordelen of je beoordelingen in te zien.</p>
+    <p class="indent_small">Kies een project en daarna een beoordelingsmoment om je medestudenten te beoordelen of je beoordelingen in te zien.</p>
     
             @*<table>
                 <tr>
@@ -22,11 +22,12 @@
                     <td><button class="button" style ="">Naar project</button></td>
                 </tr>
             </table>*@             
-            
-    @using (@Html.BeginForm("ProjectOverzicht", "Student", FormMethod.Post))
-    {
-        @Html.DropDownList("projectId", null,  new { @class = "fancy_selectbox" })
-        <input type="submit" value="Naar Project" />
-    }
+    <div class="button_container">        
+        @using (@Html.BeginForm("ProjectOverzicht", "Student", FormMethod.Post))
+        {
+            @Html.DropDownList("projectId", null,  new { @class = "fancy_selectbox" })
+            <input type="submit" value="Naar Project" />
+        }
+    </div>
             
 </div>
