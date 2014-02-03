@@ -62,7 +62,7 @@ namespace BarometerStudent.Services
         {
             ProjectRepository pr = new ProjectRepository(new Context());
 
-            return new SelectList(pr.ByTutor(/*tutorid*/id), "Id", "Name", "1");
+            return new SelectList(pr.ByTutor(/*tutorid*/id), "Id", "Name");
         }
 
         public SelectList GetTutorGroup(int projectId, int userId)

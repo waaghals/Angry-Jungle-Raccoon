@@ -4,10 +4,11 @@
 
 <h2>Selecteer Project</h2>
 
-@using (Html.BeginForm()) { 
+@using (@Html.BeginForm("SelecteerTutorGroep", "Docent", FormMethod.Post))
+{
    
     <div>
-        @Html.DropDownList("project", (SelectList) ViewBag.selectListProjects, new { @class = "fancy_selectbox" })
+        @Html.DropDownList("project", (SelectList)ViewBag.selectListProjects, new { @class = "fancy_selectbox" })
     </div>
     
     <div>

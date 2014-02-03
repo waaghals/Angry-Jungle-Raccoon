@@ -28,10 +28,17 @@
     <body>
         <header>
             <div class="content-wrapper">
-                <a href="../" class="logo"><img src="../../Images/AvansBanner.png" class="logo"/></a>
                 @if (HttpContext.Current.Session["user"] != null)
                 {
                     BarometerDomain.Model.User loggedinUser = (BarometerDomain.Model.User)Session["user"];
+                    if (loggedinUser.RoleType.Equals("Docent") || loggedinUser.RoleType.Equals("Administrator"))
+                    {
+                <a href="../Docent" class="logo"><img src="../../Images/AvansBanner.png" class="logo"/></a> 
+                    }
+                    else{
+                        
+                <a href="../Student" class="logo"><img src="../../Images/AvansBanner.png" class="logo"/></a>
+                    }
                     <div class="loginBlock">
                         <div class="loginBalk">
                             <p class="login_top"><img src="../../Images/left.png" class="balk_image_left"/>Welkom @loggedinUser.Name<img src="../../Images/right.png" class="balk_image_right"/></p>
@@ -43,6 +50,7 @@
                 }
                 else
                 {
+                <a href="../" class="logo"><img src="../../Images/AvansBanner.png" class="logo"/></a>
                     <div class="loginBalk">
                         <p class="login_top"><img src="../../Images/left.png" class="balk_image_left"/>U bent niet ingelogd<img src="../../Images/right.png" class="balk_image_right"/></p>
                     </div>

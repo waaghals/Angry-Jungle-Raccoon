@@ -55,7 +55,7 @@ namespace BarometerDomain.Repositories
             {
                 //if(group.Tutor.Id == tutor)
                 {
-                    if(!projects.Contains(group.Project))
+                    if(!projects.Contains(group.Project)&&group.Project!=null)
                         projects.Add(group.Project);
                 }
             }

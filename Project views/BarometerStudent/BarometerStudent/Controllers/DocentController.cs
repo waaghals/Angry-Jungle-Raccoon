@@ -15,12 +15,17 @@ namespace BarometerStudent.Controllers
     {
         //
         // GET: /Docent/
-        private int userID = 1;
-        private int userProjectID = 1;
 
         public ActionResult Index()
         {
             return View();
+        }
+
+        private int getSessionDocentId()
+        {
+            UserRepository userrep = new UserRepository(new Context());
+            User user = userrep.Get(((User)HttpContext.Session["User"]).Id);
+            return user.Id;
         }
 
         public ActionResult GroepsindelingAanmaken()
@@ -87,7 +92,7 @@ namespace BarometerStudent.Controllers
 
             foreach (string group in groups)
             {
-                ps.DeleteGroup(Convert.ToInt32(group), userProjectID);
+                ps.DeleteGroup(Convert.ToInt32(group), ps.GetProjectFromGroup(Convert.ToInt32(group)).Id);
             }
 
             return RedirectToAction("GroepToewijzenAanProject");
@@ -117,7 +122,7 @@ namespace BarometerStudent.Controllers
 
             foreach (string group in groups)
             {
-                ps.AddGroup(Convert.ToInt32(group), userProjectID);
+                ps.AddGroup(Convert.ToInt32(group), ps.GetProjectFromGroup(Convert.ToInt32(group)).Id);
             }
             return RedirectToAction("GroepToewijzenAanProject");
 
@@ -133,7 +138,7 @@ namespace BarometerStudent.Controllers
         public ActionResult MentorStudenten()
         {
             StudentService sr = new StudentService();
-            List<Student> studenten = sr.GetMentorStudents(userID);
+            List<Student> studenten = sr.GetMentorStudents(getSessionDocentId());
             return View(studenten);
         }
 
@@ -405,7 +410,7 @@ namespace BarometerStudent.Controllers
         public ActionResult SelecteerProject()
         {
             ProjectService ps = new ProjectService();
-            ViewBag.selectListProjects = ps.GetTutorProject(/*tutorid*/userID);
+            ViewBag.selectListProjects = ps.GetTutorProject(/*tutorid*/getSessionDocentId());
             return View();
         }
 
@@ -413,7 +418,7 @@ namespace BarometerStudent.Controllers
         public ActionResult SelecteerTutorGroep(int project)
         {
             ProjectService ps = new ProjectService();
-            ViewBag.selectListGroups = ps.GetTutorGroup(project, userID);
+            ViewBag.selectListGroups = ps.GetTutorGroup(project, getSessionDocentId());
             return View();
         }
 
