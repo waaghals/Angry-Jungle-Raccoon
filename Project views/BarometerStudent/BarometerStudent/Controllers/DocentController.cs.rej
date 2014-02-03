@@ -1,0 +1,14 @@
+diff a/Project views/BarometerStudent/BarometerStudent/Controllers/DocentController.cs b/Project views/BarometerStudent/BarometerStudent/Controllers/DocentController.cs	(rejected hunks)
+@@ -127,11 +127,10 @@
+ 
+                 ViewBag.selectListGroups = sl;
+                 return View();
+-=======
++            }
+             else if (varGroups.Length < 2)
+             {
+                 groups.Add(varGroups);
+->>>>>>> feature/POC
+             }
+             else
+             {

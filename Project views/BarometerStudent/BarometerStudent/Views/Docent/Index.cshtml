@@ -1,6 +1,6 @@
 ﻿<h2>Menu</h2>
 
-@using (@Html.BeginForm("GroepsindelingAanmaken", "Project", FormMethod.Post))
+@using (@Html.BeginForm("GroepsindelingAanmaken", "Docent", FormMethod.Post))
 {
     <input type="submit" value="Groepsindeling aanmaken" />
 }
@@ -8,4 +8,19 @@
 @using (@Html.BeginForm("MentorStudenten", "Docent", FormMethod.Post))
 {
     <input type="submit" value="Mentorstudenten bekijken" />
+}
+
+@using (@Html.BeginForm("ProjectAanmakenRedirect", "Docent", FormMethod.Post))
+{
+    <input type="submit" value="Project aanmaken" />
+}
+
+@using (@Html.BeginForm("ProjectWijzigen", "Docent", FormMethod.Post))
+{
+    <input type="submit" value="Project wijzigen" />
+}
+
+@using (@Html.BeginForm("SelecteerProject", "Docent", FormMethod.Get))
+{
+    <input type="submit" value="Eindbeoordeling inzien" />
 }

@@ -1,0 +1,9 @@
+diff a/Project views/BarometerStudent/BarometerDomain/RunDBTest.cs b/Project views/BarometerStudent/BarometerDomain/RunDBTest.cs	(rejected hunks)
+@@ -37,6 +37,7 @@
+                 Skill plannen = new Skill() { Category = "Plannen" };
+                 Skill testplankennis = new Skill() { Category = "Testplan kennis" };
+ 
++<<<<<<< HEAD
+                 Student Edwin = new Student() { Name = "Edwin Hattink", Login = "egjhatti", Number = 2063703 }; 
+                 Edwin.RoleType = "Student";
+                 Student Yannik = new Student() { Name = "Yannik Hegge", Login = "yahegge", Number = 2066492};
