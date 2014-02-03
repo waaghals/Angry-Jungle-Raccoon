@@ -222,6 +222,10 @@ a:hover.logo
     padding-left:10px;
 }
 
+input[type="submit"]:disabled
+{
+    color:gray;
+}
 
 #body
 {

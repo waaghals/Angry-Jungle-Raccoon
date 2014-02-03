@@ -17,7 +17,21 @@
         @Html.DropDownList("projectPeriodId", (IEnumerable<SelectListItem>)ViewBag.ProjectPeriod ,  new { @class = "fancy_selectbox" })
         <br />
         @Html.Hidden("projectId", (Object)ViewBag.Project)
-        <input type="submit" name="beoordelen" value="Medestudent beoordelen" />
+        
+        foreach (String s in ViewBag.Mededelingen)
+        {
+             if(@s.Equals("Er staan op dit moment geen beoordelingsmomenten open."))
+             {
+                 <input type="submit" name="beoordelen" value="Medestudent beoordelen" disabled/>
+                 break;
+             }
+             else
+             {
+                 <input type="submit" name="beoordelen" value="Medestudent beoordelen"/>
+                 break;
+             }
+        }
+        
         <input type="submit" name="bekijken" value="Beoordelingen Bekijken" />
     }
 </div>
