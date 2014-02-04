@@ -34,7 +34,9 @@
     <input type="submit" value="Competenties toevoegen" name ="competenties">
     <input type="submit" value="Beoordelingsmomenten toevoegen" name="beoordelingsmoment">
     <input type="submit" value="Groepen toewijzen aan project" name="toewijzen">
-    
+    <br/><br/>
+    @Html.DropDownList("tutor", (IEnumerable<SelectListItem>)ViewBag.tutors, new { @class = "fancy_selectbox" })
+    <input type="submit" value="Groepen toewijzen aan tutor" name="toewijzenTutor">
     <br/><br/>
     
     <input type="submit" value="Project aanmaken" name="bevestigen">

@@ -28,5 +28,18 @@ namespace BarometerDomain.Repositories
             }
             return user;
         }
+
+        public IEnumerable<User> GetTutors()
+        {
+            List<User> tutors = new List<User>();
+            foreach (User u in table)
+            {
+                if (u.RoleType.Equals("Docent"))
+                {
+                    tutors.Add(u);
+                }
+            }
+            return tutors;
+        }
     }
 }

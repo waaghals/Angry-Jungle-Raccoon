@@ -76,5 +76,31 @@ namespace BarometerDomain.Repositories
             return grp;
         }
 
+        public IEnumerable<Group> NoTutor()
+        {
+            List<Group> ret = new List<Group>();
+            Group d = table.First();
+            foreach (Group groep in table.ToList())
+                if (groep.Tutor == null)
+                    ret.Add(groep);
+            return ret;
+        }
+
+        public IEnumerable<Group> WithTutor(int tutorId)
+        {
+            List<Group> ret = new List<Group>();
+            Group d = table.First();
+            foreach (Group groep in table.ToList())
+            {
+                if (groep.Tutor != null)
+                {
+                    if (groep.Tutor.Id == tutorId)
+                    {
+                        ret.Add(groep);
+                    }
+                }
+            }
+            return ret;
+        }
     }
 }

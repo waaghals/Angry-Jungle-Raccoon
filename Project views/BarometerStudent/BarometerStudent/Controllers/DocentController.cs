@@ -147,6 +147,9 @@ namespace BarometerStudent.Controllers
             ProjectRepository pr = new ProjectRepository((Context)Session["ProjectContext"]);
             SelectList projecten = new SelectList(pr.GetAll(), "Id", "Name");
             ViewBag.projecten = projecten;
+            UserRepository userRepo = new UserRepository((Context)Session["ProjectContext"]);
+            SelectList tutors = new SelectList(userRepo.GetTutors(), "Id", "Name");
+            ViewBag.tutors = tutors;
             Project sessionProject = (Project)Session["newProject"];
             return View(sessionProject);
         }
@@ -224,6 +227,11 @@ namespace BarometerStudent.Controllers
             else if (Request.Form["toewijzen"] != null)
             {
                 return RedirectToAction("GroepToewijzenAanProject");
+            }
+            else if (Request.Form["toewijzentutor"] != null)
+            {
+                Session["tutor"] = Convert.ToInt32(Request.Form["tutor"]);
+                return RedirectToAction("GroepToewijzenAanTutor");
             }
 
 
@@ -433,5 +441,77 @@ namespace BarometerStudent.Controllers
             return View(es.GetGroupEvaluation(groep));
         }
 
+        public ActionResult GroepToewijzenAanTutor()
+        {
+            int tutorId = (int)Session["tutor"];
+            GroupRepository gr = new GroupRepository(new Context());
+            ViewBag.addGroups = new MultiSelectList(gr.NoTutor(), "Id", "Name");
+            ViewBag.deleteGroups = new MultiSelectList(gr.WithTutor(tutorId), "Id", "Name");
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddGroupTutor()
+        {
+            string varGroups = Request.Form["Groups"];
+            List<string> groups = new List<string>();
+
+            if (varGroups == null)
+            {
+                return RedirectToAction("GroepToewijzenAanTutor");
+            }
+            else if (varGroups.Length < 2)
+            {
+                groups.Add(varGroups);
+            }
+            else
+            {
+                groups = varGroups.Split(',').ToList(); ;
+            }
+
+            Context c = new Context();
+            UserRepository ur = new UserRepository(c);
+            User tutor = ur.Get(Convert.ToInt32(Session["tutor"]));
+            GroupRepository gr = new GroupRepository(c);
+            foreach (string group in groups)
+            {
+                System.Diagnostics.Debug.WriteLine(group);
+                gr.Get(Convert.ToInt32(group)).Tutor = tutor;
+            }
+            c.SaveChanges();
+            return RedirectToAction("GroepToewijzenAanTutor");
+
+        }
+
+        [HttpPost]
+        public ActionResult DeleteGroupTutor()
+        {
+            string varGroups = Request.Form["Groups"];
+            List<string> groups = new List<string>();
+
+            if (varGroups == null)
+            {
+                return RedirectToAction("GroepToewijzenAanTutor");
+            }
+            else if (varGroups.Length < 2)
+            {
+                groups.Add(varGroups);
+            }
+            else
+            {
+                groups = varGroups.Split(',').ToList(); ;
+            }
+
+            Context c = new Context();
+            GroupRepository gr = new GroupRepository(c);
+            foreach (string group in groups)
+            {
+                Group g = gr.Get(Convert.ToInt32(group));
+                g.Tutor = null;
+            }
+            c.SaveChanges();
+            return RedirectToAction("GroepToewijzenAanTutor");
+
+        }
     }
 }
