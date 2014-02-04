@@ -212,6 +212,41 @@ a:hover.logo
     width:15px;
 }
 
+.indent_small
+{
+    padding-left:10px;
+}
+
+.button_container
+{
+    padding-left:10px;
+}
+
+input[type="submit"]:disabled
+{
+    color:gray;
+}
+
+.grade_low
+{
+    background-color:red;
+    color:white;
+    font-weight:bold;
+}
+
+.grade_medium
+{
+    background-color:orange;
+    color:white;
+    font-weight:bold;
+}
+
+.grade_high
+{
+    background-color:limegreen;
+    color:white;
+    font-weight:bold;
+}
 
 #body
 {
@@ -252,7 +287,7 @@ a:hover.logo
 
 .tab
 {
-    overflow: hidden;
+    overflow: auto;
     padding: 10px;
 }
 

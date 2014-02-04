@@ -436,6 +436,8 @@ namespace BarometerStudent.Controllers
             ProjectService ps = new ProjectService();
             EvaluationService es = new EvaluationService();
             Project project = ps.GetProjectFromGroup(groep);
+
+            ViewBag.groupName = ps.GetGroupById(groep).Name;
             ViewBag.project = project;
             ViewBag.periodsCount = project.ProjectPeriod.Count;
             return View(es.GetGroupEvaluation(groep));

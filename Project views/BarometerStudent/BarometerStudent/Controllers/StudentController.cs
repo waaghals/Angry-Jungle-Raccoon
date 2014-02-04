@@ -102,7 +102,7 @@ public class StudentController : Controller
         }
         else
         {
-            return RedirectToAction("Index", "StudentHome");
+            return RedirectToAction("Index", "Student");
         }
 
         foreach (List<Evaluation> eval in evaluationList)

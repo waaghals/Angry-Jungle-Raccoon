@@ -4,8 +4,9 @@
 
 <h2>Inloggen</h2>
 
-<p>Om deze software te kunnen gebruiken moet u ingeloged zijn.<br />Klik hier onder om in te loggen via <a href="http://Avans.nl" title="Avans Hogeschool" class="tableLink">Avans</a> met uw Avans account.</p>
+<p class="indent_small">Om deze software te kunnen gebruiken moet u ingeloged zijn.<br />Klik hier onder om in te loggen via <a href="http://Avans.nl" title="Avans Hogeschool" class="tableLink">Avans</a> met uw Avans account.</p>
 
-@Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
-
+<div class="button_container">
+    @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
+</div>
 

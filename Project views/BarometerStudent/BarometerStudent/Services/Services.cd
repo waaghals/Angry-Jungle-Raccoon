@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BarometerStudent.Services.AuthorizationServices">
+    <Position X="12.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAABAAAAAAAAAAAAAAAAAEAAAAAQA=</HashCode>
+      <FileName>Services\AuthorizationServices.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BarometerStudent.Services.EvaluationService">
+    <Position X="10.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACCABAAAAAAAAIAgAAAkAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\EvaluationService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BarometerStudent.Services.ExcelReader">
+    <Position X="10.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAQAAEgAAAAAAAAAAAAAAAAAAAAABBAAA=</HashCode>
+      <FileName>Services\ExcelReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BarometerStudent.Services.ProjectService">
+    <Position X="9" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABACAAAAAAABAgAAAAAAAAAAAAggAAAAAoAAIAEAABA=</HashCode>
+      <FileName>Services\ProjectService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BarometerStudent.Services.StudentService">
+    <Position X="12.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\StudentService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BarometerStudent.Services.UserService">
+    <Position X="12.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Services\UserService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

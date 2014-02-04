@@ -37,18 +37,17 @@ namespace BarometerStudent.Services
 
             foreach (ProjectPeriod pp in project.ProjectPeriod)
             {
-                if (pp.Start.Date < DateTime.Now)
+                if (DateTime.Now < pp.End && DateTime.Now > pp.Start)
                 {
-                    ret.AddFirst(pp.Start.ToShortDateString() + " - Beoordelingsmoment " + pp.Name + " is nu geopend");
-                    if (pp.End.Date < DateTime.Now)
-                        ret.AddFirst(pp.End.ToShortDateString() + " - Beoordelingsmoment " + pp.Name + "Is nu gesloten");
-                    else
-                    {
-                        TimeSpan ts = pp.End - DateTime.Now;
-                        ret.AddFirst("Je hebt nog " + ts.Days + " dag(en) om beoordelingsmoment " + pp.Name + " in te vullen");
-                    }
-                }
+                    ret.AddFirst(pp.Start.ToShortDateString() + " - " + pp.Name + " staat op dit moment open tot " + pp.End.ToShortDateString());
+                }       
             }
+
+            if(ret.Count == 0)
+            {
+                ret.AddFirst("Er staan op dit moment geen beoordelingsmomenten open.");
+            }
+
             return ret;
         }
 
@@ -157,6 +156,12 @@ namespace BarometerStudent.Services
         {
             ProjectRepository pr = new ProjectRepository(context);
             return new SelectList(pr.WithStudent(studentId), "Id", "Name");
+        }
+
+        public Group GetGroupById(int groupId)
+        {
+            GroupRepository gr = new GroupRepository(context);
+            return gr.Get(groupId);
         }
     }
 }
