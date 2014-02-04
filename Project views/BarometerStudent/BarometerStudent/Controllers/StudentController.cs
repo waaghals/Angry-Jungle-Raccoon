@@ -66,7 +66,16 @@ public class StudentController : Controller
         List<List<Evaluation>> evaluationList = new List<List<Evaluation>>();
         List<string> names = new List<string>();
 
-        if (Request.Form["beoordelen"] != null)
+        ProjectPeriod pp = new ProjectPeriod();
+        foreach (ProjectPeriod p in project.ProjectPeriod)
+        {
+            if (p.Id==projectPeriodId)
+            {
+                pp = p;
+            }
+        }
+
+        if (Request.Form["beoordelen"] != null && (DateTime.Now < pp.End && DateTime.Now > pp.Start))
         {
             ViewBag.Beschrijving = "Hier beoordeel je je medestudenten";
             ViewBag.Actie = "geef";
