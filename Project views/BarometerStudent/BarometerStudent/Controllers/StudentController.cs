@@ -92,7 +92,7 @@ public class StudentController : Controller
 
             ViewBag.names = names;
         }
-        else if (!project.Anonymous)
+        else if (!project.Anonymous && Request.Form["beoordelen"] == null)
         {
             ViewBag.Beschrijving = "Hier zie je de beoordelingen van je medestudenten";
             ViewBag.Actie = "kijk";
@@ -121,6 +121,8 @@ public class StudentController : Controller
                 evalInner.Grade /= 10;
             }
         }
+
+        ViewBag.Beschrijving += " voor Project " + project.Name + " in Periode " + projectperiod.Name + ".";
 
         TempData["projectPeriodId"] = projectPeriodId;
         TempData["projectId"] = projectId;

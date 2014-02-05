@@ -131,7 +131,7 @@ namespace BarometerStudent.Controllers
         public ActionResult ProjectAanmakenRedirect()
         {
             Session["ProjectContext"] = new Context();
-            Session["newProject"] = null;
+            Session["newProject"] = new Project();
             return RedirectToAction("ProjectAanmaken");
         }
 
@@ -278,30 +278,33 @@ namespace BarometerStudent.Controllers
         {
             Project project = (Project)Session["newProject"];
             SkillRepository skillRepository = new SkillRepository((Context)Session["ProjectContext"]);
-            Skill s = skillRepository.SkillExists(skill.Category);
-            if (s == null)
+            if (skill.Category != null)
             {
-                s = skill;
-            }
+                Skill s = skillRepository.SkillExists(skill.Category);
+                if (s == null)
+                {
+                    s = skill;
+                }
 
-            bool canAdd = true;
-            foreach (Skill sk in project.Skill)
-            {
-                if ((s.Category.ToLower().Equals(sk.Category.ToLower())) || (s.Id == sk.Id) && s.Id != 0)
+                bool canAdd = true;
+                foreach (Skill sk in project.Skill)
                 {
-                    canAdd = false;
+                    if ((s.Category.ToLower().Equals(sk.Category.ToLower())) || (s.Id == sk.Id) && s.Id != 0)
+                    {
+                        canAdd = false;
+                    }
                 }
-            }
-            if (canAdd)
-            {
-                Context con = (Context)Session["ProjectContext"];
-                SkillRepository skillrepo = new SkillRepository(con);
-                if(!skillrepo.GetAll().Contains(s))
+                if (canAdd)
                 {
-                    skillrepo.Insert(s); 
-                    skillrepo.Save();
+                    Context con = (Context)Session["ProjectContext"];
+                    SkillRepository skillrepo = new SkillRepository(con);
+                    if (!skillrepo.GetAll().Contains(s))
+                    {
+                        skillrepo.Insert(s);
+                        skillrepo.Save();
+                    }
+                    project.Skill.Add(s);
                 }
-                project.Skill.Add(s);
             }
 
             return RedirectToAction("CompetentiesToevoegenAanProject", (Project)null);
@@ -333,30 +336,20 @@ namespace BarometerStudent.Controllers
             Project project = (Project)Session["newProject"];
             ProjectPeriod projectperiod = new ProjectPeriod() { Name = p.Name, Start = p.Start, End = p.End };
             Context context = (Context)Session["ProjectContext"];
-            ProjectPeriodRepository projectperiodrepository = new ProjectPeriodRepository(context);
-            projectperiodrepository.Insert(projectperiod);
-            projectperiodrepository.Save();
-            project.ProjectPeriod.Add(projectperiod);
-            Session["newProject"] = project;
+            if (projectperiod.Name != null && projectperiod.Start != null && projectperiod.End != null)
+            {
+                ProjectPeriodRepository projectperiodrepository = new ProjectPeriodRepository(context);
+                projectperiodrepository.Insert(projectperiod);
+                projectperiodrepository.Save();
+                project.ProjectPeriod.Add(projectperiod);
+                Session["newProject"] = project;
+            }
             return RedirectToAction("BeoordelingsmomentenToevoegen", "Docent");
         }
 
         public ActionResult ProjectToevoegen()
         {
             Project project = (Project)Session["newProject"];
-            /*System.Diagnostics.Debug.WriteLine("Naam:" + project.Name);
-            System.Diagnostics.Debug.WriteLine("Omschrijving:" + project.Description);
-            System.Diagnostics.Debug.WriteLine("Anoniem:" + project.Anonymous);
-            System.Diagnostics.Debug.WriteLine("Skills:");
-            foreach (Skill s in project.Skill)
-            {
-                 System.Diagnostics.Debug.WriteLine(s.Category);
-            }
-            System.Diagnostics.Debug.WriteLine("Beoordelingsmomenten:");
-            foreach (ProjectPeriod p in project.ProjectPeriod)
-            {
-                System.Diagnostics.Debug.WriteLine(p.Name + " " + p.Start + " " + p.End);
-            }*/
             ProjectRepository projectrepository = new ProjectRepository((Context)Session["ProjectContext"]);
             projectrepository.Insert(project);
             projectrepository.Save();
@@ -364,61 +357,10 @@ namespace BarometerStudent.Controllers
             return RedirectToAction("Index", "Docent");
         }
 
-        //public ActionResult GroepToewijzenAanProject()
-        //{
-        //    GroupRepository gr = new GroupRepository(new Context());
-        //    ViewBag.addGroups = new MultiSelectList(gr.NotInProject(), "Id", "Name");
-        //    ViewBag.deleteGroups = new MultiSelectList(gr.InProject(userProjectID), "Id", "Name");
-        //    return View();
-        //}
-        //
-        //[HttpPost]
-        //public ActionResult DeleteGroup()
-        //{
-        //    GroupRepository gr = new GroupRepository(new Context());
-        //    string[] groups;
-        //    if (true)
-        //    {
-        //
-        //    }
-        //    groups = Request.Form["Groups"].Split(',');
-        //    foreach (string group in groups)
-        //    {
-        //        Group g = gr.Get(Convert.ToInt32(group));
-        //        if (g.Project.Id == userProjectID)
-        //        {
-        //            g.Project = null;
-        //        }
-        //        gr.Update(g);
-        //        gr.Save();
-        //    }
-        //    return RedirectToAction("GroepToewijzenAanProject");
-        //
-        //}
-        //
-        //[HttpPost]
-        //public ActionResult AddGroup()
-        //{
-        //    Context c = new Context();
-        //    GroupRepository gr = new GroupRepository(c);
-        //    ProjectRepository pr = new ProjectRepository(c);
-        //    string[] groups = Request.Form["Groups"].Split(',');
-        //    foreach (string group in groups)
-        //    {
-        //        Group g = gr.Get(Convert.ToInt32(group));
-        //        Project p = pr.Get(userProjectID);
-        //        p.Groups.Add(g);
-        //        pr.Update(p);
-        //        pr.Save();
-        //    }
-        //    return RedirectToAction("GroepToewijzenAanProject");
-        //
-        //}
-
         public ActionResult SelecteerProject()
         {
             ProjectService projectservice = new ProjectService();
-            ViewBag.selectListProjects = projectservice.GetTutorProject(/*tutorid*/getSessionDocentId());
+            ViewBag.selectListProjects = projectservice.GetTutorProject(getSessionDocentId());
             return View();
         }
 
