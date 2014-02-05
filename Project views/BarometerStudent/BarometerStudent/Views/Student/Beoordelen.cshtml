@@ -57,8 +57,14 @@
             }
                     }
                 </div>
-                @ViewBag.warning
-                <div class="buttonbox">
+                
+            </div>
+@ViewBag.warning
+        </div>
+                    i++;
+            }
+            
+                <div class="buttonbox" >
                     @if (ViewBag.Actie == "kijk")
                     {
                         <input class="button" type="submit" name="Annuleren" value="Terug" />
@@ -69,11 +75,6 @@
                         <input class="button" type="submit" name="annuleren" value="Annuleren" />
                     }
                 </div>
-            </div>
-
-        </div>
-                    i++;
-            }
         }
       
     }

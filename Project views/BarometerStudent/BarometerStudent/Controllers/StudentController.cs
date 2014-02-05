@@ -122,6 +122,8 @@ public class StudentController : Controller
             }
         }
 
+        ViewBag.Beschrijving += " voor Project " + project.Name + " in Periode " + projectperiod.Name + ".";
+
         TempData["projectPeriodId"] = projectPeriodId;
         TempData["projectId"] = projectId;
         return View(evaluationList);
