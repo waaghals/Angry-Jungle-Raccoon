@@ -509,9 +509,13 @@ namespace BarometerStudent.Controllers
             foreach (string group in groups)
             {
                 Group g = grouprepository.Get(Convert.ToInt32(group));
+                System.Diagnostics.Debug.WriteLine("Groep: " + g.Name);
+                var tutor = g.Tutor;
                 g.Tutor = null;
+                //System.Diagnostics.Debug.WriteLine("Groep: " + g.Name + " Tutor: " + g.Tutor.Name);
+                grouprepository.Update(g);
+                grouprepository.Save();
             }
-            context.SaveChanges();
             return RedirectToAction("GroepToewijzenAanTutor");
 
         }

@@ -1,5 +1,5 @@
 ﻿@model BarometerDomain.Model.Project
-
+@{ViewBag.Title = "Project beheren";}
 <br/>
 
 @using (@Html.BeginForm("ProjectOpslaan", "Docent", FormMethod.Post))
@@ -39,5 +39,5 @@
     <input type="submit" value="Groepen toewijzen aan tutor" name="toewijzenTutor">
     <br/><br/>
     
-    <input type="submit" value="Project aanmaken" name="bevestigen">
+    <input type="submit" value="Project opslaan" name="bevestigen">
 }
