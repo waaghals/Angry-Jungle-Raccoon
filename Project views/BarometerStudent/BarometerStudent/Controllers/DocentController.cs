@@ -63,9 +63,9 @@ namespace BarometerStudent.Controllers
 
         public ActionResult GroepToewijzenAanProject()
         {
-            GroupRepository gr = new GroupRepository(new Context());
-            ViewBag.addGroups = new MultiSelectList(gr.NotInProject(), "Id", "Name");
-            ViewBag.deleteGroups = new MultiSelectList(gr.InProject((Project)Session["newProject"]), "Id", "Name");
+            GroupRepository grouprepository = new GroupRepository(new Context());
+            ViewBag.addGroups = new MultiSelectList(grouprepository.NotInProject(), "Id", "Name");
+            ViewBag.deleteGroups = new MultiSelectList(grouprepository.InProject((Project)Session["newProject"]), "Id", "Name");
             return View();
         }
 
@@ -137,15 +137,15 @@ namespace BarometerStudent.Controllers
 
         public ActionResult MentorStudenten()
         {
-            StudentService sr = new StudentService();
-            List<Student> studenten = sr.GetMentorStudents(getSessionDocentId());
+            StudentService studentservice = new StudentService();
+            List<Student> studenten = studentservice.GetMentorStudents(getSessionDocentId());
             return View(studenten);
         }
 
         public ActionResult ProjectAanmaken()
         {
-            ProjectRepository pr = new ProjectRepository((Context)Session["ProjectContext"]);
-            SelectList projecten = new SelectList(pr.GetAll(), "Id", "Name");
+            ProjectRepository projectrepository = new ProjectRepository((Context)Session["ProjectContext"]);
+            SelectList projecten = new SelectList(projectrepository.GetAll(), "Id", "Name");
             ViewBag.projecten = projecten;
             UserRepository userRepo = new UserRepository((Context)Session["ProjectContext"]);
             SelectList tutors = new SelectList(userRepo.GetTutors(), "Id", "Name");
@@ -156,7 +156,7 @@ namespace BarometerStudent.Controllers
 
         public ActionResult CompetentiesToevoegenAanProject()
         {
-            Project p = (Project)Session["newProject"];
+            Project project = (Project)Session["newProject"];
 
             int baseProjectId = Convert.ToInt32(Session["baseProject"]);
             if (baseProjectId == 0)
@@ -165,16 +165,16 @@ namespace BarometerStudent.Controllers
                 baseProjectId = (int)Session["baseProject"];
             }
 
-            ProjectRepository pr = new ProjectRepository((Context)Session["ProjectContext"]);
-            MultiSelectList skillsProject = new MultiSelectList(p.Skill.ToList(), "Id", "Category");
+            ProjectRepository projectrepository = new ProjectRepository((Context)Session["ProjectContext"]);
+            MultiSelectList skillsProject = new MultiSelectList(project.Skill.ToList(), "Id", "Category");
             ViewBag.CompetentiesProject = skillsProject;
 
-            List<Skill> skillLijst = pr.Get(baseProjectId).Skill.ToList();
-            foreach (Skill s in p.Skill)
+            List<Skill> skillLijst = projectrepository.Get(baseProjectId).Skill.ToList();
+            foreach (Skill skill in project.Skill)
             {
-                if (skillLijst.Contains(s))
+                if (skillLijst.Contains(skill))
                 {
-                    skillLijst.Remove(s);
+                    skillLijst.Remove(skill);
                 }
             }
 
@@ -190,25 +190,25 @@ namespace BarometerStudent.Controllers
                 Session["ProjectContext"] = new Context();
             }
 
-            ProjectRepository pr = new ProjectRepository((Context)Session["ProjectContext"]);
-            List<Project> projectList = pr.GetAll().ToList();
+            ProjectRepository projectrepository = new ProjectRepository((Context)Session["ProjectContext"]);
+            List<Project> projectList = projectrepository.GetAll().ToList();
 
-            SelectList projecten = new SelectList(pr.AllOpen(projectList), "Id", "Name");
+            SelectList projecten = new SelectList(projectrepository.AllOpen(projectList), "Id", "Name");
             ViewBag.projecten = projecten;
             return View();
         }
         public ActionResult GeselecteerdProjectWijzigen()
         {
-            ProjectRepository pr = new ProjectRepository((Context)Session["ProjectContext"]);
-            Session["newProject"] = pr.Get(Convert.ToInt32(Request.Form["Project"]));
+            ProjectRepository projectrepository = new ProjectRepository((Context)Session["ProjectContext"]);
+            Session["newProject"] = projectrepository.Get(Convert.ToInt32(Request.Form["Project"]));
             return RedirectToAction("ProjectAanmaken");
         }
 
-        public ActionResult ProjectOpslaan(Project p)
+        public ActionResult ProjectOpslaan(Project project)
         {
             if (Session["newProject"] == null)
             {
-                Session["newProject"] = p;
+                Session["newProject"] = project;
             }
             Session["baseProject"] = Request.Form["Project"];
 
@@ -242,7 +242,7 @@ namespace BarometerStudent.Controllers
         public ActionResult CompetentiesToevoegenAanLijst()
         {
             Project project = (Project)Session["newProject"];
-            SkillRepository skillRepo = new SkillRepository((Context)Session["ProjectContext"]);
+            SkillRepository skillRepository = new SkillRepository((Context)Session["ProjectContext"]);
 
             string IdsVoorgaandProject = Request.Form["competentiesVoorgaandProject"];
             string IdsProject = Request.Form["competenties"];
@@ -253,7 +253,7 @@ namespace BarometerStudent.Controllers
 
                 foreach (string IdString in IdArrayVoorgaandProject)
                 {
-                    Skill toevoegSkill = skillRepo.Get(Convert.ToInt32(IdString));
+                    Skill toevoegSkill = skillRepository.Get(Convert.ToInt32(IdString));
                     project.Skill.Add(toevoegSkill);
                 }
             }
@@ -263,7 +263,7 @@ namespace BarometerStudent.Controllers
                 string[] IdArrayProject = IdsProject.Split(',');
                 foreach (string IdString in IdArrayProject)
                 {
-                    Skill verwijder = skillRepo.Get(Convert.ToInt32(IdString));
+                    Skill verwijder = skillRepository.Get(Convert.ToInt32(IdString));
                     if (project.Skill.Contains(verwijder))
                     {
                         project.Skill.Remove(verwijder);
@@ -277,8 +277,8 @@ namespace BarometerStudent.Controllers
         public ActionResult CompetentiesToevoegen(Skill skill)
         {
             Project project = (Project)Session["newProject"];
-            SkillRepository skillRepo = new SkillRepository((Context)Session["ProjectContext"]);
-            Skill s = skillRepo.SkillExists(skill.Category);
+            SkillRepository skillRepository = new SkillRepository((Context)Session["ProjectContext"]);
+            Skill s = skillRepository.SkillExists(skill.Category);
             if (s == null)
             {
                 s = skill;
@@ -310,12 +310,12 @@ namespace BarometerStudent.Controllers
         public ActionResult BeoordelingsmomentVerwijderen(int id)
         {
             System.Diagnostics.Debug.WriteLine(id);
-            ProjectPeriodRepository pprepo = new ProjectPeriodRepository((Context)Session["ProjectContext"]);
-            ProjectPeriod pp = pprepo.Get(id);
-            Project proj = (Project)Session["newProject"];
-            proj.ProjectPeriod.Remove(pp);
-            pprepo.Delete(id);
-            pprepo.Save();
+            ProjectPeriodRepository projectperiodrepository = new ProjectPeriodRepository((Context)Session["ProjectContext"]);
+            ProjectPeriod projectperiod = projectperiodrepository.Get(id);
+            Project project = (Project)Session["newProject"];
+            project.ProjectPeriod.Remove(projectperiod);
+            projectperiodrepository.Delete(id);
+            projectperiodrepository.Save();
             return RedirectToAction("BeoordelingsmomentenToevoegen", "Docent");
         }
 
@@ -331,12 +331,12 @@ namespace BarometerStudent.Controllers
         public ActionResult BeoordelingsmomentToevoegen(ProjectPeriod p)
         {
             Project project = (Project)Session["newProject"];
-            ProjectPeriod projperiod = new ProjectPeriod() { Name = p.Name, Start = p.Start, End = p.End };
-            Context con = (Context)Session["ProjectContext"];
-            ProjectPeriodRepository projperiodrepo = new ProjectPeriodRepository(con);
-            projperiodrepo.Insert(projperiod);
-            projperiodrepo.Save();
-            project.ProjectPeriod.Add(projperiod);
+            ProjectPeriod projectperiod = new ProjectPeriod() { Name = p.Name, Start = p.Start, End = p.End };
+            Context context = (Context)Session["ProjectContext"];
+            ProjectPeriodRepository projectperiodrepository = new ProjectPeriodRepository(context);
+            projectperiodrepository.Insert(projectperiod);
+            projectperiodrepository.Save();
+            project.ProjectPeriod.Add(projectperiod);
             Session["newProject"] = project;
             return RedirectToAction("BeoordelingsmomentenToevoegen", "Docent");
         }
@@ -357,9 +357,9 @@ namespace BarometerStudent.Controllers
             {
                 System.Diagnostics.Debug.WriteLine(p.Name + " " + p.Start + " " + p.End);
             }*/
-            ProjectRepository projrepo = new ProjectRepository((Context)Session["ProjectContext"]);
-            projrepo.Insert(project);
-            projrepo.Save();
+            ProjectRepository projectrepository = new ProjectRepository((Context)Session["ProjectContext"]);
+            projectrepository.Insert(project);
+            projectrepository.Save();
             Session["newProject"] = null;
             return RedirectToAction("Index", "Docent");
         }
@@ -417,38 +417,38 @@ namespace BarometerStudent.Controllers
 
         public ActionResult SelecteerProject()
         {
-            ProjectService ps = new ProjectService();
-            ViewBag.selectListProjects = ps.GetTutorProject(/*tutorid*/getSessionDocentId());
+            ProjectService projectservice = new ProjectService();
+            ViewBag.selectListProjects = projectservice.GetTutorProject(/*tutorid*/getSessionDocentId());
             return View();
         }
 
         [HttpPost]
         public ActionResult SelecteerTutorGroep(int project)
         {
-            ProjectService ps = new ProjectService();
-            ViewBag.selectListGroups = ps.GetTutorGroup(project, getSessionDocentId());
+            ProjectService projectservice = new ProjectService();
+            ViewBag.selectListGroups = projectservice.GetTutorGroup(project, getSessionDocentId());
             return View();
         }
 
         [HttpPost]
         public ActionResult ViewGroep(int groep)
         {
-            ProjectService ps = new ProjectService();
-            EvaluationService es = new EvaluationService();
-            Project project = ps.GetProjectFromGroup(groep);
+            ProjectService projectservice = new ProjectService();
+            EvaluationService evaluationservice = new EvaluationService();
+            Project project = projectservice.GetProjectFromGroup(groep);
 
-            ViewBag.groupName = ps.GetGroupById(groep).Name;
+            ViewBag.groupName = projectservice.GetGroupById(groep).Name;
             ViewBag.project = project;
             ViewBag.periodsCount = project.ProjectPeriod.Count;
-            return View(es.GetGroupEvaluation(groep));
+            return View(evaluationservice.GetGroupEvaluation(groep));
         }
 
         public ActionResult GroepToewijzenAanTutor()
         {
             int tutorId = (int)Session["tutor"];
-            GroupRepository gr = new GroupRepository(new Context());
-            ViewBag.addGroups = new MultiSelectList(gr.NoTutor(), "Id", "Name");
-            ViewBag.deleteGroups = new MultiSelectList(gr.WithTutor(tutorId), "Id", "Name");
+            GroupRepository grouprepository = new GroupRepository(new Context());
+            ViewBag.addGroups = new MultiSelectList(grouprepository.NoTutor(), "Id", "Name");
+            ViewBag.deleteGroups = new MultiSelectList(grouprepository.WithTutor(tutorId), "Id", "Name");
             return View();
         }
 
@@ -471,16 +471,16 @@ namespace BarometerStudent.Controllers
                 groups = varGroups.Split(',').ToList(); ;
             }
 
-            Context c = new Context();
-            UserRepository ur = new UserRepository(c);
-            User tutor = ur.Get(Convert.ToInt32(Session["tutor"]));
-            GroupRepository gr = new GroupRepository(c);
+            Context context = new Context();
+            UserRepository userrepository = new UserRepository(context);
+            User tutor = userrepository.Get(Convert.ToInt32(Session["tutor"]));
+            GroupRepository grouprepository = new GroupRepository(context);
             foreach (string group in groups)
             {
                 System.Diagnostics.Debug.WriteLine(group);
-                gr.Get(Convert.ToInt32(group)).Tutor = tutor;
+                grouprepository.Get(Convert.ToInt32(group)).Tutor = tutor;
             }
-            c.SaveChanges();
+            context.SaveChanges();
             return RedirectToAction("GroepToewijzenAanTutor");
 
         }
@@ -504,14 +504,14 @@ namespace BarometerStudent.Controllers
                 groups = varGroups.Split(',').ToList(); ;
             }
 
-            Context c = new Context();
-            GroupRepository gr = new GroupRepository(c);
+            Context context = new Context();
+            GroupRepository grouprepository = new GroupRepository(context);
             foreach (string group in groups)
             {
-                Group g = gr.Get(Convert.ToInt32(group));
+                Group g = grouprepository.Get(Convert.ToInt32(group));
                 g.Tutor = null;
             }
-            c.SaveChanges();
+            context.SaveChanges();
             return RedirectToAction("GroepToewijzenAanTutor");
 
         }

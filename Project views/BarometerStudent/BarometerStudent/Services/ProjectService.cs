@@ -19,8 +19,8 @@ namespace BarometerStudent.Services
         public Group ByStudentAndProject(int studentId, int ProjectId)
         {
             Project project = GetProject(ProjectId);
-            StudentRepository sr = new StudentRepository(context);
-            Student student = sr.Get(studentId);
+            StudentRepository studentrepository = new StudentRepository(context);
+            Student student = studentrepository.Get(studentId);
 
             foreach (Group groep in project.Groups)
             {
@@ -35,11 +35,11 @@ namespace BarometerStudent.Services
             Project project = GetProject(id);
             LinkedList<String> ret = new LinkedList<String>();
 
-            foreach (ProjectPeriod pp in project.ProjectPeriod)
+            foreach (ProjectPeriod projectperiod in project.ProjectPeriod)
             {
-                if (DateTime.Now < pp.End && DateTime.Now > pp.Start)
+                if (DateTime.Now < projectperiod.End && DateTime.Now > projectperiod.Start)
                 {
-                    ret.AddFirst(pp.Start.ToShortDateString() + " - " + pp.Name + " staat op dit moment open tot " + pp.End.ToShortDateString());
+                    ret.AddFirst(projectperiod.Start.ToShortDateString() + " - " + projectperiod.Name + " staat op dit moment open tot " + projectperiod.End.ToShortDateString());
                 }       
             }
 
@@ -53,15 +53,15 @@ namespace BarometerStudent.Services
 
         public Project GetProject(int id)
         {
-            ProjectRepository pr = new ProjectRepository(context);
-            return pr.Get(id);
+            ProjectRepository projectrepository = new ProjectRepository(context);
+            return projectrepository.Get(id);
         }
 
         public SelectList GetTutorProject(int id)
         {
-            ProjectRepository pr = new ProjectRepository(new Context());
+            ProjectRepository projectrepository = new ProjectRepository(new Context());
 
-            return new SelectList(pr.ByTutor(/*tutorid*/id), "Id", "Name");
+            return new SelectList(projectrepository.ByTutor(/*tutorid*/id), "Id", "Name");
         }
 
         public SelectList GetTutorGroup(int projectId, int userId)
@@ -82,41 +82,41 @@ namespace BarometerStudent.Services
 
         public Project GetProjectFromGroup(int groep)
         {
-            GroupRepository gr = new GroupRepository(context);
-            int id = gr.Get(groep).Project.Id;
+            GroupRepository grouprepository = new GroupRepository(context);
+            int id = grouprepository.Get(groep).Project.Id;
             return GetProject(id);
         }
 
         public void DeleteGroup(int groupId, int projectId)
         {
-            GroupRepository gr = new GroupRepository(context);
-            Group g = gr.Get(groupId);
-            if (g.Project.Id == projectId)
+            GroupRepository grouprepository = new GroupRepository(context);
+            Group group = grouprepository.Get(groupId);
+            if (group.Project.Id == projectId)
             {
-                g.Project = null;
+                group.Project = null;
             }
 
-            gr.Update(g);
-            gr.Save();
+            grouprepository.Update(group);
+            grouprepository.Save();
         }
 
         public void AddGroup(int groupId, int projectId)
         {
-            GroupRepository gr = new GroupRepository(context);
-            ProjectRepository pr = new ProjectRepository(context);
-            EvaluationRepository er = new EvaluationRepository(context);
-            Group g = gr.Get(groupId);
-            Project p = pr.Get(projectId);
+            GroupRepository grouprepository = new GroupRepository(context);
+            ProjectRepository projectrepository = new ProjectRepository(context);
+            EvaluationRepository evaluationrepository = new EvaluationRepository(context);
+            Group group = grouprepository.Get(groupId);
+            Project project = projectrepository.Get(projectId);
             bool createEvals = true;
-            foreach (Evaluation evaluation in p.ProjectPeriod.First().Evaluation)
+            foreach (Evaluation evaluation in project.ProjectPeriod.First().Evaluation)
             {
-                foreach (Student byStudent in g.Student)
+                foreach (Student byStudent in group.Student)
                 {
-                    foreach (ProjectPeriod projectPeriod in p.ProjectPeriod)
+                    foreach (ProjectPeriod projectPeriod in project.ProjectPeriod)
                     {
-                        foreach (Skill skill in p.Skill)
+                        foreach (Skill skill in project.Skill)
                         {
-                            foreach (Student forStudent in g.Student)
+                            foreach (Student forStudent in group.Student)
                             {
                                 if (evaluation.For.Id == forStudent.Id && evaluation.By.Id == byStudent.Id && evaluation.ProjectPeriod.Id == projectPeriod.Id && evaluation.Skill.Id == skill.Id)
                                 {
@@ -129,39 +129,39 @@ namespace BarometerStudent.Services
             }
             if (createEvals)
             {
-                foreach (Student byStudent in g.Student)
+                foreach (Student byStudent in group.Student)
                 {
-                    foreach (ProjectPeriod projectPeriod in p.ProjectPeriod)
+                    foreach (ProjectPeriod projectPeriod in project.ProjectPeriod)
                     {
-                        foreach (Skill skill in p.Skill)
+                        foreach (Skill skill in project.Skill)
                         {
-                            foreach (Student forStudent in g.Student)
+                            foreach (Student forStudent in group.Student)
                             {
                                 if (byStudent.Id != forStudent.Id)
                                 {
                                     Evaluation eval = new Evaluation() { For = forStudent, By = byStudent, ProjectPeriod = projectPeriod, Skill = skill };
-                                    er.Insert(eval);
+                                    evaluationrepository.Insert(eval);
                                 }
                             }
                         }
                     }
                 }
             }
-            p.Groups.Add(g);
-            pr.Update(p);
-            pr.Save();
+            project.Groups.Add(group);
+            projectrepository.Update(project);
+            projectrepository.Save();
         }
 
         public SelectList WithStudent(int studentId)
         {
-            ProjectRepository pr = new ProjectRepository(context);
-            return new SelectList(pr.WithStudent(studentId), "Id", "Name");
+            ProjectRepository projectrepository = new ProjectRepository(context);
+            return new SelectList(projectrepository.WithStudent(studentId), "Id", "Name");
         }
 
         public Group GetGroupById(int groupId)
         {
-            GroupRepository gr = new GroupRepository(context);
-            return gr.Get(groupId);
+            GroupRepository grouprepository = new GroupRepository(context);
+            return grouprepository.Get(groupId);
         }
     }
 }

@@ -12,15 +12,15 @@ public class StudentController : Controller
 {
     private int getSessionStudentId()
     {
-        StudentRepository studentrep = new StudentRepository(new Context());
-        Student student = studentrep.Get(((User)HttpContext.Session["User"]).Id);
+        StudentRepository studentrepository = new StudentRepository(new Context());
+        Student student = studentrepository.Get(((User)HttpContext.Session["User"]).Id);
         return student.Id;
     }
 
     public ActionResult Index()
     {
-        ProjectService ps = new ProjectService();
-        SelectList sl = ps.WithStudent(getSessionStudentId());
+        ProjectService projectservice = new ProjectService();
+        SelectList sl = projectservice.WithStudent(getSessionStudentId());
         ViewBag.projectId = sl;
         return View();
     }
@@ -28,65 +28,65 @@ public class StudentController : Controller
     [HttpPost]
     public ActionResult ProjectOverzicht(int projectId)
     {
-        ProjectService ps = new ProjectService();
-        Project project = ps.GetProject(projectId);
+        ProjectService projectservice = new ProjectService();
+        Project project = projectservice.GetProject(projectId);
 
         ViewBag.Project = project.Id;
         ViewBag.Title = project.Name;
         ViewBag.Description = project.Description;
         ViewBag.projectPeriodId = new SelectList(project.ProjectPeriod, "Id", "Name");
-        ViewBag.Mededelingen = ps.GenerateAnnouncements(projectId);
+        ViewBag.Mededelingen = projectservice.GenerateAnnouncements(projectId);
         return View();
     }
 
     public ActionResult ProjectOverzicht()
     {
         TempData.Keep();
-        ProjectService ps = new ProjectService();
+        ProjectService projectservice = new ProjectService();
         int projectId = Convert.ToInt32(TempData["projectId"]);
-        Project project = ps.GetProject(projectId);
+        Project project = projectservice.GetProject(projectId);
 
         ViewBag.Project = project.Id;
         ViewBag.Title = project.Name;
         ViewBag.Description = project.Description;
         ViewBag.projectPeriodId = new SelectList(project.ProjectPeriod, "Id", "Name");
-        ViewBag.Mededelingen = ps.GenerateAnnouncements(projectId);
+        ViewBag.Mededelingen = projectservice.GenerateAnnouncements(projectId);
         return View();
     }
 
     [HttpPost]
     public ActionResult Beoordelen(int projectId, int projectPeriodId)
     {
-        ProjectService ps = new ProjectService();
-        EvaluationService es = new EvaluationService();
-        Project project = ps.GetProject(projectId);
-        Group group = ps.ByStudentAndProject(getSessionStudentId(), project.Id);
+        ProjectService projectservice = new ProjectService();
+        EvaluationService evaluationservice = new EvaluationService();
+        Project project = projectservice.GetProject(projectId);
+        Group group = projectservice.ByStudentAndProject(getSessionStudentId(), project.Id);
         List<Student> students = group.Student.ToList();
         List<Evaluation> evaluaties = new List<Evaluation>();
         List<List<Evaluation>> evaluationList = new List<List<Evaluation>>();
         List<string> names = new List<string>();
 
-        ProjectPeriod pp = new ProjectPeriod();
-        foreach (ProjectPeriod p in project.ProjectPeriod)
+        ProjectPeriod projectperiod = new ProjectPeriod();
+        foreach (ProjectPeriod partperiod in project.ProjectPeriod)
         {
-            if (p.Id==projectPeriodId)
+            if (partperiod.Id==projectPeriodId)
             {
-                pp = p;
+                projectperiod = partperiod;
             }
         }
 
-        if (Request.Form["beoordelen"] != null && (DateTime.Now < pp.End && DateTime.Now > pp.Start))
+        if (Request.Form["beoordelen"] != null && (DateTime.Now < projectperiod.End && DateTime.Now > projectperiod.Start))
         {
             ViewBag.Beschrijving = "Hier beoordeel je je medestudenten";
             ViewBag.Actie = "geef";
 
-            foreach (Student s in students)
+            foreach (Student student in students)
             {
-                if (s.Id != getSessionStudentId())
+                if (student.Id != getSessionStudentId())
                 {
-                    evaluaties = es.GetEvaluations(projectPeriodId, getSessionStudentId(), s.Id).ToList();
+                    evaluaties = evaluationservice.GetEvaluations(projectPeriodId, getSessionStudentId(), student.Id).ToList();
                     evaluationList.Add(evaluaties);
-                    names.Add(s.Name);
+                    names.Add(student.Name);
                 }
             }
 
@@ -97,13 +97,13 @@ public class StudentController : Controller
             ViewBag.Beschrijving = "Hier zie je de beoordelingen van je medestudenten";
             ViewBag.Actie = "kijk";
 
-            foreach (Student s in students)
+            foreach (Student student in students)
             {
-                if (s.Id != getSessionStudentId())
+                if (student.Id != getSessionStudentId())
                 {
-                    evaluaties = es.GetEvaluations(projectPeriodId, s.Id, getSessionStudentId()).ToList();
+                    evaluaties = evaluationservice.GetEvaluations(projectPeriodId, student.Id, getSessionStudentId()).ToList();
                     evaluationList.Add(evaluaties);
-                    names.Add(s.Name);
+                    names.Add(student.Name);
                 }
             }
 
@@ -133,10 +133,10 @@ public class StudentController : Controller
         int projectId = Convert.ToInt32(TempData["projectId"]);
         int projectPeriodId = Convert.ToInt32(TempData["projectPeriodId"]);
 
-        ProjectService ps = new ProjectService();
-        EvaluationService es = new EvaluationService();
-        Project project = ps.GetProject(projectId);
-        Group group = ps.ByStudentAndProject(getSessionStudentId(), project.Id);
+        ProjectService projectservice = new ProjectService();
+        EvaluationService evaluationservice = new EvaluationService();
+        Project project = projectservice.GetProject(projectId);
+        Group group = projectservice.ByStudentAndProject(getSessionStudentId(), project.Id);
         List<Student> students = group.Student.ToList();
         List<Evaluation> evaluaties = new List<Evaluation>();
         List<List<Evaluation>> evaluationList = new List<List<Evaluation>>();
@@ -145,22 +145,22 @@ public class StudentController : Controller
         ViewBag.Beschrijving = "Hier beoordeel je je medestudenten";
         ViewBag.Actie = "geef";
 
-        foreach (Student s in students)
+        foreach (Student student in students)
         {
-            if (s.Id != getSessionStudentId())
+            if (student.Id != getSessionStudentId())
             {
-                evaluaties = es.GetEvaluations(projectPeriodId, getSessionStudentId(), s.Id).ToList();
+                evaluaties = evaluationservice.GetEvaluations(projectPeriodId, getSessionStudentId(), student.Id).ToList();
                 evaluationList.Add(evaluaties);
-                names.Add(s.Name);
+                names.Add(student.Name);
             }
         }
 
         ViewBag.names = names;
 
 
-        foreach (List<Evaluation> eval in evaluationList)
+        foreach (List<Evaluation> evaluation in evaluationList)
         {
-            foreach (Evaluation evalInner in eval)
+            foreach (Evaluation evalInner in evaluation)
             {
                 evalInner.Grade /= 10;
             }
@@ -189,16 +189,16 @@ public class StudentController : Controller
                         return RedirectToAction("Beoordelen");
                     }
                 }
-            EvaluationService es = new EvaluationService();
-            es.Evaluate(model);
+            EvaluationService evaluationservice = new EvaluationService();
+            evaluationservice.Evaluate(model);
             return RedirectToAction("ProjectOverzicht");
         }
     }
 
     public ActionResult VoortgangInzien(int studentId)
     {
-        EvaluationService es = new EvaluationService();
-        Dictionary<string, List<Evaluation>> projectsAvgEvaluations = es.GetAvgEvaluations(studentId);
+        EvaluationService evaluationservice = new EvaluationService();
+        Dictionary<string, List<Evaluation>> projectsAvgEvaluations = evaluationservice.GetAvgEvaluations(studentId);
         ViewBag.projectNames = projectsAvgEvaluations.Keys.ToList();
         return View(projectsAvgEvaluations);
     }
