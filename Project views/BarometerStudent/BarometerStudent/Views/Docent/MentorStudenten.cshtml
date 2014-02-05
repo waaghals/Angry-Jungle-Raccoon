@@ -22,7 +22,10 @@
                 <td>
                     @Html.ActionLink("Bekijk voortgang", "VoortgangInzien", "Student", new { studentId = student.Id }, new { @class = "tableLink" })
                 </td>
-            </tr>
+            </tr> 
         }
+        
+        <tr><td>@Html.ActionLink("Terug naar menu", "Index", "Docent", new { @class = "tableLink" } )</td></tr>
     }
 </table>
+
