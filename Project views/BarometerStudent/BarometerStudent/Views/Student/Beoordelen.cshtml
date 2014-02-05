@@ -13,14 +13,15 @@
         }
 
     </ul>
-    @{
-        i = 0;
-        using (@Html.BeginForm("Evaluate", "Student", FormMethod.Post))
-        {
-        //Html.Hidden("projectIdFrom", (int)ViewBag.projectId);
-        //Html.Hidden("projectPeriodIdFrom", (int)ViewBag.projectPeriodId);
-            for (int k = 0; k < Model.Count; k++)
-            {
+    @{if (ViewBag.Actie == "geef")
+      {
+          i = 0;
+          using (@Html.BeginForm("Evaluate", "Student", FormMethod.Post))
+          {
+              //Html.Hidden("projectIdFrom", (int)ViewBag.projectId);
+              //Html.Hidden("projectPeriodIdFrom", (int)ViewBag.projectPeriodId);
+              for (int k = 0; k < Model.Count; k++)
+              {
         <div id="tabs-@i" class="tab">
 
 
@@ -29,8 +30,8 @@
                 <div class="competenties">
                     <h3>Competenties</h3>
                     @{
-                for (int n = 0; n < Model[k].Count; n++)
-                {
+                  for (int n = 0; n < Model[k].Count; n++)
+                  {
                         <div class="rating">
                             @Model[k][n].Skill.Category
                             @Html.HiddenFor(model => model[k][n].By.Id)
@@ -40,7 +41,7 @@
                             @Html.EditorFor(model => model[k][n].Grade)
 
                         </div>
-                }
+                  }
                     }
                 </div>
                 @ViewBag.warning
@@ -51,9 +52,47 @@
             </div>
 
         </div>
-                i++;
-            }
-        }
+                  i++;
+              }
+          }
+      }
+      else if (ViewBag.Actie == "kijk")
+      {
+          i = 0;
+          using (@Html.BeginForm("Evaluate", "Student", FormMethod.Post))
+          {
+              //Html.Hidden("projectIdFrom", (int)ViewBag.projectId);
+              //Html.Hidden("projectPeriodIdFrom", (int)ViewBag.projectPeriodId);
+              for (int k = 0; k < Model.Count; k++)
+              {
+        <div id="tabs-@i" class="tab">
+
+
+            <h1>Beoordeel @ViewBag.names[i]</h1>
+            <div class="tabcontainer">
+                <div class="competenties">
+                    <h3>Competenties</h3>
+                    @{
+                  for (int n = 0; n < Model[k].Count; n++)
+                  {
+                        <div class="rating">
+                            @Model[k][n].Skill.Category
+                            @Html.TextBoxFor(model => model[k][n].Grade, new { @readonly="readonly" })
+                        </div>
+                  }
+                    }
+                </div>
+                @ViewBag.warning
+                <div class="buttonbox">
+                    <input class="button" type="submit" name="Annuleren" value="Terug" />
+                </div>
+            </div>
+
+        </div>
+                  i++;
+              }
+          }
+      }
     }
 </div>
 
