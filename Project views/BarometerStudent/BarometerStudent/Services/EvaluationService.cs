@@ -53,27 +53,27 @@ namespace BarometerStudent.Services
                         update.Add(e);
                     }
 
-                SkillRepository sr = new SkillRepository(context);
-                StudentRepository str = new StudentRepository(context);
-                EvaluationRepository er = new EvaluationRepository(context);
+                SkillRepository skillrepository = new SkillRepository(context);
+                StudentRepository studentrepository = new StudentRepository(context);
+                EvaluationRepository evaluationrepository = new EvaluationRepository(context);
 
-                foreach (Evaluation e in update)
+                foreach (Evaluation evaluation in update)
                 {
-                    e.Skill = sr.Get(e.Skill.Id);
-                    e.By = str.Get(e.By.Id);
-                    e.For = str.Get(e.For.Id);
-                    er.Update(e);
+                    evaluation.Skill = skillrepository.Get(evaluation.Skill.Id);
+                    evaluation.By = studentrepository.Get(evaluation.By.Id);
+                    evaluation.For = studentrepository.Get(evaluation.For.Id);
+                    evaluationrepository.Update(evaluation);
                 }
 
-                er.Save();
-                sr.Save();
-                str.Save();
+                evaluationrepository.Save();
+                skillrepository.Save();
+                studentrepository.Save();
         }
 
         public Dictionary<string, List<Evaluation>> GetAvgEvaluations(int studentId)
         {
-            StudentRepository studentRepo = new StudentRepository(context);
-            Student student = studentRepo.Get(studentId);
+            StudentRepository studentRepository = new StudentRepository(context);
+            Student student = studentRepository.Get(studentId);
 
             List<Evaluation> evaluationList = new List<Evaluation>();
             Dictionary<string, List<Evaluation>> projectsAvgEvaluations = new Dictionary<string, List<Evaluation>>();
@@ -93,21 +93,21 @@ namespace BarometerStudent.Services
         public ICollection<Evaluation> GetEvaluations(int projectPeriodId, int byStudent, int forStudent)
         {
             List<Evaluation> ret = new List<Evaluation>();
-            ProjectPeriodRepository ppr = new ProjectPeriodRepository(context);
-            ProjectPeriod period = ppr.Get(projectPeriodId);
+            ProjectPeriodRepository projectperiodrepository = new ProjectPeriodRepository(context);
+            ProjectPeriod period = projectperiodrepository.Get(projectPeriodId);
 
-            foreach (Evaluation eval in period.Evaluation)
+            foreach (Evaluation evaluation in period.Evaluation)
             {
-                if (eval.By.Id == byStudent && eval.For.Id == forStudent)
-                    ret.Add(eval);
+                if (evaluation.By.Id == byStudent && evaluation.For.Id == forStudent)
+                    ret.Add(evaluation);
             }
             return ret;
         }
 
         public Dictionary<string, List<Evaluation>> GetGroupEvaluation(int groepId)
         {
-            GroupRepository gr = new GroupRepository(context);
-            Group group = gr.Get(groepId);
+            GroupRepository grouprepository = new GroupRepository(context);
+            Group group = grouprepository.Get(groepId);
             Project project = group.Project;
 
             List<ProjectPeriod> projectPeriodList = new List<ProjectPeriod>();

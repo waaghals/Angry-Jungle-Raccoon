@@ -19,8 +19,8 @@ namespace BarometerStudent.Services
 
         public List<Student> GetMentorStudents(int id)
         {
-            UserRepository userrep = new UserRepository(context);
-            User user = userrep.Get(id);
+            UserRepository userrepository = new UserRepository(context);
+            User user = userrepository.Get(id);
             return user.MentorStudent.ToList<Student>();
         }
     }
