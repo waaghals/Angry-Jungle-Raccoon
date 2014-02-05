@@ -131,7 +131,7 @@ namespace BarometerStudent.Controllers
         public ActionResult ProjectAanmakenRedirect()
         {
             Session["ProjectContext"] = new Context();
-            Session["newProject"] = null;
+            Session["newProject"] = new Project();
             return RedirectToAction("ProjectAanmaken");
         }
 
@@ -278,30 +278,33 @@ namespace BarometerStudent.Controllers
         {
             Project project = (Project)Session["newProject"];
             SkillRepository skillRepository = new SkillRepository((Context)Session["ProjectContext"]);
-            Skill s = skillRepository.SkillExists(skill.Category);
-            if (s == null)
+            if (skill.Category != null)
             {
-                s = skill;
-            }
+                Skill s = skillRepository.SkillExists(skill.Category);
+                if (s == null)
+                {
+                    s = skill;
+                }
 
-            bool canAdd = true;
-            foreach (Skill sk in project.Skill)
-            {
-                if ((s.Category.ToLower().Equals(sk.Category.ToLower())) || (s.Id == sk.Id) && s.Id != 0)
+                bool canAdd = true;
+                foreach (Skill sk in project.Skill)
                 {
-                    canAdd = false;
+                    if ((s.Category.ToLower().Equals(sk.Category.ToLower())) || (s.Id == sk.Id) && s.Id != 0)
+                    {
+                        canAdd = false;
+                    }
                 }
-            }
-            if (canAdd)
-            {
-                Context con = (Context)Session["ProjectContext"];
-                SkillRepository skillrepo = new SkillRepository(con);
-                if(!skillrepo.GetAll().Contains(s))
+                if (canAdd)
                 {
-                    skillrepo.Insert(s); 
-                    skillrepo.Save();
+                    Context con = (Context)Session["ProjectContext"];
+                    SkillRepository skillrepo = new SkillRepository(con);
+                    if (!skillrepo.GetAll().Contains(s))
+                    {
+                        skillrepo.Insert(s);
+                        skillrepo.Save();
+                    }
+                    project.Skill.Add(s);
                 }
-                project.Skill.Add(s);
             }
 
             return RedirectToAction("CompetentiesToevoegenAanProject", (Project)null);
