@@ -54,17 +54,26 @@
                         {
                             double curGrade = Convert.ToDouble(eval.Grade);
                             curGrade /= 10;
-                            <td class="student_average_cyfer">
-                                @if(curGrade == 0)
+                                if(curGrade == 0)
                                 {
                                     <text>-</text>
                                     amountOfZero++;
                                 }
                                 else
                                 {
-                                    @curGrade
+                                    if (@curGrade >= 6)
+                                    {
+                                        <td class="grade_high">@curGrade</td>
+                                    }
+                                    else if (curGrade >= 5)
+                                    {
+                                        <td class="grade_medium">@curGrade</td>
+                                    }
+                                    else
+                                    {
+                                        <td class="grade_low">@curGrade</td>
+                                    }
                                 }
-                            </td>
                             avgGrade += eval.Grade;
                         }
                     }

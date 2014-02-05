@@ -224,28 +224,37 @@ a:hover.logo
 
 input[type="submit"]:disabled
 {
-    color:gray;
+    color:white;
+    background-color: #e67e9d !important;
+    outline-color:#e67e9d;
 }
 
 .grade_low
 {
-    background-color:red;
-    color:white;
+    background-color:#FF9999;
+    color:black;
     font-weight:bold;
+    text-align:center;
+    font-size:13pt;
 }
 
 .grade_medium
 {
-    background-color:orange;
-    color:white;
+    background-color:#FFDB99;
+    color:black;
     font-weight:bold;
+    text-align:center;
+    font-size:13pt;
 }
 
 .grade_high
 {
-    background-color:limegreen;
-    color:white;
+    background-color:#ADEBAD;
+    color:black;
     font-weight:bold;
+    text-align:center;
+    font-size:13pt;
+    /*opacity:0.4;*/
 }
 
 #body
@@ -1134,12 +1143,22 @@ tr.pager td
 
 .student_average_good
 {
-    color:darkgreen;
+    border-left:2px solid black;
+    padding-left:5px;
+    background-color:#ADEBAD;
+    color:black;
+    font-weight:bold;
+    font-size:13pt;
 }
 
 .student_average_bad
 {
-    color:red;
+    border-left:2px solid black;
+    padding-left:5px;
+    background-color:#FF9999;
+    color:black;
+    font-weight:bold;
+    font-size:13pt;
 }
 
 /*tabel link
