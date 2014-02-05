@@ -23,14 +23,20 @@
             {
         <div id="tabs-@i" class="tab">
 
-
-            <h1>Beoordeel @ViewBag.names[i]</h1>
+            @if (ViewBag.Actie == "kijk")
+            {
+                <h1>Beoordeeling van @ViewBag.names[i]</h1>
+            }
+            else
+            {
+                <h1>Beoordeeling voor @ViewBag.names[i]</h1>
+            }
             <div class="tabcontainer">
                 <div class="competenties">
                     <h3>Competenties</h3>
                     @{
-                for (int n = 0; n < Model[k].Count; n++)
-                {
+            for (int n = 0; n < Model[k].Count; n++)
+            {
                         <div class="rating">
                             @Model[k][n].Skill.Category
 
@@ -48,11 +54,17 @@
                                 @Html.EditorFor(model => model[k][n].Grade)
                             }
                         </div>
-                }
+            }
                     }
                 </div>
-                @ViewBag.warning
-                <div class="buttonbox">
+                
+            </div>
+@ViewBag.warning
+        </div>
+                    i++;
+            }
+            
+                <div class="buttonbox" >
                     @if (ViewBag.Actie == "kijk")
                     {
                         <input class="button" type="submit" name="Annuleren" value="Terug" />
@@ -63,11 +75,6 @@
                         <input class="button" type="submit" name="annuleren" value="Annuleren" />
                     }
                 </div>
-            </div>
-
-        </div>
-                    i++;
-            }
         }
       
     }
