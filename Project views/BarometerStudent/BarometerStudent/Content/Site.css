@@ -352,6 +352,12 @@ ul
     float: right;
 }
 
+.buttonbox_left
+{
+    margin: 10px;
+    float: left;
+}
+
 .cijferOverzicht
 {
     text-align: center;
